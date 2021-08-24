@@ -19,33 +19,25 @@ database connections.
 Docker
 ------
 
-TimescaleDB (PostgreSQL)
-~~~~~~~~~~~~~~~~~~~~~~~~
+Note: Containers are currently not configured to provide persistent storage (to store data outside of the container)
 
-Docker compose will provide an empty TimescaleDB/PostGIS instance. Database schemas for each CDMS will be created later using SQLAlchemy models in ``pyopencdms``. The resulting schemas should be equivalent to the original, but the underlying database technology may be different and, as a result, other minor difference will exist.
+opencdms-db image
+~~~~~~~~~~~~~~~~~
 
-+-------------+------------------+---------------------+-----------------------------------------------------------------+
-| Image       | CDMS             | Database            | Notes                                                           |
-+=============+==================+=====================+=================================================================+
-| opencdms-db | clide            | TimescaleDB/PostGIS | CliDE uses PostgreSQL, therefore high compatibility is expected |
-+-------------+------------------+---------------------+-----------------------------------------------------------------+
-| opencdms-db | climsoft-4.1.1   | TimescaleDB/PostGIS |                                                                 |
-+-------------+------------------+---------------------+-----------------------------------------------------------------+
-| opencdms-db | mch-english      | TimescaleDB/PostGIS |                                                                 |
-+-------------+------------------+---------------------+-----------------------------------------------------------------+
-| opencdms-db | midas-core       | TimescaleDB/PostGIS |                                                                 |
-+-------------+------------------+---------------------+-----------------------------------------------------------------+
+Initially ``opencdms-db`` will provide an empty TimescaleDB/PostGIS database instance.
 
-DB-Group
-~~~~~~~~
+Database schemas for each supported CDMS can be created later using SQLAlchemy models in ``pyopencdms``. The resulting schemas should be equivalent to the originals, but the underlying database technology may be different and, as a result, other minor difference may exist.
 
-Database schemas for each CDMS will be create using a database system that is compatible with the original database system using the original SQL DDL from the ``opencdms-test-data`` repository. For example:
-1. MCH uses MySQL 5.1 in production, when using DB-group the SQL DDL will be restored to MariaDB 1.1
-2. MIDAS uses Oracle Enterprise or Standard Edition in productions, when using DB-group the SQL DDL will be restore to Oracle eXpression Edition (XE)
-each support CDMS
+Database groups
+~~~~~~~~~~~~~~~
+
+Database schemas for each CDMS can be created using a database system that is compatible with the original database system using the original SQL DDL from the ``opencdms-test-data`` repository. When using docker compose the database schema will be restored. For example:
+
+#. MCH uses MySQL 5.1 in production, when using DB-group the SQL DDL will be restored to MariaDB 1.1.
+#. MIDAS uses Oracle Enterprise or Standard Edition in production, when using database groups the SQL DDL will be restored to Oracle eXpression Edition (XE)
 
 +------------------+-------------------+-----------------------------------------------------------------+
-| CDMS             | Database          | Notes                                                           |
+| Image            | Database          | Notes                                                           |
 +==================+===================+=================================================================+
 | clide            | TimescaleDB       | CliDE uses PostgreSQL, therefore high compatibility is expected |
 +------------------+-------------------+-----------------------------------------------------------------+
@@ -60,7 +52,9 @@ each support CDMS
 Production
 ~~~~~~~~~~
 
-For some supported CDMSs, docker images exist for the exact database and version number that is commonly used in production:
+For some supported CDMSs, docker images exist for the exact database and version number that is commonly used in production.
+
+In each case, only one CDMS schema is restored.
 
 +------------------+---------------------------------------+------------------------------------+
 | CDMS             | Database                              | Notes                              |
