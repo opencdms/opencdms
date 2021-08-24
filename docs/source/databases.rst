@@ -24,17 +24,17 @@ TimescaleDB (PostgreSQL)
 
 Docker compose will provide an empty TimescaleDB/PostGIS instance. Database schemas for each CDMS will be created later using SQLAlchemy models in ``pyopencdms``. The resulting schemas should be equivalent to the original, but the underlying database technology may be different and, as a result, other minor difference will exist.
 
-+------------------+-------------------+-----------------------------------------------------------------+
-| CDMS             | Database          | Notes                                                           |
-+==================+===================+=================================================================+
-| clide            | TimescaleDB       | CliDE uses PostgreSQL, therefore high compatibility is expected |
-+------------------+-------------------+-----------------------------------------------------------------+
-| climsoft-4.1.1   | TimescaleDB       |                                                                 |
-+------------------+-------------------+-----------------------------------------------------------------+
-| mch-english      | TimescaleDB       |                                                                 |
-+------------------+-------------------+-----------------------------------------------------------------+
-| midas-core       | TimescaleDB       |                                                                 |
-+------------------+-------------------+-----------------------------------------------------------------+
++-------------+------------------+---------------------+-----------------------------------------------------------------+
+| Image       | CDMS             | Database            | Notes                                                           |
++=============+==================+=====================+=================================================================+
+| opencdms-db | clide            | TimescaleDB/PostGIS | CliDE uses PostgreSQL, therefore high compatibility is expected |
++-------------+------------------+---------------------+-----------------------------------------------------------------+
+| opencdms-db | climsoft-4.1.1   | TimescaleDB/PostGIS |                                                                 |
++-------------+------------------+---------------------+-----------------------------------------------------------------+
+| opencdms-db | mch-english      | TimescaleDB/PostGIS |                                                                 |
++-------------+------------------+---------------------+-----------------------------------------------------------------+
+| opencdms-db | midas-core       | TimescaleDB/PostGIS |                                                                 |
++-------------+------------------+---------------------+-----------------------------------------------------------------+
 
 DB-Group
 ~~~~~~~~
@@ -69,7 +69,7 @@ For some supported CDMSs, docker images exist for the exact database and version
 +------------------+---------------------------------------+------------------------------------+
 | climsoft-4.1.1   | MariaDB 10.1                          |                                    |
 +------------------+---------------------------------------+------------------------------------+
-| MCH-english      | MySQL 5.1.73                          | *Experimental*                     |
+| mch-english      | MySQL 5.1.73                          | *Experimental*                     |
 +------------------+---------------------------------------+------------------------------------+
-| MIDAS            | Oracle Enterprise or Standard Edition | **Not available**                  |
+| midas-core       | Oracle Enterprise or Standard Edition | **Not available**                  |
 +------------------+---------------------------------------+------------------------------------+
