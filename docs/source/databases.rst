@@ -71,5 +71,5 @@ For some supported CDMSs, docker images exist for the exact database and version
 +------------------+---------------------------------------+------------------------------------+
 | MCH-english      | MySQL 5.1.73                          | *Experimental*                     |
 +------------------+---------------------------------------+------------------------------------+
-| MIDAS            | Oracle Enterprise or Standard Edition | **Not available**                 |
+| MIDAS            | Oracle Enterprise or Standard Edition | **Not available**                  |
 +------------------+---------------------------------------+------------------------------------+
