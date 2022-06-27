@@ -1,6 +1,10 @@
 # OpenCDMS Project Technical Team
 🗎 The OpenCDMS Project Technical Team (PTT) is responsible for managing OpenCDMS software development, including project planning and managing the development backlog.
 
+![roadmap](https://raw.githubusercontent.com/opencdms/project-technical-team/main/2021_current_roadmap.png)
+
+<br/><br/>
+
 ### Phase I - OpenCDMS prototyping and development (2021-2024)
 
 | Version | Description |
