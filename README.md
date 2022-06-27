@@ -5,9 +5,9 @@
 
 | Version | Description |
 |---------|-------------|
-| 0.1.x   | Early development - *no shared database model* <br/> &nbsp;&nbsp; - Other projects can make use of libraries, e.g. Climsoft App "Powered by OpenCDMS"|
+| 0.1.x   | Early development - *no shared database model* <br/> &nbsp;&nbsp; - Other projects can make use of OpenCDMS code using their exist data models, e.g. Climsoft App "Powered by OpenCDMS"|
 | 0.2     | OpenCDMS beta release with WMO Climate Data Model (CDM). <br/>&nbsp;&nbsp; -  Early testing - 2023 release|
-| 0.3     | OpenCDMS MVP (early adopters) - mid-2023 to mid-2024 <br/> &nbsp;&nbsp; - Consistent with ClimSA deliverables ("test a CDMS") <br/> &nbsp;&nbsp; - Includes ClimSA 2.4.1 common requirements <br/> &nbsp;&nbsp; - Manual migration / Limited migration tools / Parallel operation / adds value|
+| 0.3     | OpenCDMS MVP (early adopters) - mid-2023 to mid-2024 <br/> &nbsp;&nbsp; - Consistent with ClimSA deliverables ("CDMS options tested") <br/> &nbsp;&nbsp; - Planned implementation of ClimSA 2.4.1 common requirements <br/> &nbsp;&nbsp; - Manual data migration / limited migration tools / parallel operation adds value|
 
 ### Phase II - OpenCDMS implementation (2025+)
 
