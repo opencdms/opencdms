@@ -14,6 +14,6 @@
 | Version | Description |
 |---------|-------------|
 | 1.0     | OpenCDMS public release (2025, end of prototype phase) <br/> &nbsp;&nbsp; - Support for standards supported by CDM, possibly not entire #1131 v2? (TBD) <br/> &nbsp;&nbsp; - Migration paths to CDM (RI)|
-| 2.0     | OpenCDMS (1131 v2 RI) with prototype CDMS API for testing|
+| 2.0     | OpenCDMS (WMO No. 1131 version 2.0 Reference Implementation) with prototype CDMS API for testing|
 | 3.0     | CDMS API Standard and compliance testing|
 
