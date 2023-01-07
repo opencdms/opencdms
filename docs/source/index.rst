@@ -6,11 +6,16 @@
 pyopencdms documentation
 ========================
 
+Hello World!!
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-
+   pyopencdms
+   databases
+   surface-docs/index
+   surface-docs/installation
 
 Indices and tables
 ==================

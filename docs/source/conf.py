@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'pyopencdms documentation'
+project = 'OpenCDMS documentation'
 copyright = '2021, OpenCDMS Project'
 author = 'OpenCDMS Project'
 
@@ -31,6 +31,7 @@ release = '0.1.0-alpha'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.doctest',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
