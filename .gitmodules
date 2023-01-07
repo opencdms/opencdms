@@ -1,0 +1,6 @@
+[submodule "/surface-docs"]
+	path = surface-docs
+	url = https://github.com/isedwards/surface-docs.git
+[submodule "/pyopencdms-docs"]
+	path = pyopencdms-docs
+	url = https://github.com/isedwards/pyopencdms-docs.git
