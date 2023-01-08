@@ -1,0 +1,3 @@
+[submodule "pyopencdms"]
+	path = pyopencdms
+	url = https://github.com/opencdms/pyopencdms.git

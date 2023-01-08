@@ -1,0 +1,1 @@
+pyopencdms-docs@git+https://github.com/isedwards/pyopencdms-docs@main
