@@ -8,5 +8,7 @@ Developer Guide
    :maxdepth: 2
    :caption: Contents:
 
-   /pyopencdms/installation
+   /pyopencdms/index
    databases
+   doctests
+
