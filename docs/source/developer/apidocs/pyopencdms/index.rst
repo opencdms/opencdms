@@ -5,5 +5,3 @@ pyopencdms
    :maxdepth: 2
    :caption: Contents:
 
-   pygeoapi/index
-

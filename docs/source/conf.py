@@ -95,7 +95,17 @@ html_theme = "pydata_sphinx_theme"
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+# See https://pydata-sphinx-theme.readthedocs.io/en/latest/user_guide/configuring.html
+html_theme_options = {
+    "footer_items": ["copyright", "sphinx-version", "custom_footer"],
+    # Note we have omitted the light/dark `theme-switcher` below
+    "navbar_end": ["navbar-icon-links"]
+}
+
+html_context = {
+   # The site wasn't looking great in dark mode
+   "default_mode": "light"
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
