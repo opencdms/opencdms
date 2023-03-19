@@ -12,7 +12,8 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "pip3 install --user -r requirements.txt",
+	// e.g. pip3 install --user -r requirements.txt
+	"postCreateCommand": "git clone https://github.com/opencdms/pyopencdms ../pyopencdms",
 
 	// Configure tool-specific properties.
 	"customizations": {
