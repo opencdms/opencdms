@@ -15,7 +15,7 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// e.g. pip3 install --user -r requirements.txt
-	"postCreateCommand": "git clone https://github.com/opencdms/pyopencdms",
+	"postCreateCommand": "git clone https://github.com/opencdms/pyopencdms; git clone https://github.com/opencdms/opencdms-app; git clone https://github.com/opencdms/opencdms-api; git clone https://github.com/opencdms/opencdms-test-data",
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -24,7 +24,22 @@
 			"repositories": {
 				"opencdms/pyopencdms": {
 					"permissions": {
-						"issues": "write"
+						"contents": "write"
+					}
+				},
+				"opencdms/opencdms-api": {
+					"permissions": {
+						"contents": "write"
+					}
+				},
+				"opencdms/opencdms-app": {
+					"permissions": {
+						"contents": "write"
+					}
+				},
+				"opencdms/opencdms-test-data": {
+					"permissions": {
+						"contents": "write"
 					}
 				}
 			}
