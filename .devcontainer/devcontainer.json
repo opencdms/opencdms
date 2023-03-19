@@ -1,7 +1,0 @@
-{
-  "name": "My Development Environment",
-  "mounts": [
-    "source=${localWorkspaceFolder}/pyopencdms,target=/workspace/pyopencdms",
-    "source=${localWorkspaceFolder}/opencdms-api,target=/workspace/opencdms-api"
-  ]
-}
