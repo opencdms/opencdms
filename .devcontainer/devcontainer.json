@@ -5,6 +5,8 @@
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/python:0-3.11",
 
+	"workspaceFolder": "/workspaces",
+
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
@@ -18,6 +20,7 @@
 	// Configure tool-specific properties.
 	"customizations": {
 		"codespaces": {
+			// https://docs.github.com/en/codespaces/managing-your-codespaces/managing-repository-access-for-your-codespaces
 			"repositories": {
 				"opencdms/pyopencdms": {
 					"permissions": {
