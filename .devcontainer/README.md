@@ -6,6 +6,14 @@ This environment is intended for software developers who would like to contribut
 
 If you are looking for the *OpenCDMS workshop* then close this environment and open the [opencdms-workshop codespace](https://github.com/opencdms/opencdms-workshop) instead.
 
+## Overview
+
+> TODO: Add video introduction here
+
+> **Warning:** When developing inside any container you have to be especially careful not to accidently lose any changes that you've made by closing/deleting the container before commiting and pushing your changes.
+> 
+> In addition, in this particular devcontainer, you may not receive warnings for changes made in all repositories in `/workspaces/` (since `workspaces/opencdms` is the primary repository for the container).
+
 ## Quick links
 - Main opencdms [README](opencdms/README.md)
 - opencdms-api [README](opencdms-api/README.md)
