@@ -1,3 +1,5 @@
+cp /workspaces/opencdms/README.md /workspaces
+
 cp /workspaces/opencdms/.devcontainer/.bash_aliases ~/
 source /workspaces/opencdms/.devcontainer/.bash_aliases
 
