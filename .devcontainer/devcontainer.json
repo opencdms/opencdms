@@ -19,6 +19,14 @@
 
 	// Configure tool-specific properties.
 	"customizations": {
+		"vscode": {
+			"settings": {
+				"files.exclude": {
+					".codespaces": true,
+					".vscode": true
+				}
+			}
+		},
 		"codespaces": {
 			// https://docs.github.com/en/codespaces/managing-your-codespaces/managing-repository-access-for-your-codespaces
 			"repositories": {
