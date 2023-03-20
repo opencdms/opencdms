@@ -1,4 +1,6 @@
-cp /workspaces/opencdms/README.md /workspaces
+# Link the .devcontainer README.md to our workspaces root so that it
+# previews automatically when the devcontainer starts.
+ln -s /workspaces/opencdms/.devcontainer/README.md /workspaces/
 
 cp /workspaces/opencdms/.devcontainer/.bash_aliases ~/
 source /workspaces/opencdms/.devcontainer/.bash_aliases
