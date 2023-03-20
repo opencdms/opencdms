@@ -2,6 +2,10 @@
 
 > **NOTE:** You're looking at the `opencdms/.devcontainer/README.md` introduction
 
+This environment is intended for software developers who would like to contribute to OpenCDMS development.
+
+If you are looking for the *OpenCDMS workshop* then close this environment and open the [opencdms-workshop codespace](https://github.com/opencdms/opencdms-workshop) instead.
+
 ## Quick links
 - Main opencdms [README](opencdms/README.md)
 - opencdms-api [README](opencdms-api/README.md)
