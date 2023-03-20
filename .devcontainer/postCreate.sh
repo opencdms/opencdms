@@ -5,3 +5,5 @@ git clone https://github.com/opencdms/pyopencdms
 git clone https://github.com/opencdms/opencdms-app
 git clone https://github.com/opencdms/opencdms-api
 git clone https://github.com/opencdms/opencdms-test-data
+
+pip3 install -e /workspaces/pyopencdms
