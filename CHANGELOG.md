@@ -1,5 +1,5 @@
 # CHANGELOG
 
-## 0.1.0 (YY-MM-DD)
+## 0.1.1 (23-03-23)
 
 * First release on PyPI.
