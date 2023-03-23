@@ -41,7 +41,7 @@ setup(
     description="OpenCDMS Python package",
     entry_points={
         "console_scripts": [
-            "opencdms=opencdms.cli:main",
+            "opencdms=opencdms_cli.cli:main",
         ],
     },
     install_requires=requirements,
