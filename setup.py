@@ -25,6 +25,8 @@ test_requirements = [
 setup(
     author="OpenCDMS",
     author_email="info@opencdms.org",
+    maintainer='Ian Edwards',
+    maintainer_email='info@opencdms.org',
     python_requires=">=3.7",
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
@@ -53,7 +55,7 @@ setup(
     setup_requires=setup_requirements,
     test_suite="tests",
     tests_require=test_requirements,
-    url="https://github.com/opencdms/opencdms",
+    url="https://www.opencdms.org",
     version="0.1.5",
     zip_safe=False,
 )
