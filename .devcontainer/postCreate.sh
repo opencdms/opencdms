@@ -5,6 +5,9 @@ ln -s /workspaces/opencdms/.devcontainer/README.md /workspaces/
 cp /workspaces/opencdms/.devcontainer/.bash_aliases ~/
 source /workspaces/opencdms/.devcontainer/.bash_aliases
 
+# Setup opencdms cli ready for further setup
+pip3 install -e /workspaces/opencdms
+
 ## The following setup is being moved to opencdms cli
 
 #git clone https://github.com/opencdms/pyopencdms
@@ -21,7 +24,6 @@ source /workspaces/opencdms/.devcontainer/.bash_aliases
 #&& sudo apt update \
 #&& sudo apt install gh -y
 
-#pip3 install -e /workspaces/opencdms
 #pip3 install -e /workspaces/pyopencdms
 ## pip3 install -e /workspaces/opencdms-api
 #pip3 install -e /workspaces/opencdms-workshop
