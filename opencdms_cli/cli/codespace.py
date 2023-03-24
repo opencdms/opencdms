@@ -1,5 +1,3 @@
-"""Console script for opencdms."""
-import sys
 import subprocess
 import os
 import click
@@ -34,13 +32,6 @@ def repoHasChanges(details=True):
         result = subprocess.run(summary_status, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output = bool(len(result.stdout.decode().strip()))
     return output
-
-
-@click.group()
-def main(args=None):
-    """Console script for opencdms."""
-    # See click documentation at https://click.palletsprojects.com/
-    pass
 
 
 @click.command(name="codespace")
@@ -93,11 +84,3 @@ def codespace_command(command, codespace_name):
 @click.pass_context
 def cs_command(ctx):
     ctx.invoke(codespace_command)
-
-
-main.add_command(codespace_command)
-main.add_command(cs_command)
-
-
-if __name__ == "__main__":
-    sys.exit(main())  # pragma: no coveR
