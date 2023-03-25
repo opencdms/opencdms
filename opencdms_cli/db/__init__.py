@@ -76,3 +76,6 @@ def stop_db():
     out = subprocess.run(f"docker-compose -f {docker_compose_file} down", shell=True)
 
 
+db.add_command(start_db)
+db.add_command(stop_db)
+
