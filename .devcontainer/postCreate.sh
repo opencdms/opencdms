@@ -6,7 +6,7 @@ cp /workspaces/opencdms/.devcontainer/.bash_aliases ~/
 source /workspaces/opencdms/.devcontainer/.bash_aliases
 
 # Setup opencdms cli ready for further setup
-pip3 install -e /workspaces/opencdms
+#pip3 install -e /workspaces/opencdms
 
 # TODO: The following setup will be moved to opencdms cli
 
@@ -30,4 +30,4 @@ pip3 install -e /workspaces/pyopencdms
 ## pip3 install -e /workspaces/opencdms-workshop
 
 # TODO: Run requirement-dev as setup option
-pip install -r /workspaces/pyopencdms/requirement-dev.txt
+#pip install -r /workspaces/pyopencdms/requirement-dev.txt
