@@ -1,4 +1,12 @@
-# Byte-compiled / optimized / DLL files
+# -- pyopencdms customizations to the .gitignore file --
+
+# Ignore db
+*.db
+
+
+# -- Standard Python .gitignore --# 
+
+Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class

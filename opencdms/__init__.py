@@ -21,7 +21,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 # =============================================================================
-"""Top-level package for OpenCDMS CLI (opencdms_cli)"""
+"""Top-level package for OpenCDMS"""
 
 __author__ = """OpenCDMS Project"""
 __email__ = "info@opencdms.org"

@@ -10,7 +10,7 @@ with open("README.md") as readme_file:
 with open("CHANGELOG.md") as history_file:
     history = history_file.read()
 
-with open("requirements.txt") as requirements_file:
+with open("requirements/cli.txt") as requirements_file:
     requirements = requirements_file.readlines()
 
 
@@ -41,7 +41,7 @@ setup(
     description="OpenCDMS Python package",
     entry_points={
         "console_scripts": [
-            "opencdms=opencdms_cli.cli:main",
+            "opencdms=opencdms.cli:main",
         ],
     },
     install_requires=requirements,

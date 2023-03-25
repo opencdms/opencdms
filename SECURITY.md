@@ -1,7 +1,17 @@
-# Security Policy
+# OpenCDMS Security Policy
 
-## Responsible disclosure
+## Reporting
 
-If you believe you have discovered a security vulnerability in OpenCDMS, please
-send details of the issue to security@opencdms.org. Please do not open a GitHub
-issue or otherwise comment about the issue in a public forum.
+Security/vulnerability reports **should not** be submitted through GitHub issues or public discussions, but instead please send your report 
+to **security@opencdms.org**.
+
+Please follow the [contributor guidelines](https://github.com/opencmds/opencdms/blob/master/CONTRIBUTING.md) when submitting a vulnerability report.
+
+## Supported Versions
+
+The OpenCDMS Project Technical Team (PTT) will release patches for security vulnerabilities for the following versions:
+
+| Version | Supported          |
+| ------- | ------------------ |
+| 1.x     | :white_check_mark: |
+| < 1.0   | :x:                |

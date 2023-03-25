@@ -1,11 +1,7 @@
-=======
-Credits
-=======
+# Credits
 
-Development Lead
-----------------
+## Development Lead
 * OpenCDMS Project Technical Team <info@opencdms.org>
 
-Contributors
-------------
-* Ian Edwards (`@isedwards <https://github.com/isedwards>`_)
+## Contributors
+* Ian Edwards ([@isedwards](https://github.com/isedwards))
