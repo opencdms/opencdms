@@ -2,7 +2,7 @@
 import sys
 import click
 
-from opencdms_cli.db import db
+from opencdms.cli.db import db
 
 
 @click.group()
