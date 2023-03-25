@@ -27,4 +27,7 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 
 pip3 install -e /workspaces/pyopencdms
 ## pip3 install -e /workspaces/opencdms-api
-pip3 install -e /workspaces/opencdms-workshop
+## pip3 install -e /workspaces/opencdms-workshop
+
+# TODO: Run requirement-dev as setup option
+pip install -r /workspaces/pyopencdms/requirement-dev.txt

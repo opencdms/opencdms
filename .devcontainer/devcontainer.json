@@ -49,6 +49,16 @@
 					"permissions": {
 						"contents": "write"
 					}
+				},
+				"opencdms/opencdms-test-databases": {
+					"permissions": {
+						"contents": "write"
+					}
+				},
+				"opencdms/opencdms-workshop": {
+					"permissions": {
+						"contents": "write"
+					}
 				}
 			}
 		}
