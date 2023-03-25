@@ -1,9 +1,0 @@
-# ansible-galaxy install gotmax23.github_cli,v0.3.0
-# ansible-playbook install-gh-cli.yml
-- hosts: localhost
-  become: true
-  connection: local
-  #vars:
-    #github_cli_version: "1.11.0"
-  roles:
-    - gotmax23.github_cli
