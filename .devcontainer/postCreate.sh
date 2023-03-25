@@ -6,13 +6,13 @@ cp /workspaces/opencdms/.devcontainer/.bash_aliases ~/
 source /workspaces/opencdms/.devcontainer/.bash_aliases
 
 # Setup opencdms cli ready for further setup
-#pip3 install -e /workspaces/opencdms
+pip3 install -e /workspaces/opencdms
 
 # TODO: The following setup will be moved to opencdms cli
-
-git clone https://github.com/opencdms/pyopencdms
+#       and will also be used to create prebuilt containers on ghcr.io
+#       for each software release from 0.2.0 onwards
+git clone https://github.com/geopython/pygeoapi
 git clone https://github.com/opencdms/opencdms-app
-git clone https://github.com/opencdms/opencdms-api
 git clone https://github.com/opencdms/opencdms-test-data
 git clone https://github.com/opencdms/opencdms-test-databases
 git clone https://github.com/opencdms/opencdms-workshop
@@ -25,7 +25,14 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 && sudo apt update \
 && sudo apt install gh -y
 
-## pip3 install -e /workspaces/pyopencdms
+pip3 install -e /workspaces/pygeoapi
+
+pip3 install -r /workspaces/pygeoapi/requirements-dev.txt
+pip3 install -r /workspaces/pygeoapi/requirements-django.txt
+pip3 install -r /workspaces/pygeoapi/requirements-docker.txt
+# this one takes a long time (especially installing pandas?)
+#pip3 install -r /workspaces/pygeoapi/requirements-provider.txt
+
 ## pip3 install -e /workspaces/opencdms-api
 ## pip3 install -e /workspaces/opencdms-workshop
 

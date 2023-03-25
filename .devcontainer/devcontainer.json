@@ -25,19 +25,17 @@
 					".codespaces": true,
 					".vscode": true
 				}
-			}
+			},
+			"extensions": [
+				"ms-vscode.live-server"
+			]
 		},
 		"codespaces": {
 			// https://docs.github.com/en/codespaces/managing-your-codespaces/managing-repository-access-for-your-codespaces
 			"repositories": {
-				"opencdms/pyopencdms": {
+				"geopython/pygeoapi": {
 					"permissions": {
-						"contents": "write"
-					}
-				},
-				"opencdms/opencdms-api": {
-					"permissions": {
-						"contents": "write"
+						"contents": "read"
 					}
 				},
 				"opencdms/opencdms-app": {
