@@ -1,5 +1,3 @@
 bumpversion
 setuptools
-sh
 twine
-
