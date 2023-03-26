@@ -11,7 +11,7 @@ def base_path(path: str = ''):
     Returns:
         str: The requested path.
     """
-    module_path = sys.modules['opencdms'].__file__
+    module_path = os.path.dirname(sys.modules['opencdms'].__file__)
     base_path = os.path.abspath(os.path.join(module_path, path))
     return base_path
 
@@ -34,3 +34,22 @@ def tests_path():
     """Returns the tests path."""
     # TODO: if package installed with pip then tests won't be available
     return base_path('../tests')
+
+
+def docs_path(name: str = ''):
+    """Returns the path to the docs directory.
+
+    Args:
+        name (str): Optionally request 'source|build|html'
+
+    Returns:
+        str: The required path
+
+    """
+    append = {
+        '': '',
+        'source': 'source',
+        'build': 'build',
+        'html': 'build/html',
+    }
+    return base_path(f'../docs/{append[name]}')

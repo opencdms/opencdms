@@ -4,6 +4,8 @@ import sh
 import sys
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 
+from opencdms.utils.paths import docs_path
+
 
 @click.group()
 def docs():
@@ -11,11 +13,10 @@ def docs():
 
 
 @docs.command()
-@click.option('--port', '-p', default=8000, help='Port to serve documentation on.')
-@click.option('--directory', '-d', default='docs/build/html', help='Directory to serve documentation from.')
-def serve(port, directory):
+@click.option('--port', '-p', default=48008, help='Port to serve documentation on (default 48008).')
+def serve(port):
     """Starts a simple web server to serve documentation."""
-    os.chdir(directory)
+    os.chdir(docs_path('html'))
     httpd = HTTPServer(('localhost', port), SimpleHTTPRequestHandler)
     print(f'Serving documentation at http://localhost:{port}/')
     try:
@@ -27,11 +28,10 @@ def serve(port, directory):
 
 
 @docs.command()
-def build(source_dir, build_dir):
+def build():
     """Builds the documentation using Sphinx."""
-    os.chdir(source_dir)
     try:
-        sh.make('html')
+        sh.make('html', directory=docs_path())
         print('Documentation build successful.')
     except sh.ErrorReturnCode as e:
         print(f'Error building documentation: {e}', file=sys.stderr)
