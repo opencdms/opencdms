@@ -30,10 +30,18 @@ def requirements_path(name: str):
     return base_path(f'requirements/{full_name}')
 
 
-def tests_path():
-    """Returns the tests path."""
+def tests_path(name: str = ''):
+    """Returns the tests path.
+
+    Args:
+        name (str): Optional, limit to 'unit|integration'
+
+    Returns:
+        str: The required path
+
+    """
     # TODO: if package installed with pip then tests won't be available
-    return base_path('../tests')
+    return base_path(f'../tests/{name}')
 
 
 def docs_path(name: str = ''):

@@ -1,25 +1,23 @@
-import unittest
 import click
 
-from opencdms.utils.paths import get_tests_path
+from opencdms.utils.tests import run_tests
 
 
-@click.group()
-def test():
-    pass
+@click.group(invoke_without_command=True)
+@click.pass_context
+def test(context):
+    if context.invoked_subcommand is None:
+        click.echo('No subcommand specified, running all tests...')
+        click.echo(run_tests())
 
 
 @test.command()
-@click.option('--type', type=click.Choice(['unit', 'integration']), default='')
-def test(type):
-    """Run specified type of tests"""
-    loader = unittest.TestLoader()
-    test_suite = loader.discover(get_tests_path(type), pattern='*_test.py')
+def unit():
+    click.echo('Running unit tests...')
+    click.echo(run_tests('unit'))
 
-    runner = unittest.TextTestRunner()
-    result = runner.run(test_suite)
 
-    if result.wasSuccessful():
-        click.echo(f"All {'type ' if type else ''}tests passed successfully")
-    else:
-        click.echo(f"Some {'type ' if type else ''}tests failed")
+@test.command()
+def integration():
+    click.echo('Running integration tests...')
+    click.echo(run_tests('integration'))
