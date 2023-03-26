@@ -9,6 +9,7 @@ from opencdms.utils.paths import docs_path
 
 @click.group()
 def docs():
+    """Includes commands to build and serve docs"""
     pass
 
 

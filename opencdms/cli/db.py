@@ -26,6 +26,7 @@ CONTAINER_PORT = {
 
 @click.group()
 def db():
+    """Database related commands"""
     pass
 
 

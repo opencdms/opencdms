@@ -38,7 +38,8 @@ def repoHasChanges(details=True):
 @click.argument('command', type=click.Choice(CODESPACE_OPT.keys()))
 @click.option("--codespace-name", default=os.environ.get("CODESPACE_NAME"))
 def codespace_command(command, codespace_name):
-    """
+    """Commands related to GitHub Codespaces
+
     A command-line interface for GitHub Codespaces.
     This command accepts any of the GitHub CLI codespace commands
     (e.g. code, create, delete, ...) and then calls `gh codespace <command>`

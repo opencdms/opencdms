@@ -8,7 +8,7 @@ source /workspaces/opencdms/.devcontainer/.bash_aliases
 # Setup opencdms cli ready for further setup
 pip3 install -e /workspaces/opencdms
 
-# TODO: The following setup will be moved to opencdms cli
+# TODO: The following dev setup will be moved to opencdms cli
 #       and will also be used to create prebuilt containers on ghcr.io
 #       for each software release from 0.2.0 onwards
 git clone https://github.com/geopython/pygeoapi
@@ -25,6 +25,8 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 && sudo apt update \
 && sudo apt install gh -y
 
+# For development we want editable versions of the installed packages
+# even if `opencdms install` is ran later
 pip3 install -e /workspaces/pygeoapi
 pip3 install -e /workspaces/opencdms-test-databases
 
