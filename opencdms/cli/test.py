@@ -1,6 +1,14 @@
+import importlib
 import click
 
-from opencdms.utils.tests import run_tests
+#from opencdms.utils.tests import run_tests
+
+
+# TODO: need a long term solution to lazy loading that
+#       will install requirements as needed
+def run_tests(*args, **kwargs):
+    run_tests = importlib.import_module("opencdms.utils.tests.run_tests")
+    return run_tests
 
 
 @click.group(invoke_without_command=True)
