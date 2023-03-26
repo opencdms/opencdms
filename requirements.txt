@@ -1,0 +1,6 @@
+# By default, only the dependencies required by the `opencdms`
+# command line interface (CLI) are installed.
+#
+# Other requirements files can be found in opencdms/requirements
+# See `opencdms install --help` for more information
+-r opencdms/requirements/cli.txt
