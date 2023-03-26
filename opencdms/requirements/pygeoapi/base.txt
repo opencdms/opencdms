@@ -1,1 +1,1 @@
--f https://raw.githubusercontent.com/geopython/pygeoapi/master/requirements.txt
+-r https://raw.githubusercontent.com/geopython/pygeoapi/master/requirements.txt
