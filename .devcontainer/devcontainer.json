@@ -3,7 +3,10 @@
 {
 	"name": "OpenCDMS devcontainer",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/python:0-3.11",
+
+	// Disable image below and use default image
+	// (default image appears to allow docker-in-docker with no additional configuration required)
+	// "image": "mcr.microsoft.com/devcontainers/python:0-3.11",
 
 	"workspaceFolder": "/workspaces",
 
