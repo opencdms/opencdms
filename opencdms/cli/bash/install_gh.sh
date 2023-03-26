@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usage: ./install-gh-cli.sh [OPTION]... [FILE]...
+# Usage: ./install_gh-cli.sh
 # Install GitHub CLI following the standard instructions at:
 #   https://github.com/cli/cli/blob/trunk/docs/install_linux.md
 
