@@ -4,7 +4,10 @@ import subprocess
 from pathlib import Path
 import socket
 
+from opencdms.utils.paths.test_databases import test_databases_path
 
+
+# TODO: port assignments must come from opencdms_test_databases package
 CONTAINER_PORT = {
     "postgres": 5432,
     "mariadb": 3306,
@@ -26,6 +29,7 @@ def db():
     pass
 
 
+# TODO: switch to opencdms.utils.network.check_port
 def _check_port(port)->bool:
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         # TODO: localhost shouldn't be hardcoded
@@ -39,7 +43,9 @@ def start_db(containers: str):
     Start database containers
     
     """
-    docker_compose_file = f"{Path(__file__).parent}/docker-compose.yml"
+    #docker_compose_file = f"{Path(__file__).parent}/docker-compose.yml"
+    docker_compose_file = f"{ test_databases_path()}/docker-compose.yml"
+
     if containers is None:
         # Start all contianers
         service_ports = CONTAINER_PORT.values()
@@ -82,10 +88,11 @@ def start_db(containers: str):
     click.echo("To stop running databases run: opencdms-test-data stopdb")
     return out.returncode
 
-@click.command(name="stopdb")
+@click.command(name="stop")
 def stop_db():
     """ Stops all database containers """
-    docker_compose_file = f"{Path(__file__).parent}/docker-compose.yml"
+    # docker_compose_file = f"{Path(__file__).parent}/docker-compose.yml"
+    docker_compose_file = f"{ test_databases_path()}/docker-compose.yml"
     click.echo(docker_compose_file)
     out = subprocess.run(f"docker-compose -f {docker_compose_file} down", shell=True)
 

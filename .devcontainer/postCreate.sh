@@ -26,6 +26,7 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 && sudo apt install gh -y
 
 pip3 install -e /workspaces/pygeoapi
+pip3 install -e /workspaces/opencdms-test-databases
 
 #pip3 install -r /workspaces/pygeoapi/requirements-dev.txt
 #pip3 install -r /workspaces/pygeoapi/requirements-django.txt
