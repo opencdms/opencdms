@@ -27,9 +27,9 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 
 pip3 install -e /workspaces/pygeoapi
 
-pip3 install -r /workspaces/pygeoapi/requirements-dev.txt
-pip3 install -r /workspaces/pygeoapi/requirements-django.txt
-pip3 install -r /workspaces/pygeoapi/requirements-docker.txt
+#pip3 install -r /workspaces/pygeoapi/requirements-dev.txt
+#pip3 install -r /workspaces/pygeoapi/requirements-django.txt
+#pip3 install -r /workspaces/pygeoapi/requirements-docker.txt
 # this one takes a long time (especially installing pandas?)
 #pip3 install -r /workspaces/pygeoapi/requirements-provider.txt
 
