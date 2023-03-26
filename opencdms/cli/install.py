@@ -1,6 +1,7 @@
-import click
-import subprocess
 import sys
+import click
+import sh
+from opencdms.utils.paths import get_requirements_path
 
 
 @click.group()

@@ -1,0 +1,1 @@
+-f https://raw.githubusercontent.com/geopython/pygeoapi/master/requirements-django.txt
