@@ -4,8 +4,9 @@
 	"name": "OpenCDMS devcontainer",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 
-	// Disable image below and use default image
-	// (default image appears to allow docker-in-docker with no additional configuration required)
+	// Disable image below and use default image, documented at:
+	// https://github.com/microsoft/vscode-dev-containers/tree/main/containers/codespaces-linu
+	// The default image appears to allow docker-in-docker with no additional configuration required
 	// "image": "mcr.microsoft.com/devcontainers/python:0-3.11",
 
 	"workspaceFolder": "/workspaces",

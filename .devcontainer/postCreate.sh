@@ -33,3 +33,9 @@ pip3 install -e /workspaces/opencdms-test-databases
 
 # TODO: Run requirement-dev as setup option
 #pip install -r /workspaces/pyopencdms/requirement-dev.txt
+
+# Let's leave our users in the opencdms workspace, otherwise
+# launching Python and typing `import opencdms` imports the
+# directory, not the Python package (need to see if we can
+# make the directory unimportable)
+cd /workspaces/opencdms
