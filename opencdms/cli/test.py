@@ -12,7 +12,7 @@ import click
 def run_tests(*args, **kwargs):
     """Temporary version of run_tests that replaces utils.tests with lazy loading"""
     run_tests = importlib.import_module("opencdms.utils.tests.run_tests")
-    return run_tests
+    return run_tests(*args, **kwargs)
 
 
 @click.group(invoke_without_command=True)

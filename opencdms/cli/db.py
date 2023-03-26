@@ -4,8 +4,18 @@ import subprocess
 from pathlib import Path
 import socket
 
-from opencdms.utils.paths.test_databases import test_databases_path
+#from opencdms.utils.paths.test_databases import test_databases_path
 
+
+# TODO: This workaround is currently needed otherwise
+# when cli is initiated the import from utils.paths
+# attempts to import opencdms-test-databases which may not be installed yet
+# We need a longer term solution for lazy loading that
+# will install requirements as needed.
+def test_databases_path(*args, **kwargs):
+    """Temporary version of test_databases_path that replaces utils.paths version with lazy loading"""
+    test_databases_path = importlib.import_module("opencdms.utils.tests.run_tests")
+    return test_databases_path(*args, **kwargs)
 
 # TODO: port assignments must come from opencdms_test_databases package
 CONTAINER_PORT = {
