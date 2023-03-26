@@ -1,3 +1,5 @@
+**NOTE:** The contents of this pyopencdms-old directory have not yet been fully integrated into the new opencdms repository.
+
 OpenCDMS Python library: `pyopencdms`
 ====================================
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
