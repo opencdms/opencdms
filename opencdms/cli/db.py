@@ -1,20 +1,11 @@
 import importlib
 import click
+import sh
 import subprocess
 import socket
 
-#from opencdms.utils.paths.test_databases import test_databases_path
+from opencdms.utils.paths import base_path
 
-
-# TODO: This workaround is currently needed otherwise
-# when cli is initiated the import from utils.paths
-# attempts to import opencdms-test-databases which may not be installed yet
-# We need a longer term solution for lazy loading that
-# will install requirements as needed.
-def test_databases_path(*args, **kwargs):
-    """Temporary version of test_databases_path with lazy loading"""
-    test_databases = importlib.import_module("opencdms.utils.paths.test_databases")
-    return test_databases.test_databases_path(*args, **kwargs)
 
 # TODO: port assignments must come from opencdms_test_databases package
 CONTAINER_PORT = {
@@ -56,8 +47,7 @@ def start(containers: str):
     Start database containers
     
     """
-    #docker_compose_file = f"{Path(__file__).parent}/docker-compose.yml"
-    docker_compose_file = f"{ test_databases_path()}/docker-compose.yml"
+    docker_compose_file = f"{ base_path('db') }/docker-compose.yml"
 
     if containers == 'all':
         # Start all containers
@@ -70,6 +60,7 @@ def start(containers: str):
         if occupied and not click.confirm("Some ports are already in use by another service. Do you want to continue ?"):
             exit(0)
         start_command = f"docker-compose -f {docker_compose_file} up -d"
+        compose_args = ['-f', docker_compose_file, 'up', '-d']
         containers_started = CONTAINER_PORT.keys()
     else:
         containers_to_start = containers.split(",")
@@ -86,20 +77,23 @@ def start(containers: str):
         if len(containers_started) > 0:
             databases = " ".join(containers_started)
             start_command = f"docker-compose -f {docker_compose_file} up -d {databases}"
+            compose_args = ['-f', docker_compose_file, 'up', '-d', databases]
         else:
             exit(0)
     
     
     click.echo('starting databases....')
-    out = subprocess.run(start_command,shell=True)
-    if out.returncode != 0:
-        click.echo("Start up not successfull")
-        click.echo(out.stderr)
+    try:
+        out = sh.docker_compose(*compose_args, _cwd=base_path('db'))
+    except sh.ErrorReturnCode as err:
+        click.echo("Start up not successful")
+        click.echo(err.stderr)
         click.echo("please close any conflicting ports")
-    else:
-        click.echo(out.stdout)
+        return err.exit_code
+
+    click.echo(out)
     click.echo("To stop running databases run: opencdms-test-data stopdb")
-    return out.returncode
+
 
 @click.command()
 def stop():

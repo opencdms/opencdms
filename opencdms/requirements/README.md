@@ -10,6 +10,6 @@ Additional requirements can be installed using `opencdms` CLI:
 | opencdms install dev  | Dependencies used by developers |
 | opencdms install docs | Required for building the project documentation |
 
-See [docs.opencdms.org/developer/requirements][require] for more information
+📚 See [docs.opencdms.org/developer/requirements][require] for more information
 
 [require]: https://docs.opencdms.org/developer/requirements

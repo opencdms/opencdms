@@ -1,0 +1,6 @@
+FROM oracleinanutshell/oracle-xe-11g
+
+COPY ./schemas/midas/01_User_drop_create.sql /docker-entrypoint-initdb.d/1.sql
+COPY ./schemas/midas/02_metadata_DDL_XE.sql /docker-entrypoint-initdb.d/2.sql
+COPY ./schemas/midas/03_metadata_DML_XE.sql /docker-entrypoint-initdb.d/3.sql
+COPY ./schemas/midas/04_metadata_DDL_Foreign_KEY_XE.sql /docker-entrypoint-initdb.d/4.sql

@@ -12,6 +12,10 @@ The package includes subpackages for:
 * `requirements` - Software dependencies for each subpackage
 * `utils` - Reusable utilities
 
-Depending on which subpackage(s) you use, you may need to install additional dependencies, see `opencdms install --help` and [docs.opencdms.org/developer/][developer] for more information
+Depending on which subpackage(s) you use, you may need to install additional dependencies, see:
 
-[developer]: https://docs.opencdms.org/developer/
+    `opencdms install --help`
+
+📚 See [docs.opencdms.org/developer/installation][developer] for more information
+
+[developer]: https://docs.opencdms.org/developer/installation

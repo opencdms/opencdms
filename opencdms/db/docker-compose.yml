@@ -1,0 +1,159 @@
+version: "3"
+
+services:
+
+# A PostgreSQL instance 
+  postgres:
+      image: postgres
+      container_name: postgres
+      ports:
+          - "5432:5432"
+      environment:
+          - POSTGRES_PASSWORD=password
+
+
+  # A MariaDB instance containing schemas from CDMSs that use MySQL/MariaDB (currently climsoft-4.1.1 and mch-english)
+  mariadb:
+      image: mariadb:10.1
+      container_name: mariadb
+      command: --default-authentication-plugin=mysql_native_password --collation_server=utf8_general_ci --character_set_server=utf8 --sql_mode="ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION"
+      ports:
+          - "3306:3306"
+      environment:
+          - MYSQL_ROOT_PASSWORD=password
+          - MYSQL_DATABASE=test
+
+  # An empty TimescaleDB / PostGIS instance for deploying schemas from multiple supported CDMSs (currently empty)
+  opencdmsdb:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    container_name: opencdmsdb
+    ports:
+      - "35432:5432"
+    environment:
+      - POSTGRES_PASSWORD=password
+    networks:
+      opencdms:
+
+  # A PostgreSQL instance containing schemas from CDMSs that use PostgreSQL (currently clide and wmdr)
+  postgresql:
+    build:
+      context: .
+      dockerfile: ./docker/groups/Dockerfile.postgresql
+    container_name: postgresql
+    ports:
+      - "25432:5432"
+    environment:
+      - POSTGRES_PASSWORD=password
+    networks:
+      opencdms:
+
+  # A MariaDB instance containing schemas from CDMSs that use MySQL/MariaDB (currently climsoft-4.1.1 and mch-english)
+  mysql:
+    build:
+      context: .
+      dockerfile: ./docker/groups/Dockerfile.mysql
+    container_name: mysql
+    ports:
+      - "23306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    networks:
+      opencdms:
+
+  # An Oracle Express Edition instance containing schemas from CDMSs that use Oracle (currently midas-core)
+  oracle:
+    build:
+      context: .
+      dockerfile: ./docker/groups/Dockerfile.oracle
+    container_name: oracle
+    ports:
+      - "21521:1521"
+    environment:
+      - ORACLE_ALLOW_REMOTE=true
+    networks:
+      opencdms:
+
+  # A PostgreSQL 13 instance containing the clide schema (comparable to how CliDE is used in production)
+  clide:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.clide
+    container_name: clide
+    ports:
+      - "35433:5432"
+    environment:
+      - POSTGRES_PASSWORD=password
+    networks:
+      opencdms:
+
+  # A MariaDB 10.1 instance containing the climsoft-4.1.1 schema (comparable to how Climsoft is used in production)
+  climsoft-4.1.1:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.climsoft-4.1.1
+    container_name: climsoft-4.1.1
+    ports:
+      - "33308:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    networks:
+      opencdms:
+
+  # Latest MariaDB instance containing the mch-english schema (comparable to how MCH is used in production)
+  mch-english:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.mch-english
+    container_name: mch-english
+    ports:
+      - "33306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_USER=root
+    networks:
+      opencdms:
+
+  # An Oracle Express Edition instance containing schemas from CDMSs that use Oracle (currently midas-core)
+  midas:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.midas
+    container_name: midas
+    ports:
+      - "31521:1521"
+    environment:
+      - ORACLE_ALLOW_REMOTE=true
+    networks:
+      opencdms:
+
+  # A TimescaleDB / PostGIS instance containing the wmdr schema
+  wmdr:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.wmdr
+    container_name: wmdr
+    ports:
+      - "35434:5432"
+    environment:
+      - POSTGRES_PASSWORD=password
+    networks:
+      opencdms:
+
+  surface:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.surface
+    container_name: surface
+    ports:
+      - "45432:5432"
+    environment:
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - ./conf/postgres.conf:/etc/postgresql/postgresql.conf
+    networks:
+      opencdms:
+
+networks:
+  opencdms:

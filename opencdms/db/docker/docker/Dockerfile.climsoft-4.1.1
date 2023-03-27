@@ -1,0 +1,4 @@
+FROM mariadb:10.1
+
+COPY ./schemas/climsoft/v4/v4.1.1/climsoft_v4_all.sql /docker-entrypoint-initdb.d/1.sql
+

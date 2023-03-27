@@ -1,0 +1,10 @@
+FROM timescale/timescaledb-postgis:2.3.0-pg13
+
+COPY ./schemas/surface/ddl.sql /docker-entrypoint-initdb.d/1.sql
+COPY ./schemas/surface/wx_datasource.sql /docker-entrypoint-initdb.d/2.sql
+COPY ./schemas/surface/wx_country.sql /docker-entrypoint-initdb.d/3.sql
+COPY ./schemas/surface/wx_stationprofile.sql /docker-entrypoint-initdb.d/4.sql
+COPY ./schemas/surface/wx_stationcommunication.sql /docker-entrypoint-initdb.d/5.sql
+COPY ./schemas/surface/wx_station.sql /docker-entrypoint-initdb.d/6.sql
+COPY ./schemas/surface/raw_data_station_id_14.sql /docker-entrypoint-initdb.d/7.sql
+COPY ./schemas/surface/raw_data_station_id_108.sql /docker-entrypoint-initdb.d/8.sql

@@ -1,3 +1,5 @@
+## opencdms Command Line Interface
+
 `opencdms.cli` contains all of the code for the `opencdms` command line
 interface (CLI)
 
@@ -12,3 +14,7 @@ may only be available if the corresponding subpackage has been installed:
 | test    | /tests       | opencdms install test |
 
 You can also install the default set of subpackages with `opencdms install`.
+
+See [docs.opencdms.org/administrators/cli][cli] for more information
+
+[cli]: https://docs.opencdms.org/administrators/cli
