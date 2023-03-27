@@ -1,0 +1,4 @@
+[TYPECHECK]
+# Ignore 'no-member' warnings for the 'sh' module, which dynamically generates members
+# depending on whether the command is available in the shell, e.g. sh.docker_compose().
+ignored-modules=sh

@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Usage: ./install_gh-cli.sh
+# Usage: ./install_gh.sh
 # Install GitHub CLI following the standard instructions at:
 #   https://github.com/cli/cli/blob/trunk/docs/install_linux.md
 
-# Check Docker is not already installed
+# Check gh is not already installed
 if ! command -v gh &> /dev/null; then
     type -p curl >/dev/null || sudo apt install curl -y
     curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \

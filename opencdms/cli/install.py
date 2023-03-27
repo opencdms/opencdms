@@ -12,13 +12,13 @@ def install(context):
         click.echo('Installing required packages to current environment...')
         try:
             sh.pip('install', '-r', requirements_path('all'))
-            sh.bash(f'{base_path("cli/bash/install_gh.sh")}')
             sh.bash(f'{base_path("cli/bash/install_docker.sh")}')
+            sh.bash(f'{base_path("cli/bash/install_gh.sh")}')
+            sh.bash(f'{base_path("cli/bash/install_psql.sh")}')
             print('Package requirements installed successfully.')
-        except sh.ErrorReturnCode as e:
-            print(f'Error installing requirements: {e}', file=sys.stderr)
+        except sh.ErrorReturnCode as error:
+            print(f'Error installing requirements: {error}', file=sys.stderr)
             sys.exit(1)
-        
 
 
 @install.command()
