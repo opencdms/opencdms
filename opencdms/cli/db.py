@@ -1,7 +1,6 @@
-import sys
+import importlib
 import click
 import subprocess
-from pathlib import Path
 import socket
 
 #from opencdms.utils.paths.test_databases import test_databases_path
@@ -13,9 +12,9 @@ import socket
 # We need a longer term solution for lazy loading that
 # will install requirements as needed.
 def test_databases_path(*args, **kwargs):
-    """Temporary version of test_databases_path that replaces utils.paths version with lazy loading"""
-    test_databases_path = importlib.import_module("opencdms.utils.tests.run_tests")
-    return test_databases_path(*args, **kwargs)
+    """Temporary version of test_databases_path with lazy loading"""
+    test_databases = importlib.import_module("opencdms.utils.paths.test_databases")
+    return test_databases.test_databases_path(*args, **kwargs)
 
 # TODO: port assignments must come from opencdms_test_databases package
 CONTAINER_PORT = {
@@ -47,9 +46,12 @@ def _check_port(port)->bool:
         return s.connect_ex(('localhost', port)) == 0
 
 
-@click.command(name="start")
-@click.option('--containers', help='Comma separated list of container(s) to be started')
-def start_db(containers: str):
+# TODO: Consider type=click.Choice(['opencdmsdb', 'all', 'climsoft', 'clide'])
+#       In which case we would not accept comma separated list
+@click.command()
+@click.option('--containers', help='Comma separated list of container(s) to be started',
+    default='opencdmsdb')
+def start(containers: str):
     """ 
     Start database containers
     
@@ -57,8 +59,8 @@ def start_db(containers: str):
     #docker_compose_file = f"{Path(__file__).parent}/docker-compose.yml"
     docker_compose_file = f"{ test_databases_path()}/docker-compose.yml"
 
-    if containers is None:
-        # Start all contianers
+    if containers == 'all':
+        # Start all containers
         service_ports = CONTAINER_PORT.values()
         occupied = False
         for port in service_ports:
@@ -99,8 +101,8 @@ def start_db(containers: str):
     click.echo("To stop running databases run: opencdms-test-data stopdb")
     return out.returncode
 
-@click.command(name="stop")
-def stop_db():
+@click.command()
+def stop():
     """ Stops all database containers """
     # docker_compose_file = f"{Path(__file__).parent}/docker-compose.yml"
     docker_compose_file = f"{ test_databases_path()}/docker-compose.yml"
@@ -108,6 +110,5 @@ def stop_db():
     out = subprocess.run(f"docker-compose -f {docker_compose_file} down", shell=True)
 
 
-db.add_command(start_db)
-db.add_command(stop_db)
-
+db.add_command(start)
+db.add_command(stop)
