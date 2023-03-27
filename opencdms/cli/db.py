@@ -72,19 +72,19 @@ def start(containers: str):
                     continue
             else:
                 click.echo(f"########### Invalid container name {container} #############")
-                continue            
+                continue
             containers_started.append(container)
         if len(containers_started) > 0:
             databases = " ".join(containers_started)
             start_command = f"docker-compose -f {docker_compose_file} up -d {databases}"
-            compose_args = ['-f', docker_compose_file, 'up', '-d', databases]
+            compose_args = ['--verbose', '-f', docker_compose_file, 'up', '-d', databases]
         else:
             exit(0)
     
     
     click.echo('starting databases....')
     try:
-        out = sh.docker_compose(*compose_args, _cwd=base_path('db'))
+        out = sh.docker_compose(*compose_args, _cwd=base_path('db/docker'))
     except sh.ErrorReturnCode as err:
         click.echo("Start up not successful")
         click.echo(err.stderr)
