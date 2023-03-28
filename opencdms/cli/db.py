@@ -4,6 +4,7 @@ import sh
 import subprocess
 import socket
 
+from opencdms.db import seeder
 from opencdms.utils.paths import base_path
 
 
@@ -102,6 +103,14 @@ def stop():
     docker_compose_file = f"{ test_databases_path()}/docker-compose.yml"
     click.echo(docker_compose_file)
     out = subprocess.run(f"docker-compose -f {docker_compose_file} down", shell=True)
+
+
+@click.command(name="seed")
+def seed():
+    """ Creates tables and populates them with random data"""
+    click.echo("Generating random data....")
+    seeder.up()
+    click.echo("Successfully inserted random data into DB")
 
 
 db.add_command(start)
