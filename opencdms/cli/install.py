@@ -22,6 +22,19 @@ def install(context):
 
 
 @install.command()
+def db():
+    """Installs the requirements for working with the opencdms.db subpackage."""
+    try:
+        sh.pip('install', '-r', requirements_path('db'))
+        sh.bash(f'{base_path("cli/bash/install_docker.sh")}')
+        sh.bash(f'{base_path("cli/bash/install_psql.sh")}')
+        print('opencdms.db requirements installed successfully.')
+    except sh.ErrorReturnCode as e:
+        print(f'Error installing requirements: {e}', file=sys.stderr)
+        sys.exit(1)
+
+
+@install.command()
 def docs():
     """Installs the requirements for building the documentation."""
     try:

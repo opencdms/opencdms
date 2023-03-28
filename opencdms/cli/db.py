@@ -82,8 +82,7 @@ def start(containers: str):
         else:
             exit(0)
     
-    
-    click.echo('starting databases....')
+    click.echo('Starting databases....')
     try:
         out = sh.docker_compose(*compose_args, _cwd=base_path('db/docker'))
     except sh.ErrorReturnCode as err:
@@ -93,13 +92,12 @@ def start(containers: str):
         return err.exit_code
 
     click.echo(out)
-    click.echo("To stop running databases run: opencdms-test-data stopdb")
 
 
 @click.command()
 def stop():
     """ Stops all database containers """
-    # docker_compose_file = f"{Path(__file__).parent}/docker-compose.yml"
+    click.echo('Stopping databases....')
     docker_compose_file = f"{ test_databases_path()}/docker-compose.yml"
     click.echo(docker_compose_file)
     out = subprocess.run(f"docker-compose -f {docker_compose_file} down", shell=True)
@@ -113,5 +111,15 @@ def seed():
     click.echo("Successfully inserted random data into DB")
 
 
+@click.command()
+def list():
+    """List all running database containers"""
+    # TODO: Currently all running containers are listed
+    cmd = "docker ps"
+    subprocess.run(cmd, shell=True)
+
+
 db.add_command(start)
 db.add_command(stop)
+db.add_command(seed)
+db.add_command(list)

@@ -8,7 +8,7 @@ import subprocess
 #       `-r more_requirements.txt` and
 #       `-r https://github.com/org/repo/requirements.txt`.
 #       `opencdms@git+https://github.com/opencdms/pyopencdms@main`
-
+#       Also update to ignore comments and blank lines
 
 def check_requirements(filepath: str, verbose: bool = False) -> List[str]:
     """

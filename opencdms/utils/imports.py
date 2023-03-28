@@ -1,4 +1,5 @@
 """ A collection of functions for assisting with imports, including lazy importing """
+# TODO: This module is depreciated, see requirement module instead
 import importlib
 
 

@@ -1,3 +1,4 @@
+# TODO: Depreciated - but consider moving to tests
 from datetime import datetime,timedelta
 from uuid import uuid4
 
@@ -5,8 +6,8 @@ from sqlalchemy import create_engine, schema
 from sqlalchemy.orm import sessionmaker, close_all_sessions, Session, clear_mappers
 from faker import Faker
 
-from opencdms.utils.db import get_cdm_connection_string
-from opencdms.provider.opencdmsdb import mapper_registry, start_mappers
+from opencdms.utils.config import get_cdm_connection_string
+from opencdms.adapters.opencdmsdb import mapper_registry, start_mappers
 from opencdms.models import cdm
 
 DB_URL = get_cdm_connection_string()
@@ -31,6 +32,7 @@ def setup():
 
 def seed_observations(db_session: Session):
     feature_type = cdm.FeatureType( \
+        id=1,\
         name="Feature1", \
             description="A type of feature", \
                 links=["https://links.features.com/1"]

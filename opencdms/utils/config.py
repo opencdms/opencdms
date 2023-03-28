@@ -7,7 +7,7 @@ from sqlalchemy.orm import sessionmaker, Query
 
 class OpenCDMSConfig:
     CDM_DB_HOST = os.getenv("CDM_DB_HOST", "127.0.0.1")
-    CDM_DB_PORT = os.getenv("CDM_DB_PORT", 5432)
+    CDM_DB_PORT = os.getenv("CDM_DB_PORT", 35432)
     CDM_DB_USER = os.getenv("CDM_DB_USER", "postgres")
     CDM_DB_PASS = os.getenv("CDM_DB_PASSWORD", "password")
     CDM_DB_NAME = os.getenv("CDM_DB_NAME", "postgres")
