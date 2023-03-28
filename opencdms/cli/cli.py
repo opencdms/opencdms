@@ -7,11 +7,50 @@ uninstalled_packages = []
 
 
 class UnavailablePackagesGroup(click.Group):
+    """
+    A custom click Group class that extends the default click.Group class and adds a message string about uninstalled packages to the help message.
+
+    The class inherits from click.Group, and overrides the `get_help` method to append the message string returned by the `unavailable_packages` function to the end of the help message.
+
+    Attributes:
+    ----------
+    Inherits all the attributes of the `click.Group` class.
+
+    Methods:
+    --------
+    get_help(ctx: Context) -> str:
+        Overrides the `get_help` method of the `click.Group` class to add a message string about uninstalled packages to the end of the help message.
+
+    """
     def get_help(self, ctx):
-        return super().get_help(ctx) + print_unavailable_packages()
+        """
+        Overrides the `get_help` method of the `click.Group` class to add a message string about uninstalled packages to the end of the help message.
+
+        Parameters:
+        ----------
+        ctx: click.Context
+            The context object for the command group.
+
+        Returns:
+        -------
+        str
+            The help message string, with the message string about uninstalled packages appended to the end.
+        """
+        return super().get_help(ctx) + unavailable_packages()
 
 
-def print_unavailable_packages():
+def unavailable_packages():
+    """
+    Returns a string listing all uninstalled packages.
+
+    If there are no uninstalled packages, an empty string is returned.
+
+    Returns:
+    --------
+    str
+        A message string containing information about uninstalled packages.
+
+    """
     if uninstalled_packages:
         msg = [
             os.linesep,
@@ -21,6 +60,8 @@ def print_unavailable_packages():
             os.linesep,
         ]
         return os.linesep.join(msg)
+    else:
+        return ''
 
 
 main = UnavailablePackagesGroup()

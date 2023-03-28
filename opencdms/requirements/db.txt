@@ -1,2 +1,3 @@
+-r base.txt
 faker
 psycopg2-binary
