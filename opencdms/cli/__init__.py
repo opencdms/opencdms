@@ -1,6 +1,6 @@
 """Console script for opencdms."""
 import sys
-from .cli import *
+from .cli import main
 
 
 if __name__ == "__main__":

@@ -19,6 +19,3 @@ main.add_command(db)
 main.add_command(docs)
 main.add_command(install)
 main.add_command(test)
-
-
-__all__ = ['main']
