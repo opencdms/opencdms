@@ -8,7 +8,7 @@ This repository contains, in a single place, everything that is needed to instal
 # First use pip to install the `opencdms` command line tool
 pip install opencdms
 
-# Then install all dependencies into current environment (see opencdms/requirements/)
+# Then install all dependencies into current environment
 opencdms install
 
 ```
