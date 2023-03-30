@@ -33,6 +33,7 @@ def load_data():
     connection_string = get_connection_string('CDM')
     cdm_engine = get_engine()
 
+    create_db_and_schemas('opencdmsdb', ['cdm'], connection_string)
     try:
         create_db_and_schemas('opencdmsdb', ['cdm'], connection_string)
     except DatabaseError:

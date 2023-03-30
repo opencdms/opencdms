@@ -3,13 +3,13 @@ This module contains database utils that are specific to Postgres
 
 """
 from typing import Optional
+
 import sh
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, schema
 from sqlalchemy.engine import Engine
-from sqlalchemy_utils import create_database
+from sqlalchemy_utils import create_database, database_exists
 
 from opencdms.db.config import get_engine, DEFAULT_DATABASE
-from opencdms.utils.db import DatabaseError
 
 
 def launch_psql(database_name: Optional[str] = None) -> None:
@@ -43,10 +43,10 @@ def launch_psql(database_name: Optional[str] = None) -> None:
     db_port = engine.url.port
 
     # Use `sh.psql` to launch `psql` with the appropriate connection string parameters
-    sh.psql(
-        f"postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}",
-        "--set sslmode=require",
-    )
+    try:
+        sh.psql(f'postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}', '-t', _tty_in=True, _tty_out=True)
+    except sh.ErrorReturnCode as e:
+        print(e.stderr)
 
 
 def create_db_and_schemas(db_name: str, schema_names: list[str] = None, connection_string: str = None) -> None:
@@ -65,34 +65,23 @@ def create_db_and_schemas(db_name: str, schema_names: list[str] = None, connecti
         None
     """
     # TODO: We should probably pass an engine and not a connection string to this function
+    #       we can pass engine.url to sqlalchemy_utils.create_database and it will create the
+    #       db_name from the engine's connection string
     if connection_string is None:
         connection_string = get_connection_string()
     if schema_names is None:
         schema_names = []
 
-    conn_str_without_db_name = connection_string.rsplit('/', 1)[0]
+    try:
+        engine = create_engine(connection_string)
 
-    # Create the specified database
-    create_database(conn_str_without_db_name, db_name)
+        if not database_exists(engine.url):
+            create_database(engine.url)
 
-    # Dispose of the engine to close any remaining connections
-    engine.dispose()
-
-    # Connect to the newly created or existing database
-    new_connection_string = connection_string.rsplit("/", 1)[0] + f"/{db_name}"
-    engine = create_engine(new_connection_string)
-
-    # Check if the specified schemas already exist
-    with engine.connect() as connection:
+        # Create the specified schemas
         for schema_name in schema_names:
-            result = connection.execute(f"SELECT 1 FROM pg_namespace WHERE nspname='{schema_name}'")
-            if result.fetchone() is not None:
-                raise ProgrammingError(f"Schema '{schema_name}' already exists")
-
-    # Create the specified schemas
-    with engine.begin() as connection:
-        for schema_name in schema_names:
-            connection.execute(f"CREATE SCHEMA {schema_name}")
-
-    # Dispose of the engine to close any remaining connections
-    engine.dispose()
+            if not engine.dialect.has_schema(engine, schema_name):
+                engine.execute(schema.CreateSchema(schema_name))
+    finally:
+        # Dispose of the engine to close any remaining connections
+        engine.dispose()

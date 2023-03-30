@@ -2,3 +2,4 @@
 faker
 geoalchemy2>=0.13.0
 psycopg2-binary
+sqlalchemy_utils
