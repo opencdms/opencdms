@@ -1,77 +1,64 @@
-import os
+"""
+This module provides functions for managing connection strings
+
+Example usage:
+
+    from opencdms.db.config import get_engine
+
+    # Get the engine object for the "CDM" database
+    engine = get_engine("CDM")
+
+    # Use the engine to execute SQL queries
+    with engine.connect() as conn:
+        result = conn.execute("SELECT * FROM observation")
+        for row in result:
+            print(row)
+
+"""
+import configparser
+from sqlalchemy import create_engine
+
+from opencdms.utils.paths import base_path
 
 
+def get_connection_string(database: str = "CDM") -> str:
+    """
+    Returns the SQLAlchemy connection string for the specified database
+    using the default alembic.ini file.
+
+    Args:
+        database: The name of the database to connect to. Default is "CDM".
+
+    Returns:
+        The connection string for the specified database.
+
+    Raises:
+        ConfigParser.NoSectionError: If the specified database name is not found in the alembic.ini file.
+        ConfigParser.NoOptionError: If the "sqlalchemy.url" option is not found in the specified database section.
+    """
+    config = configparser.ConfigParser()
+    config.read(base_path('db/alembic/alembic.ini'))
+
+    # Get the connection string for the named database
+    conn_str = config.get(database, "sqlalchemy.url")
+
+    return conn_str
 
 
-# TODO: Replace all this manual code with SQLAlchemy engine's connection string management
-#       and alembics's context.config (for writing default connection string to file)
-#       Production connection strings must be in environment variables.
-#       (check the code below is still in use)
-from dotenv import load_dotenv
+def get_engine(database: str = "CDM") -> sqlalchemy.engine.base.Engine:
+    """
+    Returns an SQLAlchemy engine for the specified database.
 
-load_dotenv()
+    Args:
+        database: The name of the database to connect to. Default is "CDM".
 
+    Returns:
+        An SQLAlchemy engine instance.
 
-def get_connection_string(engine: str, driver: str, user: str, password: str, host: str, port: str, db_name: str) -> str:
-    return f"{engine}+{driver}://{user}:{password}@{host}:{port}/{db_name}"
+    Raises:
+        sqlalchemy.exc.ArgumentError: If the connection string is not valid.
+    """
+    conn_str = get_connection_string(database)
 
-
-def get_clide_connection_string() -> str:
-    return get_connection_string(
-        engine="postgresql",
-        driver="psycopg2",
-        user="postgres",
-        password="password",
-        host="127.0.0.1",
-        port=os.getenv("CLIDE_PORT"),
-        db_name=os.getenv("CLIDE_DB_NAME")
-    )
-
-
-def get_climsoft_4_1_1_connection_string() -> str:
-    return get_connection_string(
-        engine="mysql",
-        driver="mysqldb",
-        user="root",
-        password="password",
-        host="127.0.0.1",
-        port=os.getenv("CLIMSOFT_4_1_1_PORT"),
-        db_name=os.getenv("CLIMSOFT_DB_NAME")
-    )
-
-
-def get_mch_english_connection_string(port_override: str = None) -> str:
-    return get_connection_string(
-        engine="mysql",
-        driver="mysqldb",
-        user="root",
-        password="password",
-        host="127.0.0.1",
-        port=os.getenv("MCH_ENGLISH_PORT") if port_override is None else port_override,
-        db_name=os.getenv("MCH_DB_NAME")
-    )
-
-
-def get_midas_connection_string(port_override: str = None) -> str:
-    return get_connection_string(
-        engine="postgresql",
-        driver="psycopg2",
-        user="postgres",
-        password="password",
-        host="127.0.0.1",
-        port=os.getenv("MIDAS_PORT") if port_override is None else port_override,
-        db_name=os.getenv("MIDAS_DB_NAME")
-    )
-
-
-def get_surface_connection_string(port_override: str = None) -> str:
-    return get_connection_string(
-        engine="postgresql",
-        driver="psycopg2",
-        user="postgres",
-        password="password",
-        host="127.0.0.1",
-        port=os.getenv("SURFACE_PORT", 45432) if port_override is None else port_override,
-        db_name=os.getenv("SURFACE_DB_NAME", "postgres")
-    )
-
+    # Create an SQLAlchemy engine using the connection string
+    return create_engine(conn_str)
