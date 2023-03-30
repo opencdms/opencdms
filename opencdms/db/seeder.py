@@ -1,4 +1,5 @@
 # TODO: Depreciated - but consider moving to tests
+#       When this is removed, utils.config should also be removed
 from datetime import datetime,timedelta
 from uuid import uuid4
 

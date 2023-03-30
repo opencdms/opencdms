@@ -1,5 +1,12 @@
 import os
 
+
+
+
+# TODO: Replace all this manual code with SQLAlchemy engine's connection string management
+#       and alembics's context.config (for writing default connection string to file)
+#       Production connection strings must be in environment variables.
+#       (check the code below is still in use)
 from dotenv import load_dotenv
 
 load_dotenv()
