@@ -1,7 +1,13 @@
-from sqlalchemy import create_engine, text
+"""
+This module contains database utils that are specific to Postgres
+
+"""
+from sqlalchemy import create_engine
+
+from opencdms.utils.db import DatabaseError
 
 
-def create_db_and_schemas(db_name: str, schema_names: list[str] = None, connection_string: str) -> None:
+def create_db_and_schemas(db_name: str, schema_names: list[str] = None, connection_string: str = None) -> None:
     """
     Create a database and specified schemas if they do not exist.
 
@@ -16,6 +22,9 @@ def create_db_and_schemas(db_name: str, schema_names: list[str] = None, connecti
     Returns:
         None
     """
+    if connection_string is None:
+        # TODO: add default connection string behaviour?
+        raise ValueError('connection_string must be specified')
     if schema_names is None:
         schema_names = []
 
@@ -26,7 +35,7 @@ def create_db_and_schemas(db_name: str, schema_names: list[str] = None, connecti
     with engine.connect() as connection:
         result = connection.execute(f"SELECT 1 FROM pg_database WHERE datname='{db_name}'")
         if result.fetchone() is not None:
-            raise ProgrammingError(f"Database '{db_name}' already exists")
+            raise DatabaseError(f"Database '{db_name}' already exists")
 
     # Create the specified database
     with engine.connect() as connection:

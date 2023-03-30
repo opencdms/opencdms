@@ -4,7 +4,7 @@ import sh
 import subprocess
 import socket
 
-from opencdms.db import seeder
+from opencdms.db import load, seeder
 from opencdms.utils.paths import base_path
 
 
@@ -119,7 +119,14 @@ def list():
     subprocess.run(cmd, shell=True)
 
 
+@click.command(name='load')
+def load_command():
+    """List all running database containers"""
+    load.load_data()
+
+
 db.add_command(start)
 db.add_command(stop)
 db.add_command(seed)
 db.add_command(list)
+db.add_command(load_command)

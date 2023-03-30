@@ -16,6 +16,7 @@ Example usage:
 
 """
 import configparser
+import sqlalchemy
 from sqlalchemy import create_engine
 
 from opencdms.utils.paths import base_path
