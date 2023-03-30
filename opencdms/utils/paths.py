@@ -2,6 +2,33 @@ import os
 import sys
 
 
+def config_directory(package_name='opencdms'):
+    """Get the path to the configuration directory for the specified package.
+
+    This function returns the path to the configuration directory for the specified package,
+    using the XDG Base Directory Specification. If the $XDG_CONFIG_HOME environment variable
+    is set, the configuration directory will be located there. Otherwise, the configuration
+    directory will be located in the default location, ~/.config/package_name/. If the directory
+    does not exist, it will be created.
+
+    Args:
+        package_name (str, optional): The name of the package. Defaults to 'opencdms'.
+
+    Returns:
+        str: The path to the configuration directory for the specified package.
+    """
+    xdg_config_home = os.environ.get('XDG_CONFIG_HOME')
+    if xdg_config_home:
+        config_dir = os.path.join(xdg_config_home, package_name)
+    else:
+        config_dir = os.path.expanduser(f'~/.config/{package_name}')
+
+    if not os.path.exists(config_dir):
+        os.makedirs(config_dir)
+
+    return config_dir
+
+
 def base_path(path: str = ''):
     """Returns the required path for the opencdms package.
 
@@ -12,8 +39,8 @@ def base_path(path: str = ''):
         str: The requested path.
     """
     module_path = os.path.dirname(sys.modules['opencdms'].__file__)
-    base_path = os.path.abspath(os.path.join(module_path, path))
-    return base_path
+    path = os.path.abspath(os.path.join(module_path, path))
+    return path
 
 
 def requirements_path(name: str):
