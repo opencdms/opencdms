@@ -1,10 +1,10 @@
-import importlib
 import click
 import sh
 import subprocess
 import socket
 
 from opencdms.db import load, seeder
+from opencdms.utils.db.postgres import launch_psql
 from opencdms.utils.paths import base_path
 
 
@@ -125,8 +125,31 @@ def load_command():
     load.load_data()
 
 
+@click.command()
+@click.argument('database_name', required=False)
+def psql(database_name: str = None) -> None:
+    """
+    Launches the `psql` command-line tool with the connection string parameters
+    for the specified database, or with no arguments if no database name is given.
+
+    Args:
+        database_name: The name of the database to connect to. If not provided,
+        the `psql` command will be launched with no arguments.
+
+    Raises:
+        sh.ErrorReturnCode: If the `psql` command returns a non-zero exit code.
+
+    Returns:
+        None
+    """
+    # Launch `psql` with the connection string parameters for the specified database
+    # or with no arguments if no database name is provided
+    launch_psql(database_name)
+
+
 db.add_command(start)
 db.add_command(stop)
 db.add_command(seed)
 db.add_command(list)
 db.add_command(load_command)
+db.add_command(psql)

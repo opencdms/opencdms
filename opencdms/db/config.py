@@ -22,7 +22,10 @@ from sqlalchemy import create_engine
 from opencdms.utils.paths import base_path
 
 
-def get_connection_string(database: str = "CDM") -> str:
+DEFAULT_DATABASE = 'CDM'
+
+
+def get_connection_string(database: str = DEFAULT_DATABASE) -> str:
     """
     Returns the SQLAlchemy connection string for the specified database
     using the default alembic.ini file.
@@ -46,7 +49,7 @@ def get_connection_string(database: str = "CDM") -> str:
     return conn_str
 
 
-def get_engine(database: str = "CDM") -> sqlalchemy.engine.base.Engine:
+def get_engine(database: str = DEFAULT_DATABASE) -> sqlalchemy.engine.base.Engine:
     """
     Returns an SQLAlchemy engine for the specified database.
 
