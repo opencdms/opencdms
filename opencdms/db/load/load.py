@@ -7,8 +7,11 @@
 # opencdms db load /workspaces/opencdms-test-data/data/cdm/`  # creates db it not exists
 #
 import csv
-# TODO: replace with imports from CDM model
-from sqlalchemy import Table, Column, String, MetaData
+import glob
+import os
+from typing import Dict
+
+from sqlalchemy import text, Engine, Table
 from sqlalchemy.engine import Engine
 
 from opencdms.adapters import opencdmsdb
@@ -16,6 +19,9 @@ from opencdms.db.config import get_connection_string, get_engine
 from opencdms.utils.db import DatabaseError
 from opencdms.utils.db.postgres import create_db_and_schemas
 from opencdms.utils.paths import base_path
+from opencdms.utils.db.postgres import launch_psql
+
+from .csv import header_mapping
 
 
 DEFAULT_DATA_PATH = base_path('../../opencdms-test-data/data/cdm/')
@@ -41,44 +47,29 @@ def load_data():
 
     create_model(cdm_engine)
 
+    file_pattern = os.path.join(DEFAULT_DATA_PATH, 'data_tables/CA_*.csv')
+    for file_name in glob.glob(file_pattern):
+        # load_csv_to_cdm(file_name, cdm_engine, opencdmsdb.observation,
+        #                 delimiter='|', header_mapping=header_mapping,
+        #                 null_value='NA', quote_char="'")
+
+        # TODO:
+        raise ValueError('Resume here')
+        load_csv_to_cdm()
+        break
+
     # Load data from CSV
     #    code_tables
     #    data_tables
     #    hosts.geojson
-
     with cdm_engine.connect() as conn:
-        result = conn.execute("SELECT * FROM cdm.observation")
+        result = conn.execute(text('SELECT * FROM cdm.observation'))
         for row in result:
             print(row)
 
 
-def load_csv_to_db(csv_file_path: str, engine: Engine, table_name: str, headers: list):
-    """
-    Loads data from a CSV file into a database table using SQLAlchemy.
-
-    Args:
-        csv_file_path (str): The file path to the CSV file.
-        engine (sqlalchemy.engine.Engine): The SQLAlchemy engine object to use for the database connection.
-        table_name (str): The name of the table to insert the data into.
-        headers (list): A list of column names in the CSV file.
-
-    Returns:
-        None
-    """
-    # create metadata object
-    metadata = MetaData()
-
-    # create table object
-    # TODO: get this from cdm model
-    table = Table(table_name, metadata, *[Column(name, String) for name in headers])
-
-    # load data from csv file
-    with open(csv_file_path, 'r') as f:
-        conn = engine.connect()
-        conn.execute(table.insert(), [row for row in csv.DictReader(f)])
-
-    # commit changes
-    conn.close()
+def load_csv_to_cdm(csv_file_path: str, database_name: str = None):
+    launch_psql()
 
 
-__all__ = ['DEFAULT_DATA_PATH', 'create_model', 'load_data', 'load_csv_to_db']
+__all__ = ['DEFAULT_DATA_PATH', 'create_model', 'load_data', 'load_csv_to_cdm']

@@ -5,14 +5,13 @@ This module contains database utils that are specific to Postgres
 import subprocess
 from typing import Optional
 
-from sqlalchemy import create_engine, schema
-from sqlalchemy.engine import Engine
+from sqlalchemy import create_engine, text
 from sqlalchemy_utils import create_database, database_exists
 
 from opencdms.db.config import get_engine, DEFAULT_DATABASE
 
 
-def launch_psql(database_name: Optional[str] = None) -> None:
+def launch_psql(database_name: Optional[str] = None, *args) -> None:
     """
     Launches the `psql` command-line tool with the connection string parameters
     for the specified database, or using the default database if no database
@@ -20,10 +19,13 @@ def launch_psql(database_name: Optional[str] = None) -> None:
 
     Args:
         database_name: The name of the database to connect to. If not provided,
-        the `psql` command will be launched for the default database
+        the `psql` command will be launched for the default database.
+        *args: Any additional arguments that should be included in the `psql`
+        command.
 
     Raises:
-        sh.ErrorReturnCode: If the `psql` command returns a non-zero exit code.
+        subprocess.CalledProcessError: If the `psql` command returns a non-zero
+        exit code.
 
     Returns:
         None
@@ -45,6 +47,10 @@ def launch_psql(database_name: Optional[str] = None) -> None:
         psql_command = f'psql postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}'
     else:
         psql_command = f'psql postgresql://{db_user}:{db_password}@{db_host}:{db_port}/'
+
+    # Add any additional arguments to the `psql` command
+    for arg in args:
+        psql_command += f' {arg}'
 
     subprocess.run(psql_command, shell=True, check=True)
 
@@ -78,10 +84,19 @@ def create_db_and_schemas(db_name: str, schema_names: list[str] = None, connecti
         if not database_exists(engine.url):
             create_database(engine.url)
 
-        # Create the specified schemas
+        connection = engine.connect()
+
         for schema_name in schema_names:
-            if not engine.dialect.has_schema(engine, schema_name):
-                engine.execute(schema.CreateSchema(schema_name))
+            if not engine.dialect.has_schema(connection, schema_name):
+                connection.execute(text(f"CREATE SCHEMA {schema_name}"))
+                connection.commit()
+
+        # Create the specified schemas
+#        for schema_name in schema_names:
+#            if not engine.dialect.has_schema(connection, schema_name):
+#                connection.execute(schema.CreateSchema(schema_name))
+#                raise ValueError(engine.dialect.has_schema(connection, schema_name))
+                
     finally:
         # Dispose of the engine to close any remaining connections
         engine.dispose()
