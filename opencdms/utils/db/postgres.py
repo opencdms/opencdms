@@ -89,7 +89,11 @@ def create_db_and_schemas(db_name: str, schema_names: list[str] = None, connecti
         for schema_name in schema_names:
             if not engine.dialect.has_schema(connection, schema_name):
                 connection.execute(text(f"CREATE SCHEMA {schema_name}"))
-                connection.commit()
+                # TODO: not clear whether connection always has a commit method
+                try:
+                    connection.commit()
+                finally:
+                    connection.close()
 
         # Create the specified schemas
 #        for schema_name in schema_names:

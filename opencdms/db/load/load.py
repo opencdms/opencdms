@@ -49,12 +49,8 @@ def load_data():
 
     file_pattern = os.path.join(DEFAULT_DATA_PATH, 'data_tables/CA_*.csv')
     for file_name in glob.glob(file_pattern):
-        # load_csv_to_cdm(file_name, cdm_engine, opencdmsdb.observation,
-        #                 delimiter='|', header_mapping=header_mapping,
-        #                 null_value='NA', quote_char="'")
-
-        # TODO:
-        raise ValueError('Resume here')
+        # Execute psql as per https://github.com/opencdms/opencdms-test-data/tree/ceaf5247df1304b6e9acd8af29b7aad9942d760a/data/cdm#ingestion
+        raise ValueError(file_name)
         load_csv_to_cdm()
         break
 
