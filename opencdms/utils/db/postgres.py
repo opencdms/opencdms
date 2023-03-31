@@ -2,9 +2,9 @@
 This module contains database utils that are specific to Postgres
 
 """
+import subprocess
 from typing import Optional
 
-import sh
 from sqlalchemy import create_engine, schema
 from sqlalchemy.engine import Engine
 from sqlalchemy_utils import create_database, database_exists
@@ -32,21 +32,21 @@ def launch_psql(database_name: Optional[str] = None) -> None:
         database_name = DEFAULT_DATABASE
 
     # Get the SQLAlchemy engine object for the specified database
-    engine: Engine = get_engine(database_name)
+    engine = get_engine(database_name)
 
     # Extract connection string parameters from the SQLAlchemy engine object
-    db_url = str(engine.url)
     db_name = engine.url.database
     db_user = engine.url.username
     db_password = engine.url.password
     db_host = engine.url.host
     db_port = engine.url.port
 
-    # Use `sh.psql` to launch `psql` with the appropriate connection string parameters
-    try:
-        sh.psql(f'postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}', '-t', _tty_in=True, _tty_out=True)
-    except sh.ErrorReturnCode as e:
-        print(e.stderr)
+    if database_exists(engine.url):
+        psql_command = f'psql postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}'
+    else:
+        psql_command = f'psql postgresql://{db_user}:{db_password}@{db_host}:{db_port}/'
+
+    subprocess.run(psql_command, shell=True, check=True)
 
 
 def create_db_and_schemas(db_name: str, schema_names: list[str] = None, connection_string: str = None) -> None:
