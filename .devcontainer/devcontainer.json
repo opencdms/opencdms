@@ -28,7 +28,12 @@
 				"files.exclude": {
 					".codespaces": true,
 					".vscode": true
-				}
+				},
+				"editor.rulers": [
+					72,
+					80,
+					88
+				]
 			},
 			"extensions": [
 				"ms-vscode.live-server"
