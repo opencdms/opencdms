@@ -70,23 +70,23 @@ main = UnavailablePackagesGroup()
 try:
     from opencdms.cli.db import db
     main.add_command(db)
-except ModuleNotFoundError:
+except (ImportError, ModuleNotFoundError):
     uninstalled_packages.append('db')
 
 try:
     from opencdms.cli.docs import docs
     main.add_command(docs)
-except ModuleNotFoundError:
+except (ImportError, ModuleNotFoundError):
     uninstalled_packages.append('docs')
 
 try:
     from opencdms.cli.install import install
     main.add_command(install)
-except ModuleNotFoundError:
+except (ImportError, ModuleNotFoundError):
     uninstalled_packages.append('install')
 
 try:
     from opencdms.cli.test import test
     main.add_command(test)
-except ModuleNotFoundError:
+except (ImportError, ModuleNotFoundError):
     uninstalled_packages.append('test')
