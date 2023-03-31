@@ -11,7 +11,7 @@ import glob
 import os
 from typing import Dict
 
-from sqlalchemy import text, Engine, Table
+from sqlalchemy import text, Table
 from sqlalchemy.engine import Engine
 
 from opencdms.adapters import opencdmsdb
