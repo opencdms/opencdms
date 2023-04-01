@@ -39,34 +39,24 @@ def load_data():
     connection_string = get_connection_string('CDM')
     cdm_engine = get_engine()
 
-    create_db_and_schemas('opencdmsdb', ['cdm'], connection_string)
     try:
         create_db_and_schemas('opencdmsdb', ['cdm'], connection_string)
     except DatabaseError:
         pass
 
     create_model(cdm_engine)
-    return
+
     file_pattern = os.path.join(DEFAULT_DATA_PATH, 'data_tables/CA_*.csv')
     for file_name in glob.glob(file_pattern):
         # Execute psql as per https://github.com/opencdms/opencdms-test-data/tree/ceaf5247df1304b6e9acd8af29b7aad9942d760a/data/cdm#ingestion
-        raise ValueError(file_name)
-        load_csv_to_cdm()
+        load_csv_to_cdm('cdm.observation', file_name)
         break
 
-    # Load data from CSV
-    #    code_tables
-    #    data_tables
-    #    hosts.geojson
-    with cdm_engine.connect() as conn:
-        result = conn.execute(text('SELECT * FROM cdm.observation'))
-        for row in result:
-            print(row)
 
-
-def load_csv_to_cdm(csv_file_path: str, database_name: str = None):
-    # Load observations\COPY cdm.observations FROM 'CA_6016527_1990.csv' WITH CSV HEADER DELIMITER AS '|' NULL AS 'NA' QUOTE E'\b';
-    launch_psql()
+def load_csv_to_cdm(table_name: str, csv_file_path: str, database_name: str = None):
+    options = "WITH CSV HEADER DELIMITER AS '|' NULL AS 'NA' QUOTE E'\b'"
+    args = f"<< ! \COPY {table_name} FROM {csv_file_path} {options};"
+    launch_psql(database_name, args)
 
 
 __all__ = ['DEFAULT_DATA_PATH', 'create_model', 'load_data', 'load_csv_to_cdm']
