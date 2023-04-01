@@ -92,6 +92,8 @@ def create_db_and_schemas(db_name: str, schema_names: list[str] = None, connecti
                 # TODO: not clear whether connection always has a commit method
                 try:
                     connection.commit()
+                except AttributeError:
+                    pass
                 finally:
                     connection.close()
 

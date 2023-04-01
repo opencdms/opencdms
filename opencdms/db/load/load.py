@@ -46,7 +46,7 @@ def load_data():
         pass
 
     create_model(cdm_engine)
-
+    return
     file_pattern = os.path.join(DEFAULT_DATA_PATH, 'data_tables/CA_*.csv')
     for file_name in glob.glob(file_pattern):
         # Execute psql as per https://github.com/opencdms/opencdms-test-data/tree/ceaf5247df1304b6e9acd8af29b7aad9942d760a/data/cdm#ingestion
@@ -65,6 +65,7 @@ def load_data():
 
 
 def load_csv_to_cdm(csv_file_path: str, database_name: str = None):
+    # Load observations\COPY cdm.observations FROM 'CA_6016527_1990.csv' WITH CSV HEADER DELIMITER AS '|' NULL AS 'NA' QUOTE E'\b';
     launch_psql()
 
 
