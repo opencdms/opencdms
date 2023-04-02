@@ -163,7 +163,7 @@ def show(database_name: Optional[str] = None) -> None:
     """
     connections = get_connection_strings(database_name)
     if isinstance(connections, str):
-        print(f'{database_name}: {connections}')
+        print(f'{connections}')
     else:
         for name, connection in connections.items():
             print(f'{name}: {connection}')
