@@ -8,7 +8,7 @@ from typing import Optional
 from sqlalchemy import create_engine, text
 from sqlalchemy_utils import create_database, database_exists
 
-from opencdms.db.config import get_engine, DEFAULT_DATABASE
+from opencdms.db.config import get_connection_string, get_engine, DEFAULT_DATABASE
 
 
 def launch_psql(database_name: Optional[str] = None, *args, **kwargs) -> None:

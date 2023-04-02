@@ -4,7 +4,7 @@ import subprocess
 import socket
 
 from opencdms.db import load, seeder
-from opencdms.utils.db.postgres import launch_psql
+from opencdms.utils.db.postgres import launch_psql, create_db_and_schemas
 from opencdms.utils.paths import base_path
 
 
@@ -119,6 +119,26 @@ def list():
     subprocess.run(cmd, shell=True)
 
 
+@click.command()
+# TODO:
+# @click.argument('database_name', required=False)
+# def create(database_name: str = None) -> None:
+#     """
+#     Create the named database
+
+#     Args:
+#         database_name: The name of the database to connect to. If not provided,
+#             the default `CDM` database will be used.
+
+#     Returns:
+#         None
+#     """
+#     create_db_and_schemas(database_name)
+def create() -> None:
+    """ Create the opencdmsdb database and CDM schema """
+    create_db_and_schemas('opencdmsdb', ['cdm'])
+
+
 @click.command(name='load')
 def load_command():
     """List all running database containers"""
@@ -147,9 +167,10 @@ def psql(database_name: str = None) -> None:
     launch_psql(database_name)
 
 
-db.add_command(start)
-db.add_command(stop)
-db.add_command(seed)
+db.add_command(create)
 db.add_command(list)
 db.add_command(load_command)
 db.add_command(psql)
+db.add_command(seed)
+db.add_command(start)
+db.add_command(stop)
