@@ -4,6 +4,7 @@ import os
 import sh
 import subprocess
 import socket
+from typing import Optional
 
 from opencdms.db import load, seeder
 from opencdms.utils.db.connections import get_connection_strings
