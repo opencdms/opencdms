@@ -1,4 +1,6 @@
+import configparser
 import click
+import os
 import sh
 import subprocess
 import socket
@@ -145,6 +147,26 @@ def load_command():
     load.load_data()
 
 
+@click.command(name='show')
+def show():
+    """ Show connection strings of known databases """
+    # TODO: Refactor for function that returns dictionary of connection strings
+    #       extend show to optionally take a database_name
+    config = configparser.ConfigParser()
+    config.read(base_path('db/alembic/alembic.ini'))
+    connections = {}
+    for section in config.sections():
+        connection = config[section]['sqlalchemy.url']
+        if connection.startswith('${') and connection.endswith('}'):
+            connection = os.environ.get(connection[2:-1], '')
+        if section == 'alembic':
+            connections['Default'] = connection
+        else:
+            connections[section] = connection
+        
+        print(f'{section}: {connection}')
+
+
 @click.command()
 @click.argument('database_name', required=False)
 def psql(database_name: str = None) -> None:
@@ -172,5 +194,6 @@ db.add_command(list)
 db.add_command(load_command)
 db.add_command(psql)
 db.add_command(seed)
+db.add_command(show)
 db.add_command(start)
 db.add_command(stop)
