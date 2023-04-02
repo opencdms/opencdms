@@ -21,7 +21,12 @@ python3 -m venv venv
 # Activate the virtual environment
 source ./venv/bin/activate
 
-pip install opencdms
+```
+
+To obtain the latest version of the software, clone the repository directly from GitHub:
+```
+git clone https://github.com/opencdms/opencdms.git
+pip install -e opencdms
 opencdms install
 
 ```
