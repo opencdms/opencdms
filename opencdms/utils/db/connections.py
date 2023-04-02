@@ -2,10 +2,11 @@
 This module contains a function for working with database connection strings for known databases.
 
 """
-
 import configparser
 import os
 from typing import Optional, Union, Dict
+
+from opencdms.utils.paths import base_path
 
 
 def get_connection_strings(database_name: Optional[str] = None) -> Union[str, Dict[str, str]]:
