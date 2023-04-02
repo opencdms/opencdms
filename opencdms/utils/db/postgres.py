@@ -11,7 +11,7 @@ from sqlalchemy_utils import create_database, database_exists
 from opencdms.db.config import get_engine, DEFAULT_DATABASE
 
 
-def launch_psql(database_name: Optional[str] = None, *args) -> None:
+def launch_psql(database_name: Optional[str] = None, *args, **kwargs) -> None:
     """
     Launches the `psql` command-line tool with the connection string parameters
     for the specified database, or using the default database if no database
@@ -22,6 +22,8 @@ def launch_psql(database_name: Optional[str] = None, *args) -> None:
         the `psql` command will be launched for the default database.
         *args: Any additional arguments that should be included in the `psql`
         command.
+        **kwargs: Additional keyword arguments to pass directly to subprocess.run()
+        e.g., `input="text to pipe to psql"`
 
     Raises:
         subprocess.CalledProcessError: If the `psql` command returns a non-zero
@@ -52,7 +54,7 @@ def launch_psql(database_name: Optional[str] = None, *args) -> None:
     for arg in args:
         psql_command += f' {arg}'
 
-    subprocess.run(psql_command, shell=True, check=True)
+    subprocess.run(psql_command, shell=True, check=True, **kwargs)
 
 
 def create_db_and_schemas(db_name: str, schema_names: list[str] = None, connection_string: str = None) -> None:
