@@ -6,6 +6,7 @@ import subprocess
 import socket
 
 from opencdms.db import load, seeder
+from opencdms.utils.db.connections import get_connection_strings
 from opencdms.utils.db.postgres import launch_psql, create_db_and_schemas
 from opencdms.utils.paths import base_path
 
@@ -148,23 +149,23 @@ def load_command():
 
 
 @click.command(name='show')
-def show():
-    """ Show connection strings of known databases """
-    # TODO: Refactor for function that returns dictionary of connection strings
-    #       extend show to optionally take a database_name
-    config = configparser.ConfigParser()
-    config.read(base_path('db/alembic/alembic.ini'))
-    connections = {}
-    for section in config.sections():
-        connection = config[section]['sqlalchemy.url']
-        if connection.startswith('${') and connection.endswith('}'):
-            connection = os.environ.get(connection[2:-1], '')
-        if section == 'alembic':
-            connections['Default'] = connection
-        else:
-            connections[section] = connection
-        
-        print(f'{section}: {connection}')
+@click.argument('database_name', default=None, required=False)
+def show(database_name: Optional[str] = None) -> None:
+    """Show connection strings of known databases.
+
+    If `database_name` is provided, print the connection string for that database.
+    If `database_name` is not provided, print all the known database names and their corresponding connection strings.
+
+    Args:
+        database_name: Optional name of the database to retrieve the connection string for.
+
+    """
+    connections = get_connection_strings(database_name)
+    if isinstance(connections, str):
+        print(f'{database_name}: {connections}')
+    else:
+        for name, connection in connections.items():
+            print(f'{name}: {connection}')
 
 
 @click.command()
