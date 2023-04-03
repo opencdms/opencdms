@@ -48,7 +48,7 @@ from opencdms.dtos.observation_schema import (
 )
 from opencdms.models import cdm as models
 from opencdms.adapters.opencdmsdb import start_mappers
-from opencdms.utils.db import get_connection_string, get_count
+from opencdms.utils.config import get_connection_string, get_count
 
 
 # Document / justify side effects
