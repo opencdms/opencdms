@@ -32,15 +32,15 @@ from pygeoapi.provider.base import (
     ProviderQueryError,
     ProviderItemNotFoundError,
 )
-from pygeoapi.api import LOGGER
-from pygeoapi.provider.base import SchemaType
 from shapely.geometry import box
 from sqlalchemy import create_engine
 from sqlalchemy.dialects.postgresql.json import JSONB
 from sqlalchemy.orm import sessionmaker, Query, Session
 from sqlalchemy.sql import asc, desc
+from pygeoapi.api import LOGGER
+from pygeoapi.provider.base import SchemaType
 
-from opencdms.dtos.observation_schema import (
+from opencdms.integrations.pygeoapi.dtos import (
     ObservationSchema,
     CreateObservationSchema,
     UpdateObservationSchema,
