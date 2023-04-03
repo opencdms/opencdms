@@ -4,7 +4,7 @@ from pydantic import BaseModel,UUID4
 from typing import NewType, Optional, List, Dict, Any
 from datetime import datetime
 
-from opencdms.types import Geography, Coordinates
+from opencdms.db.types import Geography, Coordinates
 
 class CreateObservationSchema(BaseModel):
     version: int
