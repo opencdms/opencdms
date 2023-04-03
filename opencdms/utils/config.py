@@ -1,5 +1,6 @@
 # TODO: Depreciated - this should be removed when db.seeder is replaced
 #       The rest of the codebase is using db.config for default db connection strings
+#       This file may also be in use by the pygeoapi integration until it is updated.
 import os
 
 from sqlalchemy import create_engine, func
