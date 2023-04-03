@@ -10,7 +10,7 @@ class CreateObservationSchema(BaseModel):
     version: int
     change_date: datetime
     phenomenon_end: datetime
-    result_value: float
+    result_value: Optional[float] = None
     comments: str
     host_id: str
     observer_id: Optional[str] = ""
@@ -38,7 +38,7 @@ class UpdateObservationSchema(BaseModel):
     version: int
     change_date: datetime
     phenomenon_end: datetime
-    result_value: float
+    result_value: Optional[float] = None
     comments: str
     host_id: str
     observer_id: Optional[str] = ""
