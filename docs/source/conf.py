@@ -51,6 +51,7 @@ extensions = [
     "sphinx.ext.napoleon",
     'sphinx.ext.todo',
     'sphinx.ext.viewcode',
+    'sphinxcontrib.plantuml',
     'sphinx_copybutton',
     "sphinx_mdinclude",
     'sphinx_panels',
