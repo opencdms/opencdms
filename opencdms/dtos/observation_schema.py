@@ -64,7 +64,7 @@ class UpdateObservationSchema(BaseModel):
 
 class ObservationSchema(CreateObservationSchema):
     id : str
-    coordinates: Optional[Coordinates] = [0,0]
+    coordinates: Optional[Coordinates] = Coordinates(longitude=0, latitude=0)
     class Config:
         orm_mode = True
 
