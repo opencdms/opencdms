@@ -13,9 +13,9 @@ class CreateObservationSchema(BaseModel):
     result_value: float
     comments: str
     host_id: str
-    observer_id: str
-    collection_id: str
-    feature_of_interest_id: str
+    observer_id: Optional[str] = ""
+    collection_id: Optional[str] = ""   
+    feature_of_interest_id: Optional[str] = ""
     report_id: Optional[str] = ""
     user_id: Optional[str] = None
     status_id: Optional[int] = None
@@ -41,9 +41,9 @@ class UpdateObservationSchema(BaseModel):
     result_value: float
     comments: str
     host_id: str
-    observer_id: str
-    collection_id: str
-    feature_of_interest_id: str
+    observer_id: Optional[str] = ""
+    collection_id: Optional[str] = ""
+    feature_of_interest_id: Optional[str] = ""
     report_id: Optional[str] = ""
     user_id: Optional[int] = None
     status_id: Optional[int] = None
@@ -64,7 +64,7 @@ class UpdateObservationSchema(BaseModel):
 
 class ObservationSchema(CreateObservationSchema):
     id : str
-    coordinates: Coordinates
+    coordinates: Optional[Coordinates] = [0,0]
     class Config:
         orm_mode = True
 
