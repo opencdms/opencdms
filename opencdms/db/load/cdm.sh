@@ -13,9 +13,9 @@ psql "$@" << !
 
 # Load data tables
 psql "$@" << EOF
-\COPY cdm.host FROM 'data_tables/hosts.csv' WITH CSV HEADER DELIMITER AS '|' NULL AS 'NA' QUOTE E'\b';
-\COPY cdm.source FROM 'data_tables/source.csv' WITH CSV HEADER DELIMITER AS '|' NULL AS 'NA' QUOTE E'\b';
 \COPY cdm.user FROM 'data_tables/users.csv' WITH CSV HEADER DELIMITER AS '|' NULL AS 'NA' QUOTE E'\b';
+\COPY cdm.source FROM 'data_tables/source.csv' WITH CSV HEADER DELIMITER AS '|' NULL AS 'NA' QUOTE E'\b';
+\COPY cdm.host FROM 'data_tables/hosts.csv' WITH CSV HEADER DELIMITER AS '|' NULL AS 'NA' QUOTE E'\b';
 \COPY cdm.observation FROM 'data_tables/CA_6016527_1990.csv' WITH CSV HEADER DELIMITER AS '|' NULL AS 'NA' QUOTE E'\b';
 \COPY cdm.observation FROM 'data_tables/CA_6016527_1991.csv' WITH CSV HEADER DELIMITER AS '|' NULL AS 'NA' QUOTE E'\b';
 \COPY cdm.observation FROM 'data_tables/CA_6016527_1992.csv' WITH CSV HEADER DELIMITER AS '|' NULL AS 'NA' QUOTE E'\b';
