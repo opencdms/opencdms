@@ -33,7 +33,9 @@
 					72,
 					80,
 					88
-				]
+				],
+				"plantuml.server": "${env:PLANTUML_SERVER_URL}",
+				"plantuml.render": "PlantUMLServer"
 			},
 			"extensions": [
 				"ms-vscode.live-server"
