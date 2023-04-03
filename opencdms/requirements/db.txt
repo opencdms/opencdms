@@ -1,5 +1,6 @@
-# db requirements are currently specific to PostgreSQL
+# some db requirements are currently specific to PostgreSQL
 faker
 geoalchemy2>=0.13.0
 psycopg2-binary
 sqlalchemy_utils
+alchemyjsonschema
