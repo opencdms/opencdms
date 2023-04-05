@@ -45,4 +45,4 @@ def pygeoapi(config: str) -> None:
     os.environ['PYGEOAPI_OPENAPI'] = PYGEOAPI_OPENAPI
 
     os.system('pygeoapi openapi generate $PYGEOAPI_CONFIG --output-file $PYGEOAPI_OPENAPI')
-#    os.system('pygeoapi serve')
+    os.system('pygeoapi serve')
