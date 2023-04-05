@@ -86,6 +86,12 @@ except (ImportError, ModuleNotFoundError):
     uninstalled_packages.append('install')
 
 try:
+    from opencdms.cli.pygeoapi import pygeoapi
+    main.add_command(pygeoapi)
+except (ImportError, ModuleNotFoundError):
+    uninstalled_packages.append('pygeoapi')
+
+try:
     from opencdms.cli.test import test
     main.add_command(test)
 except (ImportError, ModuleNotFoundError):

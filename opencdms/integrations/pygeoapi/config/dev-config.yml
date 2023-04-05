@@ -2,7 +2,7 @@ server:
     bind:
         host: 0.0.0.0
         port: 5000
-    url: http://localhost:5000
+    url: https://isedwards-ideal-space-fishstick-r7x6vp449g2pp5g-5000.preview.app.github.dev
     mimetype: application/json; charset=UTF-8
     encoding: utf-8
     gzip: false
