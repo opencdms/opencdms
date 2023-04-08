@@ -1,5 +1,4 @@
-@startuml LAYOUT_LEFT_RIGHT "OpenCDMS"
-
+@startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 
 
@@ -8,6 +7,7 @@ LAYOUT_LEFT_RIGHT()
 !define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons2
 !define MDICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/material
 !define WXICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/weather
+!define OPENCDMSICONS https://raw.githubusercontent.com/opencdms/opencdms/main/docs/source/_static/sprites/
 
 !include DEVICONS/vuejs.puml
 !include DEVICONS/postgresql.puml
@@ -16,9 +16,9 @@ LAYOUT_LEFT_RIGHT()
 !include MDICONS/folder.puml
 !include MDICONS/cloud_queue.puml
 
-!include ./../_static/sprites/wxaws.puml
-!include ./../_static/sprites/pygeoapi.puml
-!include ./../_static/sprites/opencdms.puml
+!include OPENCDMSICONS/wxaws.puml
+!include OPENCDMSICONS/pygeoapi.puml
+!include OPENCDMSICONS/opencdms.puml
 
 'LAYOUT_WITH_LEGEND()
 
