@@ -1,0 +1,91 @@
+version: '3.3'
+# docker-compose file to bring up full stack for OpenCDMS
+# Containers required
+#   - TimescaleDB
+#   - Mosquitto
+#   - MinIO
+#   - pygeoapi
+#   - OpenCDMS-App
+#   - OpenCDMS-Manager
+#   - Scheduler (part of OpenCDMS-Manager?)
+#   - Proxy?
+
+services:
+  database:
+    build:
+      context: .
+      dockerfile: ./containers/timescaledb/Dockerfile
+    container_name: opencdms-database
+    ports:
+      - 5432:5432
+    env_file:
+      - default.env
+    volumes:
+      - postgres:/home/postgres
+
+  broker:
+    container_name: opencdms-broker
+    build:
+      context: ./containers/mosquitto/
+      dockerfile: Dockerfile
+    env_file:
+      - default.env
+    ports:
+      - 1883:1883
+    volumes:
+      - mosquitto:/mosquitto
+
+  bucket:
+    container_name: opencdms-bucket
+    image: minio/minio
+    mem_limit: 512m
+    memswap_limit: 512m
+    restart: always
+    env_file:
+      - default.env
+    command: server --console-address ":9001" /data
+    ports:
+      - 9000:9000
+      - 9001:9001
+    volumes:
+      - minio-data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 5s
+      timeout: 1s
+      retries: 3
+    depends_on:
+      broker:
+        condition: service_started
+
+  api:
+    container_name: opencdms-api
+    build:
+      context: ./containers/pygeoapi/
+      dockerfile: Dockerfile
+    env_file:
+      - default.env
+    ports:
+      - 5000:5000
+    volumes:
+      - "./containers/pygeoapi/config/:/config"
+      - "./:/local/app"
+    tty: true
+    entrypoint: [ "pygeoapi", "serve" ]
+
+  opencdms:
+    container_name: opencdms-manager
+    image: wmoim/dim_eccodes_baseimage:2.28.0
+    volumes:
+      - "./:/local/app"
+    tty: true
+
+#  opencdms-api:
+#  opencdms-ui:
+#  opencdms-manager:
+
+volumes:
+  postgres:
+  mosquitto:
+  minio-data:
+  pygeoapi_config:

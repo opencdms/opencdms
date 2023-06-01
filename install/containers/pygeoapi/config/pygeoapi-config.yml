@@ -1,0 +1,800 @@
+server:
+    bind:
+        host: 0.0.0.0
+        port: 5000
+    url: http://localhost:5000
+    mimetype: application/json; charset=UTF-8
+    encoding: utf-8
+    languages:
+        - en-US
+    limit: 500
+    map:
+        url: https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
+        attribution: <a href="https://osm.org/copyright">OpenStreetMap</a> contributors
+    templates:
+        path: /local/app/containers/pygeoapi/templates/
+    manager:
+        name: TinyDB
+        connection: /tmp/pygeoapi-process-manager.db
+        output_dir: /tmp/
+    cors: true
+
+logging:
+    level: DEBUG
+    logfile: /tmp/pygeoapi.log
+
+metadata:
+    identification:
+        title:
+            en: OpenCDMS beta API
+        description:
+            en: |-
+                PygeoAPI instance deployed as part of the beta.opencdms.org instance
+        keywords:
+            en:
+                - wmo
+                - wis 2.0
+        keywords_type: theme
+        terms_of_service: https://public.wmo.int/en/our-mandate/what-we-do/observations/Unified-WMO-Data-Policy-Resolution
+        url: https://community.wmo.int/activity-areas/wis/wis2-implementation
+    license:
+        name: Unified WMO Data Policy
+        url: https://public.wmo.int/en/our-mandate/what-we-do/observations/Unified-WMO-Data-Policy-Resolution
+    provider:
+        name: OpenCDMS
+        url: https://www.opencdms.org
+    contact:
+        name: Lastname, Firstname
+        position: Position Title
+        address: Mailing Address
+        city: City
+        stateorprovince: Administrative Area
+        postalcode: Zip or Postal Code
+        country: Country
+        phone: +xx-xxx-xxx-xxxx
+        fax: +xx-xxx-xxx-xxxx
+        email: you@example.org
+        url: https://example.org
+        hours: Mo-Fr 08:00-17:00
+        instructions: During hours of service. Off on weekends.
+        role: pointOfContact
+
+resources:
+    daycli-encoder:
+      type: process
+      processor:
+          name: csv2bufr.pygeoapi_daycli_plugin.daycliProcessor
+    ingestHost:
+      type: process
+      processor:
+        name: OpenCDMSWMDR.ingestHost
+    cdm:
+      type: process
+      processor:
+          name: cdm.import_observations
+    observations:
+        type: collection
+        title: Hourly climate data from Ontario (ECCC)
+        description: Extract of hourly observations from the 'Hourly Climate Observations' dataset provided by Environment and Climate Change Canada.
+        keywords:
+            - [synop, climate, meteorology, observations, Canada, Ontario]
+        links:
+            - type: text/html
+              rel: canonical
+              title: Hourly Climate Observations
+              href: https://api.weather.gc.ca/collections/climate-hourly
+              hreflang: en-CA
+            - type: text/html
+              rel: license
+              title: Environment and Climate Change Canada Data Servers End-use Licence
+              href: https://eccc-msc.github.io/open-data/licence/readme_en/
+              hreflang: en-CA
+        extents:
+            spatial:
+                bbox: [-142, 42, -52, 84]
+                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+            temporal:
+                begin: 1953-01-01T00:00:00Z #TODO
+                end: null # or empty
+        crs:
+            - WGS84
+        providers:
+            - type: feature
+              name: PostgreSQL
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              time_field: phenomenon_end
+              table: observation
+              geom_field: location
+              editable: true
+    observer:
+        type: collection
+        title: Observer
+        description: Data table of observers
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        extents:
+            spatial:
+                bbox: [-142, 42, -52, 84]
+                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+            temporal:
+                begin: 1953-01-01T00:00:00Z #TODO
+                end: null # or empty
+        crs:
+            - WGS84
+        providers:
+            - type: feature
+              name: PostgreSQL
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: observer
+              geom_field: location
+    stations:
+        type: collection
+        title: Climate Stations (Ontario, Canada)
+        description: Extract of hourly observations from the 'Climate Stations' dataset provided by Environment and Climate Change Canada.
+        keywords:
+            - [Climate, metadata, stations, host]
+        links:
+            - type: text/html
+              rel: canonical
+              title: Climate Stations
+              href: https://api.weather.gc.ca/collections/climate-stations
+              hreflang: en-CA
+        extents:
+            spatial:
+                bbox: [-142, 42, -52, 84]
+                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+            temporal:
+                begin: 1953-01-01T00:00:00Z #TODO
+                end: null # or empty
+        crs:
+            - WGS84
+        providers:
+            - type: feature
+              name: PostgreSQL
+              editable: true
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              geom_field: location
+              title_field: name
+              table: host
+              editable: true
+    ontario_watershed:
+        type: collection
+        title: Example watersheds for Ontario, CA
+        description: Test / example dataset
+        keywords:
+            - [my, climate, data]
+        links:
+            - type: text/html
+              rel: canonical
+              title: Ontario watershed boundaries
+              href: https://geohub.lio.gov.on.ca/maps/mnrf::ontario-watershed-boundaries-owb/about
+              hreflang: en-CA
+        extents:
+            spatial:
+                bbox: [-142, 42, -52, 84]
+                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+            temporal:
+                begin: null
+                end: null
+        crs:
+            - WGS84
+        providers:
+            - type: feature
+              name: PostgreSQL
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              table: feature
+              geom_field: geometry
+    observed_property:
+        type: vocabulary
+        title: Observed property
+        description: Observed property code table
+        keywords:
+            - [my, climate, data]
+        links:
+            - type: text/html
+              rel: canonical
+              title: Climate Data Online
+              href: https://climate.weather.gc.ca
+              hreflang: en-CA
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: standard_name
+              table: observed_property
+              geom_field: null
+    observation_type:
+        type: vocabulary
+        title: Observation type
+        description: Observation type code table
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: observation_type
+    observing_procedure:
+      type: vocabulary
+      title: Observing procedure
+      description: Observing procedure code table
+      keywords:
+        - [ my, climate, data ]
+      links:
+        - type: text/html
+          rel: canonical
+          title: Climate Data Online
+          href: https://climate.weather.gc.ca
+          hreflang: en-CA
+      providers:
+        - type: feature
+          name: PostgreSQL-nonspatial
+          data:
+            host: opencdms-database
+            port: 5432 # Default 5432 if not provided
+            dbname: opencdms
+            user: opencdms
+            password: insecure-change-me
+            search_path: [ cdm,opencdms, public ]
+          id_field: id
+          title_field: name
+          table: observing_procedure
+          geom_field: null
+    climate_zone:
+        type: vocabulary
+        title: Climate zone
+        description: Climate zone code table
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: climate_zone
+    exposure:
+        type: vocabulary
+        title: Exposure
+        description: Exposure code table
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: exposure
+    facility_type:
+        type: vocabulary
+        title: Facility type
+        description: Facility Type code table
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: facility_type
+    feature_type:
+        type: vocabulary
+        title: Feature type
+        description: Feature Type code table
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: feature_type
+    media_type:
+        type: vocabulary
+        title: Media type
+        description: Media Type code table
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: media_type
+    observing_method:
+        type: vocabulary
+        title: Observing method
+        description: Observing method code table
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: observing_method
+    programme:
+        type: vocabulary
+        title: Programme
+        description: Programme code table
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: programme
+    reference_surface:
+        type: vocabulary
+        title: Reference surface
+        description: Reference surface code table
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: reference_surface
+    role:
+        type: vocabulary
+        title: Role
+        description: Role code table
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: role
+    season:
+        type: vocabulary
+        title: Season
+        description: Season code table
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: season
+    source_type:
+        type: vocabulary
+        title: Source type
+        description: Source type code table
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: source_type
+    status:
+        type: vocabulary
+        title: Status
+        description: Status code table
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: status
+    surface_cover:
+        type: vocabulary
+        title: Surface cover
+        description: Surface cover code table
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: surface_cover
+    surface_roughness:
+        type: vocabulary
+        title: Surface roughness
+        description: Surface roughness code table
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: surface_roughness
+    territory:
+        type: vocabulary
+        title: Territory
+        description: Territory table
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: territory
+    time_zone:
+        type: vocabulary
+        title: Time zone
+        description: time zone code table
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: time_zone
+    topography:
+        type: vocabulary
+        title: Topography
+        description: Topography code table
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: topography
+    user:
+        type: vocabulary
+        title: User
+        description: User code table
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: user
+    wmo_region:
+        type: vocabulary
+        title: WMO Region
+        description: WMO Region code table
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: wmo_region
+    deployment:
+        type: vocabulary
+        title: Deployment
+        description: Data table of deployments
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: deployment
+    observer_characteristics:
+        type: vocabulary
+        title: Observer characteristics
+        description: Data table of observer characteristics
+        keywords:
+            - []
+        links:
+            - type: text/html
+              rel: about
+              title: Example link
+              href: https://example.com
+        providers:
+            - type: feature
+              name: PostgreSQL-nonspatial
+              data:
+                  host: opencdms-database
+                  port: 5432 # Default 5432 if not provided
+                  dbname: opencdms
+                  user: opencdms
+                  password: insecure-change-me
+                  search_path: [cdm,opencdms, public]
+              id_field: id
+              title_field: name
+              table: observer_characteristics

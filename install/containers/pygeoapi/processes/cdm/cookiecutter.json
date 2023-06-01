@@ -1,0 +1,12 @@
+{
+  "author": "Name of author",
+  "email": "Author email address",
+  "maintainer": "Name of maintainer",
+  "maintainer_email": "Maintainer email address",
+  "package_url": "Package homepage",
+  "process_id": "ID for process, imported as import process_id",
+  "process_name": "Name of process class, process_id.process_name",
+  "process_description": "Short description of process",
+  "keywords": [""],
+  "license": ""
+}
