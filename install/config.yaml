@@ -1,0 +1,8 @@
+topics:
+  - fs:
+      -
+        id: 1
+        bucket: incoming
+        prefix: station_abc
+        suffix: csv
+        processor: import_observations

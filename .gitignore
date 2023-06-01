@@ -2,6 +2,7 @@
 
 # Ignore db
 *.db
+.DS_Store
 
 
 # -- Standard Python .gitignore --# 

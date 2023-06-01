@@ -1,0 +1,6 @@
+resources:
+  import_observations
+    type: process
+    processor:
+      name: cdm.import_observations
+
