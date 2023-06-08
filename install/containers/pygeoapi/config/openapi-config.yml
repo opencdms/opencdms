@@ -1623,7 +1623,7 @@ paths:
       - ingestHost
 servers:
 - description: PygeoAPI instance deployed as part of the beta.opencdms.org instance
-  url: http://localhost:5000
+  url: /
 tags:
 - description: PygeoAPI instance deployed as part of the beta.opencdms.org instance
   externalDocs:
