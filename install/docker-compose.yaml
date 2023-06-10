@@ -80,6 +80,30 @@ services:
       - "./:/local/app"
     tty: true
 
+  # nginx reverse proxy providing https access to a `pygeoapi serve`
+  # dev server (not intended for production use).
+  # We specify a custom image name and tag, otherwise the commands in
+  # the Dockerfile are not executed and instead we would just get the
+  # vanilla nginx:latest container
+  nginx:
+    build:
+      context: ./containers/nginx/
+      dockerfile: Dockerfile
+    image: install-nginx:latest
+    container_name: opencdms-nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - /tmp/acme_challenge:/tmp/acme_challenge
+    environment:
+      DOMAIN: *.opencdms.org
+      EMAIL: info@opencdms.org
+    depends_on:
+      - api
+    command: nginx_startup.sh
+
 #  opencdms-api:
 #  opencdms-ui:
 #  opencdms-manager:
