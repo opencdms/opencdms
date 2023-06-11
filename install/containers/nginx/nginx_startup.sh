@@ -1,18 +1,29 @@
 #!/bin/bash
-# This script uses Certbot to generate SSL certificates
-# It assumes that Nginx is installed and configured on the same machine.
-# The script also sets up a renewal cron job for the SSL certificates, which
-# runs every 24 hours, and reloads Nginx to apply the renewed certificates.
-DOMAIN=${DOMAIN:-*.opencdms.org}
-EMAIL=${EMAIL:-info@opencdms.org}
-
+# On startup, we stop nginx service, if running, and use certbot in
+# standalone mode (without nginx) to create the required certificates
+# if they don't already exist in the shared volume.
+#
+# From then on, nginx runs as a background service.
+#
+# Since cron is not installed in the debian slim image we use a
+# loop in foreground to check regularly whether certificates need
+# renewing, switching to using --webroot with nginx for the renewal.
+#
+# This foreground loop prevents the container from exiting.
+#
+# The nginx image was already configured to redirect logs to stderr,
+# (e.g. error.log -> /dev/stderr), so errors will be seen if the
+# container is attached to terminal.
 mkdir -p /etc/nginx/ssl
 mkdir -p /var/www/certbot
-certbot certonly --webroot -w /var/www/certbot --agree-tos --no-eff-email --email $EMAIL -d $DOMAIN
-cp /etc/letsencrypt/live/opencdms.org/fullchain.pem /etc/nginx/ssl/nginx.crt
-cp /etc/letsencrypt/live/opencdms.org/privkey.pem /etc/nginx/ssl/nginx.key
-# Restarting the service will stop the container, just reload instead
-service nginx reload
 
-# Run certbot daily
-(crontab -l 2>/dev/null; echo "0 0 * * * certbot renew --webroot -w /var/www/certbot && cp /etc/letsencrypt/live/opencdms.org/fullchain.pem /etc/nginx/ssl/nginx.crt && cp /etc/letsencrypt/live/opencdms.org/privkey.pem /etc/nginx/ssl/nginx.key && service nginx reload") | crontab -
+service nginx stop
+certbot certonly --standalone --non-interactive --agree-tos --no-eff-email $CERTBOT_CONFIG
+service nginx start
+
+while true; do
+    sleep 12h & wait -n ${!}
+    certbot renew --webroot -w /var/www/certbot --non-interactive
+    service nginx reload
+done
+
