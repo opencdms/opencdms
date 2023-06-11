@@ -94,12 +94,10 @@ services:
     ports:
       - 80:80
       - 443:443
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
-      - /tmp/acme_challenge:/tmp/acme_challenge
+#    volumes:
+#      - /etc/letsencrypt/live/:/etc/letsencrypt/live/
     environment:
-      DOMAIN: *.opencdms.org
-      EMAIL: info@opencdms.org
+      CERTBOT_CONFIG: "-d api.opencdms.org -d blue.opencdms.org --email info@opencdms.org"
     depends_on:
       - api
     command: nginx_startup.sh
