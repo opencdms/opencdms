@@ -23,6 +23,13 @@ services:
     volumes:
       - postgres:/home/postgres
 
+  dbadmin:
+      image: dbeaver/cloudbeaver:latest
+      container_name: opencdms-dbadmin
+      restart: always
+      ports:
+       - 8978:8978
+
   broker:
     container_name: opencdms-broker
     build:
@@ -98,7 +105,7 @@ services:
       - /etc/letsencrypt:/etc/letsencrypt
       - /tmp/acme_challenge:/tmp/acme_challenge
     environment:
-      DOMAIN: *.opencdms.org
+      DOMAIN: "*.opencdms.org"
       EMAIL: info@opencdms.org
     depends_on:
       - api
