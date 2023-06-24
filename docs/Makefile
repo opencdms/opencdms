@@ -30,4 +30,4 @@ deploy:
 	cd $(TMP_DIR)
 	git add .
 	git commit -m "Update docs and deploy"
-	git push origin/gh-pages && rm -rf $(TMP_DIR)
+	git push origin && rm -rf $(TMP_DIR)
