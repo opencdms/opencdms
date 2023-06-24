@@ -57,17 +57,18 @@ This is an early version of the OpenCDMS documentation that is still in developm
 
 
 .. toctree::
-   :caption: Developers Guide
-   :maxdepth: 1
-   :name: developers_index
-   :hidden:
-
-   developer/index
-
-.. toctree::
    :caption: Administrator Guide
    :maxdepth: 1
    :name: administrators_index
    :hidden:
 
    administrator/index
+
+
+.. toctree::
+   :caption: Developers Guide
+   :maxdepth: 1
+   :name: developers_index
+   :hidden:
+
+   developer/index
