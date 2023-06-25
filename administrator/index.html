@@ -310,13 +310,13 @@ document.write(`
 </section>
 <section id="opencdms-database-and-api">
 <h3>OpenCDMS database and API<a class="headerlink" href="#opencdms-database-and-api" title="Permalink to this headline">#</a></h3>
-<p>..code-block:: shell</p>
-<blockquote>
-<div><p>git clone <a class="github reference external" href="https://github.com/opencdms/opencdms">opencdms/opencdms</a>
-cd opencdms/install</p>
-<p># start the database and api containers
-docker compose up database api –detach</p>
-</div></blockquote>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/opencdms/opencdms
+<span class="nb">cd</span><span class="w"> </span>opencdms/install
+
+<span class="c1"># start the database and api containers</span>
+docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>database<span class="w"> </span>api<span class="w"> </span>--detach
+</pre></div>
+</div>
 <p>The OpenCDMS API is now accessible locally at <a class="reference external" href="http://localhost:5000">http://localhost:5000</a>. Furthermore, you can connect to the Postgress database using the details in <cite>install/default.env</cite>.</p>
 </section>
 <section id="build-database">
@@ -324,27 +324,29 @@ docker compose up database api –detach</p>
 <ol class="arabic simple">
 <li><p>Load data</p></li>
 </ol>
-<p>..code-block:: shell</p>
-<blockquote>
-<div><p># Build database from api container
-docker exec -it opencdms-api /bin/sh
-bash</p>
-<p>cd /local/app/
-git clone <a class="github reference external" href="https://github.com/opencdms/opencdms-test-data">opencdms/opencdms-test-data</a></p>
-<p># build_db.py is currrently expecting CDM data to be in ./data
-ln -s /local/app/opencdms-test-data/data/cdm data</p>
-<p># Remove station/host metadata for Malawi
-sed -i ‘s/, “host_mwi.csv”//g’ build_db.py</p>
-<p>python3 build_db.py</p>
-</div></blockquote>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build database from api container</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>opencdms-api<span class="w"> </span>/bin/sh
+bash
+
+<span class="nb">cd</span><span class="w"> </span>/local/app/
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/opencdms/opencdms-test-data
+
+<span class="c1"># build_db.py is currrently expecting CDM data to be in ./data</span>
+ln<span class="w"> </span>-s<span class="w"> </span>/local/app/opencdms-test-data/data/cdm<span class="w"> </span>data
+
+<span class="c1"># Remove station/host metadata for Malawi</span>
+sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/, &quot;host_mwi.csv&quot;//g&#39;</span><span class="w"> </span>build_db.py
+
+python3<span class="w"> </span>build_db.py
+</pre></div>
+</div>
 </section>
 <section id="install-opencdms-app">
 <h3>Install OpenCDMS App<a class="headerlink" href="#install-opencdms-app" title="Permalink to this headline">#</a></h3>
-<p>..code-block:: shell</p>
-<blockquote>
-<div><p>git clone <a class="github reference external" href="https://github.com/opencdms/opencdms-app">opencdms/opencdms-app</a>
-docker compose up app –detach</p>
-</div></blockquote>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/opencdms/opencdms-app
+docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>app<span class="w"> </span>--detach
+</pre></div>
+</div>
 <p>OpenCDMS App is now accessible locally at <a class="reference external" href="http://localhost:8000">http://localhost:8000</a>. The app will connect to the local API instance that was installed at <a class="reference external" href="http://localhost:5000">http://localhost:5000</a>.</p>
 </section>
 </section>
