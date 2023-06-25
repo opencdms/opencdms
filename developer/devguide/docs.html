@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Developer Guide &#8212; OpenCDMS 0.1.0 documentation</title>
+    <title>Updating the docs &#8212; OpenCDMS 0.1.0 documentation</title>
   
   
   
@@ -45,11 +45,11 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'developer/devguide/index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'developer/devguide/docs';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Database technologies" href="databases.html" />
-    <link rel="prev" title="Developer Documentation" href="../index.html" />
+    <link rel="next" title="API Documentation" href="../apidocs/index.html" />
+    <link rel="prev" title="Database technologies" href="databases.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -252,9 +252,9 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Developer Guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Developer Guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="databases.html">Database technologies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="docs.html">Updating the docs</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Updating the docs</a></li>
 </ul>
 </li>
 </ul>
@@ -306,7 +306,10 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Developer Documentation</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Developer Guide</li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Developer Guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Updating the docs</li>
   </ul>
 </nav>
 </div>
@@ -323,18 +326,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="developer-guide">
-<h1>Developer Guide<a class="headerlink" href="#developer-guide" title="Permalink to this headline">#</a></h1>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="databases.html">Database technologies</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="databases.html#configuration">Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="databases.html#docker">Docker</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="docs.html">Updating the docs</a></li>
-</ul>
+  <section id="updating-the-docs">
+<h1>Updating the docs<a class="headerlink" href="#updating-the-docs" title="Permalink to this headline">#</a></h1>
+<p>To build the docs locally:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">cd</span><span class="w"> </span>venv
+.<span class="w"> </span>bin/activate
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/opencdms/opencdms
+<span class="nb">cd</span><span class="w"> </span>opencdms/docs
+
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>../opencdms/requirements/docs.txt
+make<span class="w"> </span>html
+</pre></div>
+</div>
+<p>To build and deploy the docs, follow the instructions above and use:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>deploy
+</pre></div>
 </div>
 </section>
 
@@ -350,20 +357,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../index.html"
+       href="databases.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Developer Documentation</p>
+        <p class="prev-next-title">Database technologies</p>
       </div>
     </a>
     <a class="right-next"
-       href="databases.html"
+       href="../apidocs/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Database technologies</p>
+        <p class="prev-next-title">API Documentation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -381,7 +388,7 @@ document.write(`
 
   <div class="sidebar-secondary-item">
   <div class="tocsection sourcelink">
-    <a href="../../_sources/developer/devguide/index.rst.txt">
+    <a href="../../_sources/developer/devguide/docs.rst.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>
