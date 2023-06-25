@@ -15,3 +15,7 @@ pip install -r opencdms/requirements/docs.txt
 cd docs
 make deploy
 ```
+
+apidocs are not currently part of the build, they can be generated for the
+opencdms packeage by running the following command from the repo root:
+`sphinx-apidoc -o docs/source/developer/apidocs/opencdms opencdms`
