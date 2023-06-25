@@ -16,7 +16,7 @@ Prerequisites
 OpenCDMS database and API
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-..code-block:: shell
+.. code-block:: shell
     
     git clone https://github.com/opencdms/opencdms
     cd opencdms/install
@@ -31,7 +31,7 @@ Build database
 
 1. Load data
 
-..code-block:: shell
+.. code-block:: shell
 
     # Build database from api container
     docker exec -it opencdms-api /bin/sh
@@ -52,7 +52,7 @@ Build database
 Install OpenCDMS App
 ~~~~~~~~~~~~~~~~~~~~
 
-..code-block:: shell
+.. code-block:: shell
     
     git clone https://github.com/opencdms/opencdms-app
     docker compose up app --detach
