@@ -1,4 +1,3 @@
-pygeoapi
 sqlalchemy_utils
 psycopg2
 minio
