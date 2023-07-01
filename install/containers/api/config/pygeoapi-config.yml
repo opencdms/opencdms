@@ -12,7 +12,8 @@ server:
         url: https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
         attribution: <a href="https://osm.org/copyright">OpenStreetMap</a> contributors
     templates:
-        path: /local/app/containers/pygeoapi/templates/
+        path: /local/app/opencdms/opencdms/api/templates/
+        static: /local/app/opencdms/opencdms/api/static/
     manager:
         name: TinyDB
         connection: /tmp/pygeoapi-process-manager.db
@@ -232,7 +233,7 @@ resources:
               hreflang: en-CA
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
@@ -257,7 +258,7 @@ resources:
               href: https://example.com
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
@@ -282,7 +283,7 @@ resources:
           hreflang: en-CA
       providers:
         - type: feature
-          name: PostgreSQL-nonspatial
+          name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
           data:
             host: opencdms-database
             port: 5432 # Default 5432 if not provided
@@ -307,7 +308,7 @@ resources:
               href: https://example.com
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
@@ -331,7 +332,7 @@ resources:
               href: https://example.com
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
@@ -355,7 +356,7 @@ resources:
               href: https://example.com
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
@@ -379,7 +380,7 @@ resources:
               href: https://example.com
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
@@ -403,7 +404,7 @@ resources:
               href: https://example.com
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
@@ -427,7 +428,7 @@ resources:
               href: https://example.com
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
@@ -451,7 +452,7 @@ resources:
               href: https://example.com
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
@@ -475,7 +476,7 @@ resources:
               href: https://example.com
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
@@ -499,7 +500,7 @@ resources:
               href: https://example.com
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
@@ -523,7 +524,7 @@ resources:
               href: https://example.com
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
@@ -547,7 +548,7 @@ resources:
               href: https://example.com
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
@@ -571,7 +572,7 @@ resources:
               href: https://example.com
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
@@ -595,7 +596,7 @@ resources:
               href: https://example.com
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
@@ -619,7 +620,7 @@ resources:
               href: https://example.com
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
@@ -643,7 +644,7 @@ resources:
               href: https://example.com
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
@@ -667,7 +668,7 @@ resources:
               href: https://example.com
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
@@ -691,7 +692,7 @@ resources:
               href: https://example.com
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
@@ -715,7 +716,7 @@ resources:
               href: https://example.com
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
@@ -739,7 +740,7 @@ resources:
               href: https://example.com
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
@@ -763,7 +764,7 @@ resources:
               href: https://example.com
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
@@ -787,7 +788,7 @@ resources:
               href: https://example.com
         providers:
             - type: feature
-              name: PostgreSQL-nonspatial
+              name: opencdms.api.provider.postgresql_nonspatial.PostgreSQLNSProvider
               data:
                   host: opencdms-database
                   port: 5432 # Default 5432 if not provided
