@@ -1,0 +1,19 @@
+# pygeoapi altered requirements
+Babel
+click
+Flask
+jinja2
+jsonschema
+pydantic
+pygeofilter
+pygeoif
+pyproj
+python-dateutil
+pytz
+PyYAML
+rasterio
+requests
+shapely
+SQLAlchemy<2.0.0
+tinydb
+unicodecsv

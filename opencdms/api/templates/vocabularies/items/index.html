@@ -1,0 +1,91 @@
+{% extends "_base.html" %}
+{% block title %}{{ super() }} {{ data['title'] }} {% endblock %}
+{% block crumbs %}{{ super() }}
+/ <a href="{{ data['vocabularies_path'] }}">{% trans %}Vocabularies{% endtrans %}</a>
+{% for link in data['links'] %}
+  {% if link.rel == 'vocabulary' %} /
+    <a href="{{ data['vocabulary_path'] }}">{{ link['title'] | string | truncate( 25 ) }}</a>
+    {% set col_title = link['title'] %}
+  {% endif %}
+{% endfor %}
+/ <a href="{{ data['items_path']}}">{% trans %}Items{% endtrans %}</a>
+{% endblock %}
+
+{% block body %}
+  <section id="items"></section>
+  <section id="vocabulary">
+    <h1>{% for l in data['links'] if l.rel == 'vocabulary' %} {{ l['title'] }} {% endfor %}</h1>
+    <p>{% trans %}Items in this vocabulary{% endtrans %}.</p>
+  </section>
+  <section id="items">
+    {% if data['items'] %}
+    <div class="row">
+      <div class="col-sm-12 col-md-12" style="overflow-x: scroll;">
+        {% set props = [] %}
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              {% if data.get('uri_field') %}
+                {% set uri_field = data.uri_field %}
+                <th>{{ uri_field }}</th>
+              {% elif data.get('title_field') %}
+                {% set title_field = data.title_field %}
+                <th>{{ title_field }}</th>
+              {% else %}
+                <th>id</th>
+              {% endif %}
+
+              {% for k in data['items'][0].keys() %}
+                {% if k not in [data.id_field, data.title_field, data.uri_field] %}
+                  {% set props = props.append(k) %}
+                  <th>{{ k }}</th>
+                {% endif %}
+              {% endfor %}
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for ft in data['items'] %}
+              <tr>
+                {% if data.get('uri_field') %}
+                  {% set uri_field = data.uri_field %}
+                  <td data-label="{{ uri_field }}">
+                    <a href="{{ ft.get(uri_field) }}" title="{{ ft.get(uri_field) }}">
+                      {{ ft.get(uri_field) }}
+                    </a>
+                  </td>
+                {% elif data.get('title_field') %}
+                  {% set title_field = data.title_field %}
+                  <td data-label="{{ title_field }}">
+                    <a href="{{ data.items_path }}/{{ ft['id'] }}" title="{{ ft.get(title_field) }}">
+                      {{ ft.get(title_field) | string | truncate( 35 ) }}
+                    </a>
+                  </td>
+                {% else %}
+                  <td data-label="id">
+                    <a href="{{ data.items_path }}/{{ ft.id }}" title="{{ ft.id }}">
+                      {{ ft.id | string | truncate( 12 )  }}
+                    </a>
+                  </td>
+                {% endif %}
+
+                {% for prop in props %}
+                  <td data-label="{{ prop }}">
+                    {{ ft.get(prop, '') | string | truncate( 35 ) }}
+                  </td>
+                {% endfor %}
+
+              </tr>
+            {% endfor %}
+          </tbody>
+          </table>
+      </div>
+    </div>
+    {% else %}
+    <div class="row col-sm-12">
+        <p>{% trans %}No items{% endtrans %}</p>
+    </div>
+    {% endif %}
+    </section>
+{% endblock %}
+

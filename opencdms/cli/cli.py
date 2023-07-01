@@ -66,7 +66,7 @@ def unavailable_packages():
 
 main = UnavailablePackagesGroup()
 
-
+from opencdms.cli.api import api
 try:
     from opencdms.cli.db import db
     main.add_command(db)
@@ -86,10 +86,10 @@ except (ImportError, ModuleNotFoundError):
     uninstalled_packages.append('install')
 
 try:
-    from opencdms.cli.pygeoapi import pygeoapi
-    main.add_command(pygeoapi)
+    from opencdms.cli.api import api
+    main.add_command(api)
 except (ImportError, ModuleNotFoundError):
-    uninstalled_packages.append('pygeoapi')
+    uninstalled_packages.append('api')
 
 try:
     from opencdms.cli.test import test

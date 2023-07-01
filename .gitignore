@@ -4,6 +4,11 @@
 *.db
 .DS_Store
 
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/inspectionProfiles/Project_Default.xml
+
+# Pycharm IDE
+.idea/
 
 # -- Standard Python .gitignore --# 
 

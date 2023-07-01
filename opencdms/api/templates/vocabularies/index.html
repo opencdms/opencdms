@@ -1,0 +1,35 @@
+{% extends "_base.html" %}
+{% block title %}{{ super() }} {% trans %}Vocabularies{% endtrans %} {% endblock %}
+{% block crumbs %}{{ super() }}
+/ <a href="./vocab">{% trans %}Vocabularies{% endtrans %}</a>
+{% endblock %}
+{% block body %}
+    <section id="vocabularies">
+      <h2>{% trans %}Vocabularies in this service{% endtrans %}</h2>
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <table class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>{% trans %}Name{% endtrans %}</th>
+                <th>{% trans %}Description{% endtrans %}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for vcb in data['vocabularies'] %}
+              <tr itemscope itemtype="https://schema.org/WebAPI">
+                <td itemprop="name" data-label="name">
+                  <meta itemprop="url" content="{{ config['server']['url'] }}/vocab/{{ vcb['id'] }}" />
+                  <a title="{{ vcb['title'] | striptags | truncate }}" href="{{ config['server']['url'] }}/vocabularies/{{ vcb['id'] }}">{{ vcb['title'] | striptags | truncate }}</a>
+                </td>
+                <td itemprop="description" data-label="description">
+                  {{ vcb['description'] | striptags | truncate }}
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+{% endblock %}
