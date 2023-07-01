@@ -61,17 +61,17 @@ services:
   api:
     container_name: opencdms-api
     build:
-      context: ./containers/pygeoapi/
+      context: ./containers/api/
       dockerfile: Dockerfile
     env_file:
       - default.env
     ports:
       - 5000:5000
     volumes:
-      - "./containers/pygeoapi/config/:/config"
+      - "./containers/api/config/:/config"
       - "./:/local/app"
     tty: true
-    entrypoint: [ "pygeoapi", "serve" ]
+    entrypoint: [ "opencdms", "api", "serve" ]
 
   opencdms:
     container_name: opencdms-manager

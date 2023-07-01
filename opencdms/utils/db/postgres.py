@@ -3,7 +3,7 @@ This module contains database utils that are specific to Postgres
 
 """
 import subprocess
-from typing import Optional
+from typing import Optional, List
 
 from sqlalchemy import create_engine, text
 from sqlalchemy_utils import create_database, database_exists
@@ -57,7 +57,7 @@ def launch_psql(database_name: Optional[str] = None, *args, **kwargs) -> None:
     subprocess.run(psql_command, shell=True, check=True, **kwargs)
 
 
-def create_db_and_schemas(db_name: str, schema_names: list[str] = None, connection_string: str = None) -> None:
+def create_db_and_schemas(db_name: str, schema_names: List[str] = None, connection_string: str = None) -> None:
     """
     Create a database and specified schemas if they do not exist.
 

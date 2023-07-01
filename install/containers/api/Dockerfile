@@ -14,12 +14,10 @@ ENV TZ="Etc/UTC" \
 RUN echo "Acquire::Check-Valid-Until \"false\";\nAcquire::Check-Date \"false\";" | cat > /etc/apt/apt.conf.d/10no--check-valid-until \
     && apt-get update -y \
     && apt-get install -y ${DEBIAN_PACKAGES} \
-
     && apt-get install -y python3 python3-pip libpq-dev \
     && pip3 install --no-cache-dir click==8.1.3 \
     && pip3 install --no-cache-dir https://github.com/wmo-im/csv2bufr/archive/pygeoapi-debug.zip \
-    && pip3 install --no-cache-dir https://github.com/opencdms/opencdms/archive/main.zip \
-    && pip3 install --no-cache-dir https://github.com/david-i-berry/opencdms-pygeoapi/archive/wip.zip
+    && pip3 install --no-cache-dir https://github.com/opencdms/opencdms/archive/main-tmp.zip
 
 WORKDIR /tmp
 COPY requirements-providers.txt .
