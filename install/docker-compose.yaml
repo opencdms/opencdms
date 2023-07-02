@@ -58,6 +58,9 @@ services:
       broker:
         condition: service_started
 
+  # The /local/app/opencdms/ volume is currently being
+  # used at runtime so access local static files and
+  # templates during develoment.
   api:
     container_name: opencdms-api
     build:
@@ -69,7 +72,7 @@ services:
       - 5000:5000
     volumes:
       - "./containers/api/config/:/config"
-      # - "../:/local/app/opencdms/"
+      - "../:/local/app/opencdms/"
     tty: true
     entrypoint: [ "opencdms", "api", "serve" ]
 
@@ -106,8 +109,8 @@ services:
 #  opencdms-ui:
 #  opencdms-manager:
 
+  pygeoapi_config:
 volumes:
   postgres:
   mosquitto:
   minio-data:
-  pygeoapi_config:
