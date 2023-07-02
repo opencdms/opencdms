@@ -1,3 +1,1 @@
-# temporarily unpinning due to https://github.com/geopython/pygeoapi/commit/6a871e8591d62a2af228c5fdca8a127a534c231a#commitcomment-120341690
-# pygeoapi==0.15.0
 pygeoapi
