@@ -7,7 +7,7 @@ from opencdms.utils.paths import base_path, requirements_path
 @click.group(invoke_without_command=True)
 @click.pass_context
 def install(context):
-    """Installs all package requirements (or specify, e.g. docs)."""
+    """Install requirements in current environment"""
     if context.invoked_subcommand is None:
         click.echo('Installing required packages to current environment...')
         try:

@@ -4,6 +4,9 @@ import sh
 import sys
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 
+# ensure sphinx is importable (if not the error will be caught by cli)
+import sphinx
+
 from opencdms.utils.paths import docs_path
 
 

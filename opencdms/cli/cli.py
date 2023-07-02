@@ -66,7 +66,7 @@ def unavailable_packages():
 
 main = UnavailablePackagesGroup()
 
-from opencdms.cli.api import api
+
 try:
     from opencdms.cli.db import db
     main.add_command(db)

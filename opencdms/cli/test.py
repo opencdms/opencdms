@@ -1,6 +1,9 @@
 import importlib
 import click
 
+# ensure pytest is importable (if not the error will be caught by cli)
+import pytest
+
 #from opencdms.utils.tests import run_tests
 
 
