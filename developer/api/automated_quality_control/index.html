@@ -298,8 +298,16 @@ document.write(`
 <p>Tests based on the WMO “Guidelines on Surface Station Data Quality Control and Quality Assurance for Climate Applications”, WMO-No. 1269.</p>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
-<p>These tests are intended to be run automatically on individual observations on initial ingest and will be called
+<p>The tests listed below are intended to be run automatically on individual observations on initial ingest and will be called
 from another process.</p>
+</section>
+<section id="tests">
+<h2>Tests<a class="headerlink" href="#tests" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><strong>Sensor based range check</strong> (detects observations that are outside the specified sensor limits), requires observer and result.</p></li>
+<li><p><strong>Domain test</strong> (determines whether the observed value is outside the realm of scientific possibility, e.g. air temperature &gt; 70 Celsius), requires observed_property and result.</p></li>
+<li><p><strong>Climate based range test</strong> (compares the observed value with the climatological upper and lower extreme values), requires location, elevation, date, time observed_property and result. Sensor characteristics can be taken into account if available.</p></li>
+</ul>
 </section>
 <section id="api-definition">
 <h2>API definition<a class="headerlink" href="#api-definition" title="Permalink to this headline">#</a></h2>
@@ -360,14 +368,6 @@ from another process.</p>
 </dd></dl>
 
 </section>
-<section id="tests">
-<h2>Tests<a class="headerlink" href="#tests" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><strong>Sensor based range check</strong> (detects observations that are outside the specified sensor limits), requires observer and result.</p></li>
-<li><p><strong>Domain test</strong> (determines whether the observed value is outside the realm of scientific possibility, e.g. air temperature &gt; 70 Celsius), requires observed_property and result.</p></li>
-<li><p><strong>Climate based range test</strong> (compares the observed value with the climatological upper and lower extreme values), requires location, elevation, date, time observed_property and result. Sensor characteristics can be taken into account if available.</p></li>
-</ul>
-</section>
 <section id="activity-diagram">
 <h2>Activity diagram<a class="headerlink" href="#activity-diagram" title="Permalink to this headline">#</a></h2>
 <figure class="align-default">
@@ -410,8 +410,8 @@ from another process.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-definition">API definition</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tests">Tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-definition">API definition</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-diagram">Activity diagram</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-status">Implementation status</a></li>
 </ul>

@@ -6,13 +6,8 @@ Tests based on the WMO "Guidelines on Surface Station Data Quality Control and Q
 
 Overview
 --------
-These tests are intended to be run automatically on individual observations on initial ingest and will be called
+The tests listed below are intended to be run automatically on individual observations on initial ingest and will be called
 from another process.
-
-API definition
---------------
-
-.. openapi:: ./api.yml
 
 Tests
 -----
@@ -20,6 +15,12 @@ Tests
 - **Sensor based range check** (detects observations that are outside the specified sensor limits), requires observer and result.
 - **Domain test** (determines whether the observed value is outside the realm of scientific possibility, e.g. air temperature > 70 Celsius), requires observed_property and result.
 - **Climate based range test** (compares the observed value with the climatological upper and lower extreme values), requires location, elevation, date, time observed_property and result. Sensor characteristics can be taken into account if available.
+
+API definition
+--------------
+
+.. openapi:: ./api.yml
+
 
 Activity diagram
 ----------------
