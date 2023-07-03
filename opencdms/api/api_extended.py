@@ -452,7 +452,7 @@ class APIExtended(API):
             return headers, HTTPStatus.OK, content
         elif request.format == 'csv':  # render
             formatter = load_plugin('formatter',
-                                    {'name': 'CSVTable'})
+                                    {'name': 'opencdms.api.formatter.csvTable.CSVFormatter'})  # noqa
 
             try:
                 content = formatter.write(
