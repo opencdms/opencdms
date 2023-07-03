@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Automated quality control &#8212; OpenCDMS 0.1.0 documentation</title>
+    <title>&lt;no title&gt; &#8212; OpenCDMS 0.1.0 documentation</title>
   
   
   
@@ -45,7 +45,7 @@
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'developer/api/automated_quality_control/index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'developer/api/encode_daycli/index';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -276,7 +276,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Automated quality control</li>
+    <li class="breadcrumb-item active" aria-current="page">&lt;no title&gt;</li>
   </ul>
 </nav>
 </div>
@@ -293,93 +293,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="automated-quality-control">
-<span id="auto-qc"></span><h1>Automated quality control<a class="headerlink" href="#automated-quality-control" title="Permalink to this headline">#</a></h1>
-<p>Tests based on the WMO “Guidelines on Surface Station Data Quality Control and Quality Assurance for Climate Applications”, WMO-No. 1269.</p>
-<section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
-<p>These tests are intended to be run automatically on individual observations on initial ingest and will be called
-from another process.</p>
-</section>
-<section id="api-definition">
-<h2>API definition<a class="headerlink" href="#api-definition" title="Permalink to this headline">#</a></h2>
-<dl class="http post">
-<dt class="sig sig-object http" id="post--process-_ingest_auto_qc">
-<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/process/_ingest_auto_qc</span></span><a class="headerlink" href="#post--process-_ingest_auto_qc" title="Permalink to this definition">#</a></dt>
-<dd><p><strong>Data ingest automated QC</strong></p>
-<p>Runs automated quality control on one or more observations encoded as a GeoJSON FeatureCollection. Triggered after data ingested or manually.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Request JSON Object</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>features[].geometry.coordinates[]</strong> (<em>number</em>) – The coordinates of the feature</p></li>
-<li><p><strong>features[].geometry.type</strong> (<em>string</em>) – Type of feature (Point) (required)</p></li>
-<li><p><strong>features[].id</strong> (<em>string</em>) – Identifier for the observation (required)</p></li>
-<li><p><strong>features[].properties.elevation</strong> (<em>number</em>) – Elevation of observation above mean sea level (in meters)</p></li>
-<li><p><strong>features[].properties.host</strong> (<em>string</em>) – Host associated with making the observation, equivalent to OGC OMS ‘host’ (required)</p></li>
-<li><p><strong>features[].properties.observed_property</strong> (<em>string</em>) – The phenomenon, or thing, being observed (required)</p></li>
-<li><p><strong>features[].properties.observer</strong> (<em>string</em>) – Observer associated with making the observation, equivalent to OGC OMS ‘observer’ (required)</p></li>
-<li><p><strong>features[].properties.phenomenon_time</strong> (<em>string</em>) – Observation time, either instant or start and end of observing period (required)</p></li>
-<li><p><strong>features[].properties.result.description</strong> (<em>string</em>) – str representation of the result if applicable</p></li>
-<li><p><strong>features[].properties.result.uom</strong> (<em>string</em>) – Units used to represent the value being observed (required)</p></li>
-<li><p><strong>features[].properties.result.value</strong> (<em>number</em>) – The value of the result in float representation (required)</p></li>
-<li><p><strong>features[].properties.result_quality[].flag</strong> (<em>integer</em>) – Flag</p></li>
-<li><p><strong>features[].properties.result_quality[].result</strong> (<em>string</em>) – Textual representation of result</p></li>
-<li><p><strong>features[].properties.result_quality[].scheme</strong> (<em>string</em>) – Quality control scheme</p></li>
-<li><p><strong>features[].properties.result_quality[].test</strong> (<em>string</em>) – Test applied</p></li>
-<li><p><strong>features[].type</strong> (<em>string</em>) – Feature (required)</p></li>
-<li><p><strong>type</strong> (<em>string</em>) – FeatureCollection (required)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Status Codes</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – success</p></li>
-</ul>
-</dd>
-<dt class="field-odd">Response JSON Object</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>features[].geometry.coordinates[]</strong> (<em>number</em>) – The coordinates of the feature</p></li>
-<li><p><strong>features[].geometry.type</strong> (<em>string</em>) – Type of feature (Point) (required)</p></li>
-<li><p><strong>features[].id</strong> (<em>string</em>) – Identifier for the observation (required)</p></li>
-<li><p><strong>features[].properties.elevation</strong> (<em>number</em>) – Elevation of observation above mean sea level (in meters)</p></li>
-<li><p><strong>features[].properties.host</strong> (<em>string</em>) – Host associated with making the observation, equivalent to OGC OMS ‘host’ (required)</p></li>
-<li><p><strong>features[].properties.observed_property</strong> (<em>string</em>) – The phenomenon, or thing, being observed (required)</p></li>
-<li><p><strong>features[].properties.observer</strong> (<em>string</em>) – Observer associated with making the observation, equivalent to OGC OMS ‘observer’ (required)</p></li>
-<li><p><strong>features[].properties.phenomenon_time</strong> (<em>string</em>) – Observation time, either instant or start and end of observing period (required)</p></li>
-<li><p><strong>features[].properties.result.description</strong> (<em>string</em>) – str representation of the result if applicable</p></li>
-<li><p><strong>features[].properties.result.uom</strong> (<em>string</em>) – Units used to represent the value being observed (required)</p></li>
-<li><p><strong>features[].properties.result.value</strong> (<em>number</em>) – The value of the result in float representation (required)</p></li>
-<li><p><strong>features[].properties.result_quality[].flag</strong> (<em>integer</em>) – Flag</p></li>
-<li><p><strong>features[].properties.result_quality[].result</strong> (<em>string</em>) – Textual representation of result</p></li>
-<li><p><strong>features[].properties.result_quality[].scheme</strong> (<em>string</em>) – Quality control scheme</p></li>
-<li><p><strong>features[].properties.result_quality[].test</strong> (<em>string</em>) – Test applied</p></li>
-<li><p><strong>features[].type</strong> (<em>string</em>) – Feature (required)</p></li>
-<li><p><strong>type</strong> (<em>string</em>) – FeatureCollection (required)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-</section>
-<section id="tests">
-<h2>Tests<a class="headerlink" href="#tests" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><strong>Sensor based range check</strong> (detects observations that are outside the specified sensor limits), requires observer and result.</p></li>
-<li><p><strong>Domain test</strong> (determines whether the observed value is outside the realm of scientific possibility, e.g. air temperature &gt; 70 Celsius), requires observed_property and result.</p></li>
-<li><p><strong>Climate based range test</strong> (compares the observed value with the climatological upper and lower extreme values), requires location, elevation, date, time observed_property and result. Sensor characteristics can be taken into account if available.</p></li>
-</ul>
-</section>
-<section id="activity-diagram">
-<h2>Activity diagram<a class="headerlink" href="#activity-diagram" title="Permalink to this headline">#</a></h2>
-<figure class="align-default">
-<img alt="https://www.plantuml.com/plantuml/svg/dLDDJuD04BtpA-RMvT2YyKPZh35fzA1fKZmPOwQmb4sskoixrF3l7JvAR6bxS0u4PkQzDryiF659rKu7auB8-JYAd4RJU6QftKMOajehggUPmcs9k-b64WOjA02sKZg91F7IbY0nBI3dpwgK8Ep6otAFfAm9szIpwIGz3T76L0uYOIUarkHgorGPv9pzX-uX12ga0L5B7nw16uiVdTDrIpmV1v-igxaANsa2iltRrtU5cfly-9nrZZ5mACkXzpAxNaAhj9OqfiyrRk4URa1qFE5OIMhFqpFs7xIt879K-ZojoLH-vBqiT4M4PtO7uiqIu9wbSAFbYTXOA7unl3k222gN8KbecPHXhlvQXi4VvDgLzy7vwVNy5DnZSEe0yMhvxYRB3kKd8IZVBGWCrpjq6ZydoKgiGrYz9qq_Xw9wt3pW3e85Fvg_uXS=" src="https://www.plantuml.com/plantuml/svg/dLDDJuD04BtpA-RMvT2YyKPZh35fzA1fKZmPOwQmb4sskoixrF3l7JvAR6bxS0u4PkQzDryiF659rKu7auB8-JYAd4RJU6QftKMOajehggUPmcs9k-b64WOjA02sKZg91F7IbY0nBI3dpwgK8Ep6otAFfAm9szIpwIGz3T76L0uYOIUarkHgorGPv9pzX-uX12ga0L5B7nw16uiVdTDrIpmV1v-igxaANsa2iltRrtU5cfly-9nrZZ5mACkXzpAxNaAhj9OqfiyrRk4URa1qFE5OIMhFqpFs7xIt879K-ZojoLH-vBqiT4M4PtO7uiqIu9wbSAFbYTXOA7unl3k222gN8KbecPHXhlvQXi4VvDgLzy7vwVNy5DnZSEe0yMhvxYRB3kKd8IZVBGWCrpjq6ZydoKgiGrYz9qq_Xw9wt3pW3e85Fvg_uXS=" />
-</figure>
-</section>
-<section id="implementation-status">
-<h2>Implementation status<a class="headerlink" href="#implementation-status" title="Permalink to this headline">#</a></h2>
-<p>In development</p>
-</section>
-</section>
-
+  
 
                 </article>
               
@@ -408,18 +322,14 @@ from another process.</p>
     <i class="fa-solid fa-list"></i> On this page
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-definition">API definition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tests">Tests</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-diagram">Activity diagram</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-status">Implementation status</a></li>
+    <ul class="simple visible nav section-nav flex-column">
 </ul>
+
   </nav></div>
 
   <div class="sidebar-secondary-item">
   <div class="tocsection sourcelink">
-    <a href="../../../_sources/developer/api/automated_quality_control/index.rst.txt">
+    <a href="../../../_sources/developer/api/encode_daycli/index.rst.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>
