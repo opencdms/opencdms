@@ -1,4 +1,5 @@
 # pygeoapi altered requirements
+# also install /opencdms/requirements/api.txt
 Babel
 click
 Flask

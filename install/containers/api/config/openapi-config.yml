@@ -1,4 +1,11 @@
 components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  security:
+    - bearerAuth: []
   parameters:
     bbox:
       description: Only features that have a geometry that intersects the bounding
@@ -185,12 +192,43 @@ info:
     url: https://public.wmo.int/en/our-mandate/what-we-do/observations/Unified-WMO-Data-Policy-Resolution
   termsOfService: https://public.wmo.int/en/our-mandate/what-we-do/observations/Unified-WMO-Data-Policy-Resolution
   title: OpenCDMS beta API
-  version: 0.15.dev0
+  version: 0.16.dev0
   x-keywords:
   - wmo
   - wis 2.0
 openapi: 3.0.2
 paths:
+  /login:
+    post:
+      summary: User login
+      description: Generates a bearer token
+      operationId: loginUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+              required:
+                - username
+                - password
+      responses:
+        '200':
+          description: Successful login
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+      tags:
+        - Authentication
   /:
     get:
       description: Landing page
@@ -687,7 +725,6 @@ paths:
       - $ref: '#/components/parameters/skipGeometry'
       - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/parameters/sortby.yaml
       - $ref: '#/components/parameters/offset'
-      - $ref: https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/parameters/datetime
       - explode: false
         in: query
         name: id
@@ -904,7 +941,6 @@ paths:
       - $ref: '#/components/parameters/skipGeometry'
       - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/parameters/sortby.yaml
       - $ref: '#/components/parameters/offset'
-      - $ref: https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/parameters/datetime
       - explode: false
         in: query
         name: id
@@ -1115,7 +1151,6 @@ paths:
       - $ref: '#/components/parameters/skipGeometry'
       - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/parameters/sortby.yaml
       - $ref: '#/components/parameters/offset'
-      - $ref: https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/parameters/datetime
       - explode: false
         in: query
         name: id
@@ -1391,7 +1426,7 @@ paths:
           $ref: '#/components/responses/default'
       summary: Retrieve jobs list
       tags:
-      - server
+      - jobs
   /jobs/{jobId}:
     delete:
       description: Cancel / delete job
@@ -1413,7 +1448,7 @@ paths:
           $ref: '#/components/responses/default'
       summary: Cancel / delete job
       tags:
-      - server
+      - jobs
     get:
       description: Retrieve job details
       operationId: getJob
@@ -1429,7 +1464,7 @@ paths:
           $ref: '#/components/responses/default'
       summary: Retrieve job details
       tags:
-      - server
+      - jobs
   /jobs/{jobId}/results:
     get:
       description: Retrive job resiults
@@ -1446,7 +1481,7 @@ paths:
           $ref: '#/components/responses/default'
       summary: Retrieve job results
       tags:
-      - server
+      - jobs
   /openapi:
     get:
       description: This document
@@ -1623,13 +1658,15 @@ paths:
       - ingestHost
 servers:
 - description: PygeoAPI instance deployed as part of the beta.opencdms.org instance
-  url: /
+  url: ''
 tags:
 - description: PygeoAPI instance deployed as part of the beta.opencdms.org instance
   externalDocs:
     description: information
     url: https://community.wmo.int/activity-areas/wis/wis2-implementation
   name: server
+- description: Process jobs
+  name: jobs
 - description: SpatioTemporal Asset Catalog
   name: stac
 - description: Extract of hourly observations from the 'Hourly Climate Observations'
@@ -1648,4 +1685,3 @@ tags:
   name: ingestHost
 - description: Process to ingest CDM formatted observations
   name: cdm
-

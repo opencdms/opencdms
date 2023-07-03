@@ -58,9 +58,12 @@ services:
       broker:
         condition: service_started
 
-  # The /local/app/opencdms/ volume is currently being
-  # used at runtime so access local static files and
-  # templates during develoment.
+  # The /local/app/opencdms/ volume is currently being used at runtime to
+  # access local static files and templates during develoment.
+  # You can also update the containers install of the opencdms package to
+  # use your locally copy with `docker exec -it opencdms-api bash` and
+  # cd /local/app/ && pip3 uninstall opencdms && pip3 install -e opencdms
+  # opencdms install
   api:
     container_name: opencdms-api
     build:
@@ -109,8 +112,8 @@ services:
 #  opencdms-ui:
 #  opencdms-manager:
 
-  pygeoapi_config:
 volumes:
   postgres:
   mosquitto:
   minio-data:
+  api_config:

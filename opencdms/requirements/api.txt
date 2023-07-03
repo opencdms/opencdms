@@ -1,1 +1,2 @@
 pygeoapi
+flask-jwt-extended
