@@ -27,8 +27,8 @@ Usage
 Props
 +++++
 
-- api
-- path
+- *api*: Host / base path to the API.
+- *path*: relative path on the host to the API endpoint.
 
 
 Example
