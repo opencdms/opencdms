@@ -24,6 +24,6 @@ deploy:
 	mkdir -p $(TMP_DIR)
 	git clone -b gh-pages https://github.com/opencdms/opencdms $(TMP_DIR) --depth=1
 	# Delete everything on the gh-pages branch except for the git history (.git)
-	find $(TMP_DIR) -not -path '*/\.git/*' -delete
+	find $(TMP_DIR) -mindepth 1 -not -path '*/\.git*' -delete
 	sphinx-build -b html source $(TMP_DIR)
 	cd $(TMP_DIR) && git add . && git commit -m "Update docs and deploy" && git push origin gh-pages && rm -rf $(TMP_DIR)
