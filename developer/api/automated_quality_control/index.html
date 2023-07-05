@@ -319,49 +319,59 @@ from another process.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Request JSON Object</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>features[].geometry.coordinates[]</strong> (<em>number</em>) – The coordinates of the feature</p></li>
-<li><p><strong>features[].geometry.type</strong> (<em>string</em>) – Type of feature (Point) (required)</p></li>
-<li><p><strong>features[].id</strong> (<em>string</em>) – Identifier for the observation (required)</p></li>
+<li><p><strong>type</strong> (<em>string:enum, required</em>) – FeatureCollection</p></li>
+<li><p><strong>features[]</strong> (<em>object</em>) – </p></li>
+<li><p><strong>features[].id</strong> (<em>string, required</em>) – Identifier for the observation</p></li>
+<li><p><strong>features[].type</strong> (<em>string:enum, required</em>) – Feature</p></li>
+<li><p><strong>features[].geometry</strong> (<em>object, required</em>) – </p></li>
+<li><p><strong>features[].geometry.type</strong> (<em>string:enum, required</em>) – Type of feature (Point)</p></li>
+<li><p><strong>features[].geometry.coordinates[]</strong> (<em>number</em>) – </p></li>
+<li><p><strong>features[].properties</strong> (<em>object, required</em>) – </p></li>
 <li><p><strong>features[].properties.elevation</strong> (<em>number</em>) – Elevation of observation above mean sea level (in meters)</p></li>
-<li><p><strong>features[].properties.host</strong> (<em>string</em>) – Host associated with making the observation, equivalent to OGC OMS ‘host’ (required)</p></li>
-<li><p><strong>features[].properties.observed_property</strong> (<em>string</em>) – The phenomenon, or thing, being observed (required)</p></li>
-<li><p><strong>features[].properties.observer</strong> (<em>string</em>) – Observer associated with making the observation, equivalent to OGC OMS ‘observer’ (required)</p></li>
-<li><p><strong>features[].properties.phenomenon_time</strong> (<em>string</em>) – Observation time, either instant or start and end of observing period (required)</p></li>
+<li><p><strong>features[].properties.phenomenon_time</strong> (<em>string:date-time, required</em>) – Observation time, either instant or start and end of observing period</p></li>
+<li><p><strong>features[].properties.result</strong> (<em>object</em>) – </p></li>
+<li><p><strong>features[].properties.result.value</strong> (<em>number, required</em>) – The value of the result in float representation</p></li>
+<li><p><strong>features[].properties.result.uom</strong> (<em>string, required</em>) – Units used to represent the value being observed</p></li>
 <li><p><strong>features[].properties.result.description</strong> (<em>string</em>) – str representation of the result if applicable</p></li>
-<li><p><strong>features[].properties.result.uom</strong> (<em>string</em>) – Units used to represent the value being observed (required)</p></li>
-<li><p><strong>features[].properties.result.value</strong> (<em>number</em>) – The value of the result in float representation (required)</p></li>
-<li><p><strong>features[].properties.result_quality[].flag</strong> (<em>integer</em>) – Flag</p></li>
-<li><p><strong>features[].properties.result_quality[].result</strong> (<em>string</em>) – Textual representation of result</p></li>
+<li><p><strong>features[].properties.result_quality[]</strong> (<em>object</em>) – </p></li>
 <li><p><strong>features[].properties.result_quality[].scheme</strong> (<em>string</em>) – Quality control scheme</p></li>
 <li><p><strong>features[].properties.result_quality[].test</strong> (<em>string</em>) – Test applied</p></li>
-<li><p><strong>features[].type</strong> (<em>string</em>) – Feature (required)</p></li>
-<li><p><strong>type</strong> (<em>string</em>) – FeatureCollection (required)</p></li>
+<li><p><strong>features[].properties.result_quality[].result</strong> (<em>string</em>) – Textual representation of result</p></li>
+<li><p><strong>features[].properties.result_quality[].flag</strong> (<em>integer</em>) – Flag</p></li>
+<li><p><strong>features[].properties.host</strong> (<em>string:uri, required</em>) – Host associated with making the observation, equivalent to OGC OMS ‘host’</p></li>
+<li><p><strong>features[].properties.observer</strong> (<em>string:uri, required</em>) – Observer associated with making the observation, equivalent to OGC OMS ‘observer’</p></li>
+<li><p><strong>features[].properties.observed_property</strong> (<em>string:uri, required</em>) – The phenomenon, or thing, being observed</p></li>
 </ul>
 </dd>
-<dt class="field-even">Status Codes</dt>
+<dt class="field-even">Response JSON Object</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – success</p></li>
-</ul>
-</dd>
-<dt class="field-odd">Response JSON Object</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>features[].geometry.coordinates[]</strong> (<em>number</em>) – The coordinates of the feature</p></li>
-<li><p><strong>features[].geometry.type</strong> (<em>string</em>) – Type of feature (Point) (required)</p></li>
-<li><p><strong>features[].id</strong> (<em>string</em>) – Identifier for the observation (required)</p></li>
+<li><p><strong>type</strong> (<em>string:enum, required</em>) – FeatureCollection</p></li>
+<li><p><strong>features[]</strong> (<em>object</em>) – </p></li>
+<li><p><strong>features[].id</strong> (<em>string, required</em>) – Identifier for the observation</p></li>
+<li><p><strong>features[].type</strong> (<em>string:enum, required</em>) – Feature</p></li>
+<li><p><strong>features[].geometry</strong> (<em>object, required</em>) – </p></li>
+<li><p><strong>features[].geometry.type</strong> (<em>string:enum, required</em>) – Type of feature (Point)</p></li>
+<li><p><strong>features[].geometry.coordinates[]</strong> (<em>number</em>) – </p></li>
+<li><p><strong>features[].properties</strong> (<em>object, required</em>) – </p></li>
 <li><p><strong>features[].properties.elevation</strong> (<em>number</em>) – Elevation of observation above mean sea level (in meters)</p></li>
-<li><p><strong>features[].properties.host</strong> (<em>string</em>) – Host associated with making the observation, equivalent to OGC OMS ‘host’ (required)</p></li>
-<li><p><strong>features[].properties.observed_property</strong> (<em>string</em>) – The phenomenon, or thing, being observed (required)</p></li>
-<li><p><strong>features[].properties.observer</strong> (<em>string</em>) – Observer associated with making the observation, equivalent to OGC OMS ‘observer’ (required)</p></li>
-<li><p><strong>features[].properties.phenomenon_time</strong> (<em>string</em>) – Observation time, either instant or start and end of observing period (required)</p></li>
+<li><p><strong>features[].properties.phenomenon_time</strong> (<em>string:date-time, required</em>) – Observation time, either instant or start and end of observing period</p></li>
+<li><p><strong>features[].properties.result</strong> (<em>object</em>) – </p></li>
+<li><p><strong>features[].properties.result.value</strong> (<em>number, required</em>) – The value of the result in float representation</p></li>
+<li><p><strong>features[].properties.result.uom</strong> (<em>string, required</em>) – Units used to represent the value being observed</p></li>
 <li><p><strong>features[].properties.result.description</strong> (<em>string</em>) – str representation of the result if applicable</p></li>
-<li><p><strong>features[].properties.result.uom</strong> (<em>string</em>) – Units used to represent the value being observed (required)</p></li>
-<li><p><strong>features[].properties.result.value</strong> (<em>number</em>) – The value of the result in float representation (required)</p></li>
-<li><p><strong>features[].properties.result_quality[].flag</strong> (<em>integer</em>) – Flag</p></li>
-<li><p><strong>features[].properties.result_quality[].result</strong> (<em>string</em>) – Textual representation of result</p></li>
+<li><p><strong>features[].properties.result_quality[]</strong> (<em>object</em>) – </p></li>
 <li><p><strong>features[].properties.result_quality[].scheme</strong> (<em>string</em>) – Quality control scheme</p></li>
 <li><p><strong>features[].properties.result_quality[].test</strong> (<em>string</em>) – Test applied</p></li>
-<li><p><strong>features[].type</strong> (<em>string</em>) – Feature (required)</p></li>
-<li><p><strong>type</strong> (<em>string</em>) – FeatureCollection (required)</p></li>
+<li><p><strong>features[].properties.result_quality[].result</strong> (<em>string</em>) – Textual representation of result</p></li>
+<li><p><strong>features[].properties.result_quality[].flag</strong> (<em>integer</em>) – Flag</p></li>
+<li><p><strong>features[].properties.host</strong> (<em>string:uri, required</em>) – Host associated with making the observation, equivalent to OGC OMS ‘host’</p></li>
+<li><p><strong>features[].properties.observer</strong> (<em>string:uri, required</em>) – Observer associated with making the observation, equivalent to OGC OMS ‘observer’</p></li>
+<li><p><strong>features[].properties.observed_property</strong> (<em>string:uri, required</em>) – The phenomenon, or thing, being observed</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Status Codes</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – success</p></li>
 </ul>
 </dd>
 </dl>
@@ -371,7 +381,7 @@ from another process.</p>
 <section id="activity-diagram">
 <h2>Activity diagram<a class="headerlink" href="#activity-diagram" title="Permalink to this headline">#</a></h2>
 <figure class="align-default">
-<img alt="https://www.plantuml.com/plantuml/svg/dLDDJuD04BtpA-RMvT2YyKPZh35fzA1fKZmPOwQmb4sskoixrF3l7JvAR6bxS0u4PkQzDryiF659rKu7auB8-JYAd4RJU6QftKMOajehggUPmcs9k-b64WOjA02sKZg91F7IbY0nBI3dpwgK8Ep6otAFfAm9szIpwIGz3T76L0uYOIUarkHgorGPv9pzX-uX12ga0L5B7nw16uiVdTDrIpmV1v-igxaANsa2iltRrtU5cfly-9nrZZ5mACkXzpAxNaAhj9OqfiyrRk4URa1qFE5OIMhFqpFs7xIt879K-ZojoLH-vBqiT4M4PtO7uiqIu9wbSAFbYTXOA7unl3k222gN8KbecPHXhlvQXi4VvDgLzy7vwVNy5DnZSEe0yMhvxYRB3kKd8IZVBGWCrpjq6ZydoKgiGrYz9qq_Xw9wt3pW3e85Fvg_uXS=" src="https://www.plantuml.com/plantuml/svg/dLDDJuD04BtpA-RMvT2YyKPZh35fzA1fKZmPOwQmb4sskoixrF3l7JvAR6bxS0u4PkQzDryiF659rKu7auB8-JYAd4RJU6QftKMOajehggUPmcs9k-b64WOjA02sKZg91F7IbY0nBI3dpwgK8Ep6otAFfAm9szIpwIGz3T76L0uYOIUarkHgorGPv9pzX-uX12ga0L5B7nw16uiVdTDrIpmV1v-igxaANsa2iltRrtU5cfly-9nrZZ5mACkXzpAxNaAhj9OqfiyrRk4URa1qFE5OIMhFqpFs7xIt879K-ZojoLH-vBqiT4M4PtO7uiqIu9wbSAFbYTXOA7unl3k222gN8KbecPHXhlvQXi4VvDgLzy7vwVNy5DnZSEe0yMhvxYRB3kKd8IZVBGWCrpjq6ZydoKgiGrYz9qq_Xw9wt3pW3e85Fvg_uXS=" />
+<img alt="https://www.plantuml.com/plantuml/svg/dL9DJyCm3BttL_YszB0LnAqJOWXf4WSu03U4aDSwQwGi2Oqxr7-FsuwAhOC3FbJDi_sUlrQHiUPcPvDPnHnYdcN1ekkGHU5t6HPizeRRUMbmM-DklY76f4zAGAocGCYGhtqDX4K5MfvDJQ3y9bAzHpRUfNtesN2coAEtCwD1lGW8XNVQR8Mg12tHF-XkKk2A7AYMOdgKt5b-6u9jU-Bbr7ddGojLnCOoi3_ylNyqQAN9rxV504mJnx82naZbtoNqIi_4KtfjSGlNS05gu4cdIcIZJC_vVz1UWj9ex7bQLnfzXFukz8U8pEmArADdmBr8uSRIYTXKABztiZk639fG8XFqJCO9r-5Qni5_o_KhFpYNfzVpMKcFoIa0wi7BtStMGrQSfM3Yi21mKk_OQVv44k2MYLIQhEJJNVyN" src="https://www.plantuml.com/plantuml/svg/dL9DJyCm3BttL_YszB0LnAqJOWXf4WSu03U4aDSwQwGi2Oqxr7-FsuwAhOC3FbJDi_sUlrQHiUPcPvDPnHnYdcN1ekkGHU5t6HPizeRRUMbmM-DklY76f4zAGAocGCYGhtqDX4K5MfvDJQ3y9bAzHpRUfNtesN2coAEtCwD1lGW8XNVQR8Mg12tHF-XkKk2A7AYMOdgKt5b-6u9jU-Bbr7ddGojLnCOoi3_ylNyqQAN9rxV504mJnx82naZbtoNqIi_4KtfjSGlNS05gu4cdIcIZJC_vVz1UWj9ex7bQLnfzXFukz8U8pEmArADdmBr8uSRIYTXKABztiZk639fG8XFqJCO9r-5Qni5_o_KhFpYNfzVpMKcFoIa0wi7BtStMGrQSfM3Yi21mKk_OQVv44k2MYLIQhEJJNVyN" />
 </figure>
 </section>
 <section id="implementation-status">

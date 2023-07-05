@@ -9,3 +9,4 @@ OGC API Processes
    :caption: Contents:
 
    automated_quality_control/index
+   encode_daycli/index
