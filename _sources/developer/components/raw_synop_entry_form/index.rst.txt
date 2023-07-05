@@ -7,3 +7,35 @@ Context
 The sequence diagram below shows the context of the "Raw FM-12 SYNOP entry from" component.
 
 .. plantuml:: ./sequence.puml
+
+Installation
+------------
+
+TBD
+
+Usage
+-----
+
+.. code-block:: html
+
+    <template>
+      <div>
+        <synop-form api="https://api.opencdms.org" path="/processes/submit_synop/execution"/>
+      </div>
+    </template>
+
+    <script>
+    import SynopForm from '@/web-components/forms/synop-raw.vue';
+
+    export default {
+      name: 'synop',
+      components: {
+        SynopForm
+      },
+    };
+    </script>
+
+Requirements
+------------
+
+Vue3 + Vuetify3

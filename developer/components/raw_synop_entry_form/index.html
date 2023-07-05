@@ -302,6 +302,35 @@ document.write(`
 <img alt="https://www.plantuml.com/plantuml/svg/bPF1Ri8m38RlUGfh5xO3uyvX0kqof6rKWqxY658N8jAaSv8XfZtyahQmmWfYFLIgyzd-O_yTMSV9-KAntjgvqWu7Wr9n7IFtmXG3YnyUjS1-9lcAUC7OT6cHFf6W_m3fP0ZFPYKrKEIiO-aanc_6tgsXvcw6yCwLpBX3K95bHwUdPMnfj4N6bMj2rWk1rkPUCGZFQVl3jr1IR2pC5g_J150xsa79Lw6dr9igirFQunh51cGEFeI0XpD3yWkpAgDJwDjUOYIYpF5nKjsc9ZD9A1muyqTM2ztV82ReBAZePC_UEt185XR82QGEhN93nLKfBqQ7w_qlX_YsqRVqIg4B2xgoGBEVdlNBGhfUQm3Z971Fyta2oNGsRygNVASChqSQW0ENa8bsE4_LatUUAZTvvJf7dPQL8Ik71FbsRROD3hUDuxwHoD1TbOxA8gJwn1yNTkXRxEyImnchIjNMphbKdYvwGRN1kb0iCWgl-DF-00==" src="https://www.plantuml.com/plantuml/svg/bPF1Ri8m38RlUGfh5xO3uyvX0kqof6rKWqxY658N8jAaSv8XfZtyahQmmWfYFLIgyzd-O_yTMSV9-KAntjgvqWu7Wr9n7IFtmXG3YnyUjS1-9lcAUC7OT6cHFf6W_m3fP0ZFPYKrKEIiO-aanc_6tgsXvcw6yCwLpBX3K95bHwUdPMnfj4N6bMj2rWk1rkPUCGZFQVl3jr1IR2pC5g_J150xsa79Lw6dr9igirFQunh51cGEFeI0XpD3yWkpAgDJwDjUOYIYpF5nKjsc9ZD9A1muyqTM2ztV82ReBAZePC_UEt185XR82QGEhN93nLKfBqQ7w_qlX_YsqRVqIg4B2xgoGBEVdlNBGhfUQm3Z971Fyta2oNGsRygNVASChqSQW0ENa8bsE4_LatUUAZTvvJf7dPQL8Ik71FbsRROD3hUDuxwHoD1TbOxA8gJwn1yNTkXRxEyImnchIjNMphbKdYvwGRN1kb0iCWgl-DF-00==" />
 </figure>
 </section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
+<p>TBD</p>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h2>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">synop-form</span> <span class="na">api</span><span class="o">=</span><span class="s">&quot;https://api.opencdms.org&quot;</span> <span class="na">path</span><span class="o">=</span><span class="s">&quot;/processes/submit_synop/execution&quot;</span><span class="p">/&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">SynopForm</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@/web-components/forms/synop-raw.vue&#39;</span><span class="p">;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;synop&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">components</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">SynopForm</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="p">};</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">#</a></h2>
+<p>Vue3 + Vuetify3</p>
+</section>
 </section>
 
 
@@ -334,6 +363,9 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#context">Context</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
 </ul>
   </nav></div>
 
