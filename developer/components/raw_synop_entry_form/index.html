@@ -295,6 +295,8 @@ document.write(`
                   
   <section id="raw-fm-12-synop-entry-form">
 <h1>Raw FM-12 SYNOP entry form<a class="headerlink" href="#raw-fm-12-synop-entry-form" title="Permalink to this headline">#</a></h1>
+<p>This component allows a user to enter one or more FM-12 SYNOP messages into a form and to submit these to an
+API endpoint for further processing. The API is specified via the components props.</p>
 <section id="context">
 <h2>Context<a class="headerlink" href="#context" title="Permalink to this headline">#</a></h2>
 <p>The sequence diagram below shows the context of the “Raw FM-12 SYNOP entry from” component.</p>
@@ -302,12 +304,25 @@ document.write(`
 <img alt="https://www.plantuml.com/plantuml/svg/bPF1Ri8m38RlUGfh5xO3uyvX0kqof6rKWqxY658N8jAaSv8XfZtyahQmmWfYFLIgyzd-O_yTMSV9-KAntjgvqWu7Wr9n7IFtmXG3YnyUjS1-9lcAUC7OT6cHFf6W_m3fP0ZFPYKrKEIiO-aanc_6tgsXvcw6yCwLpBX3K95bHwUdPMnfj4N6bMj2rWk1rkPUCGZFQVl3jr1IR2pC5g_J150xsa79Lw6dr9igirFQunh51cGEFeI0XpD3yWkpAgDJwDjUOYIYpF5nKjsc9ZD9A1muyqTM2ztV82ReBAZePC_UEt185XR82QGEhN93nLKfBqQ7w_qlX_YsqRVqIg4B2xgoGBEVdlNBGhfUQm3Z971Fyta2oNGsRygNVASChqSQW0ENa8bsE4_LatUUAZTvvJf7dPQL8Ik71FbsRROD3hUDuxwHoD1TbOxA8gJwn1yNTkXRxEyImnchIjNMphbKdYvwGRN1kb0iCWgl-DF-00==" src="https://www.plantuml.com/plantuml/svg/bPF1Ri8m38RlUGfh5xO3uyvX0kqof6rKWqxY658N8jAaSv8XfZtyahQmmWfYFLIgyzd-O_yTMSV9-KAntjgvqWu7Wr9n7IFtmXG3YnyUjS1-9lcAUC7OT6cHFf6W_m3fP0ZFPYKrKEIiO-aanc_6tgsXvcw6yCwLpBX3K95bHwUdPMnfj4N6bMj2rWk1rkPUCGZFQVl3jr1IR2pC5g_J150xsa79Lw6dr9igirFQunh51cGEFeI0XpD3yWkpAgDJwDjUOYIYpF5nKjsc9ZD9A1muyqTM2ztV82ReBAZePC_UEt185XR82QGEhN93nLKfBqQ7w_qlX_YsqRVqIg4B2xgoGBEVdlNBGhfUQm3Z971Fyta2oNGsRygNVASChqSQW0ENa8bsE4_LatUUAZTvvJf7dPQL8Ik71FbsRROD3hUDuxwHoD1TbOxA8gJwn1yNTkXRxEyImnchIjNMphbKdYvwGRN1kb0iCWgl-DF-00==" />
 </figure>
 </section>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">#</a></h2>
+<p>Vue3 + Vuetify3</p>
+</section>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
 <p>TBD</p>
 </section>
 <section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h2>
+<section id="props">
+<h3>Props<a class="headerlink" href="#props" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>api</p></li>
+<li><p>path</p></li>
+</ul>
+</section>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">synop-form</span> <span class="na">api</span><span class="o">=</span><span class="s">&quot;https://api.opencdms.org&quot;</span> <span class="na">path</span><span class="o">=</span><span class="s">&quot;/processes/submit_synop/execution&quot;</span><span class="p">/&gt;</span>
@@ -327,9 +342,6 @@ document.write(`
 </pre></div>
 </div>
 </section>
-<section id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">#</a></h2>
-<p>Vue3 + Vuetify3</p>
 </section>
 </section>
 
@@ -363,9 +375,13 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#context">Context</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#props">Props</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
