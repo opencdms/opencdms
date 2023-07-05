@@ -1,0 +1,4 @@
+Raw FM-12 SYNOP entry form
+==========================
+
+.. plantuml:: ./sequence.puml
