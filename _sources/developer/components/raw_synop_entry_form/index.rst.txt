@@ -1,4 +1,9 @@
 Raw FM-12 SYNOP entry form
 ==========================
 
+Context
+-------
+
+The sequence diagram below shows the context of the "Raw FM-12 SYNOP entry from" component.
+
 .. plantuml:: ./sequence.puml
