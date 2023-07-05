@@ -52,4 +52,7 @@ Example
     };
     </script>
 
+API prototype
+-------------
 
+.. openapi:: openapi.yml
