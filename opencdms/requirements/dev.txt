@@ -1,9 +1,9 @@
 black
 flake8
 tox
-Sphinx
-sphinxcontrib-mermaid
-sphinx-mdinclude
+#Sphinx
+#sphinxcontrib-mermaid
+#sphinx-mdinclude
 twine
 pytest
 opencdms-test-databases

@@ -1,0 +1,145 @@
+{
+    "/static/<path:filename>": {
+      "_comment": "Additional route not defined in openapi doc",
+      "superuser": ["GET"],
+      "anonymous": ["GET"]
+    },
+    "/login": {
+      "_comment": "Additional route defined by AUTH blueprint",
+      "superuser": ["POST"],
+      "anonymous": ["POST"]
+    },
+    "/vocabularies": {
+      "_comment": "Additional route defined in custom flask_app",
+      "anonymous": ["GET"]
+    },
+    "/vocabularies/<path:vocab_id>": {
+      "_comment": "Additional route defined in custom flask_app",
+      "anonymous": ["GET"]
+    },
+
+
+    "/schemas/<path:path>": {
+      "anonymous": ["GET"]
+    },
+    "/": {
+      "anonymous": ["GET"]
+    },
+    "/openapi": {
+      "anonymous": ["GET"]
+    },
+    "/conformance": {
+      "anonymous": ["GET"]
+    },
+    "/collections": {
+      "anonymous": ["GET"]
+    },
+    "/collections/<path:collection_id>": {
+      "anonymous": ["GET"]
+    },
+    "/collections/<path:collection_id>/queryables": {
+      "anonymous": ["GET"]
+    },
+    "/collections/<path:collection_id>/items": {
+      "superuser": ["GET", "POST", "OPTIONS"],
+      "anonymous": ["GET"],
+      "admin": ["GET", "POST", "OPTIONS"]
+    },
+    "/collections/<path:collection_id>/items/<path:item_id>": {
+      "superuser": ["GET", "PUT", "DELETE", "OPTIONS"],
+      "admin": ["GET", "PUT", "DELETE", "OPTIONS"]
+    },
+    "/collections/<path:collection_id>/coverage": {
+      "anonymous": ["GET"]
+    },
+    "/collections/<path:collection_id>/coverage/domainset": {
+      "anonymous": ["GET"]
+    },
+    "/collections/<path:collection_id>/coverage/rangetype": {
+      "anonymous": ["GET"]
+    },
+    "/collections/<path:collection_id>/tiles": {
+      "anonymous": ["GET"]
+    },
+    "/collections/<path:collection_id>/tiles/<tileMatrixSetId>": {
+      "anonymous": ["GET"]
+    },
+    "/collections/<path:collection_id>/tiles/<tileMatrixSetId>/metadata": {
+      "anonymous": ["GET"]
+    },
+    "/collections/<path:collection_id>/tiles/<tileMatrixSetId>/<tileMatrix>/<tileRow>/<tileCol>": {
+      "anonymous": ["GET"]
+    },
+    "/collections/<collection_id>/map": {
+      "anonymous": ["GET"]
+    },
+    "/collections/<collection_id>/styles/<style_id>/map": {
+      "anonymous": ["GET"]
+    },
+    "/processes": {
+      "anonymous": ["GET"]
+    },
+    "/processes/<process_id>": {
+      "anonymous": ["GET"]
+    },
+    "/jobs": {
+      "anonymous": ["GET"]
+    },
+    "/jobs/<job_id>": {
+      "superuser": ["GET", "DELETE"],
+      "anonymous": ["GET"],
+      "admin": ["GET", "DELETE"]
+    },
+    "/processes/<process_id>/execution": {
+      "superuser": ["POST"],
+      "admin": ["POST"]
+    },
+    "/jobs/<job_id>/results": {
+      "anonymous": ["GET"]
+    },
+    "/jobs/<job_id>/results/<resource>":{
+      "anonymous": ["GET"]
+    },
+    "/collections/<path:collection_id>/position": {
+      "anonymous": ["GET"]
+    },
+    "/collections/<path:collection_id>/area": {
+      "anonymous": ["GET"]
+    },
+    "/collections/<path:collection_id>/cube": {
+      "anonymous": ["GET"]
+    },
+    "/collections/<path:collection_id>/radius": {
+      "anonymous": ["GET"]
+    },
+    "/collections/<path:collection_id>/trajectory": {
+      "anonymous": ["GET"]
+    },
+    "/collections/<path:collection_id>/corridor": {
+      "anonymous": ["GET"]
+    },
+    "/collections/<path:collection_id>/instances/<instance_id>/position": {
+      "anonymous": ["GET"]
+    },
+    "/collections/<path:collection_id>/instances/<instance_id>/area": {
+      "anonymous": ["GET"]
+    },
+    "/collections/<path:collection_id>/instances/<instance_id>/cube": {
+      "anonymous": ["GET"]
+    },
+    "/collections/<path:collection_id>/instances/<instance_id>/radius": {
+      "anonymous": ["GET"]
+    },
+    "/collections/<path:collection_id>/instances/<instance_id>/trajectory": {
+      "anonymous": ["GET"]
+    },
+    "/collections/<path:collection_id>/instances/<instance_id>/corridor": {
+      "anonymous": ["GET"]
+    },
+    "/stac": {
+      "anonymous": ["GET"]
+    },
+    "/stac/<path:path>": {
+      "anonymous": ["GET"]
+    }
+  }

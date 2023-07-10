@@ -1,3 +1,8 @@
+
+export PYGEOAPI_CONFIG=pygeoapi-config.yml
+export PYGEOAPI_OPENAPI=openapi-config.yml
+pygeoapi openapi generate $PYGEOAPI_CONFIG --output-file $PYGEOAPI_OPENAPI
+
 After generating openapi-config.yml (using `opencdms api openapi generate` or
 `pygeoapi openapi generate`) we are currently adding the following lines to
 openapi-config.yml manually:

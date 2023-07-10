@@ -39,6 +39,9 @@ from flask import Flask, Blueprint, make_response, request, send_from_directory
 
 # from pygeoapi.api import API  ##
 from opencdms.api.api_extended import APIExtended as API  ##
+from opencdms.api.auth import opencdms_auth ##
+from flask import render_template_string ##
+
 from pygeoapi.util import get_mimetype, yaml_load, get_api_rules
 
 
@@ -56,6 +59,7 @@ if 'templates' in CONFIG['server']:
 
 APP = Flask(__name__, static_folder=STATIC_FOLDER, static_url_path='/static')
 APP.url_map.strict_slashes = API_RULES.strict_slashes
+
 
 BLUEPRINT = Blueprint(
     'pygeoapi',
@@ -105,13 +109,17 @@ if (OGC_SCHEMAS_LOCATION is not None and
         return send_from_directory(path_, basename_,
                                    mimetype=get_mimetype(basename_))
 
+## begin opencdms additions ##
 
-def get_response(result: tuple):
+## modified to accept context dictionary    ### replace with original
+def get_response(result: tuple, context: dict = None):
     """
     Creates a Flask Response object and updates matching headers.
 
     :param result: The result of the API call.
                    This should be a tuple of (headers, status, content).
+    :param context: An optional dictionary containing context variables
+                    to be included in the content if it is HTML.
 
     :returns: A Response instance.
     """
@@ -124,6 +132,23 @@ def get_response(result: tuple):
     return response
 
 
+opencdms_auth(APP)
+
+@BLUEPRINT.route("/login", methods=["POST"])
+def login():
+    return get_response(api_.landing_page(request), {'message': 'hello'})
+    username = request.json.get("username", None)
+    password = request.json.get("password", None)
+    if username != "superuser" or password != "superuser":
+        return get_response(api_.landing_page(request))
+        #return render_template("index.html", message="Login failed")
+
+    access_token = create_access_token(identity=username)
+    return jsonify(access_token=access_token)
+
+## end opencdms additions ##
+
+
 @BLUEPRINT.route('/')
 def landing_page():
     """
@@ -131,6 +156,7 @@ def landing_page():
 
     :returns: HTTP response
     """
+    return get_response(api_.landing_page(request, {'message': 'hello'}))
     return get_response(api_.landing_page(request))
 
 
@@ -511,6 +537,9 @@ def stac_catalog_path(path):
 
 
 APP.register_blueprint(BLUEPRINT)
+
+##opencdms addition
+###APP.register_blueprint(AUTH_BLUEPRINT)
 
 
 @click.command()

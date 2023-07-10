@@ -63,7 +63,8 @@ services:
   # You can also update the containers install of the opencdms package to
   # use your locally copy with `docker exec -it opencdms-api bash` and
   # cd /local/app/ && pip3 uninstall opencdms && pip3 install -e opencdms
-  # opencdms install
+  # opencdms install  # installs dependencies (then restart the container)
+  # If you rebuild the container then you'll be using the original version
   api:
     container_name: opencdms-api
     build:

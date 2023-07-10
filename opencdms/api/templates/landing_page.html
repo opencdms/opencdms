@@ -94,6 +94,56 @@
   </section>
   </div>
   <div class="col-md-4 col-sm-12">
+
+
+
+
+    <!-- ##OpenCDMS additions for auth## -->
+    <div class="card mb-3">
+      <div class="card-header">
+        <h5 class="card-title">{% trans %}Login{% endtrans %}</h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="mb-3">
+              <label for="username" class="form-label"><b>{% trans %}Username{% endtrans %}</b></label>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="mb-3">
+              <input type="text" class="form-control" id="username">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="mb-3">
+              <label for="password" class="form-label"><b>{% trans %}Password{% endtrans %}</b></label>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="mb-3">
+              <input type="password" class="form-control" id="password">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 text-end">
+              <button type="submit" class="btn btn-primary btn-lg">{% trans %}Login{% endtrans %}</button>
+            </div>
+            <div class="col-md-8 text-end">
+              <div class="mb-3">
+                <a href="#" class="forgot-password-link" disabled>Forgot password? {{ message }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
     <div class="card mb-3">
       <div class="card-header">
        <b>{% trans %}Provider{% endtrans %}</b>
