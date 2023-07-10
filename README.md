@@ -4,6 +4,14 @@
 
 This repository contains, in a single place, everything that is needed to install the OpenCDMS software and also includes the source of the documentation that is published at [docs.opencdms.org](https://docs.opencdms.org).
 
+## Installation
+
+If you want to install OpenCDMS for production use, please see the instructions at https://docs.opencdms.org/administrator.
+
+To set up containers see install/docker-compose.yaml
+
+If you are just interested in working with the OpenCDMS Python package locally then follow the instructions below.
+
 ```
 # First use pip to install the `opencdms` command line tool
 pip install opencdms
@@ -25,6 +33,7 @@ source ./venv/bin/activate
 
 To obtain the latest version of the software, clone the repository directly from GitHub:
 ```
+pip uninstall opencdms
 git clone https://github.com/opencdms/opencdms.git
 pip install -e opencdms
 opencdms install
