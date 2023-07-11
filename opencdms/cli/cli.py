@@ -1,5 +1,6 @@
 """Implementation of console script for opencdms."""
 import os
+import pkgutil
 import click
 
 
@@ -85,11 +86,17 @@ try:
 except (ImportError, ModuleNotFoundError):
     uninstalled_packages.append('install')
 
-try:
+if pkgutil.find_loader('pygeoapi'):
     from opencdms.cli.api import api
     main.add_command(api)
-except (ImportError, ModuleNotFoundError):
+else:
     uninstalled_packages.append('api')
+
+try:
+    from opencdms.cli.notebook import notebook
+    main.add_command(notebook)
+except (ImportError, ModuleNotFoundError):
+    uninstalled_packages.append('notebook')
 
 try:
     from opencdms.cli.test import test

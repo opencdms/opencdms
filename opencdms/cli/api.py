@@ -27,18 +27,23 @@ curl http://localhost:5000  # or open in a web browser
 """
 import click
 
-from pygeoapi.config import config
-from pygeoapi.openapi import openapi
-
-from opencdms.api.flask_app import serve
-
 
 @click.group(invoke_without_command=True)
 @click.pass_context
 def api(context) -> None:
     pass
 
+try:
+    from pygeoapi.config import config
+    from pygeoapi.openapi import openapi
+    from opencdms.api.flask_app import serve
 
-api.add_command(config)
-api.add_command(openapi)
-api.add_command(serve)
+    api.add_command(config)
+    api.add_command(openapi)
+    api.add_command(serve)
+except RuntimeError as error:
+    # pygeoapi won't import if environment variables aren't set. If this
+    # is the case we won't be able to add commands, but we need execution
+    # of the cli to continue even if this import failed
+    # TODO: log error
+    print(error)
