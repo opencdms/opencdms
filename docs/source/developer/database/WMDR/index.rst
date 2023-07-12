@@ -80,7 +80,9 @@ WIGOS Metadata Standard
 - Equipment log
     - log
 
+
 Data types
+
 - Header
     - file date time - DateTime
     - record owner - CI_ResponsibleParty
