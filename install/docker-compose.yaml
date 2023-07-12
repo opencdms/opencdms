@@ -100,10 +100,10 @@ services:
     ports:
       - 80:80
       - 443:443
-#    volumes:
-#      - /etc/letsencrypt/live/:/etc/letsencrypt/live/
+    volumes:
+      - /etc/letsencrypt/live/:/etc/letsencrypt/live/
     environment:
-      CERTBOT_CONFIG: "-d blue.opencdms.org"
+      CERTBOT_CONFIG: "-d green.opencdms.org"
     depends_on:
       - api
     command: nginx_startup.sh
