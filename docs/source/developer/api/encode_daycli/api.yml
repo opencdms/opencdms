@@ -1,0 +1,248 @@
+openapi: "3.1.0"
+info:
+    title: "DAYCLI BUFR encoder"
+    version: "0.0.1"
+paths:
+  /processes/daycli-encoder/execution:
+    post:
+      description: Process to convert DAYCLI data to BUFR
+      requestBody:
+        content:
+          application/json:
+            schema:
+                $ref: '#/components/schemas/daycliFeature'
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/success'
+      summary: Process daycli-encoder execution
+
+components:
+    schemas:
+        daycliFeature:
+            type: object
+            properties:
+                type:
+                    type: string
+                    enum: [ Feature ]
+                    description: Feature
+                geometry:
+                    type: object
+                    properties:
+                        type:
+                          type: string
+                          enum: ["Point"]
+                          description: Type of feature (Point).
+                        coordinates:
+                          type: array
+                          minItems: 2
+                          maxItems: 2
+                          items:
+                            type: number
+                            description: The coordinates of the feature. (required)
+                    required:
+                    - type
+                    - coordinates
+                properties:
+                    type: object
+                    properties:
+                        metadata:
+                            type: object
+                            properties:
+                                data_identification:
+                                    type: object
+                                    properties:
+                                        originating_centre:
+                                            type: integer
+                                            description: The originating centre of the data. See Common Code Table C-11.
+                                        originating_subcentre:
+                                            type: integer
+                                            description: The originating sub-centre of the data. See Common Code Table C-12.
+                                station_identification:
+                                    type: object
+                                    properties:
+                                        wigos_identifier:
+                                            type: string
+                                            description: The WIGOS identifier assigned to the station, e.g. '0-20000-0-AQBC'.
+                                station_location:
+                                    type: object
+                                    properties:
+                                        station_height_above_sea_level:
+                                            type: number
+                                            description: Height (meters) of the station ground above mean sea level.
+                                        thermometer_height_above_local_ground:
+                                            type: number
+                                            description: Height (meters) of the thermometer above local ground.
+                                        latitude:
+                                            type: number
+                                            description: Latitude (degrees N) of the station, -90 to 90.
+                                        longitude:
+                                            type: number
+                                            description: Longitude (degrees E) of the station, -180 to 180.
+                                observing_practices:
+                                    type: object
+                                    properties:
+                                        minimum_temperature_day_offset:
+                                            type: integer
+                                            description: |
+                                                Offset in days relative to nominal reporting day for the start of
+                                                the minimum temperature observation (-1 or 0).
+                                        maximum_temperature_day_offset:
+                                            type: integer
+                                            description: |
+                                                Offset in days relative to nominal reporting day for the start of
+                                                the maximum temperature observation (-1 or 0).
+                                        mean_temperature_day_offset:
+                                            type: integer
+                                            description: |
+                                                Offset in days relative to nominal reporting day for the start of
+                                                the mean temperature observation (-1 or 0).
+                                        total_precipitation_day_offset:
+                                            type: integer
+                                            description: |
+                                                Offset in days relative to nominal reporting day for the start of
+                                                the total precipitation observation (-1 or 0).
+                                        total_snow_depth_day_offset:
+                                            type: integer
+                                            description: |
+                                                Offset in days relative to nominal reporting day for the start of
+                                                the total snow depth observation (-1 or 0).
+                                        fresh_snow_depth_day_offset:
+                                            type: integer
+                                            description: |
+                                                Offset in days relative to nominal reporting day for the start of
+                                                the fresh snow depth observation (-1 or 0).
+                                        minimum_temperature_start_time:
+                                            type: string
+                                            format: time
+                                            description: |
+                                                Start time (UTC) of the 24 hour period over which the minimum temperature
+                                                is observed.
+                                        maximum_temperature_start_time:
+                                            type: string
+                                            format: time
+                                            description: |
+                                                Start time (UTC) of the 24 hour period over which the maximum temperature
+                                                is observed.
+                                        mean_temperature_start_time:
+                                            type: string
+                                            format: time
+                                            description: |
+                                                Start time (UTC) of the 24 hour period over which the mean temperature
+                                                is observed.
+                                        total_precipitation_start_time:
+                                            type: string
+                                            format: time
+                                            description: |
+                                                Start time (UTC) of the 24 hour period over which the total precipitation
+                                                is observed.
+                                        total_snow_depth_start_time:
+                                            type: string
+                                            format: time
+                                            description: |
+                                                Start time (UTC) of the 24 hour period over which the total snow depth
+                                                is observed.
+                                        fresh_snow_depth_start_time:
+                                            type: string
+                                            format: time
+                                            description: |
+                                                Start time (UTC) of the 24 hour period over which the fresh snow depth
+                                                is observed.
+                                        method_of_calculating_mean_temperature:
+                                            type: integer
+                                            description: Method used to calculate daily average temperature.
+                                measurement_quality:
+                                    type: object
+                                    properties:
+                                        thermometer_siting_classification:
+                                            type: integer
+                                            description: Sensor siting classification (see WMO-no. 8).
+                                        thermometer_measurement_quality:
+                                            type: integer
+                                            description: Sensor measurement quality classification (see WMO-no. 8).
+                                        rain_gauge_siting_classification:
+                                            type: integer
+                                            description: Sensor siting classification (see WMO-no. 8).
+                                        rain_gauge_measurement_quality:
+                                            type: integer
+                                            description: Sensor measurement quality classification (see WMO-no. 8).
+                        data:
+                            type: array
+                            items:
+                                $ref: '#/components/schemas/obs'
+        obs:
+            type: object
+            properties:
+                nominal_reporting_day:
+                    type: string
+                    format: date
+                    description: Nominal reporting day (UTC) for the DAYCLI report.
+                total_accumulated_precipitation_flag:
+                    type: integer
+                    description: |
+                        Quality control flag for total accumulated precipitation.
+                        See BUFR Code Table 0 31 021, code figure 5.
+                total_accumulated_precipitation:
+                    type: number
+                    description: |
+                        Total accumulated precipitation (kg m-2) over indicated 24 hour period.
+                fresh_snow_depth_flag:
+                    type: integer
+                    description: |
+                        Quality control flag for fresh snow depth. See BUFR Code Table 0 31 021.
+                        See BUFR Code Table 0 31 021, code figure 5.
+                fresh_snow_depth:
+                    type: number
+                    description: Fresh snow accumulation (m) over the indicated 24 hour period.
+                total_snow_depth_flag:
+                    type: integer
+                    description: |
+                        Quality control flag for total snow depth. See BUFR Code Table 0 31 021.
+                        See BUFR Code Table 0 31 021, code figure 5.
+                total_snow_depth:
+                    type: number
+                    description: Total snow depth (m).
+                minimum_temperature_flag:
+                    type: integer
+                    description: |
+                        Quality control flag for minimum temperature. See BUFR Code Table 0 31 021.
+                        See BUFR Code Table 0 31 021, code figure 5.
+                minimum_temperature:
+                    type: number
+                    description: Minimum temperature (degrees Celsius) observed over the indicated 24 hour period.
+                maximum_temperature_flag:
+                    type: integer
+                    description: |
+                        Quality control flag for maximum temperature. See BUFR Code Table 0 31 021.
+                        See BUFR Code Table 0 31 021, code figure 5.
+                maximum_temperature:
+                    type: number
+                    description: Maximum temperature (degrees Celsius) observed over the indicated 24 hour period.
+                mean_temperature_flag:
+                    type: integer
+                    description: |
+                        Quality control flag for mean temperature. See BUFR Code Table 0 31 021.
+                        See BUFR Code Table 0 31 021, code figure 5.
+                mean_temperature:
+                    type: number
+                    description: |
+                        Mean temperature (degrees Celsius) calculated over the indicated 24 hour period and using the
+                        method specified by the 'method_of_calculating_mean_temperature' flag.
+
+        success:
+            type: object
+            properties:
+                messages:
+                    type: array
+                    items:
+                        type: string
+                        description: BUFR encoding of input data, one day per message.
+                errors:
+                    type: array
+                    items:
+                        type: string
+                        description: Error log.
+

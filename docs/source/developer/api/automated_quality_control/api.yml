@@ -1,0 +1,131 @@
+openapi: "3.1.0"
+info:
+  title: "Automated quality control"
+  version: "0.0.1"
+paths:
+  /process/_ingest_auto_qc:
+    post:
+      summary: Data ingest automated QC
+      description: Runs automated quality control on one or more observations encoded as a GeoJSON FeatureCollection. Triggered after data ingested or manually.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/featureCollection'
+      responses:
+        200:
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/featureCollection'
+
+components:
+  schemas:
+    featureCollection:
+      type: object
+      properties:
+        type:
+          type: string
+          enum: [FeatureCollection]
+          description: FeatureCollection
+        features:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: Identifier for the observation
+              type:
+                type: string
+                enum: [Feature]
+                description: Feature
+              geometry:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    enum: ["Point"]
+                    description: Type of feature (Point)
+                  coordinates:
+                    type: array
+                    items:
+                      type: number
+                    description: The coordinates of the feature
+                    minItems: 2
+                    maxItems: 2
+                required:
+                  - type
+                  - coordinates
+              properties:
+                type: object
+                properties:
+                  elevation:
+                    type: number
+                    description: Elevation of observation above mean sea level (in meters)
+                  phenomenon_time:
+                    type: string
+                    format: date-time
+                    description: Observation time, either instant or start and end of observing period
+                  result:
+                    type: object
+                    properties:
+                      value:
+                        type: number
+                        description: The value of the result in float representation
+                      uom:
+                        type: string
+                        description: Units used to represent the value being observed
+                      description:
+                        type: string
+                        description: str representation of the result if applicable
+                    required:
+                      - value
+                      - uom
+                  result_quality:
+                    type: array
+                    description: JSON representation of the result quality, key / value pairs
+                    items:
+                      type: object
+                      properties:
+                        scheme:
+                          type: string
+                          description: Quality control scheme
+                        test:
+                          type: string
+                          description: Test applied
+                        result:
+                          type: string
+                          description: Textual representation of result
+                        flag:
+                          type: integer
+                          description: Flag
+                  host:
+                    type: string
+                    format: uri
+                    description: Host associated with making the observation, equivalent to OGC OMS 'host'
+                  observer:
+                    type: string
+                    format: uri
+                    description: Observer associated with making the observation, equivalent to OGC OMS 'observer'
+                  observed_property:
+                    type: string
+                    format: uri
+                    description: The phenomenon, or thing, being observed
+                required:
+                  - phenomenon_time
+                  - host
+                  - observer
+                  - observed_property
+                  - procedure
+                  - feature_of_interest
+            required:
+              - id
+              - type
+              - geometry
+              - properties
+          description: array of observations
+      required:
+        - type
+        - features

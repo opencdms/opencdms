@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+start
+    repeat :For each feature (observation)
+        repeat :For each test
+            if (Test configured for observation?) then (yes)
+                :Apply test;
+                :Copy result to result_quality[].result;
+                if (Test passed?) then (yes)
+                    :Set result_quality[].flag = 0 (passed);
+                else (no)
+                    :Set result_quality[].flag = 1 (failed);
+                endif
+            else (no)
+                :Set result_quality[].flag to 3 (Not available);
+            endif
+            :Insert / update flag into feature[].result_quality for feature;
+        repeat while
+    repeat while (More 'Features') is (yes) not (no)
+    :Return;
+end
+@enduml
