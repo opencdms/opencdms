@@ -1,7 +1,7 @@
 FROM nginx:latest
 
 RUN mv /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf.disabled
-COPY nginx.conf /etc/nginx/conf.d/api.opencdms.org.conf
+COPY *.conf /etc/nginx/conf.d/
 
 RUN apt update -y && apt upgrade -y
 
