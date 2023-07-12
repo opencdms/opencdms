@@ -1,6 +1,6 @@
 :orphan:
 
-.. include:: ../../AUTHORS.rst
+.. include:: ../../AUTHORS.md
 
 Credits
 =======

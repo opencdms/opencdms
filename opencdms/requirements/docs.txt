@@ -1,6 +1,7 @@
 pydata-sphinx-theme
-Sphinx==4.5.0
+Sphinx
 sphinx-copybutton==0.5.1
+sphinx-jsonschema
 sphinx-mdinclude
 sphinx-panels==0.6.0
 sphinx-plantuml
