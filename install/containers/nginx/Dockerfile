@@ -8,7 +8,7 @@ RUN apt update -y && apt upgrade -y
 # apt version of certbot is old. It's also difficult to run snap in
 # debian:11-slim because systemd is not running, therefore use pip
 RUN apt install python3 python3-pip -y
-RUN pip install --upgrade pip && pip install certbot
+RUN pip3 install --upgrade pip && pip3 install certbot
 
 # Create directory for SSL certificates
 RUN mkdir -p /etc/nginx/ssl
