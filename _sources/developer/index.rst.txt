@@ -28,7 +28,7 @@ Developer Documentation
         :classes: btn-outline-info btn-block
 
     ---
-    :img-top: ../_static/evaluation.png
+    :img-top: ../_static/structure.png
 
     Web components
     +++
@@ -48,7 +48,7 @@ Developer Documentation
         :classes: btn-outline-info btn-block
 
     ---
-    :img-top: ../_static/laboratory.png
+    :img-top: ../_static/publishing.png
 
     Events
     +++
@@ -60,11 +60,11 @@ Developer Documentation
     ---
     :img-top: ../_static/evidence.png
 
-    Documentation
+    Updating the docs
     +++
     .. link-button:: docs/index
         :type: ref
-        :text: Updating the docs
+        :text: Update docs
         :classes: btn-outline-info btn-block
 
 
