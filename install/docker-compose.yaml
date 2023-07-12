@@ -103,10 +103,17 @@ services:
 #    volumes:
 #      - /etc/letsencrypt/live/:/etc/letsencrypt/live/
     environment:
-      CERTBOT_CONFIG: "-d api.opencdms.org -d blue.opencdms.org --email info@opencdms.org"
+      CERTBOT_CONFIG: "-d blue.opencdms.org"
     depends_on:
       - api
     command: nginx_startup.sh
+
+  dbadmin:
+      image: dbeaver/cloudbeaver:latest
+      container_name: opencdms-dbadmin
+      restart: always
+      ports:
+       - 8978:8978
 
 #  opencdms-api:
 #  opencdms-ui:
