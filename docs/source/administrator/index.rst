@@ -26,6 +26,16 @@ Administrator Guide
         :text: Configuring
         :classes: btn-outline-info btn-block
 
+    ---
+    :img-top: ../_static/schedule.png
+
+    Scheduling
+    +++
+    .. link-button:: schedule/index
+        :type: ref
+        :text: Scheduling
+        :classes: btn-outline-info btn-block
+
 
 .. toctree::
    :caption: Installation
@@ -43,3 +53,12 @@ Administrator Guide
    :hidden:
 
    config/index
+
+
+.. toctree::
+   :caption: Scheduling
+   :maxdepth: 1
+   :name: schedule_index
+   :hidden:
+
+   schedule/index
