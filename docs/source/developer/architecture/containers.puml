@@ -1,0 +1,57 @@
+@startuml LAYOUT_LEFT_RIGHT "OpenCDMS"
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+
+LAYOUT_LEFT_RIGHT()
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons2
+!define MDICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/material
+!define WXICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/weather
+!define OPENCDMSICONS https://raw.githubusercontent.com/opencdms/opencdms/main/docs/source/_static/sprites
+
+!include DEVICONS/vuejs.puml
+!include DEVICONS/postgresql.puml
+
+!include MDICONS/access_time.puml
+!include MDICONS/folder.puml
+!include MDICONS/cloud_queue.puml
+
+!include OPENCDMSICONS/wxaws.puml
+!include OPENCDMSICONS/pygeoapi.puml
+!include OPENCDMSICONS/opencdms.puml
+
+'LAYOUT_WITH_LEGEND()
+
+Container(opencdms, "opencdms-app", "vuejs", "The main interface that the climatologist interacts with", $sprite="vuejs")
+ContainerDb(cdm, "Datastore", "timescaleDB", "Backend database to store observations and metadata", $sprite="postgresql")
+Container(api, "opencdms-api", "pygeoapi/python","Provides OGC-APIs",$sprite="pygeoapi")
+ContainerQueue(tasks,"Message broker","mosquitto","Message queue", $sprite="cloud_queue")
+ContainerDb(fs,"File bucket","Minio","Staging area for incoming data from sensors and bulk uploads. Provision of data files for external services (e.g. WIS2.0)",$sprite="folder")
+Container(manager,"pyopencdms","python","Backend manager: manages tasks from queue and scheduler",$sprite="opencdms")
+Person(clim,"Climatologist")
+Person_Ext(w2user,"WIS2.0 user","Person or machine")
+Container(wxaws,"Automatic weather station","","Automatic weather station plus data logger (managed within the CDMS)", $sprite="wxaws")
+Container_Ext(gb,"Global broker (WIS2.0)","","WIS2.0 global broker", )
+Container_Ext(gc,"Global cache (WIS2.0)","","WIS2.0 global cache", )
+
+'ContainerDb_Ext(climsoft, "MCH", "", "External CDMS database",)
+
+Rel("clim","opencdms","Uses","HTTPS")
+Rel("api","cdm","Gets data from and sends data to", "SQL")
+Rel("opencdms","api","Makes API calls to","JSON/HTTPS")
+Rel("api","fs","Reads from / writes data to")
+Rel("fs","tasks","Sends notifications to","MQTTS")
+Rel("wxaws","fs","Sends/writes data to","")
+Rel("manager","api","Sends processes to","JSON/HTTPS")
+Rel("manager","tasks","Subscribes to","MQTTS")
+Rel("gc","gb","Subscribes to","MQTTS",)
+Rel("api","tasks","Publishes data / metadata to", "MQTTS")
+Rel("gb","tasks","Subscribes to","MQTTS",)
+Rel("gc","fs","Requests data from","JSON/HTTPS",)
+'Rel("api","climsoft","Gets data from and sends data to", "SQL")
+Rel("w2user","gb","Subscribes to", "MQTTS")
+Rel("w2user","gc","Downloads data from", "HTTPS")
+Rel("opencdms","tasks","Sends events to\nReceives events from","MQTTS")
+Rel("api","wxaws","Gets data from","FTP(S)")
+@enduml

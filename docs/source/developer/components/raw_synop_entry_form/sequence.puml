@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+Observer -> UI: Login request
+UI -> "Auth server": Validate login
+"Auth server" -> UI: Login response
+alt Login successful
+    Observer -> UI: Observer clicks SYNOP entry page link
+    UI -> "Auth server": Check if user authorized
+    "Auth server" -> UI: Response
+    alt Authorized
+    UI -> UI: Redirect to SYNOP entry page
+    UI -> Observer: Render SYNOP entry page
+    Observer -> UI: Observer enters Year into form
+    Observer -> UI: Observer enters Month into form
+    Observer -> UI: Observer enters raw SYNOP bulletin into form
+    Observer -> UI: Observer clicks 'submit'
+    UI -> API: HTTP POST SYNOP payload\n url: {api} + {path}\n contentType: application/json
+    API -> API: Process SYNOP payload
+    API -> UI: Return result
+    UI -> Observer: Update page to show result (success|error)
+    else Unauthorized
+        UI -> Observer: Render unauthorized page
+    end
+else Login failure
+    UI -> Observer: Render login failure page
+end
+@enduml

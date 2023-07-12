@@ -1,0 +1,59 @@
+openapi: "3.1.0"
+info:
+  title: "Prototype API"
+  version: "0.0.1"
+paths:
+  /raw_synop_entry_form:
+    post:
+      summary: Definition of API that accepts POST request from this component
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/synop_payload'
+      responses:
+        200:
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response'
+
+components:
+  schemas:
+    synop_payload:
+      type: object
+      properties:
+          input:
+              type: object
+              properties:
+                  year:
+                      type: numeric
+                      description: Year (UTC) of the SYNOP data
+                  month:
+                      type: numeric
+                      description: Month (UTC) of the SYNOP data
+                  bulletin:
+                      type: string
+                      description: String containing the SYNOP bulletin
+              required:
+                  - year
+                  - month
+                  - bulletin
+      required:
+          - input
+    response:
+        type: object
+        properties:
+            output:
+                type: object
+                properties:
+                    result:
+                        type: numeric
+                        description: HTTP response code for the API call
+                    errors:
+                        type: array
+                        items:
+                            type: string
+                            description: One or more error messages raised in the case of error.
+

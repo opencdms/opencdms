@@ -55,7 +55,11 @@ extensions = [
     'sphinx_copybutton',
     "sphinx_mdinclude",
     'sphinx_panels',
+    'sphinxcontrib.openapi',
+    'sphinx-jsonschema'
 ]
+
+openapi_default_renderer = 'httpdomain'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
