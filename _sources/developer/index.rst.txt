@@ -69,18 +69,54 @@ Developer Documentation
 
 
 .. toctree::
-   :caption: Developer Guide
+   :caption: Architecture
    :maxdepth: 1
-   :name: developerguide_index
+   :name: architecture_index
    :hidden:
 
-   devguide/index
+   architecture/index
+
+
+.. toctree::
+   :caption: Data models
+   :maxdepth: 1
+   :name: database_index
+   :hidden:
+
+   database/index
+
+
+.. toctree::
+   :caption: Web components
+   :maxdepth: 1
+   :name: components_index
+   :hidden:
+
+   components/index
 
 
 .. toctree::
    :caption: API Documentation
    :maxdepth: 1
-   :name: apidocs_index
+   :name: api_index
    :hidden:
 
-   apidocs/index
+   api/index
+
+
+.. toctree::
+   :caption: Events
+   :maxdepth: 1
+   :name: events_index
+   :hidden:
+
+   events/index
+
+
+.. toctree::
+   :caption: Documentation
+   :maxdepth: 1
+   :name: docs_index
+   :hidden:
+
+   docs/index

@@ -17,7 +17,7 @@ OpenCDMS database and API
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: shell
-
+    
     git clone https://github.com/opencdms/opencdms
     cd opencdms/install
 
@@ -34,14 +34,18 @@ Build database
 .. code-block:: shell
 
     # Build database from api container
-    docker exec -it opencdms-api bash
-
-    cd /local/app/opencdms/install
+    docker exec -it opencdms-api /bin/sh
+    bash
+    
+    cd /local/app/
     git clone https://github.com/opencdms/opencdms-test-data
-
-    # build_db.py is currently expecting CDM data to be in /local/app/data/
-    ln -s /local/app/opencdms/install/opencdms-test-data/data/cdm /local/app/data
-
+    
+    # build_db.py is currrently expecting CDM data to be in ./data
+    ln -s /local/app/opencdms-test-data/data/cdm data
+    
+    # Remove station/host metadata for Malawi
+    sed -i 's/, "host_mwi.csv"//g' build_db.py
+    
     python3 build_db.py
 
 
@@ -49,7 +53,7 @@ Install OpenCDMS App
 ~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: shell
-
+    
     git clone https://github.com/opencdms/opencdms-app
     docker compose up app --detach
 

@@ -31,8 +31,8 @@
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -48,6 +48,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'developer/api/encode_daycli/index';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="../../events/index.html" />
+    <link rel="prev" title="Automated quality control" href="../automated_quality_control/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -143,7 +145,7 @@
                     </li>
                 
 
-                    <li class="nav-item">
+                    <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../../index.html">
                         Developer Documentation
                       </a>
@@ -197,7 +199,7 @@ document.write(`
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -229,7 +231,7 @@ document.write(`
                     </li>
                 
 
-                    <li class="nav-item">
+                    <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../../index.html">
                         Developer Documentation
                       </a>
@@ -243,6 +245,40 @@ document.write(`
     
     
   </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Architecture</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../architecture/index.html">OpenCDMS Architecture</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Web components</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../components/index.html">OpenCDMS Web Components</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../components/raw_synop_entry_form/index.html">Raw FM-12 SYNOP entry form</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">OpenCDMS API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../automated_quality_control/index.html">Automated quality control</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">DAYCLI BUFR encoder</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../docs/index.html">Updating the docs</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
@@ -276,6 +312,12 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Developer Documentation</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">OpenCDMS API</a></li>
+    
     <li class="breadcrumb-item active" aria-current="page">DAYCLI BUFR encoder</li>
   </ul>
 </nav>
@@ -304,84 +346,6 @@ document.write(`
 <dd><p><strong>Process daycli-encoder execution</strong></p>
 <p>Process to convert DAYCLI data to BUFR</p>
 <dl class="field-list simple">
-<dt class="field-odd">Request JSON Object</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>type</strong> (<em>string:enum</em>) – Feature</p></li>
-<li><p><strong>geometry</strong> (<em>object</em>) – </p></li>
-<li><p><strong>geometry.type</strong> (<em>string:enum, required</em>) – Type of feature (Point).</p></li>
-<li><p><strong>geometry.coordinates[]</strong> (<em>number</em>) – The coordinates of the feature. (required)</p></li>
-<li><p><strong>properties</strong> (<em>object</em>) – </p></li>
-<li><p><strong>properties.metadata</strong> (<em>object</em>) – </p></li>
-<li><p><strong>properties.metadata.data_identification</strong> (<em>object</em>) – </p></li>
-<li><p><strong>properties.metadata.data_identification.originating_centre</strong> (<em>integer</em>) – The originating centre of the data. See Common Code Table C-11.</p></li>
-<li><p><strong>properties.metadata.data_identification.originating_subcentre</strong> (<em>integer</em>) – The originating sub-centre of the data. See Common Code Table C-12.</p></li>
-<li><p><strong>properties.metadata.station_identification</strong> (<em>object</em>) – </p></li>
-<li><p><strong>properties.metadata.station_identification.wigos_identifier</strong> (<em>string</em>) – The WIGOS identifier assigned to the station, e.g. ‘0-20000-0-AQBC’.</p></li>
-<li><p><strong>properties.metadata.station_location</strong> (<em>object</em>) – </p></li>
-<li><p><strong>properties.metadata.station_location.station_height_above_sea_level</strong> (<em>number</em>) – Height (meters) of the station ground above mean sea level.</p></li>
-<li><p><strong>properties.metadata.station_location.thermometer_height_above_local_ground</strong> (<em>number</em>) – Height (meters) of the thermometer above local ground.</p></li>
-<li><p><strong>properties.metadata.station_location.latitude</strong> (<em>number</em>) – Latitude (degrees N) of the station, -90 to 90.</p></li>
-<li><p><strong>properties.metadata.station_location.longitude</strong> (<em>number</em>) – Longitude (degrees E) of the station, -180 to 180.</p></li>
-<li><p><strong>properties.metadata.observing_practices</strong> (<em>object</em>) – </p></li>
-<li><p><strong>properties.metadata.observing_practices.minimum_temperature_day_offset</strong> (<em>integer</em>) – Offset in days relative to nominal reporting day for the start of
-the minimum temperature observation (-1 or 0).</p></li>
-<li><p><strong>properties.metadata.observing_practices.maximum_temperature_day_offset</strong> (<em>integer</em>) – Offset in days relative to nominal reporting day for the start of
-the maximum temperature observation (-1 or 0).</p></li>
-<li><p><strong>properties.metadata.observing_practices.mean_temperature_day_offset</strong> (<em>integer</em>) – Offset in days relative to nominal reporting day for the start of
-the mean temperature observation (-1 or 0).</p></li>
-<li><p><strong>properties.metadata.observing_practices.total_precipitation_day_offset</strong> (<em>integer</em>) – Offset in days relative to nominal reporting day for the start of
-the total precipitation observation (-1 or 0).</p></li>
-<li><p><strong>properties.metadata.observing_practices.total_snow_depth_day_offset</strong> (<em>integer</em>) – Offset in days relative to nominal reporting day for the start of
-the total snow depth observation (-1 or 0).</p></li>
-<li><p><strong>properties.metadata.observing_practices.fresh_snow_depth_day_offset</strong> (<em>integer</em>) – Offset in days relative to nominal reporting day for the start of
-the fresh snow depth observation (-1 or 0).</p></li>
-<li><p><strong>properties.metadata.observing_practices.minimum_temperature_start_time</strong> (<em>string:time</em>) – Start time (UTC) of the 24 hour period over which the minimum temperature
-is observed.</p></li>
-<li><p><strong>properties.metadata.observing_practices.maximum_temperature_start_time</strong> (<em>string:time</em>) – Start time (UTC) of the 24 hour period over which the maximum temperature
-is observed.</p></li>
-<li><p><strong>properties.metadata.observing_practices.mean_temperature_start_time</strong> (<em>string:time</em>) – Start time (UTC) of the 24 hour period over which the mean temperature
-is observed.</p></li>
-<li><p><strong>properties.metadata.observing_practices.total_precipitation_start_time</strong> (<em>string:time</em>) – Start time (UTC) of the 24 hour period over which the total precipitation
-is observed.</p></li>
-<li><p><strong>properties.metadata.observing_practices.total_snow_depth_start_time</strong> (<em>string:time</em>) – Start time (UTC) of the 24 hour period over which the total snow depth
-is observed.</p></li>
-<li><p><strong>properties.metadata.observing_practices.fresh_snow_depth_start_time</strong> (<em>string:time</em>) – Start time (UTC) of the 24 hour period over which the fresh snow depth
-is observed.</p></li>
-<li><p><strong>properties.metadata.observing_practices.method_of_calculating_mean_temperature</strong> (<em>integer</em>) – Method used to calculate daily average temperature.</p></li>
-<li><p><strong>properties.metadata.measurement_quality</strong> (<em>object</em>) – </p></li>
-<li><p><strong>properties.metadata.measurement_quality.thermometer_siting_classification</strong> (<em>integer</em>) – Sensor siting classification (see WMO-no. 8).</p></li>
-<li><p><strong>properties.metadata.measurement_quality.thermometer_measurement_quality</strong> (<em>integer</em>) – Sensor measurement quality classification (see WMO-no. 8).</p></li>
-<li><p><strong>properties.metadata.measurement_quality.rain_gauge_siting_classification</strong> (<em>integer</em>) – Sensor siting classification (see WMO-no. 8).</p></li>
-<li><p><strong>properties.metadata.measurement_quality.rain_gauge_measurement_quality</strong> (<em>integer</em>) – Sensor measurement quality classification (see WMO-no. 8).</p></li>
-<li><p><strong>properties.data[]</strong> (<em>object</em>) – </p></li>
-<li><p><strong>properties.data[].nominal_reporting_day</strong> (<em>string:date</em>) – Nominal reporting day (UTC) for the DAYCLI report.</p></li>
-<li><p><strong>properties.data[].total_accumulated_precipitation_flag</strong> (<em>integer</em>) – Quality control flag for total accumulated precipitation.
-See BUFR Code Table 0 31 021, code figure 5.</p></li>
-<li><p><strong>properties.data[].total_accumulated_precipitation</strong> (<em>number</em>) – Total accumulated precipitation (kg m-2) over indicated 24 hour period.</p></li>
-<li><p><strong>properties.data[].fresh_snow_depth_flag</strong> (<em>integer</em>) – Quality control flag for fresh snow depth. See BUFR Code Table 0 31 021.
-See BUFR Code Table 0 31 021, code figure 5.</p></li>
-<li><p><strong>properties.data[].fresh_snow_depth</strong> (<em>number</em>) – Fresh snow accumulation (m) over the indicated 24 hour period.</p></li>
-<li><p><strong>properties.data[].total_snow_depth_flag</strong> (<em>integer</em>) – Quality control flag for total snow depth. See BUFR Code Table 0 31 021.
-See BUFR Code Table 0 31 021, code figure 5.</p></li>
-<li><p><strong>properties.data[].total_snow_depth</strong> (<em>number</em>) – Total snow depth (m).</p></li>
-<li><p><strong>properties.data[].minimum_temperature_flag</strong> (<em>integer</em>) – Quality control flag for minimum temperature. See BUFR Code Table 0 31 021.
-See BUFR Code Table 0 31 021, code figure 5.</p></li>
-<li><p><strong>properties.data[].minimum_temperature</strong> (<em>number</em>) – Minimum temperature (degrees Celsius) observed over the indicated 24 hour period.</p></li>
-<li><p><strong>properties.data[].maximum_temperature_flag</strong> (<em>integer</em>) – Quality control flag for maximum temperature. See BUFR Code Table 0 31 021.
-See BUFR Code Table 0 31 021, code figure 5.</p></li>
-<li><p><strong>properties.data[].maximum_temperature</strong> (<em>number</em>) – Maximum temperature (degrees Celsius) observed over the indicated 24 hour period.</p></li>
-<li><p><strong>properties.data[].mean_temperature_flag</strong> (<em>integer</em>) – Quality control flag for mean temperature. See BUFR Code Table 0 31 021.
-See BUFR Code Table 0 31 021, code figure 5.</p></li>
-<li><p><strong>properties.data[].mean_temperature</strong> (<em>number</em>) – Mean temperature (degrees Celsius) calculated over the indicated 24 hour period and using the
-method specified by the ‘method_of_calculating_mean_temperature’ flag.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Response JSON Object</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>messages[]</strong> (<em>string</em>) – BUFR encoding of input data, one day per message.</p></li>
-<li><p><strong>errors[]</strong> (<em>string</em>) – Error log.</p></li>
-</ul>
-</dd>
 <dt class="field-odd">Status Codes</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – success</p></li>
@@ -408,6 +372,24 @@ method specified by the ‘method_of_calculating_mean_temperature’ flag.</p></
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../automated_quality_control/index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Automated quality control</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../events/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>

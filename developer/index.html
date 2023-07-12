@@ -31,8 +31,8 @@
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -48,7 +48,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'developer/index';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Developer Guide" href="devguide/index.html" />
+    <link rel="next" title="OpenCDMS Architecture" href="architecture/index.html" />
     <link rel="prev" title="Administrator Guide" href="../administrator/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -250,23 +250,31 @@ document.write(`
         <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Architecture</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="devguide/index.html">Developer Guide</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="devguide/overview.html">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="devguide/databases.html">Database technologies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="devguide/docs.html">Updating the docs</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="architecture/index.html">OpenCDMS Architecture</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Web components</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="components/index.html">OpenCDMS Web Components</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="components/raw_synop_entry_form/index.html">Raw FM-12 SYNOP entry form</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="apidocs/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="apidocs/pyopencdms/index.html">pyopencdms</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="api/index.html">OpenCDMS API</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/automated_quality_control/index.html">Automated quality control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/encode_daycli/index.html">DAYCLI BUFR encoder</a></li>
 </ul>
 </li>
 </ul>
-</li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="docs/index.html">Updating the docs</a></li>
 </ul>
 </div>
 </nav></div>
@@ -393,9 +401,17 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="toctree-wrapper compound" id="developerguide-index">
+<div class="toctree-wrapper compound" id="architecture-index">
 </div>
-<div class="toctree-wrapper compound" id="apidocs-index">
+<div class="toctree-wrapper compound" id="database-index">
+</div>
+<div class="toctree-wrapper compound" id="components-index">
+</div>
+<div class="toctree-wrapper compound" id="api-index">
+</div>
+<div class="toctree-wrapper compound" id="events-index">
+</div>
+<div class="toctree-wrapper compound" id="docs-index">
 </div>
 </section>
 
@@ -420,11 +436,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="devguide/index.html"
+       href="architecture/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Developer Guide</p>
+        <p class="prev-next-title">OpenCDMS Architecture</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
