@@ -48,8 +48,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'administrator/index';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Developer Documentation" href="../developer/index.html" />
-    <link rel="prev" title="User Guide" href="../user/index.html" />
+    <link rel="next" title="Installation" href="install/index.html" />
+    <link rel="prev" title="Scripting" href="../user/scripting/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -199,7 +199,7 @@ document.write(`
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -245,6 +245,22 @@ document.write(`
     
     
   </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="install/index.html">Installation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Configuring</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="config/index.html">Configuration</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
@@ -297,59 +313,36 @@ document.write(`
                   
   <section id="administrator-guide">
 <h1>Administrator Guide<a class="headerlink" href="#administrator-guide" title="Permalink to this headline">#</a></h1>
-<section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
-<p>OpenCDMS is not yet ready for production use. The instructions below give details on how to install a demo version of the software locally using docker containers.</p>
-<section id="prerequisites">
-<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>git</p></li>
-<li><p>docker</p></li>
-<li><p>python 3</p></li>
-</ul>
-</section>
-<section id="opencdms-database-and-api">
-<h3>OpenCDMS database and API<a class="headerlink" href="#opencdms-database-and-api" title="Permalink to this headline">#</a></h3>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/opencdms/opencdms
-<span class="nb">cd</span><span class="w"> </span>opencdms/install
-
-<span class="c1"># start the database and api containers</span>
-docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>database<span class="w"> </span>api<span class="w"> </span>--detach
-</pre></div>
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-2 text-center docutils">
+<div class="card w-100 shadow docutils">
+<img alt="img-top" class="card-img-top w-50 m-auto px-1 py-2" src="../_images/download.png" />
+<div class="card-body docutils">
+<p class="card-text">Installation</p>
 </div>
-<p>The OpenCDMS API is now accessible locally at <a class="reference external" href="http://localhost:5000">http://localhost:5000</a>. Furthermore, you can connect to the Postgress database using the details in <cite>install/default.env</cite>.</p>
-</section>
-<section id="build-database">
-<h3>Build database<a class="headerlink" href="#build-database" title="Permalink to this headline">#</a></h3>
-<ol class="arabic simple">
-<li><p>Load data</p></li>
-</ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build database from api container</span>
-docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>opencdms-api<span class="w"> </span>/bin/sh
-bash
-
-<span class="nb">cd</span><span class="w"> </span>/local/app/
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/opencdms/opencdms-test-data
-
-<span class="c1"># build_db.py is currrently expecting CDM data to be in ./data</span>
-ln<span class="w"> </span>-s<span class="w"> </span>/local/app/opencdms-test-data/data/cdm<span class="w"> </span>data
-
-<span class="c1"># Remove station/host metadata for Malawi</span>
-sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/, &quot;host_mwi.csv&quot;//g&#39;</span><span class="w"> </span>build_db.py
-
-python3<span class="w"> </span>build_db.py
-</pre></div>
+<div class="card-footer docutils">
+<p class="card-text"><a class="sphinx-bs btn text-wrap btn-outline-info btn-block reference internal" href="install/index.html"><span class="doc">Installation</span></a></p>
 </div>
-</section>
-<section id="install-opencdms-app">
-<h3>Install OpenCDMS App<a class="headerlink" href="#install-opencdms-app" title="Permalink to this headline">#</a></h3>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/opencdms/opencdms-app
-docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>app<span class="w"> </span>--detach
-</pre></div>
 </div>
-<p>OpenCDMS App is now accessible locally at <a class="reference external" href="http://localhost:8000">http://localhost:8000</a>. The app will connect to the local API instance that was installed at <a class="reference external" href="http://localhost:5000">http://localhost:5000</a>.</p>
-</section>
-</section>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-2 text-center docutils">
+<div class="card w-100 shadow docutils">
+<img alt="img-top" class="card-img-top w-50 m-auto px-1 py-2" src="../_images/browser.png" />
+<div class="card-body docutils">
+<p class="card-text">Configuring</p>
+</div>
+<div class="card-footer docutils">
+<p class="card-text"><a class="sphinx-bs btn text-wrap btn-outline-info btn-block reference internal" href="config/index.html"><span class="doc">Configuring</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="toctree-wrapper compound" id="install-index">
+</div>
+<div class="toctree-wrapper compound" id="config-index">
+</div>
 </section>
 
 
@@ -364,20 +357,20 @@ docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> 
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../user/index.html"
+       href="../user/scripting/index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">User Guide</p>
+        <p class="prev-next-title">Scripting</p>
       </div>
     </a>
     <a class="right-next"
-       href="../developer/index.html"
+       href="install/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Developer Documentation</p>
+        <p class="prev-next-title">Installation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -392,22 +385,6 @@ docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> 
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opencdms-database-and-api">OpenCDMS database and API</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-database">Build database</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-opencdms-app">Install OpenCDMS App</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
 
   <div class="sidebar-secondary-item">
   <div class="tocsection sourcelink">
