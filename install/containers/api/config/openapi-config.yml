@@ -1,11 +1,4 @@
 components:
-  securitySchemes:
-    bearerAuth:
-      type: http
-      scheme: bearer
-      bearerFormat: JWT
-  security:
-    - bearerAuth: []
   parameters:
     bbox:
       description: Only features that have a geometry that intersects the bounding
@@ -198,37 +191,6 @@ info:
   - wis 2.0
 openapi: 3.0.2
 paths:
-  /login:
-    post:
-      summary: User login
-      description: Generates a bearer token
-      operationId: loginUser
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                username:
-                  type: string
-                password:
-                  type: string
-              required:
-                - username
-                - password
-      responses:
-        '200':
-          description: Successful login
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  token:
-                    type: string
-      tags:
-        - Authentication
   /:
     get:
       description: Landing page
@@ -1569,49 +1531,6 @@ paths:
       summary: Process import_observations execution
       tags:
       - cdm
-  /processes/daycli-encoder:
-    get:
-      description: Process to convert DAYCLI data to BUFR
-      operationId: describeDaycli-encoderProcess
-      parameters:
-      - $ref: '#/components/parameters/f'
-      responses:
-        '200':
-          $ref: '#/components/responses/200'
-        default:
-          $ref: '#/components/responses/default'
-      summary: Get process metadata
-      tags:
-      - daycli-encoder
-  /processes/daycli-encoder/execution:
-    post:
-      description: Process to convert DAYCLI data to BUFR
-      operationId: executeDaycli-encoderJob
-      requestBody:
-        content:
-          application/json:
-            example:
-              inputs: {}
-              output:
-                messages: []
-            schema:
-              $ref: https://schemas.opengis.net/ogcapi/processes/part1/1.0/openapi/schemas/execute.yaml
-        description: Mandatory execute request JSON
-        required: true
-      responses:
-        '200':
-          $ref: '#/components/responses/200'
-        '201':
-          $ref: https://schemas.opengis.net/ogcapi/processes/part1/1.0/openapi/responses/ExecuteAsync.yaml
-        '404':
-          $ref: https://schemas.opengis.net/ogcapi/processes/part1/1.0/openapi/responses/NotFound.yaml
-        '500':
-          $ref: https://schemas.opengis.net/ogcapi/processes/part1/1.0/openapi/responses/ServerError.yaml
-        default:
-          $ref: '#/components/responses/default'
-      summary: Process daycli-encoder execution
-      tags:
-      - daycli-encoder
   /processes/ingestHost:
     get:
       description: Process to ingest WMDR host / station into CDMS
@@ -1656,6 +1575,95 @@ paths:
       summary: Process ingestHost execution
       tags:
       - ingestHost
+  /processes/x-opencdms:daycli-encode:
+    get:
+      description: Process to convert DAYCLI data to BUFR
+      operationId: describeX-opencdms:daycli-encodeProcess
+      parameters:
+      - $ref: '#/components/parameters/f'
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+        default:
+          $ref: '#/components/responses/default'
+      summary: Get process metadata
+      tags:
+      - x-opencdms:daycli-encode
+  /processes/x-opencdms:daycli-encode/execution:
+    post:
+      description: Process to convert DAYCLI data to BUFR
+      operationId: executeX-opencdms:daycli-encodeJob
+      requestBody:
+        content:
+          application/json:
+            example: {}
+            schema:
+              $ref: https://schemas.opengis.net/ogcapi/processes/part1/1.0/openapi/schemas/execute.yaml
+        description: Mandatory execute request JSON
+        required: true
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+        '201':
+          $ref: https://schemas.opengis.net/ogcapi/processes/part1/1.0/openapi/responses/ExecuteAsync.yaml
+        '404':
+          $ref: https://schemas.opengis.net/ogcapi/processes/part1/1.0/openapi/responses/NotFound.yaml
+        '500':
+          $ref: https://schemas.opengis.net/ogcapi/processes/part1/1.0/openapi/responses/ServerError.yaml
+        default:
+          $ref: '#/components/responses/default'
+      summary: Process DAYCLI BUFR encoder execution
+      tags:
+      - x-opencdms:daycli-encode
+  /processes/x-wmo:synop2bufr:
+    get:
+      description: Process to convert FM 12-SYNOP bulletin to BUFR
+      operationId: describeX-wmo:synop2bufrProcess
+      parameters:
+      - $ref: '#/components/parameters/f'
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+        default:
+          $ref: '#/components/responses/default'
+      summary: Get process metadata
+      tags:
+      - x-wmo:synop2bufr
+  /processes/x-wmo:synop2bufr/execution:
+    post:
+      description: Process to convert FM 12-SYNOP bulletin to BUFR
+      operationId: executeX-wmo:synop2bufrJob
+      requestBody:
+        content:
+          application/json:
+            example:
+              inputs:
+                data: AAXX 21121 15015 02999 02501 10103 21090 39765 42952 57020 60001
+                  333 4/000 55310 0//// 22591 3//// 60007 91003 91104=
+                metadata: station_name,wigos_station_identifier,traditional_station_identifier,facility_type,latitude,longitude,elevation,territory_name,wmo_region\nOCNA
+                  SUGATAG,0-20000-0-15015,15015,Land (fixed),47.77706163,23.94046026,503,Romania,6
+                month: 2
+                year: 2022
+              output:
+                messages: []
+            schema:
+              $ref: https://schemas.opengis.net/ogcapi/processes/part1/1.0/openapi/schemas/execute.yaml
+        description: Mandatory execute request JSON
+        required: true
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+        '201':
+          $ref: https://schemas.opengis.net/ogcapi/processes/part1/1.0/openapi/responses/ExecuteAsync.yaml
+        '404':
+          $ref: https://schemas.opengis.net/ogcapi/processes/part1/1.0/openapi/responses/NotFound.yaml
+        '500':
+          $ref: https://schemas.opengis.net/ogcapi/processes/part1/1.0/openapi/responses/ServerError.yaml
+        default:
+          $ref: '#/components/responses/default'
+      summary: Process synop2bufr execution
+      tags:
+      - x-wmo:synop2bufr
 servers:
 - description: PygeoAPI instance deployed as part of the beta.opencdms.org instance
   url: ''
@@ -1680,8 +1688,11 @@ tags:
 - description: Test / example dataset
   name: ontario_watershed
 - description: Process to convert DAYCLI data to BUFR
-  name: daycli-encoder
+  name: x-opencdms:daycli-encode
+- description: Process to convert FM 12-SYNOP bulletin to BUFR
+  name: x-wmo:synop2bufr
 - description: Process to ingest WMDR host / station into CDMS
   name: ingestHost
 - description: Process to ingest CDM formatted observations
   name: cdm
+

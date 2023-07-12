@@ -1,0 +1,182 @@
+WIGOS Metadata Standard
+=======================
+
+- Abstract environment monitoring facility
+    - description 0+
+    - extension 0+
+    - geospatial location 0+
+    - online resource 0+
+    - responsible party 0+
+- Data generation
+    - valid period
+    - schedule 1
+    - sampling 1
+    - processing 0 - 1
+    - reporting 1
+- Deployment
+    - application area 1+
+    - height above local referencer surface 0 - 1
+    - local reference surface 0 - 1
+    - source of observation
+    - valid period
+    - communication method 0 - 1
+    - exposure 0 - 1
+    - representativeness 0 - 1
+    - configuration 0 - 1
+    - control schedule 0 - 1
+    - instrument operating status 0+
+    - maintenance schedule 0 - 1
+- Equipment
+    - abstract environmental monitoring facility
+    - drift per unit time 0 - 1
+    - observable range 0 - 1
+    - observing method
+    - observing method details 0 - 1
+    - specification link 0 - 1
+    - specified absolute uncertainty 0 - 1
+    - specified relative uncertainty 0 - 1
+    - firmware version 0 - 1
+    - manufacturer 0 - 1
+    - model 0 - 1
+    - serial number 0 - 1
+    - frequencies 0+
+    - equipment log 0 - 1
+- Facility log
+    - log
+- Facility set
+- Frequencies
+    - bandwidth 0 - 1
+    - bandwidth unit 0 - 1
+    - frequency
+    - frequency unit 0 - 1
+    - frequency use
+    - purpose of frequency use
+    - transmission mode 0 - 1
+- Observing capability
+    - observation 1+
+    - program affiliation 1+
+- Observing facility
+    - description 0+
+    - extension 0+
+    - geospatial location 0+
+    - online resource 0+
+    - responsible party 0+
+    - date closed 0 - 1
+    - date established 0 - 1
+    - program affiliation 1+
+    - territory 1+
+    - wmo region
+    - climate zone 0+
+    - surface cover 0+
+    - surface roughness 0+
+    - topography / bathymetry 0+
+    - facility type 0 - 1
+    - observation 0+
+    - facility log 0 - 1
+- Process
+    - extension
+- Log
+    - log entry 0 +
+- Equipment log
+    - log
+
+Data types
+- Header
+    - file date time - DateTime
+    - record owner - CI_ResponsibleParty
+    - version
+- Instrument operating status
+    - instrument operating status - coded
+    - valid period TM_period
+- Log entry
+    - author - CharacterString
+    - datetime - DateTime
+    - description - CharacterString
+    - documentation URL - anyURI
+- Processing
+    - aggregation period - TM_PeriodDuration
+    - data processing - CharacterString
+    - processing centre - CharacterString
+    - software details - CharacterString
+    - software URL - anyURI
+- Program affiliation
+    - program affiliation - coded
+    - program specific facility id - CharacterString
+    - reporting status - Reporting status
+- Reporting
+    - data format - coded
+    - data format version - CharacterString
+    - data policy - DataPolicy
+    - international exchange - Boolean
+    - level of data - coded
+    - number of observations in reporting interval - integer
+    - numerical resolution - Measure
+    - official status - Boolean
+    - reference datum - CD_VerticalDatum
+    - reference time source - coded
+    - spatial reporting interval - Meausre
+    - temporal reporting interval - TM_PeriodDuration
+    - timeliness - TM_PeriodDuration
+    - time stamp meaning - coded
+    - uom - coded
+- Sampling
+    - samples per unit time - Measure
+    - sample treatment - coded
+    - sampling procedure - coded
+    - sampling procedure description - CharacterString
+    - sampling strategy - coded
+    - sampling time period - TM_Period
+    - spatial sampling resolution - Measure
+    - spatial sampling resolution details - CharacterString
+    - temporal sampling interval - TM_PeriodDuration
+- Schedule
+    - diurnal base time - Time
+    - end hour - int
+    - end minute - int
+    - end month - int
+    - end weekday - int
+    - start hour - int
+    - start minute - int
+    - start month - int
+    - start weekday - int
+- Attribution
+    - originator - CI_ResponsibleParty
+    - originator URL - CI_OnlineResource
+    - source - CI_OnlineResource
+    - title - CharacterString
+- Climate zone
+    - climate zone - coded
+    - valid period - TM_Period
+- Data policy
+    - attribution - Attribution
+    - data policy - coded
+- Description
+    - description - CharacterString
+    - valid period - TM_Period
+- Geospatial location
+    - geolocation - GM_Object
+    - geopositioning method - coded
+    - valid period - TM_Period
+- Reporting status
+    - reporting status - coded
+    - valid period - TM_Period
+- Responsible party
+    - responsible party - CI_ResponsibleParty
+    - valid period - TM_Period
+- Surface cover
+    - surface cover - coded
+    - surface cover classification - coded
+    - valid period - TM_Period
+- Surface roughness
+    - surface roughness - coded
+    - valid period - TM_Period
+- Territory
+    - territory name - coded
+    - valid period - TM_Period
+- Topography / bathymetry
+    - altitude or depth - coded
+    - local topography - coded
+    - relative elevation - coded
+    - topographic context - coded
+    - valid period - datetime
+

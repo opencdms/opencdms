@@ -61,10 +61,14 @@ metadata:
         role: pointOfContact
 
 resources:
-    daycli-encoder:
+    'x-opencdms:daycli-encode':
       type: process
       processor:
-          name: csv2bufr.pygeoapi_daycli_plugin.daycliProcessor
+        name: daycli.encode
+    'x-wmo:synop2bufr':
+      type: process
+      processor:
+        name: synop2bufr.pygeoapi_plugin.processor
     ingestHost:
       type: process
       processor:
@@ -108,7 +112,7 @@ resources:
                   dbname: opencdms
                   user: opencdms
                   password: insecure-change-me
-                  search_path: [cdm,opencdms, public]
+                  search_path: [cdm]
               id_field: id
               time_field: phenomenon_end
               table: observation
@@ -179,7 +183,7 @@ resources:
                   dbname: opencdms
                   user: opencdms
                   password: insecure-change-me
-                  search_path: [cdm,opencdms, public]
+                  search_path: [cdm]
               id_field: id
               geom_field: location
               title_field: name
