@@ -29,7 +29,8 @@ while true; do
     # Attempt to renew all certificates
     certbot renew --webroot -w /var/www/certbot --non-interactive
     
-    # TODO: only do nginx reload if one or more certificates have been renewed
+    # TODO: only do nginx reload if one or more certificates have actually been renewed
     #       requires deploy-hook script https://eff-certbot.readthedocs.io/en/stable/using.html#certbot-command-line-options
+    #       or install cron and use nginx module
     service nginx reload
 done
