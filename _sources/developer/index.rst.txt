@@ -8,7 +8,7 @@ Developer Documentation
 
 
     ---
-    :img-top: ../_static/project.png
+    :img-top: ../_static/precision.png
 
     Architecture
     +++
@@ -18,13 +18,13 @@ Developer Documentation
         :classes: btn-outline-info btn-block
 
     ---
-    :img-top: ../_static/laptop.png
+    :img-top: ../_static/database.png
 
-    Data models
+    Databases
     +++
     .. link-button:: database/index
         :type: ref
-        :text: Data models
+        :text: Databases
         :classes: btn-outline-info btn-block
 
     ---
@@ -78,7 +78,7 @@ Developer Documentation
 
 
 .. toctree::
-   :caption: Data models
+   :caption: Databases
    :maxdepth: 1
    :name: database_index
    :hidden:

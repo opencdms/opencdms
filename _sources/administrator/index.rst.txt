@@ -1,45 +1,61 @@
 Administrator Guide
 ===================
 
-.. panels::
-    :container: container-lg pb-3
-    :column: col-lg-4 col-md-4 col-sm-6 col-xs-12 p-2 text-center
-    :img-top-cls: w-50 m-auto px-1 py-2
+Installation
+------------
 
-    ---
-    :img-top: ../_static/download.png
+OpenCDMS is not yet ready for production use. The instructions below give details on how to install a demo version of the software locally using docker containers.
 
-    Installation
-    +++
-    .. link-button:: install/index
-        :type: ref
-        :text: Installation
-        :classes: btn-outline-info btn-block
-
-    ---
-    :img-top: ../_static/browser.png
-
-    Configuring
-    +++
-    .. link-button:: config/index
-        :type: ref
-        :text: Configuring
-        :classes: btn-outline-info btn-block
+Prerequisites
+~~~~~~~~~~~~~
+- git
+- docker
+- python 3
 
 
-.. toctree::
-   :caption: Installation
-   :maxdepth: 1
-   :name: install_index
-   :hidden:
+OpenCDMS database and API
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   install/index
+.. code-block:: shell
+    
+    git clone https://github.com/opencdms/opencdms
+    cd opencdms/install
+
+    # start the database and api containers
+    docker compose up database api --detach
+
+The OpenCDMS API is now accessible locally at http://localhost:5000. Furthermore, you can connect to the Postgress database using the details in `install/default.env`.
+
+Build database
+~~~~~~~~~~~~~~
+
+1. Load data
+
+.. code-block:: shell
+
+    # Build database from api container
+    docker exec -it opencdms-api /bin/sh
+    bash
+    
+    cd /local/app/
+    git clone https://github.com/opencdms/opencdms-test-data
+    
+    # build_db.py is currrently expecting CDM data to be in ./data
+    ln -s /local/app/opencdms-test-data/data/cdm data
+    
+    # Remove station/host metadata for Malawi
+    sed -i 's/, "host_mwi.csv"//g' build_db.py
+    
+    python3 build_db.py
 
 
-.. toctree::
-   :caption: Configuring
-   :maxdepth: 1
-   :name: config_index
-   :hidden:
+Install OpenCDMS App
+~~~~~~~~~~~~~~~~~~~~
 
-   config/index
+.. code-block:: shell
+    
+    git clone https://github.com/opencdms/opencdms-app
+    docker compose up app --detach
+
+
+OpenCDMS App is now accessible locally at http://localhost:8000. The app will connect to the local API instance that was installed at http://localhost:5000.
