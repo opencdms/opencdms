@@ -8,7 +8,7 @@ Developer Documentation
 
 
     ---
-    :img-top: ../_static/project.png
+    :img-top: ../_static/precision.png
 
     Architecture
     +++
@@ -18,17 +18,17 @@ Developer Documentation
         :classes: btn-outline-info btn-block
 
     ---
-    :img-top: ../_static/laptop.png
+    :img-top: ../_static/database.png
 
-    Data models
+    Databases
     +++
     .. link-button:: database/index
         :type: ref
-        :text: Data models
+        :text: Databases
         :classes: btn-outline-info btn-block
 
     ---
-    :img-top: ../_static/evaluation.png
+    :img-top: ../_static/structure.png
 
     Web components
     +++
@@ -38,7 +38,7 @@ Developer Documentation
         :classes: btn-outline-info btn-block
 
     ---
-    :img-top: ../_static/laptop.png
+    :img-top: ../_static/laptop2.png
 
     API Documentation
     +++
@@ -48,7 +48,7 @@ Developer Documentation
         :classes: btn-outline-info btn-block
 
     ---
-    :img-top: ../_static/laboratory.png
+    :img-top: ../_static/publishing.png
 
     Events
     +++
@@ -60,27 +60,63 @@ Developer Documentation
     ---
     :img-top: ../_static/evidence.png
 
-    Documentation
+    Updating the docs
     +++
     .. link-button:: docs/index
         :type: ref
-        :text: Updating the docs
+        :text: Update docs
         :classes: btn-outline-info btn-block
 
 
 .. toctree::
-   :caption: Developer Guide
+   :caption: Architecture
    :maxdepth: 1
-   :name: developerguide_index
+   :name: architecture_index
    :hidden:
 
-   devguide/index
+   architecture/index
+
+
+.. toctree::
+   :caption: Databases
+   :maxdepth: 1
+   :name: database_index
+   :hidden:
+
+   database/index
+
+
+.. toctree::
+   :caption: Web components
+   :maxdepth: 1
+   :name: components_index
+   :hidden:
+
+   components/index
 
 
 .. toctree::
    :caption: API Documentation
    :maxdepth: 1
-   :name: apidocs_index
+   :name: api_index
    :hidden:
 
-   apidocs/index
+   api/index
+
+
+.. toctree::
+   :caption: Events
+   :maxdepth: 1
+   :name: events_index
+   :hidden:
+
+   events/index
+
+
+.. toctree::
+   :caption: Documentation
+   :maxdepth: 1
+   :name: docs_index
+   :hidden:
+
+   docs/index
