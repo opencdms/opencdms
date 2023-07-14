@@ -3,7 +3,8 @@
 # standalone mode (without nginx) to create the required certificates
 # if they don't already exist in the shared volume.
 #
-# From then on, nginx runs as a background service.
+# From then on, nginx runs as a background service as intended in the
+# nginx:latest container.
 #
 # Since cron is not installed in the debian slim image we use a
 # loop in foreground to check regularly whether certificates need
@@ -18,12 +19,18 @@ mkdir -p /etc/nginx/ssl
 mkdir -p /var/www/certbot
 
 service nginx stop
-certbot certonly --standalone --non-interactive --agree-tos --no-eff-email $CERTBOT_CONFIG
+# certbot certonly --standalone --non-interactive --agree-tos --no-eff-email -d api.opencdms.org $CERTBOT_CONFIG --email info@opencdms.org
+certbot certonly --standalone --non-interactive --agree-tos --no-eff-email -d db.green.opencdms.org --email info@opencdms.org
 service nginx start
+
 
 while true; do
     sleep 12h & wait -n ${!}
+    # Attempt to renew all certificates
     certbot renew --webroot -w /var/www/certbot --non-interactive
+    
+    # TODO: only do nginx reload if one or more certificates have actually been renewed
+    #       requires deploy-hook script https://eff-certbot.readthedocs.io/en/stable/using.html#certbot-command-line-options
+    #       or install cron and use nginx module
     service nginx reload
 done
-

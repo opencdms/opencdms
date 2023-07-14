@@ -1,14 +1,11 @@
 FROM nginx:latest
 
 RUN mv /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf.disabled
-COPY nginx.conf /etc/nginx/conf.d/api.opencdms.org.conf
+COPY *.conf /etc/nginx/conf.d/
 
 RUN apt update -y && apt upgrade -y
 
-# apt version of certbot is old. It's also difficult to run snap in
-# debian:11-slim because systemd is not running, therefore use pip
-RUN apt install python3 python3-pip -y
-RUN pip install --upgrade pip && pip install certbot
+RUN apt install python3 python3-certbot -y
 
 # Create directory for SSL certificates
 RUN mkdir -p /etc/nginx/ssl
