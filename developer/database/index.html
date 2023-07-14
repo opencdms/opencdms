@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Databases &#8212; OpenCDMS 0.1.0 documentation</title>
+    <title>Database and data model(s) &#8212; OpenCDMS 0.1.0 documentation</title>
   
   
   
@@ -48,7 +48,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'developer/database/index';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="OpenCDMS Web Components" href="../components/index.html" />
+    <link rel="next" title="WIGOS Metadata Standard" href="WMDR/index.html" />
     <link rel="prev" title="OpenCDMS Architecture" href="../architecture/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -259,18 +259,23 @@ document.write(`
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Databases</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Databases</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Database and data model(s)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="WMDR/index.html">WIGOS Metadata Standard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WCMP2/index.html">WMO Core Metadata Profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CDM/index.html">Climate Data Model</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Web components</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../components/index.html">OpenCDMS Web Components</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../components/index.html">OpenCDMS Web Components</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../components/raw_synop_entry_form/index.html">Raw FM-12 SYNOP entry form</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../api/index.html">OpenCDMS API</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api/index.html">OpenCDMS API</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../api/automated_quality_control/index.html">Automated quality control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/encode_daycli/index.html">DAYCLI BUFR encoder</a></li>
 </ul>
@@ -323,7 +328,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Developer Documentation</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Databases</li>
+    <li class="breadcrumb-item active" aria-current="page">Database and data model(s)</li>
   </ul>
 </nav>
 </div>
@@ -340,8 +345,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="databases">
-<h1>Databases<a class="headerlink" href="#databases" title="Permalink to this headline">#</a></h1>
+  <section id="database-and-data-model-s">
+<h1>Database and data model(s)<a class="headerlink" href="#database-and-data-model-s" title="Permalink to this headline">#</a></h1>
+<p>The observational data and metadata schema used in the OpenCDMS database imports and extents 3 external data models:</p>
+<ol class="arabic simple">
+<li><p>The WIGOS metadata standard (station and sensor metadata).</p></li>
+<li><p>The WMO Core Metadata Profile (v2) (discovery metadata).</p></li>
+<li><p>The WMO Climate Data Model (observation, processing and provenance data and metadata).</p></li>
+</ol>
+<p>The following pages describe the physical implementation of these data models.</p>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Components:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="WMDR/index.html">WIGOS Metadata Standard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WCMP2/index.html">WMO Core Metadata Profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CDM/index.html">Climate Data Model</a></li>
+</ul>
+</div>
 </section>
 
 
@@ -365,11 +385,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../components/index.html"
+       href="WMDR/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">OpenCDMS Web Components</p>
+        <p class="prev-next-title">WIGOS Metadata Standard</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -38,7 +38,7 @@ Developer Documentation
         :classes: btn-outline-info btn-block
 
     ---
-    :img-top: ../_static/laptop.png
+    :img-top: ../_static/laptop2.png
 
     API Documentation
     +++
