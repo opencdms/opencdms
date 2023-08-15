@@ -334,6 +334,9 @@ document.write(`
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/opencdms/opencdms
 <span class="nb">cd</span><span class="w"> </span>opencdms/install
 
+<span class="c1"># If required, build the containers from scratch</span>
+docker<span class="w"> </span>compose<span class="w"> </span>build<span class="w"> </span>--no-cache<span class="w"> </span>database<span class="w"> </span>api
+
 <span class="c1"># start the database and api containers</span>
 docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>database<span class="w"> </span>api<span class="w"> </span>--detach
 </pre></div>
@@ -342,23 +345,15 @@ docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> 
 </section>
 <section id="build-database">
 <h2>Build database<a class="headerlink" href="#build-database" title="Permalink to this headline">#</a></h2>
-<ol class="arabic simple">
-<li><p>Load data</p></li>
-</ol>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build database from api container</span>
-docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>opencdms-api<span class="w"> </span>/bin/sh
-bash
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>opencdms-api<span class="w"> </span>bash
 
-<span class="nb">cd</span><span class="w"> </span>/local/app/
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/opencdms/opencdms-test-data
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/opencdms/opencdms-test-data<span class="w"> </span>/local/opencdms-test-data<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span>
 
-<span class="c1"># build_db.py is currrently expecting CDM data to be in ./data</span>
-ln<span class="w"> </span>-s<span class="w"> </span>/local/app/opencdms-test-data/data/cdm<span class="w"> </span>data
-
-<span class="c1"># Remove station/host metadata for Malawi</span>
-sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/, &quot;host_mwi.csv&quot;//g&#39;</span><span class="w"> </span>build_db.py
-
-python3<span class="w"> </span>build_db.py
+<span class="nb">cd</span><span class="w"> </span>/local/app/opencdms/install
+python3<span class="w"> </span>initialise_database.py
+python3<span class="w"> </span>ingest_code_tables.py
+python3<span class="w"> </span>ingest_sample_data.py
 </pre></div>
 </div>
 </section>

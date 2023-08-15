@@ -18,6 +18,9 @@ OpenCDMS database and API
     git clone https://github.com/opencdms/opencdms
     cd opencdms/install
 
+    # If required, build the containers from scratch
+    docker compose build --no-cache database api
+
     # start the database and api containers
     docker compose up database api --detach
 
@@ -26,24 +29,17 @@ The OpenCDMS API is now accessible locally at http://localhost:5000. Furthermore
 Build database
 ~~~~~~~~~~~~~~
 
-1. Load data
-
 .. code-block:: shell
 
     # Build database from api container
-    docker exec -it opencdms-api /bin/sh
-    bash
-    
-    cd /local/app/
-    git clone https://github.com/opencdms/opencdms-test-data
-    
-    # build_db.py is currrently expecting CDM data to be in ./data
-    ln -s /local/app/opencdms-test-data/data/cdm data
-    
-    # Remove station/host metadata for Malawi
-    sed -i 's/, "host_mwi.csv"//g' build_db.py
-    
-    python3 build_db.py
+    docker exec -it opencdms-api bash
+
+    git clone https://github.com/opencdms/opencdms-test-data /local/opencdms-test-data --depth 1
+
+    cd /local/app/opencdms/install
+    python3 initialise_database.py
+    python3 ingest_code_tables.py
+    python3 ingest_sample_data.py 
 
 
 Install OpenCDMS App
