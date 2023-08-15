@@ -1,0 +1,23 @@
+@startuml
+
+Object Host
+Object HostLocation
+Object HostMedia
+Object HostLog
+Object HostResponsibleParty
+Object HostEnvironment
+Object ReferenceStation
+Object HostAffiliation
+Object HostAliases
+
+
+HostAffiliation -- Host
+HostLog -- Host
+ReferenceStation -- Host
+HostAliases -- Host
+Host -- HostEnvironment
+Host -- HostResponsibleParty
+Host -- HostMedia
+Host -- HostLocation
+
+@enduml

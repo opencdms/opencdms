@@ -1,0 +1,12 @@
+"Property","Kind","References","Requirement","Description"
+"id","str",,"Required","Primary key for this record."
+"deployment","str","master_data.deployment.id","Required","The deployment this record belongs to."
+"operating_status","str","reference_data.operating_status.id","Required","The operating status of the deployed equipment."
+"valid_from","datetime",,"Optional","The date from which this status applies."
+"valid_to","datetime",,"Optional","The date from which this status is no longer valid."
+"_version","int",,"Required","Version number of this record."
+"_change_date","datetime",,"Required","Date this record was changed."
+"_user","str","admin.user.id","Required","Which user/agent last modified this record."
+"_status","str","reference_data.status.id","Required","Whether this is the latest version or an archived version of the record."
+"comments","str",,"Required","Free text comments on this record, for example description of changes made etc."
+

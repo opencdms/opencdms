@@ -1,0 +1,13 @@
+"Property","Kind","References","Requirement","Description"
+"id","str",,"Required","ID / primary key."
+"host","str","master_data.host.id","Required","The host to which this record applies."
+"author","str",,"Required","Author of the log entry."
+"datetime","datetime",,"Required","Date and time of the event being logged."
+"description","str",,"Required","Description of of the event being logged."
+"links","dict",,"Required","Links to further documentation of the logged event."
+"_version","int",,"Required","Version number of this record."
+"_change_date","datetime",,"Required","Date this record was changed."
+"_user","str","admin.user.id","Required","Which user/agent last modified this record."
+"_status","str","reference_data.status.id","Required","Whether this is the latest version or an archived version of the record."
+"_comments","str",,"Required","Free text comments on this record, for example description of changes made etc."
+

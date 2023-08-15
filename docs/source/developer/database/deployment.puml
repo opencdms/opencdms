@@ -1,0 +1,16 @@
+@startuml
+Object Deployment
+Object DeploymentMedia
+Object DeploymentResponsibleParty
+Object DeploymentApplicationArea
+Object DeploymentLocation
+Object OperatingStatus
+Object DeploymentLog
+
+Deployment -- DeploymentApplicationArea
+Deployment -- DeploymentLocation
+OperatingStatus -- Deployment
+DeploymentResponsibleParty -- Deployment
+DeploymentMedia -- Deployment
+DeploymentLog -- Deployment
+@enduml
