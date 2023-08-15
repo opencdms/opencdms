@@ -32,8 +32,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -49,7 +49,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Raw FM-12 SYNOP entry form" href="raw_synop_entry_form/index.html" />
-    <link rel="prev" title="Climate Data Model" href="../database/CDM/index.html" />
+    <link rel="prev" title="wmo_region" href="../database/reference_data/wmo_region.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -260,9 +260,51 @@ document.write(`
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Databases</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../database/index.html">Database and data model(s)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../database/WMDR/index.html">WIGOS Metadata Standard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/WCMP2/index.html">WMO Core Metadata Profile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/CDM/index.html">Climate Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/master_data/host.html">host</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/master_data/host_affiliation.html">host_affiliation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/master_data/host_alias.html">host_alias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/master_data/host_environment.html">host_environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/master_data/host_location.html">host_location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/master_data/host_log.html">host_log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/master_data/host_media.html">host_media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/master_data/host_responsible_party.html">host_responsible_party</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/master_data/equipment.html">equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/master_data/equipment_log.html">equipment_log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/master_data/equipment_media.html">equipment_media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/master_data/equipment_responsible_party.html">equipment_responsible_party</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/master_data/sensor_characteristics.html">sensor_characteristics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/master_data/deployment.html">deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/master_data/deployment_application_area.html">deployment_application_area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/master_data/deployment_location.html">deployment_location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/master_data/deployment_log.html">deployment_log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/master_data/deployment_media.html">deployment_media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/master_data/deployment_responsible_party.html">deployment_responsible_party</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/master_data/observation.html">observation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/master_data/feature.html">feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/application_area.html">application_area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/climate_zone.html">climate_zone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/exposure.html">exposure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/facility_type.html">facility_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/feature_type.html">feature_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/measurement_quality.html">measurement_quality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/media_type.html">media_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/observation_type.html">observation_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/observed_property.html">observed_property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/observing_method.html">observing_method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/observing_procedure.html">observing_procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/observing_program.html">observing_program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/operating_status.html">operating_status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/reference_surface.html">reference_surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/representativeness.html">representativeness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/role.html">role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/source_type.html">source_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/status.html">status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/surface_cover.html">surface_cover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/surface_roughness.html">surface_roughness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/territory.html">territory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/time_zone.html">time_zone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/topography_bathymetry.html">topography_bathymetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/reference_data/wmo_region.html">wmo_region</a></li>
 </ul>
 </li>
 </ul>
@@ -367,12 +409,12 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../database/CDM/index.html"
+       href="../database/reference_data/wmo_region.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Climate Data Model</p>
+        <p class="prev-next-title">wmo_region</p>
       </div>
     </a>
     <a class="right-next"

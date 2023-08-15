@@ -1,5 +1,7 @@
 WIGOS Metadata Standard
 =======================
+The list below lists the primary objects defined in the WIGOS metadata standard. Further information on the data model
+and associated XML schema can be found at: `schemas.wmo.int <https://schemas.wmo.int/wmdr/1.0RC9/>`_.
 
 - Abstract environment monitoring facility
     - description 0+
