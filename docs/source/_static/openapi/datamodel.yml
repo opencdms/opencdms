@@ -1,0 +1,2289 @@
+openapi: "3.1.0"
+info:
+    title: "WMDR JSON Schema"
+    version: "0.0.1"
+
+paths:
+    # First paths to data
+    /collections/stations/items/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns information on the specified station.
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/observingFacility"
+
+    /collections/sensors/items/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns information on the specified sensor.
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/equipment"
+
+    /collections/sensorCharacteristics/items/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns information on the characteristics of the specified sensor.
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-observerCharacteristics"
+
+
+    /collections/deployment/items/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns information on the specified deployment.
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/deployment"
+
+
+    /collections/observations/items/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns the specified observation.
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-observation"
+
+    /collections/features/items/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns the specified feature
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-feature"
+
+# Now paths to vocabulary / code tables
+    /vocabulary/climateZone/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns the definition of the requested climate zone
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-climateZone"
+
+    /vocabulary/exposure/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns the definition of the requested exposure classification
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-exposure"
+
+    /vocabulary/facilityType/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns the definition of the requested facility type
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-facilityType"
+
+    /vocabulary/featureType/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns the definition of the requested feature type
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-featureType"
+
+    /vocabulary/program/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns the definition of the requested observing program or network
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-program"
+
+    /vocabulary/mediaType/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns the definition of the requested media type
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-mediaType"
+
+    /vocabulary/observationType/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns the definition of the requested observation type
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-observationType"
+
+    /vocabulary/observedProperty/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns the definition of the requested observed property
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-observedProperty"
+
+    /vocabulary/observingMethod/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns the definition of the requested observing method
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-observingMethod"
+
+    /vocabulary/observingProcedure/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns the definition of the requested observing procedure
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-observingProcedure"
+
+    /vocabulary/referenceSurface/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns the definition of the requested reference
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-referenceSurface"
+    /vocabulary/status/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns the definition of the requested status
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-status"
+
+    /vocabulary/sourceType/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns the definition of the requested source type
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-sourceType"
+
+    /vocabulary/surfaceCover/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns the definition of the requested surface cover classification
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-surfaceCover"
+
+    /vocabulary/surfaceRoughness/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns the definition of the requested surface roughness classification
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-surfaceRoughness"
+
+    /vocabulary/territory/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns the definition of the requested territory
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-territory"
+
+    /vocabulary/timeZone/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns the definition of the requested time zone
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-timeZone"
+
+    /vocabulary/topographyBathymetry/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns the definition of the requested topographic classification
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-topographyBathymetry"
+
+    /vocabulary/wmoRegion/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns the definition of the requested WMO region
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-wmoRegion"
+
+# Now paths ot administrative functions / data
+    /admin/users/items/{id}:
+        get:
+            responses:
+                '200':
+                    description: Returns information on the specified user
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/x-agent"
+# responsibleParty
+# role
+# media
+# hostResponsibleParty
+# hostMedia
+# controlSchedule
+# observerResponsibleParty
+# observerMedia
+# collection
+# feature
+# source
+# maintenanceSchedule
+# deploymentMedia
+# record
+
+components:
+    schemas:
+# Primary data tables (to be served through OGC-API features)
+        observingFacility:
+            type: object
+            properties:
+                id:
+                    type: string
+                    description: record identifier
+                description:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/description"
+                    minItems: 0
+                    description: |
+                        Non-formalized information about the location and surroundings at which an observation is made
+                        and that may influence it. In WIGOS, description is used to describe an observingFacility or
+                        Equipment.
+                onlineResource:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/CI_OnlineResource"
+                    minItems: 0
+                    description: |
+                        An online resource containing additional information about the facility or equipment.
+                geospatialLocation:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/geospatialLocation"
+                    minItems: 0
+                    description: |
+                        Position in space defining the location of the environmental monitoring station/platform.
+                facilityType:
+                    type: string
+                    format: uri
+                    description: The type of the observing facility.
+                dateEstablished:
+                    type: string
+                    format: date
+                    description: |
+                        Date at which the observingFacility was established. Normally
+                        considered to be the date the first observations were made, but it
+                        can be some other, administrative date.
+                dateClosed:
+                    type: string
+                    format: date
+                    description: |
+                        The date when the ObservingFacility was closed.
+
+                wmoRegion:
+                    type: object
+                    format: uri
+                    description: The WMO region the observing facility is located in.
+                territory:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/territory"
+                    minItems: 1
+                    description: |
+                        The territory* the observing facility is located in.
+                        *WMO caveat on territories required.
+
+
+                responsibleParty:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/responsibleParty"
+                    minItems: 0
+                    description: |
+                        The organisation responsible.
+
+                programAffiliation:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/programAffiliation"
+                    minItems: 1
+                    description: |
+                        The global, regional or national program/network(s) that the
+                        station/platform is associated with.
+
+                climateZone:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/climateZone"
+                    minItems: 0
+                    description: |
+                        Type of climate zone at the facility.
+                surfaceCover:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/surfaceCover"
+                    minItems: 0
+                    description: The (bio)physical cover on the Earth’s surface in the vicinity of the observations.
+                surfaceRoughness:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/surfaceRoughness"
+                    minItems: 0
+                    description: Surface roughness at the facility.
+                topographyBathymetry:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/topographyBathymetry"
+                    minItems: 0
+                facilityLog:
+                    type: object
+                    $ref: "#/components/schemas/facilityLog"
+                x-name:
+                    type: string
+                    description: Name of the observing facility
+                x-wigosIdentifier:
+                    type: string
+                    description: The primary WIGOS identifier used by this station.
+                x-referenceStation:
+                    type: string
+                    format: uri
+                    description: Identifier of station used as a reference.
+                x-alias:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/x-alias"
+                    minItems: 0
+            required:
+                - programAffiliation
+                - territory
+                - wmoRegion
+        equipment:
+            type: object
+            properties:
+                id:
+                    type: string
+                    description: record identifier
+                description:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/description"
+                    minItems: 0
+                    description: |
+                        Non-formalized information about the location and surroundings at which an observation is made
+                        and that may influence it. In WIGOS, description is used to describe an observingFacility or
+                        Equipment.
+                geospatialLocation:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/geospatialLocation"
+                    minItems: 0
+                    description: |
+                        Position in space defining the location of the environmental monitoring station/platform.
+                onlineResource:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/CI_OnlineResource"
+                    minItems: 0
+                    description: |
+                        An online resource containing additional information about the facility or equipment.
+                responsibleParty:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/responsibleParty"
+                    minItems: 0
+                    description: |
+                        The organisation responsible.
+                specificationLink:
+                    type: string
+                    format: uri
+                    description: Link to manufacturers (or other) specification describing the equipment.
+                firmwareVersion:
+                    type: string
+                    description: Firmware version of the equipment
+                manufacturer:
+                    type: string
+                    format: uri
+                    description: Manufacturer of the equipment.
+                model:
+                    type: string
+                    format: uri
+                    description: Model number of the equipment.
+                serialNumber:
+                    type: string
+                    description: Serial number of the equipment.
+                x-sensorCharacteristics:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/x-observerCharacteristics"
+                    minItems: 0
+                frequency:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/frequencies"
+                    minItems: 0
+                equipmentLog:
+                    type: object
+                    $ref: "#/components/schemas/equipmentLog"
+        deployment:
+            type: object
+            description: Deployment of a single piece of equipment at an observing facility.
+            properties:
+                deployedEquipment:
+                    type: object
+                    $ref: "#/components/schemas/equipment"
+                    description: The deployed equipment.
+                x-host:
+                    type: object
+                    $ref: "#/components/schemas/observingFacility"
+                    description: The host where the equipment is deployed.
+                x-location:
+                    type: object
+                    $ref: "#/components/schemas/geospatialLocation"
+                    description: Location where the equipment is deployed.
+                applicationArea:
+                    type: array
+                    items:
+                        type: string
+                        format: uri
+                    minItems: 1
+                    description: |
+                        The context within, or intended application(s) for which the
+                        observation is primarily made or which has/have the most stringent
+                        requirements.
+                heightAboveLocalReferenceSurface:
+                    type: number
+                    description: |
+                        Vertical distance of sensor from specified reference surface, in
+                        the direction away from the earth’s center. Positive values indicate
+                        above reference surface, negative values indicate below references
+                        surface (e.g., below ocean surface).
+                localReferenceSurface:
+                    type: string
+                    format: uri
+                    description: |
+                        Description of the specified reference surface.
+                validPeriod:
+                    type: string
+                    format: period
+                    description: |
+                        The period of time for which this deployment configuration was/is
+                        in place.
+                communicationMethod:
+                    type: string
+                    format: uri
+                    description: |
+                        The primary data communication method
+                sourceOfObservation:
+                    type: string
+                    format: uri
+                    description: |
+                        The source of the observation (manual, automatic, visual etc.).
+                exposure:
+                    type: string
+                    format: uri
+                    description: |
+                        The degree to which an instrument is affected by external
+                        influences according to the exposure classification (see WMO No. 8).
+                representativeness:
+                    type: string
+                    format: uri
+                    description: |
+                        An assessment of the representativeness of the observations
+                configuration:
+                    type: string
+                    description: |
+                        Description of any shielding or configuration/setup of the
+                        instrumentation.
+                controlSchedule:
+                    type: string
+                    description: Description of schedule for calibrations or verification of instrument.
+                instrumentOperatingStatus:
+                    type: object
+                    $ref: "#/components/schemas/instrumentOperatingStatus"
+                    format: uri
+                    description: |
+                        The operational status of the instrument when deployed (Operational, testing etc.)
+                maintenanceSchedule:
+                    type: string
+                    description: |
+                        A description (and schedule) of maintenance that is routinely
+                        performed on an instrument.
+                dataGeneration:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/dataGeneration"
+                    minItems: 1
+                    description: |
+                        Description of sampling, processing, reporting and schedule used
+                        for making the observation(s).
+
+            required:
+                - dataGeneration
+                - validPeriod
+                - applicationArea
+                - sourceOfObservation
+                - x-location
+                - x-host
+                - deployedEquipment
+        x-observerCharacteristics:
+            type: object
+            properties:
+                id:
+                    type: string
+                    format: uri
+                    description: record identifier
+                    examples:
+                        - http://example.com/sensorCharacteristics/1
+                observer:
+                    type: string
+                    format: uri
+                    description: Observer that this record is associated with.
+                    examples:
+                        - http://example.com/sensors/1
+                observedProperty:
+                    type: string
+                    format: uri
+                    examples:
+                        - http://example.com/observedProperties/air_temperature
+                observingMethod:
+                    type: string
+                    format: uri
+                    description: The method of measurement/observation used.
+                observingMethodDetails:
+                    type: string
+                    description: A description of the method of measurement/observation used.
+                measurementUnits:
+                    type: string
+                    format: uri
+                    examples:
+                        - example.com/units/Celsius
+                driftPerUnitTime:
+                    type: number
+                    description: |
+                        Intrinsic capability of the measurement/observing method -
+                        drift per unit time. Typically a percentage per unit time but could be
+                        absolute e.g. 1 degree per year.
+                    examples:
+                        - 0.01
+                unitTime:
+                    type: string
+                    format: duration
+                    examples:
+                        - P1Y
+                observableRange:
+                    type: object
+                    description: |
+                        Intrinsic capability of the measurement/observing method -
+                        range
+                    properties:
+                        validMin:
+                            type: number
+                            description: The valid minimum observable value by this sensor.
+                            examples:
+                                - -80.0
+                        validMax:
+                            type: number
+                            description: The valid maximum observable value by this sensor.
+                            examples:
+                                - 60.0
+                specifiedRelativeUncertainty:
+                    type: number
+                    description: |
+                        Intrinsic capability of the measurement/observing method -
+                        specified relative uncertainty. A percentage.
+                specifiedAbsoluteUncertainty:
+                    type: number
+                    description: |
+                        Intrinsic capability of the measurement/observing method -
+                        specified absolute uncertainty, e.g. 0.2 deg C.
+                    examples:
+                        - 0.2
+                specifiedTrueness:
+                    type: number
+                    description: |
+                        Closeness of the arithmetic mean of a large number of results/observations and the true,
+                        or accepted, reference value. See ISO 5725-1. Values as specified by the manufacturer.
+                specifiedPrecision:
+                    type: number
+                    description: |
+                        Closeness of agreement between repeated results / observations. See ISO 5725-1.
+                        Values as specified by the manufacturer.
+                specifiedAbsoluteResolution:
+                    type: number
+                    description: |
+                        Smallest increment observable by the sensor as specified by the manufacturer in the units
+                        given by measurementUnits.
+                    examples:
+                        - 0.1
+                specifiedRelativeResolution:
+                    type: number
+                    description: |
+                        Smallest increment observable by the sensor as specified by the manufacturer (in percent).
+                measurementQuality:
+                    type: string
+                    format: uri
+                    description: |
+                        Expected quality of measurements from the sensor according to the measurement quality
+                        classification (see WMO-No. 8).
+            required:
+                - observingMethod
+        x-feature:
+            type: object
+            properties:
+                identifier:
+                    type: string
+                name:
+                    type: string
+                description:
+                    type: string
+                descriptionReference:
+                    type: string
+                    format: uri
+                geometry:
+                    type: object
+                    $ref: "#/components/schemas/x-geometry"
+        x-observation:
+            type: object
+            properties:
+                id:
+                    type: string
+                    format: uri
+                observationType:
+                    type: string
+                    format: uri
+                location:
+                    type: object
+                    $ref: "#/components/schemas/x-geometry"
+                phenomenonTime:
+                    type: string
+                    format: period
+                result:
+                    type: object
+                    $ref: "#/components/schemas/x-result"
+                resultQuality:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/x-resultQuality"
+                resultTime:
+                    type: string
+                    format: date-time
+                validTime:
+                    type: string
+                    format: period
+                host:
+                    type: string
+                    format: uri
+                observer:
+                    type: string
+                    format: uri
+                observedProperty:
+                    type: string
+                    format: uri
+                collections:
+                    type: array
+                    items:
+                        type: string
+                        format: uri
+                metadata:
+                    type: array
+                    items:
+                        type: string
+                        format: uri
+                featureOfInterest:
+                    type: string
+                    format: uri
+                parameter:
+                    type: object
+                    $ref: "#/components/schemas/x-parameter"
+# Admin
+        x-agent:
+            type: object
+# Code tables
+        x-climateZone:
+            type: object
+            description: Surface cover
+            properties:
+                id:
+                    type: string
+                    format: uri
+                    description: ID / primary key
+                inScheme:
+                    type: string
+                    format: uri
+                    description: The schema / code list that this record is from.
+                    examples:
+                        - http://codes.wmo.int/wmdr/ClimateZone
+                name:
+                    type: string
+                    description: Short name for the climate zone.
+                description:
+                    type: string
+                    description: Description of the climate zone.
+                links:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/x-link"
+                provenance:
+                    type: object
+                    $ref: "#/components/schemas/x-prov"
+        x-exposure:
+            type: object
+            description: Exposure of the sensor
+            properties:
+                id:
+                    type: string
+                    format: uri
+                    description: ID / primary key
+                inScheme:
+                    type: string
+                    format: uri
+                    description: The schema / code list that this record is from.
+                name:
+                    type: string
+                    description: Short name for record.
+                description:
+                    type: string
+                    description: Description of the sensor exposure.
+                links:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/x-link"
+                provenance:
+                    type: object
+                    $ref: "#/components/schemas/x-prov"
+        x-facilityType:
+            type: object
+            description: Station / platform type
+            properties:
+                id:
+                    type: string
+                    format: uri
+                    description: ID / primary key
+                inScheme:
+                    type: string
+                    format: uri
+                    description: The schema / code list that this record is from.
+                    examples:
+                        - https://codes.wmo.int/wmdr/FacilityType
+                name:
+                    type: string
+                    description: Short name for the facility type.
+                description:
+                    type: string
+                    description: Description of the facility type.
+                links:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/x-link"
+                provenance:
+                    type: object
+                    $ref: "#/components/schemas/x-prov"
+        x-featureType:
+            type: object
+            description: Type of feature
+            properties:
+                id:
+                    type: string
+                    format: uri
+                    description: ID / primary key
+                inScheme:
+                    type: string
+                    format: uri
+                    description: The schema / code list that this record is from.
+                name:
+                    type: string
+                    description: Short name for the feature type.
+                description:
+                    type: string
+                    description: Description of the feature type.
+                links:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/x-link"
+                provenance:
+                    type: object
+                    $ref: "#/components/schemas/x-prov"
+        x-program:
+            type: object
+            description: Observing program / network
+            properties:
+                id:
+                    type: string
+                    format: uri
+                    description: ID / primary key
+                inScheme:
+                    type: string
+                    format: uri
+                    description: The schema / code list that this record is from.
+                    examples:
+                        - https://codes.wmo.int/wmdr/ProgramAffiliation
+                name:
+                    type: string
+                    description: Short name for the observing program.
+                description:
+                    type: string
+                    description: Description of the observing program.
+                links:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/x-link"
+                provenance:
+                    type: object
+                    $ref: "#/components/schemas/x-prov"
+        x-mediaType:
+            type: object
+            properties:
+                id:
+                    type: string
+                    format: uri
+                scheme:
+                    type: string
+                    description: IANA media type
+                name:
+                    type: string
+                    description: Common name of media type
+                links:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/x-link"
+                provenance:
+                    type: object
+                    $ref: "#/components/schemas/x-prov"
+        x-observationType:
+            type: object
+            properties:
+                id:
+                    type: string
+                    format: uri
+                    description: ID / primary key
+                inScheme:
+                    type: string
+                    format: uri
+                    description: The schema / code list that this record is from.
+                name:
+                    type: string
+                    description: Short name for the observation type.
+                description:
+                    type: string
+                    description: Description of the observation type.
+                links:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/x-link"
+                provenance:
+                    type: object
+                    $ref: "#/components/schemas/x-prov"
+        x-observedProperty:
+            type: object
+            properties:
+                identifier:
+                    type: string
+                    description: Unique identifier within the concept for the observed property.
+                    examples:
+                        - 224
+                name:
+                    type: string
+                    description: Standard / preferred name of the observed property.
+                    examples:
+                        - Air temperature (at specified distance from reference surface)
+                description:
+                    type: string
+                    description: Description or definition of the observed property.
+                definingResource:
+                    type: string
+                    format: uri
+                    description: Link to the resource that defines the observed property.
+                    examples:
+                        - https://codes.wmo.int/wmdr/ObservedVariableAtmosphere/224
+                units:
+                    type: string
+                    format: uri
+                    description: The canonical units for this observed property.
+                    examples:
+                        - https://codes.wmo.int/wmdr/unit/K
+            required:
+                - identifier
+                - name
+                - description
+                - definingResource
+                - units
+        x-observingMethod:
+            type: object
+            description: Observing method
+            properties:
+                id:
+                    type: string
+                    format: uri
+                    description: ID / primary key
+                inScheme:
+                    type: string
+                    format: uri
+                    description: The schema / code list that this record is from.
+                    examples:
+                        - https://codes.wmo.int/wmdr/ObservingMethodAtmosphere
+                        - https://codes.wmo.int/wmdr/ObservingMethodOcean
+                        - https://codes.wmo.int/wmdr/ObservingMethodTerrestrial
+                name:
+                    type: string
+                    description: Short name for the observing method.
+                description:
+                    type: string
+                    description: Description of the observing method.
+                links:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/x-link"
+                provenance:
+                    type: object
+                    $ref: "#/components/schemas/x-prov"
+        x-observingProcedure:
+            type: object
+            description: Observing procedure
+            properties:
+                id:
+                    type: string
+                    format: uri
+                    description: ID / primary key
+                inScheme:
+                    type: string
+                    format: uri
+                    description: The schema / code list that this record is from.
+                name:
+                    type: string
+                    description: Short name for the observing procedure.
+                description:
+                    type: string
+                    description: Description of the observing procedure.
+                links:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/x-link"
+                provenance:
+                    type: object
+                    $ref: "#/components/schemas/x-prov"
+        x-referenceSurface:
+            type: object
+            description: Type of reference surface
+            properties:
+                id:
+                    type: string
+                    format: uri
+                    description: ID / primary key
+                inScheme:
+                    type: string
+                    format: uri
+                    description: The schema / code list that this record is from.
+                    examples:
+                        - https://codes.wmo.int/wmdr/ReferenceSurfaceType
+                name:
+                    type: string
+                    description: Short name for the reference surface.
+                description:
+                    type: string
+                    description: Description of the reference surface.
+                links:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/x-link"
+                provenance:
+                    type: object
+                    $ref: "#/components/schemas/x-prov"
+        x-status:
+            type: object
+            properties:
+                id:
+                    type: string
+                    format: uri
+                    description: ID / primary key
+                name:
+                    type: string
+                    description: Short name for the status code.
+                description:
+                    type: string
+                    description: Description / definition of the description.
+        x-sourceType:
+            type: object
+            properties:
+                id:
+                    type: string
+                    description: Identifier / primary key for the record
+                name:
+                    type: string
+                    description: Name of the source type
+                description:
+                    type: string
+                    description: Description of source type, e.g. file etc
+                scheme:
+                    type: string
+                    description: IANA URI scheme
+                links:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/x-link"
+                provenance:
+                    type: object
+                    $ref: "#/components/schemas/x-prov"
+        x-surfaceCover:
+            type: object
+            description: Surface cover
+            properties:
+                id:
+                    type: string
+                    format: uri
+                    description: ID / primary key
+                inScheme:
+                    type: string
+                    format: uri
+                    description: The schema / code list that this record is from.
+                    examples:
+                        - https://codes.wmo.int/wmdr/SurfaceCoverGlob2009
+                        - https://codes.wmo.int/wmdr/SurfaceCoverUMD
+                name:
+                    type: string
+                    description: Short name for the surface cover.
+                description:
+                    type: string
+                    description: Description of the surface cover.
+                links:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/x-link"
+                provenance:
+                    type: object
+                    $ref: "#/components/schemas/x-prov"
+        x-surfaceRoughness:
+            type: object
+            description: Surface roughness classification
+            properties:
+                id:
+                    type: string
+                    format: uri
+                    description: ID / primary key
+                inScheme:
+                    type: string
+                    format: uri
+                    description: The schema / code list that this record is from.
+                    examples:
+                        - https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport
+                name:
+                    type: string
+                    description: Short name for the surface roughness classification.
+                description:
+                    type: string
+                    description: Description of the surface roughness classification.
+                links:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/x-link"
+                provenance:
+                    type: object
+                    $ref: "#/components/schemas/x-prov"
+        x-territory:
+            type: object
+            description: Territory / country
+            properties:
+                id:
+                    type: string
+                    format: uri
+                    description: ID / primary key
+                inScheme:
+                    type: string
+                    format: uri
+                    description: The schema / code list that this record is from.
+                    examples:
+                        - https://codes.wmo.int/wmdr/TerritoryName
+                name:
+                    type: string
+                    description: Short name for the facility type.
+                officialName:
+                    type: string
+                    description: Official name of the country.
+                isoCode:
+                    type: object
+                    description: ISO codes for the territory / country described by this record
+                    $ref: "#/components/schemas/x-isoCountryCode"
+                links:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/x-link"
+                provenance:
+                    type: object
+                    $ref: "#/components/schemas/x-prov"
+        x-timeZone:
+            properties:
+                id:
+                    type: string
+                    format: uri
+                    description: Identifier / primary key for this record.
+                abbreviation:
+                    type: string
+                    description: Abbreviation for time zone.
+                name:
+                    type: string
+                    description: Name / description of time zone.
+                offset:
+                    type: number
+                    description: Offset in hours from UTC.
+                provenance:
+                    type: object
+                    $ref: "#/components/schemas/x-prov"
+        x-topographyBathymetry:
+            type: object
+            description: Topography / bathymetry (descriptive)
+            properties:
+                id:
+                    type: string
+                    format: uri
+                    description: ID / primary key
+                inScheme:
+                    type: string
+                    format: uri
+                    description: The schema / code list that this record is from.
+                    examples:
+                        - https://codes.wmo.int/wmdr/TopographicContext
+                        - https://codes.wmo.int/wmdr/LocalTopography
+                name:
+                    type: string
+                    description: Short name for the topographic classification.
+                description:
+                    type: string
+                    description: Description of the topographic classification.
+                links:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/x-link"
+                provenance:
+                    type: object
+                    $ref: "#/components/schemas/x-prov"
+        x-wmoRegion:
+            type: object
+            properties:
+                id:
+                    type: string
+                    format: uri
+                    description: Primary key for this record.
+                name:
+                    type: string
+                    description: Short name of the WMO region.
+                description:
+                    type: string
+                    description: long name / description of the WMO region.
+                links:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/x-link"
+                provenance:
+                    type: object
+                    $ref: "#/components/schemas/x-prov"
+
+
+
+        # Embedded objects and code tables
+        territory:
+            type: object
+            description: History of the territory that this station was / is located in.
+            properties:
+                id:
+                    type: string
+                    format: uri
+                    description: Identifier / primary key for this record.
+                hostId:
+                    type: string
+                    format: uri
+                    description: The host associated with this record.
+                territoryName:
+                    type: string
+                    format: uri
+                    description: The territory the observing facility is located in.
+                validPeriod:
+                    type: string
+                    format: period
+                    description: |
+                        Specifies at least the begin date of the indicated territory. If
+                        omitted, the dateEstablished of the facility will be assumed.
+            required:
+                - territoryName
+        reportingStatus:
+            type: object
+            properties:
+                reportingStatus:
+                    type: string
+                    format: uri
+                    description: |
+                        Declared reporting status of an observing facility with respect
+                        to a certain program/network affiliation.
+                validPeriod:
+                    type: string
+                    format: period
+                    description: |
+                        Specifies at least the begin date of the indicated ReportingStatus. If
+                        omitted, the dateEstablished of the facility will be assumed.
+            required:
+                - reportingStatus
+        schedule:
+            type: object
+            description: |
+                Schedule contains a description of the temporal coverage of observation. Schedules are defined in
+                terms of months covered, weekdays covered, hours and minutes covered during each day. At
+                present, schedules within the minute are not supported. A complete definition of a schedule
+                requires specification of the temporalReportingInterval, and may require the specification of
+                diurnalBaseTime.
+            properties:
+                diurnalBaseTime:
+                    type: string
+                    format: time
+                    description: |
+                        Time (of day) to which diurnal statistics are referenced. For
+                        example, a 24 h accumulated total precipitation might refer to
+                        0700z as the diurnal base time.
+                endHour:
+                    type: integer
+                    description: End hour of schedule (0 to 23).
+                endMinute:
+                    type: integer
+                    description: End minute of schedule (0 to 59).
+                endMonth:
+                    type: integer
+                    description: End month of schedule (January = 1, December = 12).
+                endWeekday:
+                    type: integer
+                    description: End day of schedule (Monday = 1, Sunday = 7).
+                startHour:
+                    type: integer
+                    description: Start hour of schedule (0 to 23).
+                startMinute:
+                    type: integer
+                    description: Start minute of schedule (0 to 59).
+                startMonth:
+                    type: integer
+                    description: Start month of schedule (January = 1, December = 12).
+                startWeekday:
+                    type: integer
+                    description: Start day of schedule (Monday = 1, Sunday = 7).
+            required:
+                - startMonth
+                - endMonth
+                - startWeekday
+                - endWeekday
+                - startHour
+                - endHour
+                - startMinute
+                - endMinute
+        sampling:
+            type: object
+            properties:
+                samplesPerUnitTime:
+                    type: number
+                sampleTreatment:
+                    type: string
+                    format: uri
+                    description: |
+                        Description of chemical or physical treatment of the sample
+                        prior to analysis.
+                samplingProcedure:
+                    type: string
+                    format: uri
+                    description: The procedure(s) involved in obtaining a sample/making an observation.
+                samplingProcedureDescription:
+                    type: string
+                    description: Description of the procedure(s) involved in obtaining a sample/making an observation.
+                samplingStrategy:
+                    type: string
+                    format: uri
+                    description: The strategy used to generate the observed variable.
+                samplingTimePeriod:
+                    type: string
+                    format: duration
+                    description: |
+                        The period of time over which a measurement is taken. This
+                        value is a duration, e.g. 1 hour, not specific times and dates.
+                spatialSamplingResolution:
+                    type: number
+                    description: |
+                        The spatial sampling resolution is the size of the smallest
+                        observable object. The value of this property may be supported by
+                        explanatory information in spatialSamplingResolutionDescription.
+                spatialSamplingResolutionDetails:
+                    type: string
+                    description: |
+                        Explanatory information about the exact meaning of the value
+                        of samplingResolution. Note: not currently supported.
+                temporalSamplingInterval:
+                    type: string
+                    format: duration
+                    description: |
+                        Time period (as a duration) between the beginning of
+                        consecutive sampling periods.
+
+
+        responsibleParty:
+            type: object
+            properties:
+                responsibleParty:
+                    type: object
+                    $ref: "#/components/schemas/CI_ResponsibleParty"
+                    description: |
+                        NB: In the current implementation of the OSCAR/Surface API, the
+                        element CI_ResponsibleParty is used to specify both, the
+                        Supervising Organization and any station contacts.
+
+                        If the corresponding role code of a CI_ResponsibleParty is “owner”,
+                        only the element CI_ResponsibleParty/organisationName will be
+                        considered and will be used to identify the Supervising
+                        Organization. Several instances can exist if the validPeriod is
+                        specified and if validPeriods are not overlapping, otherwise only the
+                        first occurrence will be used.
+
+                        If the corresponding role code of a CI_ResponsibleParty is
+                        “principalInvestigator”, all elements of CI_ResponsibleParty will be
+                        evaluated and used to identify and register or update a station
+                        contact as “Station Manager”. If more than one instance exists with
+                        this role code, they will all be rejected.
+
+                        If the corresponding role code of a CI_ResponsibleParty is
+                        “pointOfContact” or is not specified at all, all elements of
+                        CI_ResponsibleParty will be evaluated and used to identify and
+                        register or update a station contact without a specific station
+                        function. If such a station contact should be labeled as
+                        “Measurement Leader” for a specific observation, this function
+                        must be specified under om:metadata/MD_Metadata/contact (cf.
+                        6.2.6).
+
+                        The element CI_ResponsibleParty/name must be specified as a
+                        comma-separated character string of [familyname], [firstname]
+                        [title], where at least [familyname] is required.
+                validPeriod:
+                    type: string
+                    format: period
+                    description: |
+                        Specifies at least the begin date of the indicated responsibleParty.
+            required:
+                - responsibleParty
+        reporting:
+            type: object
+            properties:
+                dataFormat:
+                    type: string
+                    format: uri
+                    description: |
+                        Description of the format in which the observed variable is
+                        primarily being provided
+                dataFormatVersion:
+                    type: string
+                    description: |
+                        Version of the data format.
+                dataPolicy:
+                    type: object
+                    $ref: "#/components/schemas/dataPolicy"
+                    description: |
+                        Details relating to the use and limitations surrounding data
+                        imposed by the supervising organization
+                internationalExchange:
+                    type: boolean
+                    description: |
+                        Specifies if the observations described using dataGeneration,
+                        in particular through the temporalReportingInterval, are intended
+                        for international exchange.
+                levelOfData:
+                    type: string
+                    format: uri
+                    description: |
+                         Level of data processing.
+                numberOfObservationsInReportingInterval:
+                    type: integer
+                    description: |
+                        Specifies how many aggregated observations are reported on
+                        average in each temporal reporting interval. For full temporal
+                        coverage, the number of observations reported = temporal
+                        reporting interval / aggregation period.
+                numericalResolution:
+                    type: number
+                    description: |
+                        Numerical resolution is a measure of the detail to which a
+                        numerical quantity is expressed. This is synonymous to numerical
+                        precision of the reporting, but can be different than the numerical
+                        precision of the observed value.
+                officialStatus:
+                    type: boolean
+                    description: |
+                         Official status of observation.
+                referenceDatum:
+                    type: object
+                    $ref: "#/components/schemas/CD_VerticalDatum"
+                    description: |
+                        Reference datum used to convert observed quantity to
+                        reported quantity.
+                referenceTimeSource:
+                    type: string
+                    format: uri
+                    description: |
+                         Time reference used for observations.
+                spatialReportingInterval:
+                    type: number
+                    description: |
+                        Spatial interval over which the observed variable is reported.
+                        Note that this is expressed as length, without geo-referencing.
+                timeliness:
+                    type: string
+                    format: duration
+                    description: |
+                        Timeliness of reporting is the typical time taken between
+                        completion of the observation and when it becomes available to
+                        users.
+                timestampMeaning:
+                    type: string
+                    format: uri
+                    description:
+                        Meaning of the time stamp in the temporalReportingInterval.
+                uom:
+                    type: string
+                    format: uri
+                    description: Measurement Unit (unit of measure).
+            required:
+                - internationalExchange
+                - uom
+                - temporalReportingInterval
+        programAffiliation:
+            type: object
+            properties:
+                id:
+                    type: string
+                    format: uri
+                    description: primary key for this record
+                hostId:
+                    type: string
+                    format: uri
+                    description: Host described by this record
+                program:
+                    type: string
+                    format: uri
+                    description: |
+                        The global, regional or national program/network(s) that the station/platform is associated with.
+                programSpecificFacilityID:
+                    type: string
+                    description: The identifier of the observing facility as used by the program/network.
+                reportingStatus:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/reportingStatus"
+                    minItems: 0
+                provenance:
+                    type: object
+                    $ref: "#/components/schemas/x-prov"
+            required:
+                - program
+        processing:
+            type: object
+            properties:
+                aggregationPeriod:
+                    type: string
+                    format: duration
+                    description:  Time period over which individual samples/observations are aggregated.
+                dataProcessing:
+                    type: string
+                    description: |
+                        A description of the data processing used to generate
+                        observations including, if relevant, algorithms used to derive the
+                        result.
+                processingCentre:
+                    type: string
+                    description: |
+                        Center at which the observation is processed.
+                        Although this is a free text string, it is expected that in practice this
+                        value should be from a controlled list of known centers
+                softwareDetails:
+                    type: string
+                    description: |
+                        Name and version of the software or processor used to derive
+                        the values.
+                softwareURL:
+                    type: string
+                    format: uri
+                    description: URL for the software or processor used to derive the values
+        instrumentOperatingStatus:
+            type: object
+            properties:
+                operatingStatus:
+                    type: string
+                    format: uri
+                    description: |
+                        The operational status of the instrument when deployed
+                        (Operational, testing etc.).
+                validPeriod:
+                    type: string
+                    format: period
+                    description: |
+                        	The time period for which the specified instrumentOperatingStatus is known to be valid.
+                            Normally, this will be specified as a "from" date, implying that the validity extends
+                            but does not include the next instrumentOperatingStatus on record. If only one
+                            instrumentOperatingStatus is specified for an equipment, the time stamp is optional.
+
+        geospatialLocation:
+            type: object
+            properties:
+                geoLocation:
+                    type: object
+                    $ref: "#/components/schemas/GM_Point"
+                    description: |
+                        (Observing facility) Representative or conventional geospatial location of
+                        observing facility, the reference location. This will always be a point
+                        location, but this location can change with time.
+
+                        (Equipment) Geospatial location of instrument or observing equipment,
+                        typically the location of the sensing element or sample inlet. This
+                        will always be a point location, but this location can change with
+                        time.
+                geopositioningMethod:
+                    type: string
+                    format: uri
+                    description: |
+                        The geopositioning method used to determine the specified geolocation.
+                validPeriod:
+                    type: string
+                    format: period
+                    description: |
+                        The time period for which this location is known to be valid.
+                        Normally, this will be specified as a "from" date, implying that the
+                        validity extends but does not include the next location on record.
+            required:
+                - geoLocation
+        description:
+            type: object
+            properties:
+                description:
+                    type: string
+                    description: Defined in ISO19103 Edition 1
+                validPeriod:
+                    type: string
+                    format: period
+                    description: |
+                        Specifies at least the begin date of the indicated description. If
+                        omitted, the dateEstablished of the facility will be assumed.
+            required:
+                - description
+        dataPolicy:
+            type: object
+            properties:
+                attribution:
+                    type: object
+                    $ref: "#/components/schemas/attribution"
+                dataPolicy:
+                    type: string
+                    format: uri
+        attribution:
+            type: object
+            properties:
+                originator:
+                    type: object
+                    $ref: "#/components/schemas/CI_ResponsibleParty"
+                    description: |
+                        Identifies the individual and/or organization at the origin of the resource.
+                        This is typically the owner of the resource, e.g. a data set.
+                originatorURL:
+                    type: object
+                    $ref: "#/components/schemas/CI_OnlineResource"
+                source:
+                    type: object
+                    $ref: "#/components/schemas/CI_OnlineResource"
+                title:
+                    type: string
+                    description: |
+                        The title of the attributed work.
+
+
+
+        dataGeneration:
+            type: object
+            properties:
+                validPeriod:
+                    type: string
+                    format: period
+                    description: |
+                        The period of time for which this DataGeneration arrangement
+                        was/is in place. (Note: this time period must fall within the time
+                        period specified in the Deployment).
+                schedule:
+                    type: object
+                    $ref: "#/components/schemas/schedule"
+                    description: Description of the schedule of observation.
+                sampling:
+                    type: object
+                    $ref: "#/components/schemas/sampling"
+                    description: Sampling details.
+                processing:
+                    type: object
+                    $ref: "#/components/schemas/processing"
+                    description: Processing details.
+                reporting:
+                    type: object
+                    $ref: "#/components/schemas/reporting"
+                    description: Reporting details.
+            required:
+                - validPeriod
+                - schedule
+                - sampling
+                - reporting
+        frequencies:
+            type: object
+            properties:
+                bandwidth:
+                    type: number
+                    description: |
+                        The difference of the highest and the lowest frequency, or more
+                        specifically, the full-width at half-maximum (FWHM).
+                bandwidthUnit:
+                    type: string
+                    format: uri
+                    description: |
+                        Use conditional on use of bandwidth. Expected values are: Hz, kHz,
+                        MHz, GHz, THz.
+                frequency:
+                    type: number
+                    description: The nominal frequency used by equipment
+                frequencyUnit:
+                    type: string
+                    format: uri
+                    description: |
+                        Use conditional on use of frequency. Expected values are: Hz, kHz, MHz, GHz, THz
+                frequencyUse:
+                    type: string
+                    format: uri
+                    description: |
+                        Expected values are: Transmit, Receive, TransmitReceive
+                purposeOfFrequencyUse:
+                    type: string
+                    format: uri
+                    description: PurposeOfFrequencyUseType uses values
+                transmissionMode:
+                    type: string
+                    format: uri
+                    description: |
+                        Expected values are: pulsed, continuous-wave
+                        Use conditional on frequencyUse = Transmit.
+            required:
+                - frequency
+                - purposeOfFrequencyUse
+                - frequencyUse
+# External objects from ISO 19156 and other related standards
+        CI_ResponsibleParty:
+            type: object
+            properties:
+                contactInfo:
+                    type: object
+                    $ref: "#/components/schemas/CI_Contact"
+                individualName:
+                    type: string
+                organisationName:
+                    type: string
+                positionName:
+                    type: string
+                role:
+                    type: string
+                    enum:
+                        - author
+                        - custodian
+                        - distributor
+                        - originator
+                        - owner
+                        - pointOfContact
+                        - principleInvestigator
+                        - processor
+                        - publisher
+                        - resourceProvider
+                        - user
+            required:
+                - role
+        CI_OnlineResource:
+            type: object
+            properties:
+                applicationProfile:
+                    type: string
+                description:
+                    type: string
+                function:
+                    type: string
+                    enum:
+                        - download
+                        - information
+                        - offlineAccess
+                        - order
+                        - search
+                linkage:
+                    type: string
+                    format: uri
+                name:
+                    type: string
+                protocol:
+                    type: string
+            required:
+                - linkage
+        CI_Contact:
+            type: object
+            properties:
+                address:
+                    type: object
+                    $ref: "#/components/schemas/CI_Address"
+                contactInstructions:
+                    type: string
+                hoursOfService:
+                    type: string
+                onlineResource:
+                    type: object
+                    $ref: "#/components/schemas/CI_OnlineResource"
+                phone:
+                    type: object
+                    $ref: "#/components/schemas/CI_Telephone"
+        CI_Address:
+            type: object
+            properties:
+                administrativeArea:
+                    type: string
+                city:
+                    type: string
+                country:
+                    type: string
+                deliveryPoint:
+                    type: array
+                    items:
+                        type: string
+                    minItems: 0
+                electronicMailAddress:
+                    type: array
+                    items:
+                        type: string
+                    minItems: 0
+                postalCode:
+                    type: string
+        CI_Telephone:
+            type: object
+            properties:
+                facsimile:
+                    type: array
+                    items:
+                        type: string
+                    minItems: 0
+                voice:
+                    type: array
+                    items:
+                        type: string
+                    minItems: 0
+        CD_VerticalDatum:
+            type: object
+            properties:
+                anchorDefinition:
+                    type: string
+                domainOfValidity:
+                    type: object
+                    $ref: "#/components/schemas/EX_Extent"
+                realizationEpoch:
+                    type: string
+                    format: date
+                scope:
+                    type: array
+                    items:
+                        type: string
+                    minItems: 1
+        GM_Point:
+            type: object
+            properties:
+                position:
+                    type: object
+                    properties:
+                        coordinate:
+                            type: array
+                            items:
+                                type: number
+                            minItems: 2
+                            maxItems: 3
+                        dimension:
+                            type: number
+                        coordinateReferenceSystem:
+                            type: object
+                            properties:
+                                identifier:
+                                    type: array
+                                    items:
+                                        type: object
+                                        properties:
+                                            codeSpace:
+                                                type: string
+                                            version:
+                                                type: string
+                                    minItems: 0
+                                alias:
+                                    type: array
+                                    items:
+                                        type: string
+                                    minItems: 0
+                                remarks:
+                                    type: string
+                                scope:
+                                    type: array
+                                    items:
+                                        type: string
+                                    minItems: 1
+                    required:
+                        - coordinate
+                        - dimension
+            required:
+                - position
+        EX_Extent:
+            type: object
+            properties:
+                description:
+                    type: string
+                verticalElement:
+                    type: array
+                    items:
+                        type: object
+                        properties:
+                            maximumValue:
+                                type: number
+                            minimumValue:
+                                type: number
+                        required:
+                            - minimumValue
+                            - maximumValue
+                temporalElement:
+                    type: array
+                    items:
+                        type: object
+                        properties:
+                            extent:
+                                type: string
+                                format: period
+                        required:
+                            - extent
+                geographicElement:
+                    type: array
+                    items:
+                        type: object
+                        properties:
+                            extentTypeCode:
+                                type: boolean
+# Station environment
+        topographyBathymetry:
+            type: object
+            properties:
+                altitudeOrDepth:
+                    type: string
+                    format: uri
+                    description: The altitude/depth with respect to mean sea level.
+                localTopography:
+                    type: string
+                    format: uri
+                    description: The local topography.
+                relativeElevation:
+                    type: string
+                    format: uri
+                    description: The relative elevation.
+                topographicContext:
+                    type: string
+                    format: uri
+                    description: The topographic context.
+                validPeriod:
+                    type: string
+                    format: period
+        climateZone:
+            type: object
+            properties:
+                climateZone:
+                    type: string
+                    format: uri
+                    description: |
+                        Type of climate zone at the facility.
+                validPeriod:
+                    type: string
+                    format: period
+                    description: |
+                        Specifies at least the begin date of the indicated climateZone. If
+                        omitted, the dateEstablished of the facility will be assumed.
+
+
+        surfaceRoughness:
+            type: object
+            properties:
+                surfaceRoughness:
+                    type: string
+                    format: uri
+                    description: Surface roughness at the facility.
+                validPeriod:
+                    type: string
+                    format: period
+                    description: |
+                        Specifies at least the begin date of the indicated surfaceRoughness.
+                        If omitted, the dateEstablished of the facility will be assumed.
+            required:
+                - surfaceRoughness
+        surfaceCover:
+            type: object
+            properties:
+                surfaceCover:
+                    type: string
+                    format: uri
+                    description:  |
+                        The observed (bio)physical cover on the Earth’s surface in the vicinity of the observation.
+                surfaceCoverClassification:
+                    type: string
+                    format: uri
+                    description: Link to document describing the classification scheme
+                validPeriod:
+                    type: string
+                    format: period
+                    description: |
+                        Specifies at least the begin date of the indicated surfaceCover. If
+                        omitted, the dateEstablished of the facility will be assumed.
+            required:
+                - surfaceCover
+                - surfaceCoverClassification
+# Logging
+        equipmentLog:
+            type: object
+            properties:
+                log:
+                    type: object
+                    $ref: "#/components/schemas/log"
+            required:
+                - log
+        facilityLog:
+            type: object
+            properties:
+                log:
+                    type: object
+                    $ref: "#/components/schemas/log"
+            required:
+                - log
+        log:
+            type: object
+            properties:
+                logEntry:
+                    type: array
+                    items:
+                        type: object
+                        $ref: "#/components/schemas/logEntry"
+                    minItems: 0
+                    description: |
+                        An entry in a log
+
+        logEntry:
+            type: object
+            properties:
+                author:
+                    type: string
+                    description: |
+                        Author of the log entry.
+                datetime:
+                    type: string
+                    format: date-time
+                    description: |
+                        Date and time of the event being logged.
+                description:
+                    type: string
+                    description: |
+                        Description of the log entry.
+                documentationURL:
+                    type: string
+                    format: uri
+                    description: |
+                        Link to additional documents, photos etc. about the event being
+                        logged.
+            required:
+                - datetime
+                - author
+                - description
+# observation
+        x-result:
+            type: object
+            properties:
+                value:
+                    type: number
+                    description: The result of the observation.
+                uom:
+                    type: string
+                    format: uri
+                    description: |
+                        Units of the result suitable for reporting the observed property.
+                        This my be unitless as appropriate.
+                description:
+                    type: string
+                    description: |
+                        Description of the result value for categorical data, e.g. present weather.
+            required:
+                - value
+                - uom
+        x-resultQuality:
+            type: object
+            properties:
+                scheme:
+                    type: string
+                    format: uri
+                test:
+                    type: string
+                    format: uri
+                flag:
+                    type: string
+                    enum:
+                        - pass
+                        - fail
+                        - suspect
+                        - not available
+                result:
+                    type: string
+                    description: Plain text description of the result and its meaning.
+        x-parameter:
+            type: object
+            properties:
+                user:
+                    type: string
+                    format: uri
+                status:
+                    type: string
+                    format: uri
+                comments:
+                    type: string
+                source:
+                    type: string
+                    format: uri
+                sourceID:
+                    type: string
+                version:
+                    type: string
+            required:
+                - user
+                - status
+                - source
+                - version
+        x-geometry:
+            type: object
+            properties:
+                type:
+                    type: string
+                    enum:
+                        - Point
+                        - Polygon
+                coordinates:
+                    type: array
+                    items:
+                        type: number
+                    minItems: 2
+                    maxItems: 3
+        x-metadata:
+            type: object
+            properties:
+                id:
+                    type: string
+                    description:
+                        A unique identifier of the catalogue record.
+                    format: uri
+                conformsTo:
+                    type: array
+                    items:
+                        type: string
+                type:
+                    type: string
+                    enum:
+                        - Feature
+                time:
+                    oneOf:
+                        - enum:
+                              - null
+                        - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/time.yaml
+        x-alias:
+            type: object
+            properties:
+                id:
+                    type: string
+                    format: uri
+                    description: Primary key for this record
+                hostId:
+                    type: string
+                    format: uri
+                    description: The host that this record belongs to
+                alternativeIdentifier:
+                    type: string
+                    description: Alternative identifier used by this station
+                identifierType:
+                    type: string
+                    format: uri
+                    description: The type of identifier.
+                alternativeName:
+                    type: string
+                    description: Alternative name used by this station.
+                validPeriod:
+                    type: string
+                    format: period
+                    description: Period when this alias was in use.
+                provenance:
+                    type: object
+                    $ref: "#/components/schemas/x-prov"
+        x-source:
+            id:
+                type: string
+                format: uri
+                description: Identifier / primary key for this record.
+            name:
+                type: string
+                description: Name of the source.
+            description:
+                type: string
+                description: |
+                    Description of the source type, e.g. file etc.
+            sourceType:
+                type: string
+                format: uri
+                description: Type of source.
+            format:
+                type: string
+                format: uri
+                description: Format of the source, e.g. csv, json etc.
+            processor:
+                type: string
+                format: uri
+                description: Processor used to ingest and process the data.
+            links:
+                type: array
+                $ref: "#/components/schemas/x-link"
+            provenance:
+                type: object
+                $ref: "#/components/schemas/x-prov"
+        x-prov:
+            type: object
+            description: Basic provenance information.
+            properties:
+                version:
+                    type: string
+                    description: Version of this record.
+                changeDate:
+                    type: string
+                    format: datetime
+                    description: Date this record was changed.
+                agent:
+                    type: string
+                    $ref: "#/components/schemas/x-agent"
+                    description: Who (or what) made the change.
+                status:
+                    type: string
+                    format: uri
+                    description: Status (latest, archived etc) of this record.
+                    examples:
+                        - /vocabulary/status/1
+                comment:
+                    type: string
+                    description: Free text comments.
+        x-link:
+            type: object
+        x-isoCountryCode:
+            type: object
