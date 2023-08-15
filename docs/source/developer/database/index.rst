@@ -108,7 +108,7 @@ table can be found via the link below.
 .. toctree::
    :maxdepth: 1
    :glob:
-   :caption: Observation:
+   :caption: Observation table definition:
 
    master_data/observation
 
@@ -123,7 +123,7 @@ the table can be found via the link below.
 .. toctree::
    :maxdepth: 1
    :glob:
-   :caption: Feature:
+   :caption: Feature table definition:
 
    master_data/feature
 
@@ -131,12 +131,11 @@ the table can be found via the link below.
 Reference Data
 --------------
 
-The following tables / code lists are used by and referenced from the *master_data*. In many cases the code lists have
-been cached from the WIGOS Metadata Standard and associated code lists.
+The following tables / code lists are used by and referenced from the *master_data*.
 
 .. toctree::
    :maxdepth: 1
    :glob:
-   :caption: Components:
+   :caption: Code list definitions:
 
    reference_data/*
