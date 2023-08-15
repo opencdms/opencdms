@@ -1,0 +1,13 @@
+"Property","Kind","References","Requirement","Description"
+"id","str",,"Required",""
+"equipment","str","master_data.equipment.id","Required","The equipment that this record corresponds to."
+"responsible_party","str","master_data.responsible_party.id","Required","The responsible party associated with the record."
+"role","str","reference_data.role.id","Required","The role the responsible party plays."
+"valid_from","datetime",,"Optional","Date this record is valid from."
+"valid_to","datetime",,"Optional","Date this record is valid to."
+"_version","int",,"Required","Version number of this record."
+"_change_date","datetime",,"Required","Date this record was changed."
+"_user","str","admin.user.id","Required","Which user/agent last modified this record."
+"_status","str","reference_data.status.id","Required","Whether this is the latest version or an archived version of the record."
+"_comments","str",,"Required","Free text comments on this record, for example description of changes made etc."
+
