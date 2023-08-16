@@ -1,0 +1,1094 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>time_zone &#8212; OpenCDMS 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css?v=2a6c4383" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css?v=d290406d" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=adfaaca5" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=40769cce"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=5eb1bb1e"></script>
+    <script src="../../../../_static/tabs.js?v=3030b3cb"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'developer/database/default/reference_data/time_zone';</script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="topographic_context" href="topographic_context.html" />
+    <link rel="prev" title="territory" href="territory.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">OpenCDMS 0.1.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../administrator/index.html">
+                        Administrator Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../../../index.html">
+                        Developer Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../administrator/index.html">
+                        Administrator Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../../../index.html">
+                        Developer Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Architecture</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../architecture/index.html">OpenCDMS Architecture</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Databases</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../index.html">Database and data model(s)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../index.html">OpenCDMS default database</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="../master_data.html">Master data</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/host.html">host</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/host_affiliation.html">host_affiliation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/host_alias.html">host_alias</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/host_environment.html">host_environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/host_location.html">host_location</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/host_log.html">host_log</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/host_media.html">host_media</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/host_responsible_party.html">host_responsible_party</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/equipment.html">equipment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/equipment_log.html">equipment_log</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/equipment_media.html">equipment_media</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/equipment_responsible_party.html">equipment_responsible_party</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/sensor_characteristics.html">sensor_characteristics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/deployment.html">deployment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/deployment_application_area.html">deployment_application_area</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/deployment_location.html">deployment_location</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/deployment_log.html">deployment_log</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/deployment_media.html">deployment_media</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/deployment_responsible_party.html">deployment_responsible_party</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/observation.html">observation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/feature.html">feature</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="../reference_data.html">Reference Data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="altitude.html">altitude</a></li>
+<li class="toctree-l4"><a class="reference internal" href="application_area.html">application_area</a></li>
+<li class="toctree-l4"><a class="reference internal" href="climate_zone.html">climate_zone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="communication_method.html">communication_method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="equipment_type.html">equipment_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exposure.html">exposure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="facility_type.html">facility_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="feature_type.html">feature_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="geopositioning_method.html">geopositioning_method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="local_topography.html">local_topography</a></li>
+<li class="toctree-l4"><a class="reference internal" href="measurement_quality.html">measurement_quality</a></li>
+<li class="toctree-l4"><a class="reference internal" href="media_type.html">media_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="observation_type.html">observation_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="observed_property.html">observed_property</a></li>
+<li class="toctree-l4"><a class="reference internal" href="observing_method.html">observing_method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="observing_procedure.html">observing_procedure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="observing_program.html">observing_program</a></li>
+<li class="toctree-l4"><a class="reference internal" href="operating_status.html">operating_status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference_surface.html">reference_surface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reporting_status.html">reporting_status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="representativeness.html">representativeness</a></li>
+<li class="toctree-l4"><a class="reference internal" href="role.html">role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source_of_observation.html">source_of_observation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source_type.html">source_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="status.html">status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="surface_cover.html">surface_cover</a></li>
+<li class="toctree-l4"><a class="reference internal" href="surface_roughness.html">surface_roughness</a></li>
+<li class="toctree-l4"><a class="reference internal" href="territory.html">territory</a></li>
+<li class="toctree-l4 current active"><a class="current reference internal" href="#">time_zone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="topographic_context.html">topographic_context</a></li>
+<li class="toctree-l4"><a class="reference internal" href="topography_bathymetry.html">topography_bathymetry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wmo_region.html">wmo_region</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Web components</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../components/index.html">OpenCDMS Web Components</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../components/raw_synop_entry_form/index.html">Raw FM-12 SYNOP entry form</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">OpenCDMS API</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/automated_quality_control/index.html">Automated quality control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/encode_daycli/index.html">DAYCLI BUFR encoder</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Events</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../events/index.html">Events</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../docs/index.html">Updating the docs</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Developer Documentation</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../reference_data.html" class="nav-link">Reference Data</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">time_zone</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="time-zone">
+<h1>time_zone<a class="headerlink" href="#time-zone" title="Permalink to this heading">#</a></h1>
+<p>Time zone code list</p>
+<style>
+
+   /*disable page width for wide tables*/
+   .bd-page-width {max-width: none;}
+   .bd-article-container {max-width: 100% !important;}
+
+   /* Limit primary side bar width for wide pages */
+   .bd-sidebar-primary {max-width: 400px;}
+
+</style><div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Table definition</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Example data</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>Download the definition as a CSV file: <a class="reference download internal" download="" href="../../../../_downloads/d91c3bf5ecd1d84639cd4d0d9fad86d9/time_zone.csv"><code class="xref download docutils literal notranslate"><span class="pre">csv</span></code></a>.</p>
+<table class="table" id="id1">
+<caption><span class="caption-text">Definition of the <em>time_zone</em> table.</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Kind</p></th>
+<th class="head"><p>References</p></th>
+<th class="head"><p>Requirement</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p id="id">id</p>
+</td>
+<td><p>str</p></td>
+<td></td>
+<td><p>Required</p></td>
+<td><p>ID / primary key</p></td>
+</tr>
+<tr class="row-odd"><td><p id="inscheme">inScheme</p>
+</td>
+<td><p>str</p></td>
+<td></td>
+<td><p>Required</p></td>
+<td><p>The scheme/vocabulary that this record is from.</p></td>
+</tr>
+<tr class="row-even"><td><p id="name">name</p>
+</td>
+<td><p>str</p></td>
+<td></td>
+<td><p>Required</p></td>
+<td><p>Name / abbreviation of time zone</p></td>
+</tr>
+<tr class="row-odd"><td><p id="description">description</p>
+</td>
+<td><p>str</p></td>
+<td></td>
+<td><p>Required</p></td>
+<td><p>Description of the time zone.</p></td>
+</tr>
+<tr class="row-even"><td><p id="offset">offset</p>
+</td>
+<td><p>float</p></td>
+<td></td>
+<td><p>Required</p></td>
+<td><p>Offset from UTC in hours (decimal)</p></td>
+</tr>
+<tr class="row-odd"><td><p id="links">links</p>
+</td>
+<td><p>dict</p></td>
+<td></td>
+<td><p>Optional</p></td>
+<td><p>Link(s) to further information.</p></td>
+</tr>
+<tr class="row-even"><td><p id="version">_version</p>
+</td>
+<td><p>int</p></td>
+<td></td>
+<td><p>Required</p></td>
+<td><p>Version number of this record</p></td>
+</tr>
+<tr class="row-odd"><td><p id="change-date">_change_date</p>
+</td>
+<td><p>datetime</p></td>
+<td></td>
+<td><p>Required</p></td>
+<td><p>Date this record was changed</p></td>
+</tr>
+<tr class="row-even"><td><p id="user">_user</p>
+</td>
+<td><p>str</p></td>
+<td><p><a class="reference external" href="../admin/user.html#id">admin.user.id</a></p></td>
+<td><p>Required</p></td>
+<td><p>Which user/agent last modified this record</p></td>
+</tr>
+<tr class="row-odd"><td><p id="status">_status</p>
+</td>
+<td><p>str</p></td>
+<td><p><a class="reference external" href="../reference_data/status.html#id">reference_data.status.id</a></p></td>
+<td><p>Required</p></td>
+<td><p>Whether this is the latest version or an archived version of the record</p></td>
+</tr>
+<tr class="row-even"><td><p id="comments">_comments</p>
+</td>
+<td><p>str</p></td>
+<td></td>
+<td><p>Required</p></td>
+<td><p>Free text comments on this record, for example description of changes made etc</p></td>
+</tr>
+</tbody>
+</table>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>Download the example CSV file: <a class="reference download internal" download="" href="../../../../_downloads/f682527cad25129d3ee2576e0d9fc8b9/time_zone.csv"><code class="xref download docutils literal notranslate"><span class="pre">csv</span></code></a>.</p>
+<table class="table" id="id2">
+<caption><span class="caption-text">Example data</span><a class="headerlink" href="#id2" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>id</p></th>
+<th class="head"><p>inScheme</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>description</p></th>
+<th class="head"><p>offset</p></th>
+<th class="head"><p>links</p></th>
+<th class="head"><p>_version</p></th>
+<th class="head"><p>_change_date</p></th>
+<th class="head"><p>_user</p></th>
+<th class="head"><p>_status</p></th>
+<th class="head"><p>_comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-12">https://codes.wmo.int/wmdr/Timezone/-12</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC-12:00</p></td>
+<td><p>Timezone with a UTC offset of UTC-12:00 hours. Locations in this timezone include Etc/GMT+12.</p></td>
+<td><p>-12.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-12">https://codes.wmo.int/wmdr/Timezone/-12</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-11">https://codes.wmo.int/wmdr/Timezone/-11</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC-11:00</p></td>
+<td><p>Timezone with a UTC offset of UTC-11:00 hours. Locations in this timezone include Pacific/Samoa, US/Samoa, Pacific/Pago_Pago, Etc/GMT+11, Pacific/Niue, Pacific/Midway.</p></td>
+<td><p>-11.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-11">https://codes.wmo.int/wmdr/Timezone/-11</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-10">https://codes.wmo.int/wmdr/Timezone/-10</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC-10:00</p></td>
+<td><p>Timezone with a UTC offset of UTC-10:00 hours. Locations in this timezone include Pacific/Honolulu, Pacific/Tahiti, America/Atka, US/Aleutian, Pacific/Johnston, Pacific/Rarotonga, US/Hawaii, Etc/GMT+10, America/Adak, HST.</p></td>
+<td><p>-10.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-10">https://codes.wmo.int/wmdr/Timezone/-10</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-9">https://codes.wmo.int/wmdr/Timezone/-9</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC-09:00</p></td>
+<td><p>Timezone with a UTC offset of UTC-09:00 hours. Locations in this timezone include Etc/GMT+9, Pacific/Gambier, America/Nome, America/Metlakatla, US/Alaska, America/Yakutat, America/Sitka, America/Juneau, America/Anchorage.</p></td>
+<td><p>-9.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-9">https://codes.wmo.int/wmdr/Timezone/-9</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-8">https://codes.wmo.int/wmdr/Timezone/-8</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC-08:00</p></td>
+<td><p>Timezone with a UTC offset of UTC-08:00 hours. Locations in this timezone include America/Santa_Isabel, America/Vancouver, Etc/GMT+8, Mexico/BajaNorte, Canada/Pacific, America/Tijuana, PST8PDT, US/Pacific, America/Ensenada, Pacific/Pitcairn, America/Los_Angeles.</p></td>
+<td><p>-8.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-8">https://codes.wmo.int/wmdr/Timezone/-8</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-7">https://codes.wmo.int/wmdr/Timezone/-7</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC-07:00</p></td>
+<td><p>Timezone with a UTC offset of UTC-07:00 hours. Locations in this timezone include America/Cambridge_Bay, America/Fort_Nelson, America/Edmonton, America/Shiprock, America/Denver, America/Dawson_Creek, America/Phoenix, America/Mazatlan, America/Ojinaga, Canada/Mountain, America/Creston, America/Chihuahua, America/Boise, America/Dawson, America/Inuvik, America/Hermosillo, US/Mountain, MST7MDT, US/Arizona, America/Whitehorse, Mexico/BajaSur, America/Yellowknife, Etc/GMT+7, Canada/Yukon, MST, Navajo.</p></td>
+<td><p>-7.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-7">https://codes.wmo.int/wmdr/Timezone/-7</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-6">https://codes.wmo.int/wmdr/Timezone/-6</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC-06:00</p></td>
+<td><p>Timezone with a UTC offset of UTC-06:00 hours. Locations in this timezone include America/Merida, America/Monterrey, America/Mexico_City, Mexico/General, Canada/Central, America/Menominee, Pacific/Easter, America/Chicago, America/Managua, America/Costa_Rica, Pacific/Galapagos, America/Knox_IN, Etc/GMT+6, US/Central, America/Matamoros, America/El_Salvador, America/Belize, America/Rainy_River, CST6CDT, America/Indiana/Knox, America/Tegucigalpa, America/Swift_Current, America/Winnipeg, America/Resolute, America/Regina, America/Rankin_Inlet, America/Guatemala, US/Indiana-Starke, America/Indiana/Tell_City, America/North_Dakota/New_Salem, America/North_Dakota/Center, Chile/EasterIsland, America/North_Dakota/Beulah, America/Bahia_Banderas, Canada/Saskatchewan.</p></td>
+<td><p>-6.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-6">https://codes.wmo.int/wmdr/Timezone/-6</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-5">https://codes.wmo.int/wmdr/Timezone/-5</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC-05:00</p></td>
+<td><p>Timezone with a UTC offset of UTC-05:00 hours. Locations in this timezone include America/Indiana/Petersburg, America/Indiana/Vincennes, America/Indiana/Vevay, America/Jamaica, America/Indiana/Marengo, Cuba, America/Iqaluit, America/Indianapolis, America/Indiana/Winamac, America/Toronto, America/Kentucky/Louisville, America/Kentucky/Monticello, America/Lima, America/Louisville, America/Montreal, America/Nassau, America/New_York, America/Nipigon, America/Panama, America/Pangnirtung, America/Port-au-Prince, America/Porto_Acre, America/Indiana/Indianapolis, America/Thunder_Bay, Etc/GMT+5, America/Rio_Branco, America/Guayaquil, EST5EDT, America/Havana, America/Cancun, America/Detroit, America/Eirunepe, America/Coral_Harbour, America/Fort_Wayne, Brazil/Acre, Canada/Eastern, America/Bogota, US/East-Indiana, America/Atikokan, America/Grand_Turk, US/Eastern, US/Michigan, EST, America/Cayman, Jamaica.</p></td>
+<td><p>-5.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-5">https://codes.wmo.int/wmdr/Timezone/-5</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-4">https://codes.wmo.int/wmdr/Timezone/-4</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC-04:00</p></td>
+<td><p>Timezone with a UTC offset of UTC-04:00 hours. Locations in this timezone include America/Santiago, America/Santo_Domingo, America/Aruba, America/Port_of_Spain, America/Asuncion, America/Barbados, America/Puerto_Rico, America/St_Barthelemy, America/Thule, America/St_Lucia, America/St_Thomas, America/St_Vincent, America/Antigua, America/Anguilla, Canada/Atlantic, America/Tortola, Brazil/West, America/Virgin, Chile/Continental, Etc/GMT+4, Atlantic/Bermuda, America/St_Kitts, America/Blanc-Sablon, America/Halifax, America/Montserrat, America/Guyana, America/Guadeloupe, America/Grenada, America/Goose_Bay, America/Glace_Bay, America/Dominica, America/Kralendijk, America/La_Paz, America/Curacao, America/Cuiaba, America/Lower_Princes, America/Boa_Vista, America/Marigot, America/Martinique, America/Caracas, America/Manaus, America/Porto_Velho, America/Campo_Grande, America/Moncton.</p></td>
+<td><p>-4.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-4">https://codes.wmo.int/wmdr/Timezone/-4</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-3">https://codes.wmo.int/wmdr/Timezone/-3</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC-03:00</p></td>
+<td><p>Timezone with a UTC offset of UTC-03:00 hours. Locations in this timezone include America/Argentina/Tucuman, America/Argentina/Ushuaia, America/Miquelon, America/Argentina/Salta, America/Jujuy, America/Cordoba, Brazil/East, Atlantic/Stanley, Antarctica/Palmer, Antarctica/Rothera, America/Buenos_Aires, America/Godthab, America/Bahia, Etc/GMT+3, America/Montevideo, America/Belem, America/Fortaleza, America/Araguaina, America/Catamarca, America/Maceio, America/Punta_Arenas, America/Argentina/Rio_Gallegos, America/Argentina/Mendoza, America/Recife, America/Argentina/La_Rioja, America/Argentina/Jujuy, America/Argentina/Cordoba, America/Rosario, America/Paramaribo, America/Argentina/ComodRivadavia, America/Nuuk, America/Sao_Paulo, America/Argentina/Buenos_Aires, America/Argentina/Catamarca, America/Santarem, America/Cayenne, America/Mendoza, America/Argentina/San_Juan, America/Argentina/San_Luis.</p></td>
+<td><p>-3.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-3">https://codes.wmo.int/wmdr/Timezone/-3</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-2">https://codes.wmo.int/wmdr/Timezone/-2</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC-02:00</p></td>
+<td><p>Timezone with a UTC offset of UTC-02:00 hours. Locations in this timezone include Brazil/DeNoronha, America/Noronha, Atlantic/South_Georgia, Etc/GMT+2.</p></td>
+<td><p>-2.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-2">https://codes.wmo.int/wmdr/Timezone/-2</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-1">https://codes.wmo.int/wmdr/Timezone/-1</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC-01:00</p></td>
+<td><p>Timezone with a UTC offset of UTC-01:00 hours. Locations in this timezone include Atlantic/Azores, America/Scoresbysund, Etc/GMT+1, Atlantic/Cape_Verde.</p></td>
+<td><p>-1.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-1">https://codes.wmo.int/wmdr/Timezone/-1</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-3.5">https://codes.wmo.int/wmdr/Timezone/-3.5</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC-03:30</p></td>
+<td><p>Timezone with a UTC offset of UTC-03:30 hours. Locations in this timezone include America/St_Johns, Canada/Newfoundland.</p></td>
+<td><p>-3.5</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-3.5">https://codes.wmo.int/wmdr/Timezone/-3.5</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-9.5">https://codes.wmo.int/wmdr/Timezone/-9.5</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC-09:30</p></td>
+<td><p>Timezone with a UTC offset of UTC-09:30 hours. Locations in this timezone include Pacific/Marquesas.</p></td>
+<td><p>-9.5</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/-9.5">https://codes.wmo.int/wmdr/Timezone/-9.5</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/0">https://codes.wmo.int/wmdr/Timezone/0</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC±00:00</p></td>
+<td><p>Timezone with a UTC offset of UTC±00:00 hours. Locations in this timezone include Atlantic/Canary, Atlantic/St_Helena, Atlantic/Faroe, Atlantic/Reykjavik, Atlantic/Faeroe, Atlantic/Madeira, Africa/Abidjan, Etc/GMT+0, Universal, UTC, UCT, Portugal, Iceland, Greenwich, GMT0, GMT-0, GMT+0, GMT, GB-Eire, GB, Europe/London, Europe/Lisbon, Europe/Jersey, Europe/Isle_of_Man, Europe/Guernsey, Europe/Belfast, Etc/Zulu, Etc/Universal, Etc/UTC, Etc/UCT, Etc/Greenwich, Etc/GMT0, Etc/GMT-0, Etc/GMT, WET, Zulu, Africa/Lome, Antarctica/Troll, Africa/Dakar, America/Danmarkshavn, Africa/Freetown, Africa/Bissau, Africa/Banjul, Africa/Bamako, Africa/Nouakchott, Africa/Conakry, Africa/Ouagadougou, Africa/Monrovia, Africa/Timbuktu, Africa/Accra, Africa/Sao_Tome.</p></td>
+<td><p>0.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/0">https://codes.wmo.int/wmdr/Timezone/0</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/1">https://codes.wmo.int/wmdr/Timezone/1</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+01:00</p></td>
+<td><p>Timezone with a UTC offset of UTC+01:00 hours. Locations in this timezone include Africa/Ndjamena, Africa/Malabo, Arctic/Longyearbyen, Europe/Skopje, Eire, Europe/Stockholm, Europe/Tirane, Europe/Vaduz, Africa/Niamey, Europe/Vatican, CET, Europe/Sarajevo, Europe/Warsaw, Europe/Zagreb, Europe/Luxembourg, Atlantic/Jan_Mayen, Europe/Vienna, Europe/Brussels, Europe/San_Marino, Europe/Ljubljana, Africa/Porto-Novo, Europe/Gibraltar, Europe/Dublin, Europe/Copenhagen, Europe/Busingen, Europe/Budapest, Europe/Malta, Europe/Bratislava, Etc/GMT-1, Europe/Berlin, Africa/Tunis, Europe/Andorra, Europe/Amsterdam, Europe/Monaco, Europe/Oslo, Europe/Paris, Europe/Podgorica, MET, Europe/Rome, Europe/Belgrade, Europe/Prague, Europe/Zurich, Europe/Madrid, Africa/Ceuta, Poland, Africa/Brazzaville, Africa/Luanda, Africa/Bangui, Africa/Kinshasa, Africa/Algiers, Africa/Lagos, Africa/Libreville, Africa/El_Aaiun, Africa/Douala, Africa/Casablanca.</p></td>
+<td><p>1.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/1">https://codes.wmo.int/wmdr/Timezone/1</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/10">https://codes.wmo.int/wmdr/Timezone/10</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+10:00</p></td>
+<td><p>Timezone with a UTC offset of UTC+10:00 hours. Locations in this timezone include Asia/Vladivostok, Pacific/Saipan, Pacific/Port_Moresby, Australia/Hobart, Australia/Melbourne, Pacific/Truk, Australia/Queensland, Australia/NSW, Australia/Sydney, Australia/Tasmania, Australia/Victoria, Etc/GMT-10, Antarctica/Macquarie, Antarctica/DumontDUrville, Pacific/Yap, Australia/Currie, Australia/Lindeman, Australia/ACT, Asia/Ust-Nera, Australia/Brisbane, Australia/Canberra, Pacific/Chuuk, Pacific/Guam.</p></td>
+<td><p>10.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/10">https://codes.wmo.int/wmdr/Timezone/10</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/10.5">https://codes.wmo.int/wmdr/Timezone/10.5</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+10:30</p></td>
+<td><p>Timezone with a UTC offset of UTC+10:30 hours. Locations in this timezone include Australia/LHI, Australia/Lord_Howe.</p></td>
+<td><p>10.5</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/10.5">https://codes.wmo.int/wmdr/Timezone/10.5</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/11">https://codes.wmo.int/wmdr/Timezone/11</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+11:00</p></td>
+<td><p>Timezone with a UTC offset of UTC+11:00 hours. Locations in this timezone include Antarctica/Casey, Pacific/Efate, Asia/Magadan, Etc/GMT-11, Asia/Sakhalin, Pacific/Guadalcanal, Pacific/Pohnpei, Asia/Srednekolymsk, Pacific/Noumea, Pacific/Norfolk, Pacific/Kosrae, Pacific/Ponape, Pacific/Bougainville.</p></td>
+<td><p>11.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/11">https://codes.wmo.int/wmdr/Timezone/11</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/12">https://codes.wmo.int/wmdr/Timezone/12</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+12:00</p></td>
+<td><p>Timezone with a UTC offset of UTC+12:00 hours. Locations in this timezone include Etc/GMT-12, NZ, Kwajalein, Antarctica/McMurdo, Antarctica/South_Pole, Asia/Anadyr, Pacific/Auckland, Asia/Kamchatka, Pacific/Majuro, Pacific/Tarawa, Pacific/Nauru, Pacific/Kwajalein, Pacific/Fiji, Pacific/Wallis, Pacific/Wake, Pacific/Funafuti.</p></td>
+<td><p>12.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/12">https://codes.wmo.int/wmdr/Timezone/12</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/12.75">https://codes.wmo.int/wmdr/Timezone/12.75</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+12:45</p></td>
+<td><p>Timezone with a UTC offset of UTC+12:45 hours. Locations in this timezone include Pacific/Chatham, NZ-CHAT.</p></td>
+<td><p>12.75</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/12.75">https://codes.wmo.int/wmdr/Timezone/12.75</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/2">https://codes.wmo.int/wmdr/Timezone/2</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+02:00</p></td>
+<td><p>Timezone with a UTC offset of UTC+02:00 hours. Locations in this timezone include EET, Etc/GMT-2, Egypt, Europe/Tallinn, Europe/Sofia, Asia/Amman, Asia/Beirut, Europe/Riga, Europe/Tiraspol, Europe/Mariehamn, Europe/Nicosia, Europe/Uzhgorod, Africa/Bujumbura, Africa/Windhoek, Asia/Nicosia, Europe/Athens, Africa/Blantyre, Europe/Bucharest, Europe/Chisinau, Africa/Tripoli, Europe/Helsinki, Europe/Kaliningrad, Europe/Kiev, Asia/Jerusalem, Africa/Cairo, Asia/Tel_Aviv, Africa/Lubumbashi, Europe/Vilnius, Africa/Mbabane, Africa/Maseru, Africa/Maputo, Asia/Damascus, Africa/Kigali, Africa/Khartoum, Asia/Gaza, Israel, Africa/Juba, Africa/Johannesburg, Asia/Famagusta, Africa/Harare, Africa/Gaborone, Africa/Lusaka, Asia/Hebron, Libya, Europe/Zaporozhye.</p></td>
+<td><p>2.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/2">https://codes.wmo.int/wmdr/Timezone/2</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/3">https://codes.wmo.int/wmdr/Timezone/3</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+03:00</p></td>
+<td><p>Timezone with a UTC offset of UTC+03:00 hours. Locations in this timezone include W-SU, Europe/Kirov, Europe/Istanbul, Etc/GMT-3, Indian/Comoro, Asia/Istanbul, Europe/Minsk, Indian/Mayotte, Asia/Kuwait, Africa/Asmera, Asia/Qatar, Africa/Asmara, Africa/Addis_Ababa, Europe/Moscow, Turkey, Indian/Antananarivo, Asia/Baghdad, Africa/Djibouti, Asia/Bahrain, Asia/Riyadh, Antarctica/Syowa, Europe/Simferopol, Africa/Nairobi, Asia/Aden, Africa/Dar_es_Salaam, Europe/Volgograd, Africa/Kampala, Africa/Mogadishu.</p></td>
+<td><p>3.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/3">https://codes.wmo.int/wmdr/Timezone/3</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/4">https://codes.wmo.int/wmdr/Timezone/4</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+04:00</p></td>
+<td><p>Timezone with a UTC offset of UTC+04:00 hours. Locations in this timezone include Asia/Tbilisi, Europe/Saratov, Asia/Dubai, Asia/Muscat, Europe/Samara, Europe/Astrakhan, Indian/Reunion, Asia/Baku, Indian/Mauritius, Europe/Ulyanovsk, Indian/Mahe, Etc/GMT-4, Asia/Yerevan.</p></td>
+<td><p>4.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/4">https://codes.wmo.int/wmdr/Timezone/4</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/6">https://codes.wmo.int/wmdr/Timezone/6</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+06:00</p></td>
+<td><p>Timezone with a UTC offset of UTC+06:00 hours. Locations in this timezone include Indian/Chagos, Asia/Omsk, Asia/Qostanay, Asia/Urumqi, Asia/Kashgar, Asia/Thimphu, Asia/Thimbu, Etc/GMT-6, Asia/Dhaka, Asia/Dacca, Asia/Bishkek, Asia/Almaty, Antarctica/Vostok.</p></td>
+<td><p>6.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/6">https://codes.wmo.int/wmdr/Timezone/6</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/7">https://codes.wmo.int/wmdr/Timezone/7</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+07:00</p></td>
+<td><p>Timezone with a UTC offset of UTC+07:00 hours. Locations in this timezone include Asia/Novokuznetsk, Indian/Christmas, Asia/Pontianak, Asia/Saigon, Antarctica/Davis, Asia/Ho_Chi_Minh, Asia/Tomsk, Asia/Phnom_Penh, Asia/Vientiane, Asia/Barnaul, Asia/Bangkok, Asia/Novosibirsk, Etc/GMT-7, Asia/Hovd, Asia/Jakarta, Asia/Krasnoyarsk.</p></td>
+<td><p>7.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/7">https://codes.wmo.int/wmdr/Timezone/7</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/8">https://codes.wmo.int/wmdr/Timezone/8</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+08:00</p></td>
+<td><p>Timezone with a UTC offset of UTC+08:00 hours. Locations in this timezone include Hongkong, Asia/Taipei, Asia/Ulan_Bator, Asia/Ujung_Pandang, Asia/Ulaanbaatar, Asia/Harbin, Asia/Hong_Kong, Etc/GMT-8, Asia/Singapore, PRC, Asia/Manila, Asia/Makassar, Asia/Macau, Asia/Macao, Asia/Brunei, Asia/Choibalsan, Asia/Chongqing, Asia/Chungking, Asia/Kuching, Asia/Kuala_Lumpur, Asia/Shanghai, Australia/West, Asia/Irkutsk, Singapore, ROC, Australia/Perth.</p></td>
+<td><p>8.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/8">https://codes.wmo.int/wmdr/Timezone/8</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/9">https://codes.wmo.int/wmdr/Timezone/9</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+09:00</p></td>
+<td><p>Timezone with a UTC offset of UTC+09:00 hours. Locations in this timezone include Asia/Tokyo, Asia/Khandyga, ROK, Pacific/Palau, Asia/Pyongyang, Asia/Seoul, Asia/Jayapura, Asia/Yakutsk, Etc/GMT-9, Japan, Asia/Dili, Asia/Chita.</p></td>
+<td><p>9.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/9">https://codes.wmo.int/wmdr/Timezone/9</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/13">https://codes.wmo.int/wmdr/Timezone/13</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+13:00</p></td>
+<td><p>Timezone with a UTC offset of UTC+13:00 hours. Locations in this timezone include Pacific/Kanton, Pacific/Enderbury, Etc/GMT-13, Pacific/Tongatapu, Pacific/Apia, Pacific/Fakaofo.</p></td>
+<td><p>13.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/13">https://codes.wmo.int/wmdr/Timezone/13</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/14">https://codes.wmo.int/wmdr/Timezone/14</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+14:00</p></td>
+<td><p>Timezone with a UTC offset of UTC+14:00 hours. Locations in this timezone include Pacific/Kiritimati, Etc/GMT-14.</p></td>
+<td><p>14.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/14">https://codes.wmo.int/wmdr/Timezone/14</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/3.5">https://codes.wmo.int/wmdr/Timezone/3.5</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+03:30</p></td>
+<td><p>Timezone with a UTC offset of UTC+03:30 hours. Locations in this timezone include Iran, Asia/Tehran.</p></td>
+<td><p>3.5</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/3.5">https://codes.wmo.int/wmdr/Timezone/3.5</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/4.5">https://codes.wmo.int/wmdr/Timezone/4.5</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+04:30</p></td>
+<td><p>Timezone with a UTC offset of UTC+04:30 hours. Locations in this timezone include Asia/Kabul.</p></td>
+<td><p>4.5</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/4.5">https://codes.wmo.int/wmdr/Timezone/4.5</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/5">https://codes.wmo.int/wmdr/Timezone/5</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+05:00</p></td>
+<td><p>Timezone with a UTC offset of UTC+05:00 hours. Locations in this timezone include Asia/Karachi, Asia/Yekaterinburg, Asia/Tashkent, Antarctica/Mawson, Asia/Dushanbe, Asia/Qyzylorda, Asia/Samarkand, Etc/GMT-5, Asia/Oral, Indian/Kerguelen, Asia/Atyrau, Asia/Aqtau, Asia/Aqtobe, Indian/Maldives, Asia/Ashkhabad, Asia/Ashgabat.</p></td>
+<td><p>5.0</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/5">https://codes.wmo.int/wmdr/Timezone/5</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/5.5">https://codes.wmo.int/wmdr/Timezone/5.5</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+05:30</p></td>
+<td><p>Timezone with a UTC offset of UTC+05:30 hours. Locations in this timezone include Asia/Calcutta, Asia/Colombo, Asia/Kolkata.</p></td>
+<td><p>5.5</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/5.5">https://codes.wmo.int/wmdr/Timezone/5.5</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/5.75">https://codes.wmo.int/wmdr/Timezone/5.75</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+05:45</p></td>
+<td><p>Timezone with a UTC offset of UTC+05:45 hours. Locations in this timezone include Asia/Katmandu, Asia/Kathmandu.</p></td>
+<td><p>5.75</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/5.75">https://codes.wmo.int/wmdr/Timezone/5.75</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/6.5">https://codes.wmo.int/wmdr/Timezone/6.5</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+06:30</p></td>
+<td><p>Timezone with a UTC offset of UTC+06:30 hours. Locations in this timezone include Indian/Cocos, Asia/Rangoon, Asia/Yangon.</p></td>
+<td><p>6.5</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/6.5">https://codes.wmo.int/wmdr/Timezone/6.5</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/8.75">https://codes.wmo.int/wmdr/Timezone/8.75</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+08:45</p></td>
+<td><p>Timezone with a UTC offset of UTC+08:45 hours. Locations in this timezone include Australia/Eucla.</p></td>
+<td><p>8.75</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/8.75">https://codes.wmo.int/wmdr/Timezone/8.75</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/9.5">https://codes.wmo.int/wmdr/Timezone/9.5</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/Timezone">https://codes.wmo.int/wmdr/Timezone</a></p></td>
+<td><p>UTC+09:30</p></td>
+<td><p>Timezone with a UTC offset of UTC+09:30 hours. Locations in this timezone include Australia/Yancowinna, Australia/North, Australia/Broken_Hill, Australia/Adelaide, Australia/Darwin, Australia/South.</p></td>
+<td><p>9.5</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/Timezone/9.5">https://codes.wmo.int/wmdr/Timezone/9.5</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:26.187140</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+</tbody>
+</table>
+</div></div>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="territory.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">territory</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="topographic_context.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">topographic_context</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023 OpenCDMS Project.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item"><p>
+    <a class="p7uSE79MnACAhTKGluPE" href="https://img.shields.io/badge/License-MIT-yellow.svg" rel="noopener noreferrer nofollow" target="_blank">
+        <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" class="XdlD3JTLTIpaFYwF8VPj">
+    </a> 
+    <a class="p7uSE79MnACAhTKGluPE" href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener noreferrer nofollow" target="_blank">
+        <img src="https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg" alt="License: CC BY-SA 4.0" class="XdlD3JTLTIpaFYwF8VPj">
+    </a>
+    See <a href="/credits.html">credits</a>
+</p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

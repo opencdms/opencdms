@@ -1,0 +1,872 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>application_area &#8212; OpenCDMS 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css?v=2a6c4383" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css?v=d290406d" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=adfaaca5" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=40769cce"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=5eb1bb1e"></script>
+    <script src="../../../../_static/tabs.js?v=3030b3cb"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'developer/database/default/reference_data/application_area';</script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="climate_zone" href="climate_zone.html" />
+    <link rel="prev" title="altitude" href="altitude.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">OpenCDMS 0.1.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../administrator/index.html">
+                        Administrator Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../../../index.html">
+                        Developer Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../administrator/index.html">
+                        Administrator Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../../../index.html">
+                        Developer Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Architecture</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../architecture/index.html">OpenCDMS Architecture</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Databases</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../index.html">Database and data model(s)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../index.html">OpenCDMS default database</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="../master_data.html">Master data</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/host.html">host</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/host_affiliation.html">host_affiliation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/host_alias.html">host_alias</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/host_environment.html">host_environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/host_location.html">host_location</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/host_log.html">host_log</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/host_media.html">host_media</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/host_responsible_party.html">host_responsible_party</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/equipment.html">equipment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/equipment_log.html">equipment_log</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/equipment_media.html">equipment_media</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/equipment_responsible_party.html">equipment_responsible_party</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/sensor_characteristics.html">sensor_characteristics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/deployment.html">deployment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/deployment_application_area.html">deployment_application_area</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/deployment_location.html">deployment_location</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/deployment_log.html">deployment_log</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/deployment_media.html">deployment_media</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/deployment_responsible_party.html">deployment_responsible_party</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/observation.html">observation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/feature.html">feature</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="../reference_data.html">Reference Data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="altitude.html">altitude</a></li>
+<li class="toctree-l4 current active"><a class="current reference internal" href="#">application_area</a></li>
+<li class="toctree-l4"><a class="reference internal" href="climate_zone.html">climate_zone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="communication_method.html">communication_method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="equipment_type.html">equipment_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exposure.html">exposure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="facility_type.html">facility_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="feature_type.html">feature_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="geopositioning_method.html">geopositioning_method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="local_topography.html">local_topography</a></li>
+<li class="toctree-l4"><a class="reference internal" href="measurement_quality.html">measurement_quality</a></li>
+<li class="toctree-l4"><a class="reference internal" href="media_type.html">media_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="observation_type.html">observation_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="observed_property.html">observed_property</a></li>
+<li class="toctree-l4"><a class="reference internal" href="observing_method.html">observing_method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="observing_procedure.html">observing_procedure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="observing_program.html">observing_program</a></li>
+<li class="toctree-l4"><a class="reference internal" href="operating_status.html">operating_status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference_surface.html">reference_surface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reporting_status.html">reporting_status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="representativeness.html">representativeness</a></li>
+<li class="toctree-l4"><a class="reference internal" href="role.html">role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source_of_observation.html">source_of_observation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source_type.html">source_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="status.html">status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="surface_cover.html">surface_cover</a></li>
+<li class="toctree-l4"><a class="reference internal" href="surface_roughness.html">surface_roughness</a></li>
+<li class="toctree-l4"><a class="reference internal" href="territory.html">territory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="time_zone.html">time_zone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="topographic_context.html">topographic_context</a></li>
+<li class="toctree-l4"><a class="reference internal" href="topography_bathymetry.html">topography_bathymetry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wmo_region.html">wmo_region</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Web components</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../components/index.html">OpenCDMS Web Components</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../components/raw_synop_entry_form/index.html">Raw FM-12 SYNOP entry form</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">OpenCDMS API</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/automated_quality_control/index.html">Automated quality control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/encode_daycli/index.html">DAYCLI BUFR encoder</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Events</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../events/index.html">Events</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../docs/index.html">Updating the docs</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Developer Documentation</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../reference_data.html" class="nav-link">Reference Data</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">application_area</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="application-area">
+<h1>application_area<a class="headerlink" href="#application-area" title="Permalink to this heading">#</a></h1>
+<p>Application area code list.</p>
+<style>
+
+   /*disable page width for wide tables*/
+   .bd-page-width {max-width: none;}
+   .bd-article-container {max-width: 100% !important;}
+
+   /* Limit primary side bar width for wide pages */
+   .bd-sidebar-primary {max-width: 400px;}
+
+</style><div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Table definition</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Example data</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>Download the definition as a CSV file: <a class="reference download internal" download="" href="../../../../_downloads/599ee75c3608c69303dfa72551935b5d/application_area.csv"><code class="xref download docutils literal notranslate"><span class="pre">csv</span></code></a>.</p>
+<table class="table" id="id1">
+<caption><span class="caption-text">Definition of the <em>application_area</em> table.</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Kind</p></th>
+<th class="head"><p>References</p></th>
+<th class="head"><p>Requirement</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p id="id">id</p>
+</td>
+<td><p>str</p></td>
+<td></td>
+<td><p>Required</p></td>
+<td><p>ID / primary key.</p></td>
+</tr>
+<tr class="row-odd"><td><p id="inscheme">inScheme</p>
+</td>
+<td><p>str</p></td>
+<td></td>
+<td><p>Required</p></td>
+<td><p>The scheme/vocabulary that this record is from.</p></td>
+</tr>
+<tr class="row-even"><td><p id="name">name</p>
+</td>
+<td><p>str</p></td>
+<td></td>
+<td><p>Required</p></td>
+<td><p>Short name / abbreviation for the application area.</p></td>
+</tr>
+<tr class="row-odd"><td><p id="description">description</p>
+</td>
+<td><p>str</p></td>
+<td></td>
+<td><p>Required</p></td>
+<td><p>Description of the application area.</p></td>
+</tr>
+<tr class="row-even"><td><p id="links">links</p>
+</td>
+<td><p>dict</p></td>
+<td></td>
+<td><p>Optional</p></td>
+<td><p>Link(s) to further information on the application area.</p></td>
+</tr>
+<tr class="row-odd"><td><p id="version">_version</p>
+</td>
+<td><p>int</p></td>
+<td></td>
+<td><p>Required</p></td>
+<td><p>Version of this record, e.g. 1.</p></td>
+</tr>
+<tr class="row-even"><td><p id="change-date">_change_date</p>
+</td>
+<td><p>datetime</p></td>
+<td></td>
+<td><p>Required</p></td>
+<td><p>Date this record was changed.</p></td>
+</tr>
+<tr class="row-odd"><td><p id="user">_user</p>
+</td>
+<td><p>str</p></td>
+<td><p><a class="reference external" href="../admin/user.html#id">admin.user.id</a></p></td>
+<td><p>Required</p></td>
+<td><p>Which user/agent last modified this record.</p></td>
+</tr>
+<tr class="row-even"><td><p id="status">_status</p>
+</td>
+<td><p>str</p></td>
+<td><p><a class="reference external" href="../reference_data/status.html#id">reference_data.status.id</a></p></td>
+<td><p>Required</p></td>
+<td><p>Whether this is the latest version or an archived version of the record.</p></td>
+</tr>
+<tr class="row-odd"><td><p id="comments">_comments</p>
+</td>
+<td><p>str</p></td>
+<td></td>
+<td><p>Required</p></td>
+<td><p>Free text comments on this record, for example description of changes made etc.</p></td>
+</tr>
+</tbody>
+</table>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>Download the example CSV file: <a class="reference download internal" download="" href="../../../../_downloads/5126baf2a6cd2b864dde5520c95800f5/application_area.csv"><code class="xref download docutils literal notranslate"><span class="pre">csv</span></code></a>.</p>
+<table class="table" id="id2">
+<caption><span class="caption-text">Example data</span><a class="headerlink" href="#id2" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>id</p></th>
+<th class="head"><p>inScheme</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>description</p></th>
+<th class="head"><p>links</p></th>
+<th class="head"><p>_version</p></th>
+<th class="head"><p>_change_date</p></th>
+<th class="head"><p>_user</p></th>
+<th class="head"><p>_status</p></th>
+<th class="head"><p>_comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/aeronauticalMeteorology">https://codes.wmo.int/wmdr/ApplicationArea/aeronauticalMeteorology</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea">https://codes.wmo.int/wmdr/ApplicationArea</a></p></td>
+<td><p>Aeronautical meteorology</p></td>
+<td><p>Aeronautical meteorology covers worldwide, reliable provision of high quality, timely and cost-effective meteorological services to aviation users.</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/aeronauticalMeteorology">https://codes.wmo.int/wmdr/ApplicationArea/aeronauticalMeteorology</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:23.016509</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/agriculturalMeteorology">https://codes.wmo.int/wmdr/ApplicationArea/agriculturalMeteorology</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea">https://codes.wmo.int/wmdr/ApplicationArea</a></p></td>
+<td><p>Agricultural meteorology</p></td>
+<td><p>Agricultural Meteorology relates to specific weather and climate services addressed to the agricultural community to help develop sustainable agricultural production systems. <a class="reference external" href="http://www.wmo.int/pages/prog/www/OSY/SOG/SoG-Agriculture.pdf">http://www.wmo.int/pages/prog/www/OSY/SOG/SoG-Agriculture.pdf</a></p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/agriculturalMeteorology">https://codes.wmo.int/wmdr/ApplicationArea/agriculturalMeteorology</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:23.016509</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/atmosphericCompositionForecasting">https://codes.wmo.int/wmdr/ApplicationArea/atmosphericCompositionForecasting</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea">https://codes.wmo.int/wmdr/ApplicationArea</a></p></td>
+<td><p>Forecasting atmospheric composition</p></td>
+<td><p>Applications from global to regional scales (with horizontal resolutions similar to global NWP (~10 km and coarser) with stringent timeliness requirements (NRT) to support operations such as sand and dust storm and chemical weather forecasts [source: <a class="reference external" href="http://www.wmo.int/pages/prog/arep/gaw/documents/FINAL_GAW_221.pdf">http://www.wmo.int/pages/prog/arep/gaw/documents/FINAL_GAW_221.pdf</a>]</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/atmosphericCompositionForecasting">https://codes.wmo.int/wmdr/ApplicationArea/atmosphericCompositionForecasting</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:23.016509</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/atmosphericCompositionMonitoring">https://codes.wmo.int/wmdr/ApplicationArea/atmosphericCompositionMonitoring</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea">https://codes.wmo.int/wmdr/ApplicationArea</a></p></td>
+<td><p>Monitoring atmospheric composition</p></td>
+<td><p>Applications related to evaluating and analysing changes (temporally and spatially) in atmospheric composition regionally and globally to support treaty monitoring, climatologies and re-analyses, assessing trends in composition and emissions/ fluxes, and to better understand processes, using data of controlled quality (and with less stringent time requirements (not needed in NRT)), and used in products such as Ozone and Greenhouse Gas Bulletins, and State/Health of the Atmosphere reports [source: <a class="reference external" href="http://www.wmo.int/pages/prog/arep/gaw/documents/FINAL_GAW_221.pdf">http://www.wmo.int/pages/prog/arep/gaw/documents/FINAL_GAW_221.pdf</a>]</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/atmosphericCompositionMonitoring">https://codes.wmo.int/wmdr/ApplicationArea/atmosphericCompositionMonitoring</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:23.016509</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/climateApplications">https://codes.wmo.int/wmdr/ApplicationArea/climateApplications</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea">https://codes.wmo.int/wmdr/ApplicationArea</a></p></td>
+<td><p>Climate applications</p></td>
+<td><p>Climate applications cover the effective application of climate knowledge and information for the benefit of society and the provision of climate services, including the prediction of significant climate variations both natural and as a result of human activity. <a class="reference external" href="http://www.wmo.int/pages/prog/www/OSY/SOG/SoG-Climate">http://www.wmo.int/pages/prog/www/OSY/SOG/SoG-Climate</a>- CCl.pdf</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/climateApplications">https://codes.wmo.int/wmdr/ApplicationArea/climateApplications</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:23.016509</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/climateMonitoring">https://codes.wmo.int/wmdr/ApplicationArea/climateMonitoring</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea">https://codes.wmo.int/wmdr/ApplicationArea</a></p></td>
+<td><p>Climate monitoring (GCOS)</p></td>
+<td><p>Climate monitoring (as supported through GCOS) covers the GCOS coordinated international network of global observing systems for climate, fundamental to detect, model and assess climate change, support adaptation to climate change, monitor the effectiveness of policies for mitigating climate change, develop climate information services, promote sustainable national economic development and meet other requirements of the UNFCCC and other convention and agreements. <a class="reference external" href="http://www.wmo.int/pages/prog/gcos/">http://www.wmo.int/pages/prog/gcos/</a></p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/climateMonitoring">https://codes.wmo.int/wmdr/ApplicationArea/climateMonitoring</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:23.016509</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/climateScience">https://codes.wmo.int/wmdr/ApplicationArea/climateScience</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea">https://codes.wmo.int/wmdr/ApplicationArea</a></p></td>
+<td><p>Climate Science</p></td>
+<td><p>This application area aims at coordinating international research to improve the understanding, analysis and prediction of the Earth System</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/climateScience">https://codes.wmo.int/wmdr/ApplicationArea/climateScience</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:23.016509</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/cryosphere">https://codes.wmo.int/wmdr/ApplicationArea/cryosphere</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea">https://codes.wmo.int/wmdr/ApplicationArea</a></p></td>
+<td><p>Cryosphere</p></td>
+<td><p>EGOS-IP</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/cryosphere">https://codes.wmo.int/wmdr/ApplicationArea/cryosphere</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:23.016509</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/energy">https://codes.wmo.int/wmdr/ApplicationArea/energy</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea">https://codes.wmo.int/wmdr/ApplicationArea</a></p></td>
+<td><p>Energy sector</p></td>
+<td><p>Economic activities that produce or distribute energy, such as renewable energies, e.g. solar, thermal, wind</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/energy">https://codes.wmo.int/wmdr/ApplicationArea/energy</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:23.016509</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/globalNumericalWeatherPrediction">https://codes.wmo.int/wmdr/ApplicationArea/globalNumericalWeatherPrediction</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea">https://codes.wmo.int/wmdr/ApplicationArea</a></p></td>
+<td><p>Global numerical weather prediction (GNWP)</p></td>
+<td><p>Global numerical weather prediction (GNWP) covers numerical weather prediction on a global scale, required for weather forecasting for more than a few days ahead. NWP uses mathematical models of the atmosphere and oceans to predict the weather based on current conditions of the atmosphere and oceans. <a class="reference external" href="http://www.wmo.int/pages/prog/www/OSY/SOG/SoG-Global-NWP.pdf">http://www.wmo.int/pages/prog/www/OSY/SOG/SoG-Global-NWP.pdf</a></p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/globalNumericalWeatherPrediction">https://codes.wmo.int/wmdr/ApplicationArea/globalNumericalWeatherPrediction</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:23.016509</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/health">https://codes.wmo.int/wmdr/ApplicationArea/health</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea">https://codes.wmo.int/wmdr/ApplicationArea</a></p></td>
+<td><p>Health sector</p></td>
+<td><p>Health-related services, often provided to the public, particularly those related to prevention, e.g. pollen allergies, UV radiation, heat wave alerts</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/health">https://codes.wmo.int/wmdr/ApplicationArea/health</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:23.016509</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/highResolutionNumericalWeatherPrediction">https://codes.wmo.int/wmdr/ApplicationArea/highResolutionNumericalWeatherPrediction</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea">https://codes.wmo.int/wmdr/ApplicationArea</a></p></td>
+<td><p>High-resolution numerical weather prediction (HRNWP)</p></td>
+<td><p>High-resolution numerical weather prediction (HRNWP) covers forecasting of meteorological events over a limited area with a 1-5 km horizontal resolution, for 1 or 2 days ahead. Its high spatial resolutions allows: (i) to get more realistic descriptions of the surface and of atmospheric phenomena such as clouds and precipitation or boundary layer processes; and (ii) to use denser and more frequent observations than global NWP over the area of interest. <a class="reference external" href="http://www.wmo.int/pages/prog/www/OSY/SOG/SoG-HighRes-NWP.pdf">http://www.wmo.int/pages/prog/www/OSY/SOG/SoG-HighRes-NWP.pdf</a></p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/highResolutionNumericalWeatherPrediction">https://codes.wmo.int/wmdr/ApplicationArea/highResolutionNumericalWeatherPrediction</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:23.016509</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/hydrology">https://codes.wmo.int/wmdr/ApplicationArea/hydrology</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea">https://codes.wmo.int/wmdr/ApplicationArea</a></p></td>
+<td><p>Hydrology</p></td>
+<td><p>Hydrology covers the assessment of the quantity and quality of water resources, both surface and groundwater (in support of the National Authorities responsible for water management in a wide range of activities), in order to meet the needs of society, to permit mitigation of water-related hazards, and to maintain or enhance the condition of the global environment. <a class="reference external" href="http://www.wmo.int/pages/prog/www/OSY/SOG/SOG-Hydrology.pdf">http://www.wmo.int/pages/prog/www/OSY/SOG/SOG-Hydrology.pdf</a></p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/hydrology">https://codes.wmo.int/wmdr/ApplicationArea/hydrology</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:23.016509</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/inapplicable">https://codes.wmo.int/wmdr/ApplicationArea/inapplicable</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea">https://codes.wmo.int/wmdr/ApplicationArea</a></p></td>
+<td><p>inapplicable</p></td>
+<td><p>No application area is applicable.</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/inapplicable">https://codes.wmo.int/wmdr/ApplicationArea/inapplicable</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:23.016509</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/integratedUrbanServices">https://codes.wmo.int/wmdr/ApplicationArea/integratedUrbanServices</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea">https://codes.wmo.int/wmdr/ApplicationArea</a></p></td>
+<td><p>Providing atmospheric composition information to support services in urban and populated areas</p></td>
+<td><p>Applications that target limited areas (with horizontal resolution of a few km or smaller and stringent timeliness requirements to support services related to weather/climate/pollution, such as air quality forecasting  [source: <a class="reference external" href="http://www.wmo.int/pages/prog/arep/gaw/documents/FINAL_GAW_221.pdf">http://www.wmo.int/pages/prog/arep/gaw/documents/FINAL_GAW_221.pdf</a>])</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/integratedUrbanServices">https://codes.wmo.int/wmdr/ApplicationArea/integratedUrbanServices</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:23.016509</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/nowcasting">https://codes.wmo.int/wmdr/ApplicationArea/nowcasting</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea">https://codes.wmo.int/wmdr/ApplicationArea</a></p></td>
+<td><p>Nowcasting and very short-range forecasting (NVSRF)</p></td>
+<td><p>Nowcasting and very short-range forecasting (NVSRF) covers the 0-12 hours forecasting range with high time and space resolution, focusing on rapid evolving phenomena like convection and using dedicated algorithms with combined relevant observed and model data, to produce forecasts usually near the surface, in a seamless way for the forecast range. <a class="reference external" href="http://www.wmo.int/pages/prog/www/OSY/SOG/SoG-Nowcasting-VSRF.pdf">http://www.wmo.int/pages/prog/www/OSY/SOG/SoG-Nowcasting-VSRF.pdf</a></p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/nowcasting">https://codes.wmo.int/wmdr/ApplicationArea/nowcasting</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:23.016509</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/oceanApplications">https://codes.wmo.int/wmdr/ApplicationArea/oceanApplications</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea">https://codes.wmo.int/wmdr/ApplicationArea</a></p></td>
+<td><p>Ocean applications</p></td>
+<td><p><a class="reference external" href="http://www.wmo.int/pages/prog/www/OSY/SOG/SoG-Ocean.pdf">http://www.wmo.int/pages/prog/www/OSY/SOG/SoG-Ocean.pdf</a></p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/oceanApplications">https://codes.wmo.int/wmdr/ApplicationArea/oceanApplications</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:23.016509</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/seasonalForecasting">https://codes.wmo.int/wmdr/ApplicationArea/seasonalForecasting</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea">https://codes.wmo.int/wmdr/ApplicationArea</a></p></td>
+<td><p>Sub-seasonal to longer predictions</p></td>
+<td><p>Sub-seasonal to longer predictions covers predictions in sub-seasonal to decadal time-ranges (roughly two weeks to 10 years), using numerical prediction models based on current and past observations and analyses. <a class="reference external" href="http://www.wmo.int/pages/prog/www/OSY/SOG/SoG-SSLP.pdf">http://www.wmo.int/pages/prog/www/OSY/SOG/SoG-SSLP.pdf</a></p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/seasonalForecasting">https://codes.wmo.int/wmdr/ApplicationArea/seasonalForecasting</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:23.016509</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/spaceWeather">https://codes.wmo.int/wmdr/ApplicationArea/spaceWeather</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea">https://codes.wmo.int/wmdr/ApplicationArea</a></p></td>
+<td><p>Space weather</p></td>
+<td><p>Space weather is a discipline which aims at observing, understanding and predicting the state of the Sun, of the interplanetary and planetary environments, their disturbances, and the potential impacts of these disturbances on biological and technological systems. <a class="reference external" href="http://www.wmo.int/pages/prog/www/OSY/SOG/SoG-SW.pdf">http://www.wmo.int/pages/prog/www/OSY/SOG/SoG-SW.pdf</a></p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/spaceWeather">https://codes.wmo.int/wmdr/ApplicationArea/spaceWeather</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:23.016509</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/terrestrialEcology">https://codes.wmo.int/wmdr/ApplicationArea/terrestrialEcology</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea">https://codes.wmo.int/wmdr/ApplicationArea</a></p></td>
+<td><p>Terrestrial ecology</p></td>
+<td><p>Activities and services related to the terrestrial environment, e.g., relating to bio-diversity</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/terrestrialEcology">https://codes.wmo.int/wmdr/ApplicationArea/terrestrialEcology</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:23.016509</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/transport">https://codes.wmo.int/wmdr/ApplicationArea/transport</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea">https://codes.wmo.int/wmdr/ApplicationArea</a></p></td>
+<td><p>Transportation sector</p></td>
+<td><p>Economic activities related to transportation of people and goods, on land, air and water</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/transport">https://codes.wmo.int/wmdr/ApplicationArea/transport</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:23.016509</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/unknown">https://codes.wmo.int/wmdr/ApplicationArea/unknown</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea">https://codes.wmo.int/wmdr/ApplicationArea</a></p></td>
+<td><p>unknown</p></td>
+<td><p>Application area unknown.</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ApplicationArea/unknown">https://codes.wmo.int/wmdr/ApplicationArea/unknown</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-16T07:24:23.016509</p></td>
+<td><p>x-opencdms:admin:users:1</p></td>
+<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+</tbody>
+</table>
+</div></div>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="altitude.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">altitude</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="climate_zone.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">climate_zone</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023 OpenCDMS Project.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item"><p>
+    <a class="p7uSE79MnACAhTKGluPE" href="https://img.shields.io/badge/License-MIT-yellow.svg" rel="noopener noreferrer nofollow" target="_blank">
+        <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" class="XdlD3JTLTIpaFYwF8VPj">
+    </a> 
+    <a class="p7uSE79MnACAhTKGluPE" href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener noreferrer nofollow" target="_blank">
+        <img src="https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg" alt="License: CC BY-SA 4.0" class="XdlD3JTLTIpaFYwF8VPj">
+    </a>
+    See <a href="/credits.html">credits</a>
+</p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
