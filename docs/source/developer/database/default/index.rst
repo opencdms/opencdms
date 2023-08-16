@@ -18,7 +18,7 @@ together with the following information:
 - *comments / description*: A description of the changes made and the reasons why.
 
 The main method for interacting with the data contained in the CDMS is via its API. The definition of the API can be
-found at: `API definition  <./CDM/index.html>`_.
+found at: `API definition  <./api/index.html>`_.
 
 .. toctree::
    :maxdepth: 1

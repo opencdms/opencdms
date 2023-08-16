@@ -38,7 +38,7 @@ the WCMP2 data model and the early draft climate data model.
         margin-top: 40px;
       }
     </style>
-    <redoc spec-url='../../../_static/openapi/datamodel.yml'>
+    <redoc spec-url='../../../../_static/openapi/datamodel.yml' expand-responses="200" json-sample-expand-level="0">
     </redoc>
     <script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"> </script>
 
