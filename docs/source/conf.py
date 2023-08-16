@@ -56,7 +56,8 @@ extensions = [
     "sphinx_mdinclude",
     'sphinx_panels',
     'sphinxcontrib.openapi',
-    'sphinx-jsonschema'
+    'sphinx-jsonschema',
+    'sphinx_tabs.tabs'
 ]
 panels_add_bootstrap_css = False
 openapi_default_renderer = 'httpdomain'

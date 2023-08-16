@@ -1,0 +1,12 @@
+"Property","Kind","References","Requirement","Description"
+"id","str",,"Required","ID / primary key."
+"inScheme","str",,"Required","The scheme/vocabulary that this record is from."
+"name","str",,"Required","Short name / abbreviation for the communication method."
+"description","str",,"Required","Description of the communication method."
+"links","dict",,"Optional","Link(s) to further information on the communication method."
+"_version","int",,"Required","Version of this record, e.g. 1."
+"_change_date","datetime",,"Required","Date this record was changed."
+"_user","str","admin.user.id","Required","Which user/agent last modified this record."
+"_status","str","reference_data.status.id","Required","Whether this is the latest version or an archived version of the record."
+"_comments","str",,"Required","Free text comments on this record, for example description of changes made etc."
+
