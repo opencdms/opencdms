@@ -279,6 +279,7 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="../master_data/deployment_responsible_party.html">deployment_responsible_party</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../master_data/observation.html">observation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../master_data/feature.html">feature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/source.html">source</a></li>
 </ul>
 </li>
 <li class="toctree-l3 current active has-children"><a class="reference internal" href="../reference_data.html">Reference Data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -301,6 +302,7 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="observing_program.html">observing_program</a></li>
 <li class="toctree-l4"><a class="reference internal" href="operating_status.html">operating_status</a></li>
 <li class="toctree-l4"><a class="reference internal" href="reference_surface.html">reference_surface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="relative_elevation.html">relative_elevation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="reporting_status.html">reporting_status</a></li>
 <li class="toctree-l4"><a class="reference internal" href="representativeness.html">representativeness</a></li>
 <li class="toctree-l4"><a class="reference internal" href="role.html">role</a></li>
@@ -312,7 +314,6 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="territory.html">territory</a></li>
 <li class="toctree-l4"><a class="reference internal" href="time_zone.html">time_zone</a></li>
 <li class="toctree-l4"><a class="reference internal" href="topographic_context.html">topographic_context</a></li>
-<li class="toctree-l4"><a class="reference internal" href="topography_bathymetry.html">topography_bathymetry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="wmo_region.html">wmo_region</a></li>
 </ul>
 </li>
@@ -419,6 +420,8 @@ document.write(`
 
    /* Limit primary side bar width for wide pages */
    .bd-sidebar-primary {max-width: 400px;}
+
+   .sphinx-tabs-panel {overflow-x: scroll;}
 
 </style><div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Table definition</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Example data</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>Download the definition as a CSV file: <a class="reference download internal" download="" href="../../../../_downloads/ec783336a361d56ce6deea5f6adf35d6/climate_zone.csv"><code class="xref download docutils literal notranslate"><span class="pre">csv</span></code></a>.</p>
@@ -528,9 +531,9 @@ document.write(`
 <td><p>Desert - Cold arid</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/desertColdArid">https://codes.wmo.int/wmdr/ClimateZone/desertColdArid</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/desertHotArid">https://codes.wmo.int/wmdr/ClimateZone/desertHotArid</a></p></td>
@@ -539,9 +542,9 @@ document.write(`
 <td><p>Desert - Hot arid</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/desertHotArid">https://codes.wmo.int/wmdr/ClimateZone/desertHotArid</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/equatorialMonsoon">https://codes.wmo.int/wmdr/ClimateZone/equatorialMonsoon</a></p></td>
@@ -550,9 +553,9 @@ document.write(`
 <td><p>Equatorial - Monsoon</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/equatorialMonsoon">https://codes.wmo.int/wmdr/ClimateZone/equatorialMonsoon</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/equatorialRainforestFullyHumid">https://codes.wmo.int/wmdr/ClimateZone/equatorialRainforestFullyHumid</a></p></td>
@@ -561,9 +564,9 @@ document.write(`
 <td><p>Equatorial rainforest - fully humid</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/equatorialRainforestFullyHumid">https://codes.wmo.int/wmdr/ClimateZone/equatorialRainforestFullyHumid</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/equatorialSavannahDrySummer">https://codes.wmo.int/wmdr/ClimateZone/equatorialSavannahDrySummer</a></p></td>
@@ -572,9 +575,9 @@ document.write(`
 <td><p>Equatorial - Savannah - dry summer</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/equatorialSavannahDrySummer">https://codes.wmo.int/wmdr/ClimateZone/equatorialSavannahDrySummer</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/equatorialSavannahDryWinter">https://codes.wmo.int/wmdr/ClimateZone/equatorialSavannahDryWinter</a></p></td>
@@ -583,9 +586,9 @@ document.write(`
 <td><p>Equatorial - Savannah - dry winter</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/equatorialSavannahDryWinter">https://codes.wmo.int/wmdr/ClimateZone/equatorialSavannahDryWinter</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/inapplicable">https://codes.wmo.int/wmdr/ClimateZone/inapplicable</a></p></td>
@@ -594,9 +597,9 @@ document.write(`
 <td><p>Inapplicable.</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/inapplicable">https://codes.wmo.int/wmdr/ClimateZone/inapplicable</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/polarFrost">https://codes.wmo.int/wmdr/ClimateZone/polarFrost</a></p></td>
@@ -605,9 +608,9 @@ document.write(`
 <td><p>Polar - Frost</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/polarFrost">https://codes.wmo.int/wmdr/ClimateZone/polarFrost</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/polarTundra">https://codes.wmo.int/wmdr/ClimateZone/polarTundra</a></p></td>
@@ -616,9 +619,9 @@ document.write(`
 <td><p>Polar - Tundra</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/polarTundra">https://codes.wmo.int/wmdr/ClimateZone/polarTundra</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowDryCoolSummer">https://codes.wmo.int/wmdr/ClimateZone/snowDryCoolSummer</a></p></td>
@@ -627,9 +630,9 @@ document.write(`
 <td><p>Snow - Dry and cool summer</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowDryCoolSummer">https://codes.wmo.int/wmdr/ClimateZone/snowDryCoolSummer</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowDryHotSummer">https://codes.wmo.int/wmdr/ClimateZone/snowDryHotSummer</a></p></td>
@@ -638,9 +641,9 @@ document.write(`
 <td><p>Snow - Dry and hot summer</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowDryHotSummer">https://codes.wmo.int/wmdr/ClimateZone/snowDryHotSummer</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowDrySummerVeryColdWinter">https://codes.wmo.int/wmdr/ClimateZone/snowDrySummerVeryColdWinter</a></p></td>
@@ -649,9 +652,9 @@ document.write(`
 <td><p>Snow - Dry summer - Very cold winter</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowDrySummerVeryColdWinter">https://codes.wmo.int/wmdr/ClimateZone/snowDrySummerVeryColdWinter</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowDryWarmSummer">https://codes.wmo.int/wmdr/ClimateZone/snowDryWarmSummer</a></p></td>
@@ -660,9 +663,9 @@ document.write(`
 <td><p>Snow - Dry and warm summer</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowDryWarmSummer">https://codes.wmo.int/wmdr/ClimateZone/snowDryWarmSummer</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowDryWinterColdSummer">https://codes.wmo.int/wmdr/ClimateZone/snowDryWinterColdSummer</a></p></td>
@@ -671,9 +674,9 @@ document.write(`
 <td><p>Snow - Dry winter - Cold summer</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowDryWinterColdSummer">https://codes.wmo.int/wmdr/ClimateZone/snowDryWinterColdSummer</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowDryWinterHotSummer">https://codes.wmo.int/wmdr/ClimateZone/snowDryWinterHotSummer</a></p></td>
@@ -682,9 +685,9 @@ document.write(`
 <td><p>Snow - Dry winter - Hot summer</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowDryWinterHotSummer">https://codes.wmo.int/wmdr/ClimateZone/snowDryWinterHotSummer</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowDryWinterVeryColdWinter">https://codes.wmo.int/wmdr/ClimateZone/snowDryWinterVeryColdWinter</a></p></td>
@@ -693,9 +696,9 @@ document.write(`
 <td><p>Snow - Dry winter - Very cold winter</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowDryWinterVeryColdWinter">https://codes.wmo.int/wmdr/ClimateZone/snowDryWinterVeryColdWinter</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowDryWinterWarmSummer">https://codes.wmo.int/wmdr/ClimateZone/snowDryWinterWarmSummer</a></p></td>
@@ -704,9 +707,9 @@ document.write(`
 <td><p>Snow - Dry winter - Warm summer</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowDryWinterWarmSummer">https://codes.wmo.int/wmdr/ClimateZone/snowDryWinterWarmSummer</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowFullyHumidCoolSummer">https://codes.wmo.int/wmdr/ClimateZone/snowFullyHumidCoolSummer</a></p></td>
@@ -715,9 +718,9 @@ document.write(`
 <td><p>Snow - Fully humid - Cool summer</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowFullyHumidCoolSummer">https://codes.wmo.int/wmdr/ClimateZone/snowFullyHumidCoolSummer</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowFullyHumidHotSummer">https://codes.wmo.int/wmdr/ClimateZone/snowFullyHumidHotSummer</a></p></td>
@@ -726,9 +729,9 @@ document.write(`
 <td><p>Snow - Fully humid - Hot summer</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowFullyHumidHotSummer">https://codes.wmo.int/wmdr/ClimateZone/snowFullyHumidHotSummer</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowFullyHumidVeryColdWinter">https://codes.wmo.int/wmdr/ClimateZone/snowFullyHumidVeryColdWinter</a></p></td>
@@ -737,9 +740,9 @@ document.write(`
 <td><p>Snow - Fully humid - Very cold winter</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowFullyHumidVeryColdWinter">https://codes.wmo.int/wmdr/ClimateZone/snowFullyHumidVeryColdWinter</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowFullyHumidWarmSummer">https://codes.wmo.int/wmdr/ClimateZone/snowFullyHumidWarmSummer</a></p></td>
@@ -748,9 +751,9 @@ document.write(`
 <td><p>Snow - Fully humid - Warm summer</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/snowFullyHumidWarmSummer">https://codes.wmo.int/wmdr/ClimateZone/snowFullyHumidWarmSummer</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/steppeColdArid">https://codes.wmo.int/wmdr/ClimateZone/steppeColdArid</a></p></td>
@@ -759,9 +762,9 @@ document.write(`
 <td><p>Steppe - Cold arid</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/steppeColdArid">https://codes.wmo.int/wmdr/ClimateZone/steppeColdArid</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/steppeHotArid">https://codes.wmo.int/wmdr/ClimateZone/steppeHotArid</a></p></td>
@@ -770,9 +773,9 @@ document.write(`
 <td><p>Steppe - Hot arid</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/steppeHotArid">https://codes.wmo.int/wmdr/ClimateZone/steppeHotArid</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/unknown">https://codes.wmo.int/wmdr/ClimateZone/unknown</a></p></td>
@@ -781,9 +784,9 @@ document.write(`
 <td><p>Unknown - The value is unknown or missing.</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/unknown">https://codes.wmo.int/wmdr/ClimateZone/unknown</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryCoolSummer">https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryCoolSummer</a></p></td>
@@ -792,9 +795,9 @@ document.write(`
 <td><p>Warm temperate - Dry and cool summer</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryCoolSummer">https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryCoolSummer</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryHotSummer">https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryHotSummer</a></p></td>
@@ -803,9 +806,9 @@ document.write(`
 <td><p>Warm temperate - Dry and hot summer</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryHotSummer">https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryHotSummer</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryWarmSummer">https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryWarmSummer</a></p></td>
@@ -814,9 +817,9 @@ document.write(`
 <td><p>Warm temperate - Dry and warm summer</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryWarmSummer">https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryWarmSummer</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryWinterCoolSummer">https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryWinterCoolSummer</a></p></td>
@@ -825,9 +828,9 @@ document.write(`
 <td><p>Warm Temperate - Dry winter - Cool summer</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryWinterCoolSummer">https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryWinterCoolSummer</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryWinterHotSummer">https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryWinterHotSummer</a></p></td>
@@ -836,9 +839,9 @@ document.write(`
 <td><p>Warm Temperate - Dry winter - Hot summer</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryWinterHotSummer">https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryWinterHotSummer</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryWinterWarmSummer">https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryWinterWarmSummer</a></p></td>
@@ -847,9 +850,9 @@ document.write(`
 <td><p>Warm Temperate - Dry winter - Warm summer</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryWinterWarmSummer">https://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryWinterWarmSummer</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/warmTemperateFullyHumidCoolSummer">https://codes.wmo.int/wmdr/ClimateZone/warmTemperateFullyHumidCoolSummer</a></p></td>
@@ -858,9 +861,9 @@ document.write(`
 <td><p>Warm Temperate - Fully humid - Cool summer</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/warmTemperateFullyHumidCoolSummer">https://codes.wmo.int/wmdr/ClimateZone/warmTemperateFullyHumidCoolSummer</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/warmTemperateFullyHumidHotSummer">https://codes.wmo.int/wmdr/ClimateZone/warmTemperateFullyHumidHotSummer</a></p></td>
@@ -869,9 +872,9 @@ document.write(`
 <td><p>Warm Temperate - Fully humid - Hot summer</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/warmTemperateFullyHumidHotSummer">https://codes.wmo.int/wmdr/ClimateZone/warmTemperateFullyHumidHotSummer</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/warmTemperateFullyHumidWarmSummer">https://codes.wmo.int/wmdr/ClimateZone/warmTemperateFullyHumidWarmSummer</a></p></td>
@@ -880,9 +883,9 @@ document.write(`
 <td><p>Warm Temperate - Fully humid - Warm summer</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/ClimateZone/warmTemperateFullyHumidWarmSummer">https://codes.wmo.int/wmdr/ClimateZone/warmTemperateFullyHumidWarmSummer</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.190312</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:31.866475</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 </tbody>

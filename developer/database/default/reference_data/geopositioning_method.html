@@ -279,6 +279,7 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="../master_data/deployment_responsible_party.html">deployment_responsible_party</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../master_data/observation.html">observation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../master_data/feature.html">feature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/source.html">source</a></li>
 </ul>
 </li>
 <li class="toctree-l3 current active has-children"><a class="reference internal" href="../reference_data.html">Reference Data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -301,6 +302,7 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="observing_program.html">observing_program</a></li>
 <li class="toctree-l4"><a class="reference internal" href="operating_status.html">operating_status</a></li>
 <li class="toctree-l4"><a class="reference internal" href="reference_surface.html">reference_surface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="relative_elevation.html">relative_elevation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="reporting_status.html">reporting_status</a></li>
 <li class="toctree-l4"><a class="reference internal" href="representativeness.html">representativeness</a></li>
 <li class="toctree-l4"><a class="reference internal" href="role.html">role</a></li>
@@ -312,7 +314,6 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="territory.html">territory</a></li>
 <li class="toctree-l4"><a class="reference internal" href="time_zone.html">time_zone</a></li>
 <li class="toctree-l4"><a class="reference internal" href="topographic_context.html">topographic_context</a></li>
-<li class="toctree-l4"><a class="reference internal" href="topography_bathymetry.html">topography_bathymetry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="wmo_region.html">wmo_region</a></li>
 </ul>
 </li>
@@ -419,6 +420,8 @@ document.write(`
 
    /* Limit primary side bar width for wide pages */
    .bd-sidebar-primary {max-width: 400px;}
+
+   .sphinx-tabs-panel {overflow-x: scroll;}
 
 </style><div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Table definition</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Example data</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>Download the definition as a CSV file: <a class="reference download internal" download="" href="../../../../_downloads/96c47b80c081bb39b9a06dbd9a913113/geopositioning_method.csv"><code class="xref download docutils literal notranslate"><span class="pre">csv</span></code></a>.</p>
@@ -528,9 +531,9 @@ document.write(`
 <td><p>Location determined using the frequency shift of transmissions to the ARGOS communications satellite service. <a class="reference external" href="http://www.argos-system.org/web/en/333-why-choose-argos.php">http://www.argos-system.org/web/en/333-why-choose-argos.php</a></p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/GeopositioningMethod/argosDoppler">https://codes.wmo.int/wmdr/GeopositioningMethod/argosDoppler</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.938674</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:32.631706</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/GeopositioningMethod/argosKalman">https://codes.wmo.int/wmdr/GeopositioningMethod/argosKalman</a></p></td>
@@ -539,9 +542,9 @@ document.write(`
 <td><p>Location determined using the Kalman filtering technique and the ARGOS communications satellite service. <a class="reference external" href="http://www.argos-system.org/web/en/393-faq-kalman.php">http://www.argos-system.org/web/en/393-faq-kalman.php</a>.</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/GeopositioningMethod/argosKalman">https://codes.wmo.int/wmdr/GeopositioningMethod/argosKalman</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.938674</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:32.631706</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/GeopositioningMethod/galileo">https://codes.wmo.int/wmdr/GeopositioningMethod/galileo</a></p></td>
@@ -550,9 +553,9 @@ document.write(`
 <td><p>Location determined using the European GALILEO global navigation satellite system. <a class="reference external" href="http://galileognss.eu/">http://galileognss.eu/</a></p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/GeopositioningMethod/galileo">https://codes.wmo.int/wmdr/GeopositioningMethod/galileo</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.938674</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:32.631706</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/GeopositioningMethod/glonass">https://codes.wmo.int/wmdr/GeopositioningMethod/glonass</a></p></td>
@@ -561,9 +564,9 @@ document.write(`
 <td><p>Location determined using the Russian GLONASS (Globalnaya Navigazionnaya Sputnikovaya Sistema) global navigation satellite system. <a class="reference external" href="https://www.glonass-iac.ru/en/">https://www.glonass-iac.ru/en/</a></p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/GeopositioningMethod/glonass">https://codes.wmo.int/wmdr/GeopositioningMethod/glonass</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.938674</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:32.631706</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/GeopositioningMethod/gps">https://codes.wmo.int/wmdr/GeopositioningMethod/gps</a></p></td>
@@ -572,9 +575,9 @@ document.write(`
 <td><p>Location determined using the Global Positioning System. <a class="reference external" href="http://www.gps.gov/">http://www.gps.gov/</a></p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/GeopositioningMethod/gps">https://codes.wmo.int/wmdr/GeopositioningMethod/gps</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.938674</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:32.631706</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/GeopositioningMethod/inapplicable">https://codes.wmo.int/wmdr/GeopositioningMethod/inapplicable</a></p></td>
@@ -583,9 +586,9 @@ document.write(`
 <td><p>None of the codes in the table are applicable.</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/GeopositioningMethod/inapplicable">https://codes.wmo.int/wmdr/GeopositioningMethod/inapplicable</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.938674</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:32.631706</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/GeopositioningMethod/iridiumDoppler">https://codes.wmo.int/wmdr/GeopositioningMethod/iridiumDoppler</a></p></td>
@@ -594,9 +597,9 @@ document.write(`
 <td><p>Location determined using the frequency shift of transmissions to the Iridium communications satellite constellation. <a class="reference external" href="https://www.iridium.com/">https://www.iridium.com/</a></p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/GeopositioningMethod/iridiumDoppler">https://codes.wmo.int/wmdr/GeopositioningMethod/iridiumDoppler</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.938674</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:32.631706</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/GeopositioningMethod/loran">https://codes.wmo.int/wmdr/GeopositioningMethod/loran</a></p></td>
@@ -605,9 +608,9 @@ document.write(`
 <td><p>Location determined using the LORAN (LOng RAnge Navigation) hyperbolic radio system.</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/GeopositioningMethod/loran">https://codes.wmo.int/wmdr/GeopositioningMethod/loran</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.938674</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:32.631706</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/GeopositioningMethod/map">https://codes.wmo.int/wmdr/GeopositioningMethod/map</a></p></td>
@@ -616,9 +619,9 @@ document.write(`
 <td><p>Location extracted by locating the object on a map.</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/GeopositioningMethod/map">https://codes.wmo.int/wmdr/GeopositioningMethod/map</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.938674</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:32.631706</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/GeopositioningMethod/survey">https://codes.wmo.int/wmdr/GeopositioningMethod/survey</a></p></td>
@@ -627,9 +630,9 @@ document.write(`
 <td><p>Location determined using a geographic survey.</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/GeopositioningMethod/survey">https://codes.wmo.int/wmdr/GeopositioningMethod/survey</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.938674</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:32.631706</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/GeopositioningMethod/unknown">https://codes.wmo.int/wmdr/GeopositioningMethod/unknown</a></p></td>
@@ -638,9 +641,9 @@ document.write(`
 <td><p>The coordinates source/service is unknown.</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/GeopositioningMethod/unknown">https://codes.wmo.int/wmdr/GeopositioningMethod/unknown</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:23.938674</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:32.631706</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 </tbody>

@@ -1,0 +1,2 @@
+'id','inScheme','name','description','links','_version','_change_date','_user','_comments'
+'x-opencdms:reference_data:source_type:file','https://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml','file','Host-specific file names','[{"rel": "canonical", "type": "text/html", "href": "https://www.rfc-editor.org/rfc/rfc8089.html"}]',1,'2023-08-17 10:28+2','x-opencdms:admin:users:1',''

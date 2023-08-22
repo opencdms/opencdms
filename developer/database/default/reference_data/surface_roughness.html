@@ -279,6 +279,7 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="../master_data/deployment_responsible_party.html">deployment_responsible_party</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../master_data/observation.html">observation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../master_data/feature.html">feature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/source.html">source</a></li>
 </ul>
 </li>
 <li class="toctree-l3 current active has-children"><a class="reference internal" href="../reference_data.html">Reference Data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -301,6 +302,7 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="observing_program.html">observing_program</a></li>
 <li class="toctree-l4"><a class="reference internal" href="operating_status.html">operating_status</a></li>
 <li class="toctree-l4"><a class="reference internal" href="reference_surface.html">reference_surface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="relative_elevation.html">relative_elevation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="reporting_status.html">reporting_status</a></li>
 <li class="toctree-l4"><a class="reference internal" href="representativeness.html">representativeness</a></li>
 <li class="toctree-l4"><a class="reference internal" href="role.html">role</a></li>
@@ -312,7 +314,6 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="territory.html">territory</a></li>
 <li class="toctree-l4"><a class="reference internal" href="time_zone.html">time_zone</a></li>
 <li class="toctree-l4"><a class="reference internal" href="topographic_context.html">topographic_context</a></li>
-<li class="toctree-l4"><a class="reference internal" href="topography_bathymetry.html">topography_bathymetry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="wmo_region.html">wmo_region</a></li>
 </ul>
 </li>
@@ -419,6 +420,8 @@ document.write(`
 
    /* Limit primary side bar width for wide pages */
    .bd-sidebar-primary {max-width: 400px;}
+
+   .sphinx-tabs-panel {overflow-x: scroll;}
 
 </style><div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Table definition</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Example data</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>Download the definition as a CSV file: <a class="reference download internal" download="" href="../../../../_downloads/acc63a3a47780729097cbd206734f737/surface_roughness.csv"><code class="xref download docutils literal notranslate"><span class="pre">csv</span></code></a>.</p>
@@ -528,9 +531,9 @@ document.write(`
 <td><p>Centres of large towns with mixture of low-rise and high-rise buildings. Also irregular large forests with many clearings. (zo ≥ 2)</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/chaotic">https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/chaotic</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:25.699493</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:34.756382</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/closed">https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/closed</a></p></td>
@@ -539,9 +542,9 @@ document.write(`
 <td><p>Landscape totally and quite regularly covered with similar size large obstacles, with open spaces comparable to the obstacle heights; e.g. mature regular forests, homogeneous cities or villages. (zo 1.0)</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/closed">https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/closed</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:25.699493</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:34.756382</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/inapplicable">https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/inapplicable</a></p></td>
@@ -550,9 +553,9 @@ document.write(`
 <td><p>None of the codes in the table are applicable in the context of this particular observation</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/inapplicable">https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/inapplicable</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:25.699493</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:34.756382</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/open">https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/open</a></p></td>
@@ -561,9 +564,9 @@ document.write(`
 <td><p>Level country with low vegetation (e.g. grass) and isolated obstacles with separations of at least 50 obstacle heights; e.g. grazing land without windbreaks, heather, moor and tundra, runway area of airports. (zo 0.03)</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/open">https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/open</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:25.699493</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:34.756382</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/rough">https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/rough</a></p></td>
@@ -572,9 +575,9 @@ document.write(`
 <td><p>Recently-developed 'young' landscape with high crops or crops of varying height, and scattered obstacles (e.g. dense shelterbelts, vineyards) at relative distances of about 15 obstacle heights. (zo 0.25)</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/rough">https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/rough</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:25.699493</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:34.756382</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/roughlyOpen">https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/roughlyOpen</a></p></td>
@@ -583,9 +586,9 @@ document.write(`
 <td><p>Cultivated area with regular cover of low crops, or moderately open country with occasional obstacles (e.g. low hedges, single rows of trees, isolated farms) at relative horizontal distances of at least 20 obstacle heights. (zo 0.10)</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/roughlyOpen">https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/roughlyOpen</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:25.699493</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:34.756382</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/sea">https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/sea</a></p></td>
@@ -594,9 +597,9 @@ document.write(`
 <td><p>Open sea or lake (irrespective of the wave size), tidal flat, snow-covered flat plain, featureless desert, tarmac and concrete, with a free fetch of several kilometers. (zo 0.0002)</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/sea">https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/sea</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:25.699493</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:34.756382</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/smooth">https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/smooth</a></p></td>
@@ -605,9 +608,9 @@ document.write(`
 <td><p>Featureless land surface without any noticeable obstacles and with negligible vegetation; e.g. beaches, pack ice without large ridges, morass, and snow-covered or fallow open country. (zo 0.005)</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/smooth">https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/smooth</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:25.699493</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:34.756382</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/unknown">https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/unknown</a></p></td>
@@ -616,9 +619,9 @@ document.write(`
 <td><p>The surface roughness is unknown.</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/unknown">https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/unknown</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:25.699493</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:34.756382</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/veryRough">https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/veryRough</a></p></td>
@@ -627,9 +630,9 @@ document.write(`
 <td><p>'Old' cultivated landscape with many rather large obstacle groups (large farms, clumps of forest) separated by open spaces of about 10 obstacle heights. Also low large vegetation with small interspaces, such as bushland, orchards, young densely-planted forest. (zo 0.5)</p></td>
 <td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/veryRough">https://codes.wmo.int/wmdr/SurfaceRoughnessDavenport/veryRough</a>”}]</p></td>
 <td><p>1</p></td>
-<td><p>2023-08-16T07:24:25.699493</p></td>
-<td><p>x-opencdms:admin:users:1</p></td>
-<td><p>x-opencdms:code_lists:status:1</p></td>
+<td><p>2023-08-17T08:05:34.756382</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
 <td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
 </tr>
 </tbody>

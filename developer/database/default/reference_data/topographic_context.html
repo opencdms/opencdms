@@ -48,7 +48,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'developer/database/default/reference_data/topographic_context';</script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="topography_bathymetry" href="topography_bathymetry.html" />
+    <link rel="next" title="wmo_region" href="wmo_region.html" />
     <link rel="prev" title="time_zone" href="time_zone.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -279,6 +279,7 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="../master_data/deployment_responsible_party.html">deployment_responsible_party</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../master_data/observation.html">observation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../master_data/feature.html">feature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../master_data/source.html">source</a></li>
 </ul>
 </li>
 <li class="toctree-l3 current active has-children"><a class="reference internal" href="../reference_data.html">Reference Data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -301,6 +302,7 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="observing_program.html">observing_program</a></li>
 <li class="toctree-l4"><a class="reference internal" href="operating_status.html">operating_status</a></li>
 <li class="toctree-l4"><a class="reference internal" href="reference_surface.html">reference_surface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="relative_elevation.html">relative_elevation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="reporting_status.html">reporting_status</a></li>
 <li class="toctree-l4"><a class="reference internal" href="representativeness.html">representativeness</a></li>
 <li class="toctree-l4"><a class="reference internal" href="role.html">role</a></li>
@@ -312,7 +314,6 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="territory.html">territory</a></li>
 <li class="toctree-l4"><a class="reference internal" href="time_zone.html">time_zone</a></li>
 <li class="toctree-l4 current active"><a class="current reference internal" href="#">topographic_context</a></li>
-<li class="toctree-l4"><a class="reference internal" href="topography_bathymetry.html">topography_bathymetry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="wmo_region.html">wmo_region</a></li>
 </ul>
 </li>
@@ -420,6 +421,8 @@ document.write(`
    /* Limit primary side bar width for wide pages */
    .bd-sidebar-primary {max-width: 400px;}
 
+   .sphinx-tabs-panel {overflow-x: scroll;}
+
 </style><div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Table definition</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Example data</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>Download the definition as a CSV file: <a class="reference download internal" download="" href="../../../../_downloads/ed1f4c67dcfbba4576d18cfa6e5a6dfe/topographic_context.csv"><code class="xref download docutils literal notranslate"><span class="pre">csv</span></code></a>.</p>
 <table class="table" id="id1">
@@ -505,7 +508,168 @@ document.write(`
 </tr>
 </tbody>
 </table>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>Download the example CSV file: <code class="xref download docutils literal notranslate"><span class="pre">csv</span></code>.</p>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>Download the example CSV file: <a class="reference download internal" download="" href="../../../../_downloads/b7ae134494e55c1dafb99b206878bdfa/topographic_context.csv"><code class="xref download docutils literal notranslate"><span class="pre">csv</span></code></a>.</p>
+<table class="table" id="id2">
+<caption><span class="caption-text">Example data</span><a class="headerlink" href="#id2" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>id</p></th>
+<th class="head"><p>inScheme</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>description</p></th>
+<th class="head"><p>links</p></th>
+<th class="head"><p>_version</p></th>
+<th class="head"><p>_change_date</p></th>
+<th class="head"><p>_user</p></th>
+<th class="head"><p>_status</p></th>
+<th class="head"><p>_comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/basins">https://codes.wmo.int/wmdr/TopographicContext/basins</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext">https://codes.wmo.int/wmdr/TopographicContext</a></p></td>
+<td><p>within basins</p></td>
+<td><p>A depression of the sea floor more or less equidimensional in form and of very variable extent</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/basins">https://codes.wmo.int/wmdr/TopographicContext/basins</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-17T08:05:35.446293</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/guyots">https://codes.wmo.int/wmdr/TopographicContext/guyots</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext">https://codes.wmo.int/wmdr/TopographicContext</a></p></td>
+<td><p>within guyots</p></td>
+<td><p>An undersea mountain having a comparatively smooth flat top. Also called a table mount</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/guyots">https://codes.wmo.int/wmdr/TopographicContext/guyots</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-17T08:05:35.446293</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/hills">https://codes.wmo.int/wmdr/TopographicContext/hills</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext">https://codes.wmo.int/wmdr/TopographicContext</a></p></td>
+<td><p>within hills</p></td>
+<td><p>Medium relief (differences 250-1000 m within 5-10 km range) on land, tending to divergent form</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/hills">https://codes.wmo.int/wmdr/TopographicContext/hills</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-17T08:05:35.446293</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/hollows">https://codes.wmo.int/wmdr/TopographicContext/hollows</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext">https://codes.wmo.int/wmdr/TopographicContext</a></p></td>
+<td><p>within hollows</p></td>
+<td><p>Low relief (differences 30-250 m within 5-10 km range) on land, tending to convergent form</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/hollows">https://codes.wmo.int/wmdr/TopographicContext/hollows</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-17T08:05:35.446293</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/inapplicable">https://codes.wmo.int/wmdr/TopographicContext/inapplicable</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext">https://codes.wmo.int/wmdr/TopographicContext</a></p></td>
+<td><p>inapplicable</p></td>
+<td><p>None of the codes in the table are applicable in the context of this particular station/platform.</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/inapplicable">https://codes.wmo.int/wmdr/TopographicContext/inapplicable</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-17T08:05:35.446293</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/mountains">https://codes.wmo.int/wmdr/TopographicContext/mountains</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext">https://codes.wmo.int/wmdr/TopographicContext</a></p></td>
+<td><p>within mountains</p></td>
+<td><p>High relief (differences &gt; 1000 m within 5-10 km range) on land</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/mountains">https://codes.wmo.int/wmdr/TopographicContext/mountains</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-17T08:05:35.446293</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/plains">https://codes.wmo.int/wmdr/TopographicContext/plains</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext">https://codes.wmo.int/wmdr/TopographicContext</a></p></td>
+<td><p>within plains</p></td>
+<td><p>Very low relief (differences &lt;30 m within 5-10 km range) on land</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/plains">https://codes.wmo.int/wmdr/TopographicContext/plains</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-17T08:05:35.446293</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/ridges">https://codes.wmo.int/wmdr/TopographicContext/ridges</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext">https://codes.wmo.int/wmdr/TopographicContext</a></p></td>
+<td><p>within ridges</p></td>
+<td><p>A long, narrow elevation with steep sides; or: A long, narrow elevation often separating ocean basins; or: The major oceanic mountain systems of global extent</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/ridges">https://codes.wmo.int/wmdr/TopographicContext/ridges</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-17T08:05:35.446293</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/rises">https://codes.wmo.int/wmdr/TopographicContext/rises</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext">https://codes.wmo.int/wmdr/TopographicContext</a></p></td>
+<td><p>within rises</p></td>
+<td><p>Low relief (differences 30-250 m within 5-10 km range) on land, tending to divergent form</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/rises">https://codes.wmo.int/wmdr/TopographicContext/rises</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-17T08:05:35.446293</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/seaMounts">https://codes.wmo.int/wmdr/TopographicContext/seaMounts</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext">https://codes.wmo.int/wmdr/TopographicContext</a></p></td>
+<td><p>within sea mounts</p></td>
+<td><p>An isolated or comparatively isolated elevation rising 1 000 meters or more from the sea floor and of limited extent across the summit</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/seaMounts">https://codes.wmo.int/wmdr/TopographicContext/seaMounts</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-17T08:05:35.446293</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/trenches">https://codes.wmo.int/wmdr/TopographicContext/trenches</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext">https://codes.wmo.int/wmdr/TopographicContext</a></p></td>
+<td><p>within trenches</p></td>
+<td><p>A long, narrow and deep depression of the sea floor with relatively steep sides</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/trenches">https://codes.wmo.int/wmdr/TopographicContext/trenches</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-17T08:05:35.446293</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/unknown">https://codes.wmo.int/wmdr/TopographicContext/unknown</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext">https://codes.wmo.int/wmdr/TopographicContext</a></p></td>
+<td><p>unknown</p></td>
+<td><p>The topographic context is unknown.</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/unknown">https://codes.wmo.int/wmdr/TopographicContext/unknown</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-17T08:05:35.446293</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/valleys">https://codes.wmo.int/wmdr/TopographicContext/valleys</a></p></td>
+<td><p><a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext">https://codes.wmo.int/wmdr/TopographicContext</a></p></td>
+<td><p>within valleys</p></td>
+<td><p>Medium relief (differences 250-1000 m within 5-10 km range) on land, tending to convergent form</p></td>
+<td><p>[{“type”: “text/html”, “rel”: “canonical”, “href”: “<a class="reference external" href="https://codes.wmo.int/wmdr/TopographicContext/valleys">https://codes.wmo.int/wmdr/TopographicContext/valleys</a>”}]</p></td>
+<td><p>1</p></td>
+<td><p>2023-08-17T08:05:35.446293</p></td>
+<td><p>x-opencdms:admin:user:1</p></td>
+<td><p>x-opencdms:reference_data:status:1</p></td>
+<td><p>First automated ingest from codes.wmo.int. Data download on _change_date.</p></td>
+</tr>
+</tbody>
+</table>
 </div></div>
 </section>
 
@@ -530,11 +694,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="topography_bathymetry.html"
+       href="wmo_region.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">topography_bathymetry</p>
+        <p class="prev-next-title">wmo_region</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

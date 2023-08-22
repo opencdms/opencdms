@@ -33,7 +33,7 @@ The pages linked below define each of the associated tables, including the *host
 
 
 Equipment
-----
+---------
 
 The *equipment* and associated tables provide information on equipment registered in the climate data management system
 and that may be associated with one or more hosts. The equipment may be a sensor used to make observations or another
@@ -54,7 +54,7 @@ The pages linked below define each of the associated tables, including the *equi
    master_data/sensor_characteristics
 
 Deployment
-----
+----------
 
 The *deployment* table provides information on the installation of a piece of equipment as a given host or
 observing facility. This includes: the deployment location; installation height and configuration; expected quality
@@ -74,7 +74,7 @@ associated with the deployment and any associated media (e.g. photographs of the
    master_data/operating_status
 
 Observation
-----
+-----------
 
 The *observation* table contains the observations stored within the database and has been developed based on the
 Open Geospatial Consortium (OGC) *Observations, Measurements and Samples* standard (OGC-OMS). Each record contains
@@ -92,7 +92,7 @@ table can be found via the link below.
 
 
 Feature
-----
+-------
 
 In addition to being associated with a host or sensor, each observation can be associated with a feature of interest.
 The *Feature* table contains all the features of interest defined and registered within the CDMS. The definition of
@@ -104,3 +104,19 @@ the table can be found via the link below.
    :caption: Feature table definition:
 
    master_data/feature
+
+Source
+------
+
+The source table is used to record where the observations have come from, for example a source data file,
+an external service etc.
+
+The definition of
+the table can be found via the link below.
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+   :caption: Source table definition:
+
+   master_data/source

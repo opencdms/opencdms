@@ -17,6 +17,8 @@ Operating status code list.
       /* Limit primary side bar width for wide pages */
       .bd-sidebar-primary {max-width: 400px;}
 
+      .sphinx-tabs-panel {overflow-x: scroll;}
+
    </style>
 
 .. tabs::
