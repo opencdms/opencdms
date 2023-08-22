@@ -1,0 +1,2 @@
+'id','inScheme','name','description','_version','_change_date','_user','_comments'
+'x-opencdms:reference_data:status:1',NULL,'current','The latest / current version of the record', 1, '2023-08-17 09:31+2','x-opencdms:admin:users:1',''

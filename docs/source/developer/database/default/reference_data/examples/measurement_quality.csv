@@ -1,0 +1,5 @@
+'id','inScheme','name','description','links','_version','_change_date','_user','_comments'
+'x-opencdms:reference_data:measurement_quality:A',NULL,'Class A','Aligned with OSCAR/Requirements “goal” level. (WMO-No. 8, 2021 edition)',NULL,1, '2023-08-17 10:28+2','x-opencdms:admin:users:1',''
+'x-opencdms:reference_data:measurement_quality:B',NULL,'Class B','Aligned with OSCAR/Requirements “breakthrough” level. (WMO-No. 8, 2021 edition)',NULL,1, '2023-08-17 10:28+2','x-opencdms:admin:users:1',''
+'x-opencdms:reference_data:measurement_quality:C',NULL,'Class C','Aligned with OSCAR/Requirements “threshold” level. (WMO-No. 8, 2021 edition)',1NULL,1, '2023-08-17 10:28+2','x-opencdms:admin:users:1',''
+'x-opencdms:reference_data:measurement_quality:D',NULL,'Class D','Greater than the uncertainty for Class C, or no information available. (WMO-No. 8, 2021 edition)',NULL,1, '2023-08-17 10:28+2','x-opencdms:admin:users:1',''

@@ -1,9 +1,9 @@
 :html_theme.sidebar_secondary.remove:
 
-representativeness
+relative_elevation
 ====
 
-Representativeness classification code list.
+Relative elevation classification code list.
 
 
 .. raw:: html
@@ -24,9 +24,9 @@ Representativeness classification code list.
 .. tabs::
     .. tab:: Table definition
 
-        Download the definition as a CSV file: :download:`csv <representativeness.csv>`.
+        Download the definition as a CSV file: :download:`csv <relative_elevation.csv>`.
 
-        .. csv-table:: Definition of the *representativeness* table.
+        .. csv-table:: Definition of the *relative_elevation* table.
            :header: "Property","Kind","References","Requirement","Description"
 
            ".. _id:
@@ -37,13 +37,13 @@ Representativeness classification code list.
            inScheme","str",,"Required","The scheme/vocabulary that this record is from."
            ".. _name:
 
-           name","str",,"Optional","Short name / abbreviation for the representativeness classification."
+           name","str",,"Optional","Short name / abbreviation of the relative elevation classification."
            ".. _description:
 
-           description","str",,"Required","Description of the representativeness classification."
+           description","str",,"Required","Description of relative elevation classification."
            ".. _links:
 
-           links","dict",,"Optional","Links providing further information on the representativeness classification."
+           links","dict",,"Optional","Links providing further definition of relative elevation classification."
            ".. _version:
 
            _version","int",,"Required","Version number of this record."
@@ -62,9 +62,9 @@ Representativeness classification code list.
 
     .. tab:: Example data
 
-        Download the example CSV file: :download:`csv <./examples/representativeness.csv>`.
+        Download the example CSV file: :download:`csv <./examples/relative_elevation.csv>`.
 
         .. csv-table:: Example data
-           :file: ./examples/representativeness.csv
+           :file: ./examples/relative_elevation.csv
            :header-rows: 1
            :quote: '

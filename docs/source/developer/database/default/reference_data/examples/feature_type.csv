@@ -1,0 +1,2 @@
+'id','inScheme','name','description','links','_version','_change_date','_user','_status','_comments'
+'x-opencdms:reference_data:feature_type:1',NULL,'watershed','watershed',NULL,1,'2023-08-17 10:00+2','x-opencdms:admin:user:1','x-opencdms:reference_data:status:1',''
