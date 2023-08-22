@@ -21,7 +21,9 @@ if CLEAN:
 
 with engine.begin() as conn:
     # Create schema
-    conn.execute(text("CREATE SCHEMA IF NOT EXISTS cdm"))
+    conn.execute(text("CREATE SCHEMA IF NOT EXISTS admin"))
+    conn.execute(text("CREATE SCHEMA IF NOT EXISTS reference_data"))
+    conn.execute(text("CREATE SCHEMA IF NOT EXISTS master_data"))
     # Add PostGIS extension
     conn.execute(text("CREATE EXTENSION Postgis;"))
 
