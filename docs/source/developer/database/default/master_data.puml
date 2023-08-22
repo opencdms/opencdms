@@ -1,0 +1,22 @@
+@startuml
+package "master_data" {
+    package "WIGOS Metadata" {
+        Object Equipment
+        Object Deployment
+        Object Host
+    }
+
+    object Observation
+    object Feature
+
+    package "WMO Core Metadata Profile" {
+        object Metadata
+    }
+}
+Host --- Observation
+Observation -- Equipment
+Host -- Deployment
+Observation -- Metadata
+Deployment -- Equipment
+Feature -- Observation
+@enduml

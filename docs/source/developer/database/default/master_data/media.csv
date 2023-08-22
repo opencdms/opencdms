@@ -1,0 +1,10 @@
+"Property","Kind","References","Requirement","Description"
+"id","str",,"Optional","ID / primary key."
+"media_type","str","reference_data.media_type.id","Optional","The type of media described by this entry."
+"description","str",,"Optional","Description of the media."
+"created","datetime",,"Optional","Date the media was created/uploaded."
+"creator","str",,"Optional","Who uploaded the media. "
+"rights","int",,"Optional","Digital rights associated with the media."
+"source","str",,"Optional","Source of the media."
+"data","dict",,"Optional","TBD"
+

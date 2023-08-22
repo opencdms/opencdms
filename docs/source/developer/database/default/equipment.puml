@@ -1,0 +1,12 @@
+@startuml
+Object Equipment
+Object SensorCharacteristics
+Object EquipmentLog
+Object EquipmentMedia
+Object EquipmentResponsibleParty
+
+Equipment -- SensorCharacteristics
+Equipment -- EquipmentResponsibleParty
+EquipmentLog -- Equipment
+EquipmentMedia -- Equipment
+@enduml
