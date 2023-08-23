@@ -36,7 +36,7 @@ from sqlalchemy import (
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import registry, relationship
 
-from opencdms.models.default import reference_data, master_data
+from opencdms.models.default import reference_data, master_data, admin
 
 
 mapper_registry = registry()

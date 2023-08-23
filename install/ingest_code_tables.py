@@ -18,34 +18,52 @@ opencdmsdb.start_mappers()
 session = sessionmaker(bind=engine)()
 cursor = session.connection().connection.cursor()
 
+admin_tables = {
+    "admin.user": "user.csv"
+}
+
+for key, value in admin_tables.items():
+    with open(f"{DATADIR}/admin/{value}") as fh:
+        cursor.copy_expert(f"COPY {key} FROM STDIN WITH CSV HEADER DELIMITER AS ',' NULL AS 'NULL' QUOTE E'\\''", fh)
+
 code_tables = {
-    "cdm.user": "user.csv",
-    "cdm.status": "status.csv",
-    "cdm.observation_type": "observation_type.csv",
-    "cdm.facility_type": "facility_type.csv",
-    "cdm.feature_type": "feature_type.csv",
-    "cdm.wmo_region": "wmo_region.csv",
-    "cdm.territory": "territory.csv",
-    "cdm.observed_property": "observed_property.csv",
-    "cdm.observing_procedure": "observing_procedure.csv",
-    "cdm.time_zone": "time_zone.csv",
-    "cdm.source_type": "source_type.csv",
-    "cdm.media_type": "media_type.csv",
-    "cdm.climate_zone": "climate_zone.csv",
-    "cdm.surface_cover": "surface_cover.csv",
-    "cdm.surface_roughness": "surface_roughness.csv",
-    "cdm.topography": "topography.csv",
-    "cdm.season": "season.csv",
-    "cdm.programme": "programme.csv",
-    "cdm.observing_method": "observing_method.csv",
-    "cdm.exposure": "exposure.csv",
-    "cdm.reference_surface": "reference_surface.csv",
-    "cdm.role": "role.csv"
+    "reference_data.status": "status.csv",
+    "reference_data.altitude": "altitude.csv",
+    "reference_data.application_area": "application_area.csv",
+    "reference_data.climate_zone": "climate_zone.csv",
+    "reference_data.communication_method": "communication_method.csv",
+    "reference_data.equipment_type": "equipment_type.csv",
+    "reference_data.exposure": "exposure.csv",
+    "reference_data.facility_type": "facility_type.csv",
+    "reference_data.feature_type": "feature_type.csv",
+    "reference_data.geopositioning_method": "geopositioning_method.csv",
+    "reference_data.local_topography": "local_topography.csv",
+    "reference_data.measurement_quality": "measurement_quality.csv",
+    "reference_data.media_type": "media_type.csv",
+    "reference_data.observation_type": "observation_type.csv",
+    "reference_data.observed_property": "observed_property.csv",
+    "reference_data.observing_method": "observing_method.csv",
+    "reference_data.observing_procedure": "observing_procedure.csv",
+    "reference_data.observing_program": "observing_program.csv",
+    "reference_data.operating_status": "operating_status.csv",
+    "reference_data.reference_surface": "reference_surface.csv",
+    "reference_data.relative_elevation": "relative_elevation.csv",
+    "reference_data.reporting_status": "reporting_status.csv",
+    "reference_data.representativeness": "representativeness.csv",
+    "reference_data.role": "role.csv",
+    "reference_data.source_of_observation": "source_of_observation.csv",
+    "reference_data.source_type": "source_type.csv",
+    "reference_data.surface_cover": "surface_cover.csv",
+    "reference_data.surface_roughness": "surface_roughness.csv",
+    "reference_data.territory": "territory.csv",
+    "reference_data.time_zone": "time_zone.csv",
+    "reference_data.topographic_context": "topographic_context.csv",
+    "reference_data.wmo_region": "wmo_region.csv"
 }
 
 for key, value in code_tables.items():
-    with open(f"{DATADIR}/code_tables/{value}") as fh:
-        cursor.copy_expert(f"COPY {key} FROM STDIN WITH CSV HEADER DELIMITER AS '|' NULL AS 'NA' QUOTE E'\b'", fh)
+    with open(f"{DATADIR}/reference_data/{value}") as fh:
+        cursor.copy_expert(f"COPY {key} FROM STDIN WITH CSV HEADER DELIMITER AS ',' NULL AS 'NULL' QUOTE E'\\''", fh)
 
 session.commit()
 session.close()
