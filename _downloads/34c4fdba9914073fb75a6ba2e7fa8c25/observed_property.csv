@@ -1,0 +1,2 @@
+id,inScheme,name,description,standard_name,units,links,_version,_change_date,_user,_status,_comments
+'https://vocab.nerc.ac.uk/collection/P07/current/CFSN0023/','https://vocab.nerc.ac.uk/collection/P07/current/','Air temperature','Air temperature is the bulk temperature of the air, not the surface (skin) temperature.','air_temperature','http://qudt.org/vocab/unit/K',NULL,1,'2023-08-23 11:23+2','x-opencdms:admin:user:1','x-opencdms:reference_data:status:1',''
