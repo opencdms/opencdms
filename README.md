@@ -4,6 +4,11 @@
 
 This repository contains, in a single place, everything that is needed to install the OpenCDMS software and also includes the source of the documentation that is published at [docs.opencdms.org](https://docs.opencdms.org).
 
+
+## Architecture
+
+![OpenCDMS Architecture](http://cdn-0.plantuml.com/plantuml/png/XP5HJy8m58NVzojkzWGFumVuG1282YfEXyQ4yN3fhh2mtYvjbqYC_zrcnfGk8CkIPUqztpaz7HcBsZQoYW1GMANXrP1sF-xzq2W9ugUQU39zp6BuQfS1QXHxtBejtfRy2KAnnP99kua8saUWBY3EUN4xMxpd70VBoW558Ks2TPrpxwsXUTR_7VaE-TZOtN_uUpg8Ik4-vnDodpn0d8jIkYZfmUuKmqs5PdywaIqb6O4L5HjFXLwgZDrgofuV-jwYG8iRD7HaKsnoDc974fsRYmOlixwlnmlyqVoypnFzVThBWi5WUDmrN44CgxlbCitMu4J1NdA-_kvaChpGZpVoFe4wkA3kT0INy0vniJb7NKt7oNKwMxVCZcatXsUqolbqF5b78-AYaTKF)
+
 ## Installation
 
 If you want to install OpenCDMS for production use, please see the instructions at https://docs.opencdms.org/administrator.
