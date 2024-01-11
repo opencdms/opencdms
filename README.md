@@ -2,6 +2,13 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
+> **The OpenCDMS software is expected to be available by 2025**\
+> **See [roadmap](https://www.opencdms.org/approach/roadmap) and [frequently asked questions](https://www.opencdms.org/about/faq/)**
+
+📌 OpenCDMS is an open source [Climate Data Management System (CDMS)](https://library.wmo.int/index.php?lvl=notice_display&id=16300) and also a Reference Implementation of the [WMO Climate Data Model Standard (CDM)](https://github.com/wmo-im/tt-cdm).
+
+📚 For more information, please see [docs.opencdms.org](https://docs.opencdms.org), see also [www.opencdms.org](https://www.opencdms.org)
+
 This repository contains, in a single place, everything that is needed to install the OpenCDMS software and also includes the source of the documentation that is published at [docs.opencdms.org](https://docs.opencdms.org).
 
 
