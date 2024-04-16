@@ -1,0 +1,77 @@
+type: object
+properties:
+  type:
+    type: string
+    enum: ["Feature"]
+  geometry:
+    type: object
+    properties:
+      type:
+        type: string
+        enum: [Point, Polygon]
+      coordinates:
+        type: array
+        minItems: 2
+        maxItems: 2
+        items:
+          type: number
+  properties:
+    type: object
+    properties:
+      id:
+        type: string
+        description: ID / primary key
+      name:
+        type: string
+        description: Preferred name of host
+      description:
+        type: string
+        description: Description of host
+      links:
+        type: string
+        description: URI to host, e.g. to OSCAR/Surface
+      elevation:
+        type: number
+        description: Elevation of station above mean sea level
+      wigos_station_identifier:
+        type: string
+        description: WIGOS station identifier
+      facility_type:
+        type: string
+        description: Type of observing facility, fixed land, mobile sea, etc
+      date_established:
+        type: string
+        description: Date host was first established
+      date_closed:
+        type: string
+        description: Date host was first established
+      wmo_region:
+        type: string
+        description: WMO region in which the host is located
+      territory:
+        type: string
+        description: Territory the host is located in
+      valid_from:
+        type: string
+        description: Date from which the details for this record are valid
+      valid_to:
+        type: string
+        description: Date after which the details for this record are no longer valid
+      version:
+        type: integer
+        description: Version number of this record
+      change_date:
+        type: string
+        description: Date this record was changed
+      user:
+        type: integer
+        description: Which user last modified this record
+      status:
+        type: integer
+        description: Whether this is the latest version or an archived version of the record
+      comments:
+        type: string
+        description: Free text comments on this record, for example description of changes made etc
+      time_zone:
+        type: integer
+        description: Time zone the host is located in

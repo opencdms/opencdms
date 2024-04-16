@@ -1,0 +1,15 @@
+id|name|description|links|_version|_change_data|_user|_status|_comments
+0|Air (fixed)|Airborne station/platform, at fixed position|[{"rel":"canonical", "href":"http://codes.wmo.int/wmdr/FacilityType/airFixed", "type":"html/text", "title":""}]|1|||1|
+1|Air (mobile)|Airborne station/platform, moving around|[{"rel":"canonical", "href":"http://codes.wmo.int/wmdr/FacilityType/airMobile", "type":"html/text", "title":""}]|1|||1|
+2|Lake/River (fixed)|Station/platform at lake/river surface, at fixed position|[{"rel":"canonical", "href":"http://codes.wmo.int/wmdr/FacilityType/lakeRiverFixed", "type":"html/text", "title":""}]|1|||1|
+3|Lake/River (mobile)|Station/platform at lake/river surface, moving around|[{"rel":"canonical", "href":"http://codes.wmo.int/wmdr/FacilityType/lakeRiverMobile", "type":"html/text", "title":""}]|1|||1|
+4|Land (fixed)|Station/platform on solid terrain, at fixed position|[{"rel":"canonical", "href":"http://codes.wmo.int/wmdr/FacilityType/landFixed", "type":"html/text", "title":""}]|1|||1|
+5|Land (mobile)|Station/platform on solid terrain, moving around|[{"rel":"canonical", "href":"http://codes.wmo.int/wmdr/FacilityType/landMobile|1|||1|
+6|Land (on ice)|Station/platform on ice-covered ground, moving with the ice|[{"rel":"canonical", "href":"http://codes.wmo.int/wmdr/FacilityType/landOnIce", "type":"html/text", "title":""}]|1|||1|
+7|Sea (fixed)|Station/platform at sea surface, at fixed position|[{"rel":"canonical", "href":"http://codes.wmo.int/wmdr/FacilityType/seaFixed", "type":"html/text", "title":""}]|1|||1|
+8|Sea (mobile)|Station/platform at sea surface, moving around|[{"rel":"canonical", "href":"http://codes.wmo.int/wmdr/FacilityType/seaMobile", "type":"html/text", "title":""}]|1|||1|
+9|Sea (on ice)|Station/platform on floating ice, moving with the ice|[{"rel":"canonical", "href":"http://codes.wmo.int/wmdr/FacilityType/seaOnIce", "type":"html/text", "title":""}]|1|||1|
+10|Space-based|Satellite platform in orbit|[{"rel":"canonical", "href":"http://codes.wmo.int/wmdr/FacilityType/spaceBased", "type":"html/text", "title":""}]|1|||1|
+11|Underwater (fixed)|Station/platform under water, at fixed horizontal position|[{"rel":"canonical", "href":"http://codes.wmo.int/wmdr/FacilityType/underwaterFixed", "type":"html/text", "title":""}]|1|||1|
+12|Underwater (mobile)|Station/platform under water, moving around also horizontally|[{"rel":"canonical", "href":"http://codes.wmo.int/wmdr/FacilityType/underwaterMobile", "type":"html/text", "title":""}]|1|||1|
+13|Unknown|The station/platform type is unknown.|[{"rel":"canonical", "href":"http://codes.wmo.int/wmdr/FacilityType/unknown", "type":"html/text", "title":""}]|1|||1|

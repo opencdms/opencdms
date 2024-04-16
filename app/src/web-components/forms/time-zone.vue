@@ -1,0 +1,129 @@
+<template>
+  <v-card>
+    <v-card-title>Create new 'TimeZone'</v-card-title>
+    <v-card-text>
+        <v-form>
+            <v-card-item><v-text-field label="id" v-model="timeZone.id"  hint="ID / primary key" persistent-hint></v-text-field></v-card-item>
+            <v-card-item><v-text-field label="abbreviation" v-model="timeZone.abbreviation"  hint="Abbreviation for time zone" persistent-hint></v-text-field></v-card-item>
+            <v-card-item><v-text-field label="name" v-model="timeZone.name"  hint="Name / description of timezone" persistent-hint></v-text-field></v-card-item>
+            <v-card-item><v-text-field label="offset" v-model="timeZone.offset" type="number" hint="Offset from UTC (hours)" persistent-hint></v-text-field></v-card-item>
+            <v-card-item><v-text-field label="_version" v-model="timeZone._version" type="number" hint="Version number of this record" persistent-hint></v-text-field></v-card-item>
+            <v-card-item><VueDatePicker label="_change_date" v-model="timeZone._change_date"  hint="Date this record was changed" persistent-hint></VueDatePicker></v-card-item>
+            <v-card-item><v-select :items="userOptions" item-title="name" item-value="id" label="user" v-model="timeZone._user" :hint="userOptionsHint" return-object persistent-hint></v-select></v-card-item>
+            <v-card-item><v-select :items="statusOptions" item-title="name" item-value="id" label="status" v-model="timeZone._status" :hint="statusOptionsHint" return-object persistent-hint></v-select></v-card-item>
+            <v-card-item><v-text-field label="comments" v-model="timeZone.comments"  hint="Free text comments on this record, for example description of changes made etc" persistent-hint></v-text-field></v-card-item>
+        </v-form>
+        <v-btn @click="createTimeZone">Create TimeZone</v-btn>
+    </v-card-text>
+  </v-card>
+</template>
+
+<script>
+import * as d3 from 'd3';
+import { defineComponent, ref, computed } from 'vue';
+import { VCard, VCardTitle, VCardText, VCardItem, VForm, VTextField, VSelect, VBtn } from 'vuetify/lib/components';
+import { onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted, onErrorCaptured} from 'vue';
+import {useStore} from 'pinia';
+import {useRepo} from 'pinia-orm';
+
+import LinkForm from '@/web-components/forms/links';
+import VueDatePicker from '@/web-components/pickers/date-picker.vue';
+
+
+import User from '@/models/User';
+import Status from '@/models/Status';
+
+// import model
+import TimeZone from '@/models/TimeZone';
+
+export default defineComponent({
+  name: 'TimeZoneForm',
+  props: {
+  },
+  methods:{
+    parseLinks (links) {
+      let res;
+      if( links && links.length > 0 ){
+        res = JSON.stringify(links);
+      }else{
+        res = '';
+      }
+      return res;
+    }
+  },
+  components: {
+    VCard,
+    VCardTitle,
+    VCardText,
+    VCardItem,
+    VTextField,
+    VSelect,
+    VForm,
+    VBtn,
+    VueDatePicker,
+    LinkForm
+  },
+  setup() {
+
+    // set up links object
+    const links = ref([]);
+    const updateLinks = (updatedLinks) => {
+      console.log("updating links");
+      timeZone.value.links = updatedLinks;
+    }
+
+    // set up repos
+    const userRepo = useRepo(User);
+    const userOptions = computed(() => { return userRepo.all() });
+    const userOptionsHint = computed(() => {
+      if( timeZone.value._user !== null ){
+        if ( 'description' in timeZone.value._user ){
+          return timeZone.value._user.description;
+        }else{
+          return "";
+        }
+      }else{
+        return "Select user";
+      }
+    } );
+    const statusRepo = useRepo(Status);
+    const statusOptions = computed(() => { return statusRepo.all() });
+    const statusOptionsHint = computed(() => {
+      if( timeZone.value._status !== null ){
+        if ( 'description' in timeZone.value._status ){
+          return timeZone.value._status.description;
+        }else{
+          return "";
+        }
+      }else{
+        return "Select status";
+      }
+    } );
+
+    const timeZoneRepo = useRepo(TimeZone);
+    const timeZone = ref(timeZoneRepo.make());
+
+    // function to create new object and to add to store
+    const createTimeZone = async () => {
+        let valueToSave = {};
+        Object.assign(valueToSave,timeZone.value);
+        await timeZoneRepo.save(valueToSave);
+        resetTimeZone();
+    };
+
+    const resetTimeZone = () => {
+        Object.assign(timeZone.value, timeZoneRepo.make() );
+    };
+
+    return {
+        timeZone,
+        createTimeZone,
+        resetTimeZone,
+        links,
+        updateLinks,
+        userOptions, userOptionsHint,
+        statusOptions, statusOptionsHint
+    }
+  }
+});
+</script>

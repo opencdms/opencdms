@@ -1,0 +1,34 @@
+id|name|description|koppen_code|links|_version|_change_date|_user_id|_status_id|comments
+http://codes.wmo.int/wmdr/ClimateZone/desertColdArid|desertColdArid|Desert - Cold arid|BWk||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/desertHotArid|desertHotArid|Desert - Hot arid|BWh||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/equatorialMonsoon|equatorialMonsoon|Equatorial - Monsoon|Am||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/equatorialRainforestFullyHumid|equatorialRainforestFullyHumid|Equatorial rainforest - fully humid|Af||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/equatorialSavannahDrySummer|equatorialSavannahDrySummer|Equatorial - Savannah - dry summer|Aw||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/equatorialSavannahDryWinter|equatorialSavannahDryWinter|Equatorial - Savannah - dry winter|As||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/inapplicable|inapplicable|Inapplicable.|||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/polarFrost|polarFrost|Polar - Frost|EF||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/polarTundra|polarTundra|Polar - Tundra|ET||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/snowDryCoolSummer|snowDryCoolSummer|Snow - Dry and cool summer|Dsc||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/snowDryHotSummer|snowDryHotSummer|Snow - Dry and hot summer|Dsa||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/snowDrySummerVeryColdWinter|snowDrySummerVeryColdWinter|Snow - Dry summer - Very cold winter|Dsd||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/snowDryWarmSummer|snowDryWarmSummer|Snow - Dry and warm summer|Dsb||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/snowDryWinterColdSummer|snowDryWinterColdSummer|Snow - Dry winter - Cold summer|Dwc||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/snowDryWinterHotSummer|snowDryWinterHotSummer|Snow - Dry winter - Hot summer|Dwa||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/snowDryWinterVeryColdWinter|snowDryWinterVeryColdWinter|Snow - Dry winter - Very cold winter|Dwd||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/snowDryWinterWarmSummer|snowDryWinterWarmSummer|Snow - Dry winter - Warm summer|Dwb||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/snowFullyHumidCoolSummer|snowFullyHumidCoolSummer|Snow - Fully humid - Cool summer|Dfc||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/snowFullyHumidHotSummer|snowFullyHumidHotSummer|Snow - Fully humid - Hot summer|Dfa||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/snowFullyHumidVeryColdWinter|snowFullyHumidVeryColdWinter|Snow - Fully humid - Very cold winter|Dfd||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/snowFullyHumidWarmSummer|snowFullyHumidWarmSummer|Snow - Fully humid - Warm summer|Dfb||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/steppeColdArid|steppeColdArid|Steppe - Cold arid|BSk||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/steppeHotArid|steppeHotArid|Steppe - Hot arid|BSh||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/unknown|unknown|Unknown - The value is unknown or missing.|||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryCoolSummer|warmTemperateDryCoolSummer|Warm temperate - Dry and cool summer|Csc||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryHotSummer|warmTemperateDryHotSummer|Warm temperate - Dry and hot summer|Csa||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryWarmSummer|warmTemperateDryWarmSummer|Warm temperate - Dry and warm summer|Csb||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryWinterCoolSummer|warmTemperateDryWinterCoolSummer|Warm Temperate - Dry winter - Cool summer|Cwc||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryWinterHotSummer|warmTemperateDryWinterHotSummer|Warm Temperate - Dry winter - Hot summer|Cwa||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/warmTemperateDryWinterWarmSummer|warmTemperateDryWinterWarmSummer|Warm Temperate - Dry winter - Warm summer|Cwb||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/warmTemperateFullyHumidCoolSummer|warmTemperateFullyHumidCoolSummer|Warm Temperate - Fully humid - Cool summer|Cfc||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/warmTemperateFullyHumidHotSummer|warmTemperateFullyHumidHotSummer|Warm Temperate - Fully humid - Hot summer|Cfa||1||1|1|First import
+http://codes.wmo.int/wmdr/ClimateZone/warmTemperateFullyHumidWarmSummer|warmTemperateFullyHumidWarmSummer|Warm Temperate - Fully humid - Warm summer|Cfb||1||1|1|First import

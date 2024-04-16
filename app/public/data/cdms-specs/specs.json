@@ -1,0 +1,1443 @@
+[
+  {
+    "title": "Observations data",
+    "label": "4.1",
+    "text": "",
+    "requirements": [
+      {
+        "title": "Climate observations",
+        "label": "4.1.1",
+        "text": "This subsection refers to the system's capacity to handle climate observation variables. The list below is not comprehensive and additional variables may be required or recommended.\n\nThe list is currently based on the ECVs published in 2010 by GCOS. However, it is worth noting that there are other types of variables that are very relevant to climate observation, such as visibility, evaporation and meteorological phenomena.\n\nObservations include measurements made by observers, traditional sensors and remote sensors.\n\nFor more information, see:\na) GCOS website\nb) GCOS web page on ECVS",
+        "requirements": [
+          {
+            "title": "Atmospheric",
+            "label": "4.1.1.1",
+            "text": "Observations relevant to the GCOS ECVs are needed to support the work of the United Nations Framework Convention on Climate Change and the Intergovernmental Panel on Climate Change.\n\nWithin this component, observations relating to the following atmospheric ECVs (over land, sea and ice) are either required or recommended, as shown below:\n\n**Required**\n1. Surface\n    1. Air temperature\n    2. Wind speed and direction\n    3. Water vapour\n    4. Pressure\n    5. Precipitation\n    6. Surface radiation budget\n2. Upper air\n    1. Air temperature\n    2. Wind speed and direction\n    3. Water vapour\n\n**Recommended**\n\n3. Upper air\n    1. Cloud properties\n    2. Earth radiation budget (including solar irradiance)\n4. Composition\n    1. Carbon dioxide\n    2. Methane\n    3. Ozone\n    4. Aerosol\n    5. Other\n\nFor more information, see:\na) GCOS web page on ECVs\nb) Guide to Climatological Practices (WMO-No. 100), Table 2.1",
+            "classification": "Required",
+            "status": "Implemented by (draft) climate data model based on OGC OMS",
+            "color": "green"
+          },
+          {
+            "title": "Terrestrial",
+            "label": "4.1.1.2",
+            "text": "**Terrestrial ECVs:**\n1. River discharge\n2. Water use\n3. Groundwater\n4. Lakes\n5. Snow cover\n6. Glaciers and ice caps\n7. Ice sheets\n8. Permafrost\n9. Albedo\n10. Land cover (including vegetation type)\n11. Fraction of absorbed photosynthetically active radiation\n12. Leaf area index\n13. Above-ground biomass\n14. Soil carbon\n15. Fire disturbance\n16. Soil moisture\n\nFor more information, see:\na) GCOS web page on ECVs\nb) Guide to Climatological Practices (WMO-No. 100), Table 2.1",
+            "classification": "Recommended",
+            "status": "Implemented by  (draft) climate data model based on OGC OMS",
+            "color": "green"
+          },
+          {
+            "title": "Oceanic",
+            "label": "4.1.1.3",
+            "text": "**Oceanic ECVs:**\n1. Surface\n    1. Sea-surface temperature\n    2. Sea-surface salinity\n    3. Sea level\n    4. Sea state\n    5. Sea ice\n    6. Surface current\n    7. Ocean colour\n    8. Carbon dioxide partial pressure\n    9. Ocean acidity\n    10. Phytoplankton\n2. Subsurface\n    1. Temperature\n    2. Salinity\n    3. Current\n    4. Nutrients\n    5. Carbon dioxide partial pressure\n    6. Ocean acidity\n    7. Oxygen\n    8. Tracers\n\nFor more information, see:\na) GCOS web page on ECVs\nb) Guide to Climatological Practices (WMO-No. 100), Table 2.1",
+            "classification": "Recommended",
+            "status": "Implemented by  (draft) climate data model based on OGC OMS",
+            "color": "green"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title":  "Logical data models",
+    "label": "4.2",
+    "text": "",
+    "requirements": [
+      {
+        "title": "Climate database",
+        "label": "4.2.1",
+        "text": "This subsection refers to the database(s) used to store and manage a range of time-series data, including: climate observations, climate metadata (observations, discovery and data provenance), spatial information, derived data and related data required for effective data management.\\n\\nMore advanced CDMSs may manage the data in a series of related databases rather than in a single database.\\n\\nIt is recommended that the climate database provide support for the following functionalities, classified by priority:\\n\\n**Required**\\n1. Managing core observations described in the Guide to Climatological Practices (WMO-No. 100).\\n2. Managing observation metadata (such as station metadata) and integrating them with observations data.\\n3. Handling observations from multiple sensors per station, per phenomenon, and recording the source of each observation.\\n4. Managing multiple tiers of data quality, from raw records to homogenized data.\\n5. Managing spatial and time-series data.\\n\\n**Recommended**\\n\\n6. Covering at least the GCOS ECVs.\\n7. Using a robust data model that takes into account the requirements of open spatial standards, particularly the ISO 19156:2011 Geographic information - Observations and measurements standard, METCE and the WMO climate observations application schema (see component 4.2.3.2).\\n8. Managing metadata related to data provenance. This entails ensuring that each change to an observation is recorded for future recovery, and recording the details of why a particular change was made, which includes:\\n    1. Tracing the product lineage to the data source. For example, what observations and gridded data were used to underpin the analysis released in peer-reviewed paper X?\\n    2. Ensuring that the reason for each observation change is recorded.\\n9. Managing third-party and crowdsourced data.\\n10. Managing intellectual property rights related to data.\\n11. Enabling point-in-time recovery. For example, what data were present in the database for station X at time T?\\n12. Storing a range of document formats, such as:\\n    1. Photographs of observation stations and instruments, meteorological phenomena, etc.\\n    2. Scanned paper observation forms\\n    3. Scanned microfiche/microfilm\\n    4. Relevant observations metadata documents, such as instrument calibration reports\\n    5. Technical manuals\\n    6. Site location plans and sections\\n    7. Videos and other multimedia formats\\n\\nOptional\\n\\n13. Handling data uncertainty (for more information, see Wikipedia articles on uncertain data and uncertainty).\\n14. Managing multidimensional time-series gridded data and possibly numerical models.\\n15. Providing support for the information management concepts of semantics and linked data.",
+        "requirements": [
+          {
+            "title": "Data dictionary",
+            "label": "4.2.1.1",
+            "text": "This component represents the data dictionary, which describes the database structure, data model and other elements used by the climate database.",
+            "classification":"Required",
+            "status": "Dictionary implemented as part of API instance",
+            "color": "green"
+          }
+        ]
+      },{
+        "title": "Foundation standards",
+        "label":  "4.2.2",
+        "text": "",
+        "requirements": [
+          {
+            "title": "Observations and measurements",
+            "label": "4.2.2.1",
+            "text": "This component represents technology that provides rules and a standardized approach for modelling observations data, regardless of the domain.\n\nIn essence, the ISO 19156:2011 *Geographic information - Observations and measurements* standard treats an observation as an event at a given point in time whose result is an estimate of the value of some property of a feature of interest, obtained using a known observation procedure.\n\nThis standard is being widely adopted as the framework for a number of logical data models related to observations data, such as WaterML and the Meteorological Information Exchange Model of the International Civil Aviation Organization (ICAO).\n\nIt also underpins current work on the WMO logical data model called METCE (see below).\n\nFor more information, see:\na) ISO 19156:2011, *Geographic information - Observations and measurements*\nb) OGC Abstract Specification: Geographic information - Observations and measurements",
+            "classification": "Recommended",
+            "status": "Observations modelled by OGC Observations, Measurements and Samples standard",
+            "color": "green"
+          }
+        ]
+      },{
+        "title": "WMO logical data models",
+        "label": "4.2.3",
+        "text": "",
+        "requirements": [
+          {
+            "title": "METCE",
+            "label": "4.2.3.1",
+            "text": "The METCE component represents technology that provides rules and a standardized approach for modelling observations and simulations in the weather, water and climate domains.\n\nMETCE is an application schema conforming to ISO 19109:2005 *Geographic information - Rules for application schema*. Furthermore, METCE is a profile of the Observations and measurements standard that provides domain- and application specific semantics for use within the weather, water and climate domains.\n\nThe initial iteration of METCE and its companion model, the Observable Property Model, were developed by the Task Team on Aviation XML to support the ICAO Meteorological Information Exchange Model.\n\nHowever, METCE will provide a common semantic basis for a growing number of data products relating to observation and simulation within WMO. Not only will this simplify the requirements for software systems working with WMO products, it is also expected to simplify the mappings between WMO data products and counterparts from other communities such as CF-netCDF.\n\nAs at December 2013, plans have been made to provide mappings/rules to convert from the METCE application schema to BUFR sequences and/or GRIB templates at some point in the future.\n\nFor more information, please see:\na) AvXML-1.0 data model\nb) ISO 19109:2005, Geographic information - Rules for application schema",
+            "classification": "Optional",
+            "status": "obsolete - METCE has not been developed 2015",
+            "color": "grey"
+          },
+          {
+            "title": "Climate observations application schema",
+            "label": "4.2.3.2",
+            "text": "This component represents technology that provides rules and a standardized approach for modelling climate observations data.\n\nIt is anticipated that METCE will be used as the basis for developing an application schema that will provide more detailed semantics and constraints specific to a given domain or application. In this way, METCE will provide the basis for an application schema developed to support the wide array of climate observation applications.\n\nThe scope of such an application schema is expected to cover both the climate observations themselves and the associated observation metadata (see subsection on observations metadata (4.3.1)).",
+            "classification": "Optional",
+            "status": "Obsolete - XML and application schemas replaced by json and geojson",
+            "color": "grey"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Climate metadata",
+    "label": "4.3.",
+    "text": "",
+    "requirements": [
+      {
+        "title": "Observations metadata",
+        "label": "4.3.1",
+        "text": "This subsection covers access to and management of station metadata and platform metadata.\n\nStation and platform metadata are time-series data that describe how, when and where meteorological observations were made and the conditions they were made under. They are used to support a range of activities that allow climate professionals to understand the fitness for purpose of specific data and, in many cases, improve the quality of climate observations data. This type of metadata is referred to as observations metadata in this publication.\n\nIt is anticipated that application schemas (also known as logical data models) will be developed to formally define the structure and content of the information required to describe climate observing stations, sensors and platforms (see the Climate observations application schema component (4.2.3.2))\n\nNote: As a general rule, it will be necessary to record and maintain the details of any change to observations metadata in order to understand the context surrounding specific climate data and to support future data homogenization activities. In addition to details of the change, specific reference must be made to:\n1. The date/time of the change - Note: It may not always be possible to define the exact date of the change, for example when a change happens between two site visits. Therefore, it may be more appropriate to include a period of time during which the change occurred.\n2. The reason the change was made.\n3. The beginning and end dates of the prior value.\n4. Any date/time reference will need to be constrained by the appropriate temporal datum to ensure that date handling is consistently applied.\n\nFor more information, see:\na) *Guide to Climatological Practices* (WMO-No. 100)\nb) *Guide to Meteorological Instruments and Methods of Observation* (WMO-No. 8)\nc) *Guide to the Global Observing System* (WMO-No. 488), Appendix III.3 Automatic weather station metadata\nd) *Manual on the Global Observing System* (WMO-No. 544), Volume I, Attachment III.1 Standard set of metadata elements for automatic weather station installations\ne) Discussion paper on stations metadata and the WMO Core Profile (Bannerman, 2012)\nf) Draft paper on the climatological needs for minimum stations metadata in the frame of WMO publication No. 9, Volume A (Stuber, 2012)\ng) Guidelines on Climate Metadata and Homogenization (WMO-No. 1186), WCDMP-53",
+        "requirements": [
+          {
+            "title": "Station identifier",
+            "label": "4.3.1.1",
+            "text": "This component supports the management of identifiers associated with the observation station or platform.\n\nIdentifiers include:\n1. A globally unique WMO identifier. The use of this identifier must become a priority in order to support future global analysis. See recommendation 11.6 of this publication.\n2. Other identifiers or aliases used for the station.\n3. A history of past used identifiers, including historical WMO identifiers.\n4. The beginning and end dates of each historical identifier used for the station.",
+            "classification": "Required",
+            "status": "Implemented by WIGOS metadata standard and included in the climate data model",
+            "color": "green"
+          },
+          {
+            "title": "Station overview",
+            "label": "4.3.1.2",
+            "text": "This component covers what to provide in an overview of the observation station or platform.\n\nThis should include:\n1. Station owner - If required, the sensor owner\n2. Station manager - If required, the sensor manager\n3. Maintenance authority - If required, the sensor maintenance authority\n4. Station licence agreement - If required, the sensor licence agreement\n5. Station data usage constraints - If required, the sensor data usage constraints\n6. Purpose of the station\n7. Observation practices\n8. Observation schedule - this is particularly relevant for stations that use manual observation methods and where observations are not taken on a continuous basis\n9. Definition of which datasets provide the actual observations data for a given station, sensor and phenomenon combination, together with the URL of the relevant discovery metadata records\n10. Observers and maintenance personnel, including their names, experience and training level\n11. Station logistics, including consumables, electricity suppliers, communications suppliers, etc.",
+            "classification": "Required",
+            "status": "In progress, implemented in the WIGOS metadata standard. Elements included in the climate data model.",
+            "color": "orange"
+          },
+          {
+            "title": "Station status",
+            "label": "4.3.1.3",
+            "text": "This component supports recording the period(s) of activity during which observations were being made at the station or platform.\n\nAs it is possible for stations to close and then reopen at a later time, the time period of each status is also required.\n\nValid operational status codes are:\n1. Operational\n2. Not operational",
+            "classification": "Required",
+            "status": "Implemented - included in the WIGOS metadata standard, the climate data model and station records.",
+            "color": "green"
+          },
+          {
+            "title": "Station type",
+            "label": "4.3.1.4",
+            "text": "This component supports recording the type of station or observation platform.\n\nIdeally, the type will be recorded for each instrument used at that station.\n\nAt a minimum, the station type is to be recorded in accordance with the following guidelines:\n1. *Manual on Codes* (WMO-No. 306), Volume I.1, code 1860, and Volume I.2, code 0 02 001\n\nIn addition, there may be multiple definitions of station types used by the NMHS and other organizations.",
+            "classification": "Required",
+            "status": "Implemented - included in the WIGOS metadata standard, the climate data model and station records.",
+            "color": "green"
+          },
+          {
+            "title": "Location",
+            "label": "4.3.1.5",
+            "text": "This component covers the recording of details relating to the location of the station or observation platform.\n\nAs discussed in the Sensor component below (4.3.1.7), recording the location of each sensor at the station is also mandatory.\n\nThe following information is required:\n1. Latitude\n2. Longitude\n3. Elevation\n4. Spatial reference system (horizontal and vertical)\n5. Date/time of the survey observation used to record the location of the station and/or sensor\n6. Temporal reference system\n7. Method used to determine the location of the station\n8. Positional accuracy of location\n9. Date/time the station or sensor moved, together with previous locations\n10. Administrative boundaries within which the station is located (as required by the NMHS)\n11. Time zone\n\nIn exceptional circumstances, it may be necessary to move a station and keep the same station identifier. This should only be done in accordance with future global climate data policies and data governance processes (see recommendation 11.1 of this publication). Typically, this will involve parallel observations at the old and new station over a period of time (two years, for example).\n\nIf this is necessary, the time of the move should be recorded, together with current and past location details.\n\nThe precision required for the latitude, longitude and elevation should be in accordance with guidance provided by the Commission for Instruments and Methods of Observation.\n\nWhile not authoritative, the final report of the first session of the Commission for Instruments and Methods of Observation Expert Team on Standardization suggests that the precision required for latitude and longitude measurements is one second (of arc), which equates to approximately 30 meters at the equator. This degree of precision should be achievable using a survey observation process that uses handheld GPS techniques.\n\nAdministrative boundaries may refer to different types of boundaries that contain the station, including:\ni. Political boundaries, such as state, regional or district boundaries\nii. Administrative boundaries, such as the forecast district\niii. Natural boundaries, such as hydrological, catchment or topographic areas\n\nFor more information, see:\na) ISO 19111-2:2009 *Geographic information - Spatial referencing by coordinates, Part 2: Extension for parametric values*\nb) *Guide to Meteorological Instruments and Methods of Observation* (WMO-No. 8), section 1.3.3.2 Coordinates of the station. Specifically note the instructions on determining the elevation of a station relative to the raingauge.\nc) OGC Abstract Specification: Spatial referencing by coordinates",
+            "classification": "Required",
+            "status": "Implemented - included in the WIGOS metadata standard, the climate data model and station records.",
+            "color": "green"
+          },
+          {
+            "title": "Local environment",
+            "label": "4.3.1.6",
+            "text": "This component concerns the recording of information on the local environment surrounding the station or observation platform.\n\nThe following information is required:\n1. Site location diagram\n2. Site plans - For an example, see *Guide to Meteorological Instruments and Methods of Observation* (WMO-No. 8), Figure 1.1\n3. Site skyline diagram\n4. Site photographs and video showing the surroundings and instrument layout\n5. Station exposure\n6. Site roughness\n7. Type of soil\n8. Type of vegetation\n9. Surrounding land use\n10. Date/time of each visit\n\nFor more information, see:\na) *Guide to Meteorological Instruments and Methods of Observation* (WMO-No. 8), section 1.3.3 Siting and exposure, Annex 1.B Siting classifications for surface observing stations on land, and Annex 1.C Station exposure description",
+            "classification": "Required",
+            "status": "Implemented in the WIGOS metadata standard but not yet implemented in the climate data model or OpenCDMS",
+            "color": "red"
+          },
+          {
+            "title": "Sensor",
+            "label": "4.3.1.7",
+            "text": "This component covers the recording of details relating to the meteorological sensors and/or instruments used at the station or observation platform. In this publication, the term sensor will be used to cover all instrument types.\n\nThe following information is required:\n1. Sensor description, including:\n     1. Name\n     2. Type\n    3. Serial number\n    4. Brand and model details\n    5. Photograph of sensor in situ\n    6. Supplier\n    7. Manufacturer\n    8.  Location of manuals\n    9.  Sensor firmware, version and dates during which each version was used\n    10.  Length of time the observation data are stored locally on the sensor, prior to deletion\n2. Sensor installation details, including:\n    1. Technician and organization that installed the sensor\n    2.  Date sensor was installed\n3. Sensor status, including:\n    1. Operational status:\n        - Operational\n        - Not operational\n        - Defective\n        - Testing\n    2.  Date/times applicable for each status\n4. Sensor maintenance:\n    1.  Scheduled maintenance\n    2. Actual maintenance\n    3. Result\n    4. Replacement of consumables\n5. Sensor uncertainty:\n    1. System performance statistics claimed by manufacturer\n    2.  Sensor calibration results\n    3.  Observed sensor performance characteristics\n6. Sensor siting details:\n    1. Instrument height above ground\n    2. Station exposure description\n    3.  As discussed in the Location component (4.3.1.5), recording the location of each sensor is required.\n7. Recommended sensor settings for optimal operations on site\n8. Details of what meteorological variable is being observed by the sensor (i.e. the observed property), including:\n    1. Phenomena observed\n    2. Frequency of measurement\n    3. Frequency of acquisition\n    4.  Units of measurement\n    5.  Precision of measurement",
+            "classification": "Required",
+            "status": "Partially implemented, only partial coverage by the WIGOS metadata standard",
+            "color": "orange"
+          },
+          {
+            "title": "Data processing",
+            "label": "4.3.1.8",
+            "text": "This component concerns the recording of details relating to any data processing that has occurred to convert a sensor's signal into its recorded observation value.\n\nThe following information is required:\n1. Software, including:\n    1. Version\n    2. Software language\n    3. Software name\n    4. Location of software source code\n    5. Description of processing applied (for example, whether values were calculated per minute, hour or other)\n    6.  Formula/algorithm implemented\n    7.  Processor details (the version, type of central processing unit and so forth)\n    8.  Date/time covering the period of validity of the method\n2. Input source (instrument, element and so forth)\n3. Data output, including:\n    1. Data format and version of format",
+            "classification": "Required",
+            "status": "Not implemented, only partial coverage by the WIGOS metadata standard",
+            "color": "red"
+          },
+          {
+            "title": "Data transmission",
+            "label": "4.3.1.9",
+            "text": "This component refers to the recording of details relating to the transmission of data from stations or observation platforms.\n\nThe following information is required:\n1. Sensor communications, including:\n    1. Frequency of transmission\n    2.  Time of transmission\n    3.  Primary communication details\n    4.  Redundant communication details\n    5.  Network addresses\n    6.  Method of transmission\n\nNote: Some NMHSs with more advanced IT infrastructures may choose to store this type of information within their configuration management system. In these instances, it is important to ensure that at least the frequency and time of the transmission are replicated in the observations metadata.",
+            "classification": "Recommended",
+            "status": "Not implemented, only partial coverage by the WIGOS metadata standard",
+            "color": "red"
+          },
+          {
+            "title": "Network",
+            "label": "4.3.1.10",
+            "text": "This component concerns the recording of details relating to the observation network(s) that stations or observation platforms may belong to.\n\nThe following information is required:\n1. Network name (such as Regional Basic Climatological Network, Regional Basic Synoptic Network, GCOS, GCOS Upper-Air Network or National Climate Network)\n2. Network priority:\n    1. Critical\n    2.  Essential\n    3. Not applicable\n3. Time of observations\n4. Reporting frequency\n5. Date/time of network membership\n6. There is a possibility that a station does not belong to a network. This information is also useful.",
+            "classification": "Required",
+            "status": "Partial implementation, placeholder in the climate data model but implemented as part of the WIGOS metadata standard",
+            "color": "orange"
+          }
+        ]
+      },
+      {
+        "title": "Dataset discovery metadata",
+        "label": "4.3.2",
+        "text": "This subsection refers to the processes, software and governance arrangements that ensure that discovery metadata are captured, managed and maintained.\n\nDiscovery metadata are intended to facilitate the discovery and assessment of a spatial dataset to determine if it is fit for reuse for a purpose that may be at odds with the reason for which it was originally created.\n\nDiscovery metadata may also be known as WIS metadata. They are not the same as the observations metadata described above.\n\nNote that some of the components below may be in addition to the WMO Core Profile of the ISO 19115 *Geographic information - Metadata* standard. This is not expected to be an issue as the WMO Core Profile does not restrict the use of additional ISO 19115 records.\n\nFor more information, see:\na) Discussion paper on stations metadata and the WMO Core Profile (Bannerman, 2012)\nb) WMO Core Metadata Profile version 1.3, Part 1 Conformance requirements\nc) WMO Core Metadata Profile version 1.3, Part 2 Abstract test suite, data dictionary and code lists\nd) Tandy (2010) also provides a useful introduction to discovery metadata. However, note that the specifications part of this text has been superseded.\ne) ISO 19115 Geographic information - Metadata",
+        "requirements": [
+          {
+            "title": "Dataset identifier",
+            "label": "4.3.2.1",
+            "text": "This component represents a unique identifier used to identify the dataset.",
+            "classification": "Required",
+            "status": "Implemented, datasets (collections) assigned unique identifiers as part of the climate data model. Included in the underpinning standards (OGC-API Records and WCMP2)",
+            "color": "green"
+          },
+          {
+            "title": "Dataset overview",
+            "label": "4.3.2.2",
+            "text": "This component gives an overview of a dataset.\n\nThis may include a description of the dataset (such as an abstract), the intended use of the dataset, its lineage and status.",
+            "classification": "Required",
+            "status": "Implemented, datasets (collections) descriptions etc. included as part of the climate data model. Included in the underpinning standards (OGC-API Records and WCMP2)",
+            "color": "green"
+          },
+          {
+            "title": "Dataset data quality",
+            "label": "4.3.2.3",
+            "text": "This component represents a general assessment of the quality of a dataset.",
+            "classification": "Required",
+            "status": "Not implemented",
+            "color": "red"
+          },
+          {
+            "title": "Distribution",
+            "label":"4.3.2.4",
+            "text": "This component covers information about the distributor of and options for obtaining a dataset.",
+            "classification": "Required",
+            "status": "Information partially included in climate data model but not populated",
+            "color": "orange"
+          },
+          {
+            "title": "Access constraints",
+            "label": "4.3.2.5",
+            "text": "This component provides information on the restrictions in place for a dataset.",
+            "classification": "Required",
+            "status": "Not implemented",
+            "color": "red"
+          },
+          {
+            "title": "Dataset maintenance",
+            "label": "4.3.2.6",
+            "text": "This component provides information on the scope and frequency of updates and maintenance conducted on a dataset.",
+            "classification": "Required",
+            "status": "Not implemented",
+            "color": "red"
+          },
+          {
+            "title": "Spatial representation",
+            "label": "4.3.2.7",
+            "text": "This component covers information on the mechanisms used to represent spatial information within a dataset.",
+            "classification": "Required",
+            "status": "Not implemented",
+            "color": "red"
+          },
+          {
+            "title": "Reference systems",
+            "label": "4.3.2.8",
+            "text": "This component gives information on the reference systems used by a dataset. These include a horizontal spatial reference system, vertical spatial reference system and temporal reference system.",
+            "classification": "Required",
+            "status": "Partial implementation, horizontal CRS included",
+            "color": "orange"
+          }
+        ]
+      },
+      {
+        "title": "Data provenance",
+        "label": "4.3.3",
+        "text": "This subsection refers to the processes, data and governance arrangements that record and manage information relevant to climate data and enable end-users, including data managers, scientists and the general public, to develop trust in the integrity of the climate data.\n\nData provenance allows an end-user to understand the history of each piece of data, and thus helps the user to identify what version of the data was available at any given time. The need for this new type of climate metadata has become more evident following a number of attacks on the credibility of climate data. One notable example is the so-called Climategate\nincident and subsequent inquiries.\n\nTherefore, it is important for NMHSs to establish the reliability of their climate data and processes and to ensure that these data are subsequently seen as the authoritative source that can be used for global climate studies.\n\nWhile the concept of data provenance has been relatively nebulous within the information management domain for many years, there has been a significant amount of work on the concept within the World Wide Web Consortium (W3C) for over more than a decade, particularly with regard to the development of the PROV standard.\n\nThe W3C defines provenance as:\n> [A] record that describes the people, institutions, entities, and activities involved in producing,\n> influencing, or delivering a piece of data or a thing. In particular, the provenance of information\n> is crucial in deciding whether information is to be trusted, how it should be integrated with\n> other diverse information sources, and how to give credit to its originators when reusing it. In\n> an open and inclusive environment such as the Web, where users find information that is often\n> contradictory or questionable, provenance can help those users to make trust judgements.\n> (W3C, 2013a)\n\nWhile this work is still relatively new, it is showing significant potential for use within the climate domain.\n\nThe concepts presented here for climate data provenance are quite embryonic and need further work to ensure that they can be implemented effectively. See the related recommendation in Chapter 11.\n\nMaintaining a dataset with high levels of data provenance metadata is expected to be quite expensive and, as a result, will be limited to data of high importance such as high-quality climate monitoring datasets. It is anticipated that guidance will be required to suggest what data should be maintained with what level of data provenance metadata. This guidance could perhaps be included as a policy within a future climate data framework.\n\nFor more information, see:\na) Overview of the PROV family of documents (W3C, 2013b)\nb) PROV data model specification (W3C, 2013a)",
+        "requirements": [
+          {
+            "title": "What was changed?",
+            "label": "4.3.3.1",
+            "text": "This component refers to the processes, software and governance arrangements that ensure that any change to climate data is recorded.",
+            "classification": "Optional",
+            "status": "Full version information representable in data model. Not yet implemented in backend database",
+            "color": "orange"
+          },
+          {
+            "title": "When was it changed?",
+            "label": "4.3.3.2",
+            "text": "This component covers the processes, software and governance arrangements that ensure that the time of the change is recorded.",
+            "classification": "Optional",
+            "status": "Full version information representable in data model. Not yet implemented in backend database",
+            "color": "orange"
+          },
+          {
+            "title": "What was it derived from?",
+            "label": "4.3.3.3",
+            "text": "This component deals with the processes, software and governance arrangements that ensure that a dataset's lineage is understood. In other words, where did the data come from?\n\nThis component is also required in the section on data discovery (8.2).",
+            "classification": "Optional",
+            "status": "Full version information representable in data model. Not yet implemented in backend database",
+            "color": "orange"
+          },
+          {
+            "title": "What was done to change it?",
+            "label": "4.3.3.4",
+            "text": "This component refers to the processes, software and governance arrangements that ensure a clear explanation of any ad hoc modifications to a climate record.\n\nThis includes:\n1. What was changed\n2. When the change was made\n3. Details describing what was done",
+            "classification": "Optional",
+            "status": "Full version information representable in data model. Not yet implemented in backend database",
+            "color": "orange"
+          },
+          {
+            "title": "How/why was it changed?",
+            "label": "4.3.3.5",
+            "text": "This component refers to the processes, software and governance arrangements that ensure that the rationale behind a modification to a climate record is clearly understood.\n\nThis includes:\n1. How the change was made\n2. Why it was made",
+            "classification": "Optional",
+            "status": "Full version information representable in data model. Not yet implemented in backend database",
+            "color": "orange"
+          },
+          {
+            "title": "Who/what changed it?",
+            "label": "4.3.3.6",
+            "text": "This component involves the processes, software and governance arrangements that ensure a clear understanding of the agent that affected the change.",
+            "classification": "Optional",
+            "status": "Full version information representable in data model. Not yet implemented in backend database",
+            "color": "orange"
+          },
+          {
+            "title": "Who did they act on behalf of?",
+            "label": "4.3.3.7",
+            "text": "This component refers to the processes, software and governance arrangements that ensure that the person or role who requested the change is identified.",
+            "classification": "Optional",
+            "status": "Full version information representable in data model. Not yet implemented in backend database",
+            "color": "orange"
+          },
+          {
+            "title": "Who was responsible?",
+            "label": "4.3.3.8",
+            "text": "This component refers to the processes, software and governance arrangements that ensure that the person or role who authorized the change is identified.",
+            "classification": "Optional",
+            "status": "Full version information representable in data model. Not yet implemented in backend database",
+            "color": "orange"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "WMO standard products",
+    "label": "4.4",
+    "text": "",
+    "requirements": [
+      {
+        "title": "Observation data products",
+        "label": "4.4.1",
+        "text": "This subsection outlines the types of data products that NMHSs have committed to generate and provide to WMO.",
+        "requirements": [
+          {
+            "title": "Routine messages",
+            "label": "4.4.1.1",
+            "text": "This component represents data computed from observation data for use in WMO products.\n\nAn example is the daily minimum and maximum temperature, evaporation and evapotranspiration that are typically transmitted via the Global Telecommunication System (GTS) as a SYNOP message or in the corresponding table-driven code form (TDCF) for SYNOP.\n\nFor more information, see:\n- *Manual on Codes* (WMO-No. 306)",
+            "classification": "Required",
+            "status": "Partially implemented. BUFR can be generated by OpenCDMS API but not yet automated. csv2bufr module used for temnplating of BUFR files.",
+            "color": "orange"
+          },
+          {
+            "title": "Climatological standard normals",
+            "label": "4.4.1.2",
+            "text": "This component covers monthly and annual standard normals.\n\nSee Wright (2012a) for a description of a recommended change in the method of calculating\nclimatological standard normals.\n\nThe approach is understood to comprise the following. (However, as at December 2013 this has\nyet to be officially endorsed.)\n1. A fixed reference period (1961-1990) for longterm climate variability and change assessment. This is to be adopted as a stable WMO reference period, until such time as there is a compelling scientific case for changing it.\n2. A varying 30-year period updated every 10 years (suitable for most climate services). The current period is 1981-2010.\n\nFor more information, see:\na) *Calculation of Monthly and Annual 30-Year Standard Normals* (WMO/TD-No. 341), WCDP-10\nb) *Technical Regulations* (WMO-No. 49), Volume II\nc) *Guide to Climatological Practices* (WMO-No. 100), section 4.8 Normals\nd) *Manual on Codes* (WMO-No. 306)\ne) *1961-1990 Global Climate Normals (CLINO)* (WMO-No. 847)\nf) *A Note on Climatological Normals: Report of a Working Group of the Commission for Climatology*, Technical Note No. 84\ng) *The Role of Climatological Normals in a Changing Climate* (WMO/TD-No. 1377), WCDMP-61\nh) Discussion paper on the calculation of the standard climate normals (Wright, 2012a)",
+            "classification": "Required",
+            "status": "Not yet implemented",
+            "color": "red"
+          },
+          {
+            "title": "CLIMAT",
+            "label": "4.4.1.3",
+            "text": "This component concerns CLIMAT messages in either traditional alphanumeric codes (TAC) or TDCF formats. These messages are transmitted to WMO via the GTS.\n\nNote: The use of TAC is being phased out.\n\nFor more explanation, see:\na) *Handbook on CLIMAT and CLIMAT TEMP Reporting* (WMO/TD-No. 1188)\nb) *Practical Help for Compiling CLIMAT Reports* (WMO/TD-No. 1477), GCOS-127\nc) *Manual on Codes* (WMO-No. 306), Volume I.2, Part C, section d. Regulations for reporting traditional observation data in table-driven code forms (TDCF): BUFR or CREX",
+            "classification": "Required",
+            "status": "DAYCLI BUFR encoding implemented but not yet CLIMAT",
+            "color": "orange"
+          },
+          {
+            "title": "World Weather Records",
+            "label": "4.4.1.4",
+            "text": "This component covers the annual World Weather Records.\n\nFor more details, see:\na) *Guidelines on Submission of the World Weather Records Tenth Series* (2001-2010), WCDMP-77\nb) World Weather Records website",
+            "classification": "Required",
+            "status": "Not yet implemented",
+            "color": "red"
+          },
+          {
+            "title": "Aeronautical climatology",
+            "label": "4.4.1.5",
+            "text": "This component refers to the monthly aerodrome climatology summary -tabular forms (models A to E).\n\nFor more explanation, see:\na) *Technical Regulations* (WMO-No. 49), Volume II, C.3.2 Aeronautical climatology",
+            "classification": "Required",
+            "status": "Not yet implemented",
+            "color": "red"
+          },
+          {
+            "title": "Other",
+            "label": "4.4.1.6",
+            "text": "This component covers other WMO standard products, as may be required.\n\nOther standard products are to be confirmed, particularly for the hydrological, agricultural and marine domains.",
+            "classification": "Optional",
+            "status": "Not yet implemented, will not be implemented in v1.0",
+            "color": "grey"
+          }
+        ]
+      },
+      {
+        "title": "Climate change indices",
+        "label": "4.4.2",
+        "text": "This subsection represents the recommendations of the Commission for Climatology in the elaboration of climate change indices. \n\nThe Commission for Climatology/Climate Variability and Predictability (CCl/CLIVAR) Working Group on Climate Change Detection has been coordinating an international effort to develop, calculate and analyse a suite of indices so that individuals, countries and regions can calculate the indices in exactly the same way such that their analyses will fit seamlessly into the global picture.\n\nThose indices have been split in two categories: core indices and approved indices.\n\nFor more information, see the website of the Joint CCl/CLIVAR/JCOMM Expert Team on Climate Change Detection and Indices (ETCCDI).",
+        "requirements": [
+          {
+            "title": "Core indices",
+            "label": "4.4.2.1",
+            "text": "This component represents the ETCCDI core climate change indices.\n\nAs at June 2013, 27 core indices have been defined, see:\na) ETCCDI website",
+            "classification": "Required",
+            "status": "Not yet implemented",
+            "color": "red"
+          },
+          {
+            "title": "Other indices",
+            "label": "4.4.2.2",
+            "text": "This component covers other climate change indices.\n\nAs at June 2013, different research groups have defined different indices for their particular purposes. One example is the Statistical and Regional dynamical Downscaling of Extremes for European regions (STARDEX) project, mentioned in the ETCCDI website referred to above.",
+            "classification": "Optional",
+            "status": "Not implemented, will not be implemented in v1.0",
+            "color": "grey"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Derived climate data",
+    "label": "4.5",
+    "text": "",
+    "requirements": [
+      {
+        "title": "Derived observation data",
+        "label": "4.5.1",
+        "text": "This subsection describes a range of derived observational data products generated from climate observation variables.",
+        "requirements": [
+          {
+            "title": "Homogenized data",
+            "label": "4.5.1.1",
+            "text": "This component represents high-quality homogenized time-series datasets. Such datasets aim to ensure that the only variability remaining in the time series is that resulting from actual climate variability.\n\nSee also the subsection on data homogenization (6.1.3).",
+            "classification": "Recommended",
+            "status": "Not yet implemented",
+            "color": "red"
+          },
+          {
+            "title": "Computed",
+            "label": "4.5.1.2",
+            "text": "This component deals with derived data computed from observations for NMHS products. The computation shall be in accordance with the climatology policies in place.\n\nSome examples are:\n1. Data generation of accumulation, averages or extremes, such as generating ten-day data from daily data or daily data from hourly data.\n2. The generation of particular data derived from raw data, such as computing the potential evapotranspiration output for agricultural purposes.\n3. The generation of any statistical parameter required for products, such as extreme value analysis, homogenized data and others.\n4. Climate indices such as computed teleconnection indices.",
+            "classification": "Recommended",
+            "status": "Not yet implemented",
+            "color": "red"
+          },
+          {
+            "title": "Normals and averages",
+            "label": "4.5.1.3",
+            "text": "This component represents any normals and averages used by NMHSs that are in addition to climatological standard normals. For example, the component should be able to compute:\n1. Averages over specified time periods (daily, hourly, 5 days, 10 days, monthly and so forth)\n2. Period averages for any period (for example 5, 10, 30 or 100 years)\n\nFor more information, see:\na) *The Role of Climatological Normals in a Changing Climate* (WMO/TD-No. 1377), WCDMP-61",
+            "classification": "Recommended",
+            "status": "Not yet implemented",
+            "color": "red"
+          },
+          {
+            "title": "Other",
+            "label": "4.5.1.4",
+            "text": "This component concerns any other derived observation data product not mentioned above that is required for NMHS purposes.",
+            "classification": "Optional",
+            "status": "Specification unclear",
+            "color": "grey"
+          }
+        ]
+      },
+      {
+        "title": "Gridded spatial distribution of observations",
+        "label": "4.5.2",
+        "text": "This subsection concerns the capacity to generate or manipulate gridded data according to different techniques such as interpolation and extrapolation.\n\nSome of these techniques are described in the Guide to Climatological Practices (WMO-No. 100), section 5.9 Estimating data.\n\nThese gridded data are spatial data. They are included in this section to show their lineage as a type of derived climate data.",
+        "requirements": [
+          {
+            "title": "Analysed data",
+            "label": "4.5.2.1",
+            "text": "This component refers to spatially distributed gridded data that have been derived from observational data as the result of an analytical process.\n\nSome examples are:\n1. Singular variables such as:\n    1. Normals\n    2. Observations for a given day or time\n    3. Averages\n    4. Percentiles\n    5. Cumulative data\n    6. Extremes\n    7. Homogenized data\n2. Multivariables such as:\n    1. The generation of anomalies (difference between the normals data and a specific monthly variable)\n    2. More complex data such as potential evapotranspiration",
+            "classification": "Recommended",
+            "status": "Not yet implemented",
+            "color": "red"
+          },
+          {
+            "title": "Other",
+            "label": "4.5.2.2",
+            "text": "This component covers any spatially distributed gridded data product not mentioned above that are required for NMHS purposes.",
+            "classification": "Optional",
+            "status": "Not yet implemented",
+            "color": "red"
+          }
+        ]
+      },
+      {
+        "title": "Numerical models",
+        "label": "4.5.3",
+        "text": "Note: The infrastructure, software and skills required to operate numerical models are undoubtedly beyond the reach of many NMHSs.\n\nAs the output from numerical models is of interest to most NMHSs, it is expected that such output will be available via a number of sources, including Regional Climate Centres.\n\nTherefore, the CDMS should ideally have the ability to work with such data.",
+        "requirements": [
+          {
+            "title": "Numerical models",
+            "labels": "4.5.3.1",
+            "text": "This component refers to the data output from a variety of climate modelling processes. Such data are generally represented by multidimensional array grids.\n\nSome examples are:\n1. Climate models (such as global climate models) - numerical representations of the climate system based on physical, biological and chemical rules. They vary on timescales ranging from seasonal to centennial. Climate models are often used to produce climate change projections.\n2. Downscaled models - derived from climate models but at a much higher resolution to support regional and local analysis.\n3. Reanalysis - designed for climate studies, reanalyses provide gridded data over a long time period. Reanalyses are created via an unchanging (frozen) data assimilation scheme and model(s) which ingest all available observations. This unchanging framework provides a dynamically consistent estimate of the climate state at each time step. Some available reanalysis products include ERA-40 (40 years) and ERA-Interim (1979 to the present) from the European Centre for Medium-Range Weather Forecasts, and the Twentieth Century Reanalysis project (1871-2011) from the National Oceanic and Atmospheric Administration, United States.\n4. Numerical weather prediction\n\nSee also:\na) *Guide to Climatological Practices* (WMO-No. 100), section 6.7 Climate models and climate outlooks",
+            "classification": "Optional",
+            "status": "Not yet implemented",
+            "color": "red"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Ancillary data",
+    "label": "4.6",
+    "text": "",
+    "requirements": [
+      {
+        "title": "Spatial",
+        "label": "4.6.1",
+        "text": "This subsection represents a wide range of spatial information typically used to provide context to climate data or as an input for spatial analysis processes. These data may be presented in vector, image, gridded or multidimensional array data formats.\n\nTypically, spatial representations of data contain aspatial attributes that describe various properties of spatial features. The spatial and aspatial attributes of the data can be used to support a variety of spatial analysis processes.\n\nThe components listed below are indicative of the types of spatial data that could be relevant to climate. This list is not exhaustive.\n\nSee also:\na) Statement of guidance for climate, Attachment 1 Requirements for climate data (Wright,\n2012*b*)",
+        "requirements": [
+          {
+            "title": "Topography",
+            "label": "4.6.1.1",
+            "text": "Although this component is labelled topography, it actually refers to a wider set of data.\n\nSome examples are:\n1. Typical topographic data such as drainage, relief, cultural and nomenclatural features\n2. Digital elevation models",
+            "classification": "Recommended",
+            "status": "Not implemented, use of open standards allow other geospatial data to be easily integrated",
+            "color": "orange"
+          },
+          {
+            "title": "Emergency management",
+            "label":"4.6.1.2",
+            "text": "This component concerns datasets that are useful for supporting emergency management and related warning systems.",
+            "classification": "Optional",
+            "status": "Not implemented, unlikely to be in version 1.0",
+            "color": "grey"
+          },
+          {
+            "title": "Agricultural",
+            "label": "4.6.1.3",
+            "text": "This component refers to agricultural information datasets.\n\nSome examples are:\n1. Data from the Food and Agriculture Organization of the United Nations that could relate to agriculture, animal production and health, fisheries, forestry, land and water or plant production and protection.\n2. Regional, national or international data from different organizations such as primary industry departments or research centres on agriculture.",
+            "classification": "Optional",
+            "status": "Not implemented, unlikely to be in version 1.0",
+            "color": "grey"
+          },
+          {
+            "title": "Health",
+            "label": "4.6.1.4",
+            "text": "The component refers to a wide variety of health datasets.\n\nSome examples are:\n1. Data from the World Health Organization covering datasets on a very large spectrum.\n2. National or international data from different organizations such as health departments or health research centres.\n3. Epidemiological studies (see Wikipedia article) and so forth.",
+            "classification": "Optional",
+            "status": "Not implemented, unlikely to be in version 1.0",
+            "color": "grey"
+          },
+          {
+            "title": "Environmental",
+            "label": "4.6.1.5",
+            "text": "This component refers to environmental datasets.\n\nSome examples are:\n1. Data from the United Nations Environment Programme or the United Nations Educational, Scientific and Cultural Organization.\n2. National or international data from different organizations such as environment departments or research centres.\n3. Data relating to the distribution of particular flora and fauna, etc.",
+            "classification": "Optional",
+            "status": "Not implemented, unlikely to be in version 1.0",
+            "color": "grey"
+          },
+          {
+            "title": "Administrative",
+            "label": "4.6.1.6",
+            "text": "This component covers administrative data.\n\nSome examples are:\n1. Localities and gazetteers\n2. Administrative boundaries\n3. Transportation networks\n4. Cadastres",
+            "classification": "Recommended",
+            "status": "Not implemented, unlikely to be in version 1.0",
+            "color": "grey"
+          },
+          {
+            "title": "Impacts data",
+            "label":"4.6.1.7",
+            "text": "This component concerns a range of spatial data that relate to things impacted by climate. This could include:\n1. Deaths caused by heatwaves, prolonged droughts, floods, cyclones, etc.\n2. Infrastructure damage caused by a range of events such as floods, bush fires or cyclones.\n3. Changing land use, such as agricultural adaptations due to a changing climate.",
+            "classification": "Recommended",
+            "status": "Not implemented",
+            "color": "red"
+          },
+          {
+            "title": "Other",
+            "label": "4.6.1.8",
+            "text": "This component refers to a range of other spatial data that may be relevant to climate.",
+            "classification": "Optional",
+            "status": "Not implemented, unlikely to be in version 1.0",
+            "color": "grey"
+          }
+        ]
+      },
+      {
+        "title": "Climate documentation",
+        "label": "4.6.2",
+        "text": "",
+        "requirements": [
+          {
+            "title": "Published reports",
+            "label": "4.6.2.1",
+            "text": "This component represents the processes and governance arrangements that result in the preparation and release of a wide variety of written reports.\n\nSome examples are:\n1. Peer-reviewed papers\n2. Climate change impact studies\n3. Climate statements and studies\n4. Assessments from the Intergovernmental Panel on Climate Change\n5. Monthly and annual summaries\n\nAs this is essentially a scientific and intellectual process, this component will not be expanded upon in this publication.",
+            "classification": "Optional",
+            "status": "Not implemented, unlikely to be in version 1.0",
+            "color": "grey"
+          },
+          {
+            "title": "Documentation",
+            "label": "4.6.2.2",
+            "text": "This component refers to a range of textual data that describe various climate-related phenomena or serve as documentation for CDMSs.\nSome examples may be:\n\n1. CDMS technical and user documentation\n2. Text on a web page\n3. Diagrams representing climate processes, such as the Community Earth System Model from the National Center for Atmospheric Research, United States, shown in section 2.1 of this publication\n4. Various climate forecasts and events\n5. Climate processes such as El Nino-Southern Oscillation\n6. NMHS policies and practices\n7. Various documents and reports\n8. Training documentation\n9. Presentations",
+            "classification": "Recommended",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "title": "Various media",
+            "label": "4.6.2.3",
+            "text": "This component covers a range of media used to support various climate-related services on an NMHS website.\n\nSome examples may be:\n1. Scanned hard copy climate records\n2. Image portrayal of various climate data, such as an extract from a radar image stored in portable network graphics (PNG) format\n3. Podcasts and video clips used to communicate various climate-related messages\n4. Photographs of various climate-related\nphenomena",
+            "classification": "Recommended",
+            "status": "",
+            "color": "red"
+          }
+        ]
+      },
+      {
+        "title": "Climate software",
+        "label": "4.6.3",
+        "text": "As discussed in the article by the UK Parliament Science and Technology Committee (2011), one of the recommendations of the UK parliamentary review of the Climategate issue was to ensure that climate scientists make available the full methodological workings (including computer codes) used to support their work. An extract is reproduced below.\n\n> It is not standard practice in climate science to publish the raw data and the computer code in academic papers. However, climate science is a matter of great importance and the quality of the science should be irreproachable. We therefore consider that climate scientists should take steps to make available all the data that support their work (including raw data) and full methodological workings (including the computer codes).\n\nThis has implications for the effective management of climate data and software in that software source code will also require careful management.\n\nIn addition, it will be necessary to keep track of the time period during which each software version is in operation, as this may also have implications for climate data and climate analysis.\n\nOn a conceptual level, this is similar in a way to the need to have effective observations metadata that describe the maintenance of sensors and stations.",
+        "requirements": [
+          {
+            "title": "Source code management",
+            "label": "4.6.3.1",
+            "text": "This component deals with managing the source code of the software used to process climate data. This component should have the following capabilities at a minimum:\n1. Maintain a library of a variety of software source code.\n2. Manage different versions (or branches) of the software concurrently, with the ability to maintain each version independently and to easily backport newer functionalities to an older version.\n3. Easily detect the differences between software versions.",
+            "classification": "Recommended",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "4.6.3.2",
+            "title": "Package management",
+            "text": "This component refers to the functionality that facilitates the packaging of software and its configuration for installation on a computer. In addition, the component should facilitate dependency management to ensure that all required supporting software is also installed and configured appropriately at installation time.",
+            "classification": "Recommended",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "4.6.3.3",
+            "title": "Environment configuration",
+            "text": "This component concerns the functionality that facilitates the recording and management of information relating to any changes to operational software.\n\nThis includes:\n1. What software was deployed on what server?\n2. What version of the software was deployed?\n3. Details of any configuration changes.\n4. Details of any change made to the operational software.\n5. Details of the decommission of the software at the end of its period of operation, including decommission date.",
+            "classification": "Recommended",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "4.6.3.4",
+            "title": "Software testing",
+            "text": "This component covers the testing of software that is to be deployed to manipulate climate data.\n\nThis includes:\n1. Details of test plans and individual test cases, including user-acceptance testing.\n2. Details of the test data, database, etc.\n3. Details of test systems and environment.\n4. Details of test results and artefacts, particularly proof that the test data were not affected by the software or a change to the software.",
+            "classification": "Recommended",
+            "status": "",
+            "color": "red"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Ingest and extract",
+    "label": "5.1",
+    "text": "",
+    "requirements": [
+      {
+        "title": "Data ingest",
+        "label": "5.1.1",
+        "text": "",
+        "requirements": [
+          {
+            "label": "5.1.1.1",
+            "title": "Business rules",
+            "text": "This component supports a wide range of user defined business rules that govern how data are ingested into the climate database. Some examples (for observations data) are:\n1. Action required when new phenomena are to be ingested but a record already exists in the\ndatabase for that time period.\n    1. Should the new record replace the current record in the database or should the new record be rejected?\n\n        There is potential for data that have not been quality controlled to overwrite perfectly good quality-controlled data. An example is a message that is reingested and the ingest process does not take into account the possibility that the data already exist in the database and that they have been modified.\n\n2. Action required when a message arrives for ingest but the message type is not appropriate according to the observations metadata on record for that station.\n3. Action required should a message arrive containing an observed value that is outside the accepted bounds for a given phenomenon. For example, a message contains a value of 90\u00b0C for temperature, where the maximum accepted temperature is 60\u00b0C.\n4. Action required should a message arrive that is of a lower order of precedence to one that has already been ingested for the same time period and station. For example:\n    1. The priority level given to records being ingested may relate to the method of data acquisition. A record that has been keyed in via a quality assurance process may be given a higher priority than a record acquired via a real-time message ingest.",
+            "classification": "Required",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "5.1.1.2",
+            "title": "WMO messages",
+            "text": "This component allows for the import of data from a range of WMO message formats, including TAC and TDCF.\n\nAs both historical and current data will need to be imported, this component should be able to work with data in a wide variety of past, present (and future) data formats.\n\nSome examples are:\n1. Binary:\n    1. BUFR\n    2. GRIB\n2. Alphanumeric:\n    1. CREX\n    2.  SYNOP\n    3.  TEMP\n    4.  SHIP\n    5.  METAR\n    6.  World Weather Records\n\nNote: While TAC formats are being phased out, support for them will still be required by this component to support the ingest of historical data.\n\nFor more information, see:\na) WMO international codes",
+            "classification": "Required",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "5.1.1.3",
+            "title": "Vector",
+            "text": "This component supports the import of a series of vector spatial formats.\n\nFor example:\n1. Shapefile\n2. Geography Markup Language (GML) (see OGC GML web page)",
+            "classification": "Recommended",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "5.1.1.4",
+            "title": "Raster array",
+            "text": "This component supports the import of a series of raster array spatial formats.\n\nFor example:\n1. CF-netCDF\n2. Hierarchical data format\n3. ArcInfo ASCII\n4. GeoTIFF",
+            "classification": "Recommended",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "5.1.1.5",
+            "title": "Other formats",
+            "text": "This component covers the import of a range of other formats.\n\nFor example:\n1. Photographs (PNG, JPEG, TIFF, etc.)\n2. Scanned documents\n3. PDF files\n4. ASCII generic formats such as CSV\n5. Data managed in spreadsheets\n6. Tabular formats, such as the import of data from a relational database management system",
+            "classification": "Recommended",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "5.1.1.6",
+            "title": "Status log",
+            "text": "This component concerns the recording of each ingest activity status in order to:\n1. Monitor the ingest job status.\n2. Automatically recover failed ingests.\n3. Record warning and other error messages to enable manual intervention if required, for example if expected data are not received.",
+            "classification": "Required",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "5.1.1.7",
+            "title": "Automated with self-recovery",
+            "text": "This component supports the automated ingest of a range of ingest types (particularly WMO messages and data from automatic weather stations).\n\nThe component also allows for the automatic recovery of ingest tasks in the event that a task fails either entirely or part way through an ingest. This could be due to a number of reasons, including:\n1. Corrupted messages\n2. Network failures\n3. Hard disk failures\n4. Database failures\n5. Upstream data flow disruptions",
+            "classification": "Recommended",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "5.1.1.8",
+            "title": "Transformation",
+            "text": "This component supports the transformation of an ingest record. This may include:\n1. Transforming data from one format to another.\n2. Transforming codes into formats more suitable for the destination climate database.\n3. Correcting records that have been abbreviated in accordance with accepted local observation practice.",
+            "classification": "Required",
+            "status": "",
+            "color": "red"
+          }
+        ]
+      },
+      {
+        "title": "Data extraction",
+        "label": "5.1.2",
+        "text": "",
+        "requirements": [
+          {
+            "label": "5.1.2.1",
+            "title": "Data extraction",
+            "text": "This component allows data to be extracted from the climate database in accordance with NMHS data policy and governance processes.\n\nData may be transformed into a wide range of formats as described in the subsection on data ingest (5.1.1).\n\nNote: This component is only intended for advanced users who have an intimate knowledge of the climate database, its data structures, the relevant data policies and the appropriate use of quality flags and other aspects in order to perform one-off data extraction activities.\n\nEnd-user data extraction is intended to be constrained to defined data types via the climate data delivery services components (Chapter 8), using components under Chapter 7, such as: Tables and charts, Integrated search of climate data and Data download.",
+            "classification": "Recommended",
+            "status": "",
+            "color": "red"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Data rescue",
+    "label": "5.2",
+    "text": "",
+    "requirements": [
+      {
+        "title": "Imaging",
+        "label": "5.2.1",
+        "text": "",
+        "requirements": [
+          {
+            "label": "5.2.1.1",
+            "title": "Document imaging",
+            "text": "This component supports the functionality required to digitally capture a physical document and store the resultant file and associated discovery metadata, perhaps within the climate database.\n\nSome examples of the types of documents to be digitally captured are:\n1. Scanned paper observation forms\n2. Scanned microfiche/microfilm\n3. Relevant observations metadata documents such as instrument calibration reports\n4. Technical manuals\n5 Site location plans and sections\n\nFor more information, see:\na) *Guidelines on Climate Data Rescue* (WMO/TDNo. 1210), WCDMP-55",
+            "classification": "Recommended",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "5.2.1.2",
+            "title": "Optical character recognition",
+            "text": "This component provides the functionality required to digitally capture data stored in scanned documents such as hand written and/or typed meteorological observation forms.",
+            "classification": "Optional",
+            "status": "Not implemented, unlikely to be in version 1.0",
+            "color": "grey"
+          },
+          {
+            "label": "5.2.1.3",
+            "title": "Chart digitization",
+            "text": "This component refers to the capacity to digitize data from recording cards such as those used with a Campbell-Stokes sunshine recorder, thermograph, barograph or other meteorological instrument.\n\nThe typical functionality required for this component would be to:\n1. Scan a physical recording chart (or card) using the Document imaging component (5.2.1.1).\n2. Analyse the image of the chart.\n3. Extract numeric points from the chart.\n4. Calculate a value for those points.\n5. Store the resultant data in the climate database.",
+            "classification": "Optional",
+            "status": "Not implemented, unlikely to be in version 1.0",
+            "color": "grey"
+          }
+        ]
+      },
+      {
+        "title": "Monitoring",
+        "label": "5.2.2",
+        "text": "",
+        "requirements": [
+         {
+            "label": "5.2.2.1",
+            "title": "Data rescue metrics",
+            "text": "This component maintains metrics relating to the capture of historical observations data. These may contain:\n1. Name and brief description of data rescue project\n2. Countries where activity is taking place\n3. Contact person for project\n4. Types of data rescued\n5. Summary and per cent digitized\n6. Summary and per cent scanned\n7. Summary and per cent scanned but not digitized\n8. Summary and per cent undigitized",
+            "classification": "Recommended",
+            "status": "",
+            "color": "red"
+          }
+        ]
+      },
+      {
+        "title": "Data entry",
+        "label": "5.2.3",
+        "text": "This subsection covers the functionality required to enable an appropriately trained and authorized person to manually enter data into the climate database.\n\nTypically, this functionality is tightly controlled according to NMHS data governance processes.\n\nSome issues to consider are:\n1. Data entry staff should only be able to add data to or edit data in the climate database under programme control, with appropriate safeguards in place to protect the integrity of the climate database.\n2. Any functionality that provides write access to the database should also include an audit function to allow an independent review of database changes - One example could be the use of database triggers that write the details of a transaction,\nincluding the previous values, into a separate set of audit tables.\n3. Another approach could be to ensure that the data entry process creates an interim data file that is then entered into the database via data ingest processes, bypassing the need for direct access to the database.\n4. NMHS data policy may enforce the need for double entry practices, where two or more operators key in data for the same form, independent of each other, to detect and minimize key-in errors.\n5. Careful consideration should be made to ensure that an organization has very effective IT security and monitoring in place prior to allowing key-in access via the Internet. Most organizations will not have suitable controls in place. Therefore, key-in via the Internet should be avoided as a general rule.\n6. NMHS data policy should provide guidelines as to appropriate data quality considerations applied to data that are manually entered.",
+        "requirements": [
+          {
+            "label": "5.2.3.1",
+            "title": "Forms",
+            "text": "This component covers:\n1. The visual design of a form.\n2. The software logic that controls the data key-in process.\n3. The mapping of fields in the form with appropriate records and tables within the climate database.\n4. Ensuring that the integrity of the climate database is protected by validating data before they are added to the database.\n\nThe component should also support:\n\n5. A custom definition of user input forms that mimic traditional meteorological forms (including the language where appropriate).\n6. Efficient and effective data entry that minimizes operator fatigue and automatically calculates appropriate values.\n7. The component should provide adequate support for monitoring the validity of data that are entered.\n\nSome examples are:\n8. Performing data quality consistency checks of the data to be entered. These checks and the appropriate values are to be customizable according to NMHS data policy and governance processes.\n9. Ensuring that appropriate data types and context are entered for each field.\n10. The component should alert the operator to any doubtful entries detected, providing appropriate advice as per NMHS data policy guidelines.",
+            "classification": "Required",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "5.2.3.2",
+            "title": "Key entry",
+            "text": "This component provides the functionality to support manual key-in of meteorological data.",
+            "classification": "Required",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "5.2.3.3",
+            "title": "Computation",
+            "text": "This component allows for the automatic derivation of parameters at key-in.\n\nSuch computation should be customizable according to NMHS data policy and governance processes.\n\nSome possible scenarios where this functionality may be used are:\n1. The computation of a value for relative humidity after the values for dry-bulb temperature and dewpoint have been entered.\n2. Decoding shorthand codes and replacing them with appropriate values.",
+            "classification": "Recommended",
+            "status": "",
+            "color": "red"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Observations quality control",
+    "label": "5.3",
+    "text": "",
+    "requirements": [
+      {
+        "title": "Quality management",
+        "label": "5.3.1",
+        "text": "For more information, see:\na) *Guide to Climatological Practices* (WMO-No. 100)\nb) *Guide to the Global Observing System* (WMO-No. 488), Appendix VI.1 Data quality control, and Appendix VI.2 Guidelines for quality control procedures applying to data from automatic weather stations\nc) *Guidelines on the Quality Control of Surface Climatological Data* (WMO/TD-No. 111), WCP-85\nd) *Guidelines on Climate Data Management* (WMO/TD-No. 1376), WCDMP-60\ne) *Guide on the Global Data-processing System* (WMO-No. 305), Chapter 6 Quality control procedures",
+        "requirements": [
+          {
+            "label": "5.3.1.1",
+            "title": "Consistency checks",
+            "text": "This component covers a range of tests to ensure that inconsistent, unlikely or impossible records are either rejected or flagged as suspect. A manual investigation may then assess the validity of the suspect values.\n\nThis component includes the concepts of internal, temporal and summarization consistency checks as discussed in the *Guide to Climatological Practices* (WMO-No. 100), section 3.4.6 Consistency tests.\n\nSome examples are:\n1. Is the minimum temperature lower than the maximum temperature?\n2. Is the maximum temperature within the historical range for maximum temperatures for a given station?",
+            "classification": "Required",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "5.3.1.2",
+            "title": "Data comparison",
+            "text": "This component covers a series of tests that use and cross-reference data from a number of sources to validate suspect observations.\n\nSome examples of datasets that may be cross-referenced are:\n1. Observations data showing daily precipitation at a station\n2. Radar data covering the station\n3. Synoptic forecast charts\n4. Satellite imagery",
+            "classification": "Recommended",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "5.3.1.3",
+            "title": "Heuristic checks",
+            "text": "This component refers to a set of tests that rely on experience and knowledge of observation processes, techniques and instrumentation to detect inconsistent, unlikely or impossible records and flag them as suspect. A manual investigation may then assess the validity of the suspect values.\n\nSome examples are problems typically caused by:\n1. Inexperienced operators.\n2. Instruments that are not or are incorrectly calibrated.\n3. Operator behaviour or organizational policy, for example not recording rainfall data over a weekend period and aggregating the results on the following Monday.\n4. Known deficiencies in observers handling data such as evaporation-related observations.\n5. Changes over time caused by changes at an observation site. For example, a shift in the magnitude of wind recorded from a specific direction may be an indicator of a problem at the site location, such as a new building structure or trees obstructing the flow of the wind in that direction.",
+            "classification": "Required",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "5.3.1.4",
+            "title": "Statistical checks",
+            "text": "This component covers a number of tests that statistically analyse historical data to detect inconsistent, unlikely or impossible records and flag them as suspect. A manual investigation may then assess the validity of the suspect values.\n\nSome examples are:\n1. Climate tests that highlight extreme climatic values, such as a record maximum air temperature.\n2. Flatline tests where a constant value exceeds the specified limit in a time series, for example when the station air temperature remains constant for 12 hours.\n3. Spike tests conducted in a time series to identify data spikes exceeding a specified limit, for example when a three-hourly air temperature observation is at least 50 degrees colder than all others during the day.\n4. Rapid change tests conducted in a time series to identify rapid changes exceeding a specified limit, for example when a 100 cm soil temperature suddenly changes in consecutive 3-hourly observations from a relatively stable 22C to 38C for all following observations.",
+            "classification": "Required",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "5.3.1.5",
+            "title": "Spatial checks",
+            "text": "This component covers a range of spatial tests to detect inconsistent, unlikely or impossible records and flag them as suspect. A manual investigation may then assess the validity of the suspect values.\n\nSome examples are:\n1. Comparing the results of a time series of observations at a given station with those at nearby stations.\n2. Using a Barnes or similar analysis to derive spatial patterns against which anomalous and possibly erroneous station values stand out.",
+            "classification": "Recommended",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "5.3.1.6",
+            "title": "Data recovery",
+            "text": "This component refers to the processes, policies, governance arrangements, audit processes, etc., that enable the recovery and insertion of data in the climate database, possibly overwriting existing data.\n\nThis component involves a number of manual processes undertaken by experienced and well-trained personnel, supported by effective technology, governance and data management processes, to investigate anomalous observations and either accept or reject suspect records.\n\nPersonnel will typically review and consider a wide range of data in their investigations, such as raw records, synoptic charts, satellite imagery, radar and other types.",
+            "classification": "Required",
+            "status": "",
+            "color": "red"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Quality assessment",
+    "label":"5.4",
+    "text": "",
+    "requirements": [
+      {
+        "title": "Observations quality assessment",
+        "label": "5.4.1",
+        "text": "This subsection refers to the processes implemented to help NMHSs assess the quality of observations used by their organization. It covers all stages, from the observation site and expertise level of personnel to the final product distributed to users.\n\nThe aim of this subsection is to move towards a more objective way of defining the quality of observations data.",
+        "requirements": [
+          {
+            "label": "5.4.1.1",
+            "title": "Siting classification",
+            "text": "This component refers to the processes, software, governance mechanisms and analysis that classify sensors according to the rating scale described in the *Guide to Meteorological Instruments and\nMethods of Observation* (WMO-No. 8), Annex 1.B Siting classifications for surface observing stations on land.",
+            "classification": "Required",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "5.4.1.2",
+            "title": "Sustained performance classification",
+            "text": "This component refers to the processes, software, governance mechanisms and analysis that classify sensors according to their sustained performance over time.\n\nThe best description found to date on how to determine this classification may be found in Annex III of the final report of the first session of the Commission for Instruments and Methods of Observation Expert Team on Standardization.\n\nNote: A more objective approach to developing this classification for the global WMO community is required.",
+            "classification": "Recommended",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "5.4.1.3",
+            "title": "Multilayer quality flags",
+            "text": "This component refers to the processes, software, governance mechanisms and data analysis used to understand and enumerate the quality flags of a specific record of data.\n\nThis will facilitate:\n1. Future analysis that requires data of a specific quality flag value.\n2. Communication on the assessed quality of records.\n\nThe best description to date on how to define this classification may be found in the *Guide to Climatological Practices* (WMO-No. 100), pp. 3-8 to 3-9. This reference describes a way of flagging quality based on a combination of:\n\n3. Data type (original, corrected, reconstructed or calculated)\n4. Validation stage\n5.  Acquisition method\n\nThis approach is still quite limited. It does not provide a clear way of determining just what level of quality control a record has been subjected to.\n\nWhile the classifications are relevant and relate to the perceived quality of a record, they do not allow for an explicit comparison of data of similar perceived quality.\n\nFor example, the subsection on quality management (5.3.1) describes a series of classifications of tests (without providing actual details). If a record has passed all such tests, can it be considered to be better quality than one that has not passed any test?\n\nObjective quality classifications are required to support a consistent approach within the global WMO community so that data can be:\n\n6. Objectively compared to ensure that data of similar quality can be compared and analysed as required.\n7. Stored and easily retrieved from a climate database. It is becoming increasingly apparent that organizations will need to retain observations at multiple levels of quality from the raw observation through various edit and analysis processes in order to demonstrate the true lineage of a record and explain and justify the changes made to the raw observations.\n\nNote: A more objective approach to determining this classification for the global WMO community is required.",
+            "classification": "Required",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "5.4.1.4",
+            "title": "Climate observation quality classification",
+            "text": "This component refers to the processes, software, governance mechanisms and data analysis used to understand and enumerate the quality of a specific record of data relative to an objective index. This index will need to combine a number of criteria relevant to data reliability and quality.\n\nNote: This index has yet to be created. For the purposes of this publication, it is called the climate observation quality classification. However, this name may change. It is envisioned that this index will need to take into account a number of factors, including:\n1. Siting classification\n2. Sustained performance classification\n3. Regular maintenance and calibration of sensor\n4. Sensor reliability\n5. Uncertainty inherent in observations\n6. Observation quality control processes\n7. Multilayer quality flags\n8. Lineage\n9. Homogeneity\n10. Other appropriate factors\n\nSee also the summary of findings of the seventh Data Management Workshop of the European Climate Support Network (ECSN) held at the Danish Meteorological Institute, in particular:\n> Noting that 'everybody' talks about different levels of Quality Control [QC] and (almost) nobody uses the same wording or nomenclature - it is recommended that an overview of QC nomenclature in ECSN is worked out. It might be considered if such an overview could form the basis for a recommended set of QC wordings. (Kern- Hansen, 2009)",
+            "classification": "Optional",
+            "status": "Not implemented, unlikely to be in version 1.0",
+            "color": "grey"
+          }
+        ]
+      },
+      {
+        "title": "Derived-data quality assessment",
+        "label": "5.4.2",
+        "text": "",
+        "requirements": [
+          {
+            "label": "5.4.2.1",
+            "title": "Derived-data quality assessment",
+            "text": "This component refers to the processes, software, governance and data analysis processes used to understand and enumerate the quality of derived data relative to an objective index.\n\nThere are many factors that can influence the quality of derived data. Some issues to consider are:\n1. What is the quality of the source data?\n2. What algorithms have been applied to the source data to arrive at the derived data?\n3. What is the impact of these algorithms on the quality of the derived data?\n4. If the derived dataset is spatial, how has the positional location of the data been derived?\n    1. What is the quality of the source spatial data?\n    2. What is the impact of the algorithms used to spatially distribute the data on the positional accuracy of the derived data?\n\nFor more information, see also the Derived data component (5.4.4.2).\n\nNote: This index has yet to be created. For the purposes of this publication, it is called the derived-data quality assessment. However, this name may change.",
+            "classification": "Optional",
+            "status": "Not implemented, unlikely to be in version 1.0",
+            "color": "grey"
+          }
+        ]
+      },
+      {
+        "title": "Quality assurance metrics",
+        "text": "",
+        "label": "5.4.3",
+        "requirements": [
+          {
+            "label": "5.4.3.1",
+            "title": "Quality assurance metrics",
+            "text": "This component refers to the processes, software, governance mechanisms and analysis used to monitor the performance of quality assurance processes.\n\nSuch monitoring will allow network managers and climate data specialists to validate the performance of quality assurance software and processes.\n\nThis can be done, for example, by reviewing automatically generated reports that:\n1. Summarize observational errors detected by each quality assurance test.\n2. Summarize false positives and valid errors detected.\n3. Compare the performance of current quality assurance metrics with historical averages.\n\nThese types of metrics can also help data and network managers improve quality assurance processes and software.",
+            "classification": "Recommended",
+            "status": "",
+            "color": "red"
+          }
+        ]
+      },
+      {
+        "title": "Uncertainty",
+        "text": "This subsection refers to the processes, software, governance processes and data analysis used to understand and record the uncertainty inherent in the data.\n\nAs noted in the OGC Abstract Specification: Geographic Information - Observations and measurements (p. 13), all observations have an element of uncertainty:\n\n> The observation error typically has a systematic component, which is similar for all estimates made using the same procedure, and a random component, associated with the particular application instance of the observation procedure. If potential errors in a property value are important in the context of a data analysis or processing application, then the details of the act of observation which provided the estimate of the value are required.\n\nThis functionality will support:\n1. Future statistical analysis that takes into account the uncertainty inherent in data.\n2. Communication of data uncertainty.\n\nFor more information, see Wikipedia articles on:\na) Uncertain data\nb) Uncertainty",
+        "label": "5.4.4",
+        "requirements": [
+          {
+            "label": "5.4.4.1",
+            "title": "Measurements",
+            "text": "This component refers to the processes, software, governance mechanisms and data analysis used to understand and record the uncertainty inherent in observation measurements and processes.\n\nThe *Guide to Meteorological Instruments and Methods of Observation* (WMO-No. 8) provides a number of examples per meteorological variable.\n\nFor more information, see:\na) *Guide to Meteorological Instruments and Methods of Observation* (WMO-No. 8), Annex 1.D Operational measurement uncertainty requirements and instrument performance\nb) Annex III of the final report of the first session of the Commission for Instruments and Methods of Observation Expert Team on Standardization",
+            "classification": "Required",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "5.4.4.2",
+            "title": "Derived data",
+            "text": "This component refers to the processes, software, governance mechanisms and data analysis used to understand and record the uncertainty inherent in gridded data that have been derived from observation data.\n\nMany factors can contribute to the uncertainty inherent in gridded derived data. Some examples are:\n1. Uncertainty inherent in the source observations data.\n2. Uncertainty inherent in the location of sensors/stations used to generate the grids.\n3. The relative accuracy of the algorithms used to generate the derived data.\n4. The precision of variable data types used in the software that generates derived data.\n\nIt is also worth noting that a number of these factors may propagate through the data derivation process.",
+            "classification": "Optional",
+            "status": "Not implemented, unlikely to be in version 1.0",
+            "color": "grey"
+          }
+        ]
+
+      }
+    ]
+  },
+  {
+    "title": "Climate metadata",
+    "label": "5.5",
+    "text": "",
+    "requirements": [
+      {
+        "label": "5.5.1",
+        "title": "Manage climate metadata",
+        "text": "This subsection refers to the processes, software, governance mechanisms and data analysis required to effectively manage climate metadata, which include metadata on observations, discovery and data provenance.\n\nNote: This subsection is deliberately kept generic in this version of the CDMS Specifications, with all types of climate metadata bundled together. While the Create and Maintain components (5.5.1.1 and 5.5.1.2, respectively) are classified as recommended, in reality data provenance metadata has not yet been adequately defined. Therefore, a pragmatic approach would rightly not address the creation and maintenance of data provenance metadata until this has been rectified. The creation and maintenance of discovery and observations metadata, however, is required.\n\nFor more information on climate metadata, see section 4.3 of this publication.",
+        "requirements": [
+          {
+            "label": "5.5.1.1",
+            "title": "Create",
+            "text": "This component refers to the processes, software and governance processes needed to effectively and efficiently create climate metadata.",
+            "classification": "Recommended",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "5.5.1.2",
+            "title": "Maintain",
+            "text": "This component covers the processes, software and governance mechanisms required to effectively and efficiently maintain climate metadata.",
+            "classification": "Recommended",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "5.5.1.3",
+            "title": "Quality control",
+            "text": "This component deals with the processes, software and governance processes needed to effectively and efficiently assess and control the quality of climate metadata.\n\nMore work is required to provide effective guidance on this component.",
+            "classification": "Recommended",
+            "status": "",
+            "color": "red"
+          },
+          {
+            "label": "5.5.1.4",
+            "title": "Metrics",
+            "text": "This component refers to the processes, software and governance processes required to effectively and efficiently maintain metrics relevant to climate metadata.\n\nSome examples are:\n1. Which stations or sensors do not have observations metadata records?\n2. Which datasets do not have discovery metadata records?\n\nMore work is required to provide effective guidance on this component.",
+            "classification": "Recommended",
+            "status": "",
+            "color": "red"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Analysis",
+    "label": "6.1",
+    "text": "",
+    "requirements": [
+      {
+        "label": "6.1.1",
+        "title": "Climate modelling",
+        "text": "",
+        "requirements": [
+          {
+            "label": "6.1.1.1",
+            "title": "Numerical models",
+            "text": "This component represents the software, processes and governance mechanisms that provide numerical models such as general circulation models (GCMs), also known as global climate models.\n\nA Wikipedia article defines general circulation models as:\n> [A] mathematical model of the general circulation of a planetary atmosphere or ocean and based on the Navier-Stokes equations on a rotating sphere with thermodynamic terms for various energy sources (radiation, latent heat). These equations are the basis for complex computer programs commonly used for simulating the atmosphere or ocean of the Earth. Atmospheric and oceanic GCMs (AGCM and OGCM) are key components of **global climate models** along with sea ice and land-surface components. GCMs and global climate models are widely applied for weather forecasting, understanding the climate, and projecting climate change.\n\nSuch climate numerical models could be global in scale (like GCMs) but they could also be regional, with generally a higher precision.\n\nDownscaling techniques are often used when creating regional models.\n\nModels can be based on:\n1. The rules of physics, biology and chemistry\n2. Statistical rules\n3. A mix of dynamic and statistic methods\n\nThe use of climate models includes:\n\n4. Simulation of the present climate\n5. Simulation of the future climate\n6. Palaeoclimate reconstruction\n7. Seasonal forecasts\n8. Decadal prediction\n\nNote: Most NMHSs would not have the resources needed to effectively manage the infrastructure and software required to support this component. However, the data output from such components may be useful and should be available for NMHSs via a number of sources, including Regional Climate Centres.\n\nFor more information, see:\na) Wikipedia article on general circulation models",
+            "classification": "Optional",
+            "status": "Not implemented, out of scope",
+            "color": "grey"
+          },
+          {
+            "label": "6.1.1.2",
+            "title": "Reanalysis",
+            "text": "This component concerns the software, processes and governance mechanisms that establish 'a meteorological data assimilation project which aims to assimilate historical observational data spanning an extended period, using a single consistent assimilation (or 'analysis') scheme throughout'. (See Wikipedia article on meteorological reanalysis)",
+            "classification": "Optional",
+            "status": "Not implemented, out of scope",
+            "color": "grey"
+          },
+          {
+            "label": "6.1.1.3",
+            "title": "Model ensembles",
+            "text": "This component refers to the software, processes and governance mechanisms used to aggregate data from:\n1. A number of GCMs to produce products that portray a range of model forecasts.\n2. A series of runs of the same model.",
+            "classification": "Optional",
+            "status": "Not implemented, out of scope",
+            "color": "grey"
+          }
+        ]
+      },
+      {
+        "label": "6.1.2",
+        "title": "Generate derived data from climate observations",
+        "text": "",
+        "requirements": [
+          {
+            "label": "6.1.2.1",
+            "title": "Spatial analysis",
+            "text": "This component represents the software, processes and governance tools that handle a very wide variety of raster and vector spatial analysis techniques.\n\nSome examples are:\n1. Generating grids that show the spatial distribution of observations of a phenomenon such as precipitation.\n2. Generating grids that represent the distribution of the average maximum temperature for the month of May for climatological standard normals.\n3. Generating grids that represent the distribution of the maximum temperature anomalies for May 2010 when compared to the climatological standard normal.\n4. Selecting all meteorological stations located within a 10 km radius around a national administrative boundary.",
+            "classification": "Recommended",
+            "status": "Not yet implemented in OpenCDMS, tools via R-Instat and other statistical software interoperable",
+            "color": "oranage"
+          },
+          {
+            "label": "6.1.2.2",
+            "title": "Image analysis",
+            "text": "This component covers the software, processes and governance tools that handle a very wide range of image analysis techniques.\n\nSome examples are:\n1. Processing remotely sensed satellite imagery to measure the relative solar reflectance of a satellite image, determine the cloud cover within a scene or generate a normalized difference vegetation index to measure vegetation greenness.\n2. Processing ground-based radar imagery to detect rain and storm activity.",
+            "classification": "Recommended",
+            "status": "Not yet implemented",
+            "color": "red"
+          },
+          {
+            "label": "6.1.2.3",
+            "title": "Time-series analysis",
+            "text": "This component concerns the software, processes and governance mechanisms that analyse timeseries data using a very broad range of analysis techniques.\n\nSome examples are the analysis required to produce:\n1. WMO standard products such as extremes, standard normals, World Weather Records and climate change indices.\n2. A variety of derived observations data.\n\nFor more information, see:\na) *Guide to Climatological Practices* (WMO-No. 100), Chapter 4 Characterizing climate from datasets, and Chapter 5 Statistical methods for analysing datasets",
+            "classification": "Recommended",
+            "status": "Not yet implemented in OpenCDMS, tools via R-Instat and other statistical software interoperable",
+            "color": "orange"
+          },
+          {
+            "label": "6.1.2.4",
+            "title": "Teleconnection indices",
+            "text": "This component represents the software, processes and governance processes used to analyse, record and manage data representing teleconnections and major climate indices such as the El Nino-Southern Oscillation and the Southern Oscillation Index.\n\nAccording to an article on Wikipedia, **[t]eleconnection** in atmospheric science refers to climate anomalies being related to each\nother at large distances (typically thousands of kilometers).",
+            "classification": "Optional",
+            "status": "Not yet implemented in OpenCDMS, tools via R-Instat and other statistical software interoperable",
+            "color": "orange"
+          }
+        ]
+      }
+
+    ]
+  },
+  {
+    "title": "Graphical user interface - time-series data exploration",
+    "label": "7.1",
+    "text": "",
+    "requirements": [
+      {
+        "label": "7.1.1",
+        "title": "Tables and charts",
+        "text": "This subsection represents the technology, software, processes and governance mechanisms suitable for generating a broad array of tabular and graphical reports to effectively communicate issues relating to climate data.",
+        "requirements": [
+          {
+            "label": "7.1.1.1",
+            "title": "Tables",
+            "text": "This component refers to the technology, software, processes and governance processes suitable for generating a wide variety of tabular reports to effectively communicate issues relating to climate data.",
+            "classification": "Recommended",
+            "status": "Basic tabulation implemented, csv data available via OpenCDMS-API",
+            "color": "orange"
+          },
+          {
+            "label": "7.1.1.2",
+            "title": "Graphs",
+            "text": "This component concerns the technology, software, processes and governance processes suitable for generating a large variety of graphs to effectively convey climate data issues.\n\nGraphs could be presented in a wide array of formats, including:\n1. Scatter plots\n2. Histograms\n3. Windroses\n4. Time-series graphs using one or more variables\n\nFor more information, see:\na) *Guide to Climatological Practices* (WMO-No. 100), Chapter 6 Services and products",
+            "classification": "Recommended",
+            "status": "Basic graphs demonstrated but limited in scope. Graphics and graph generation via external software and interoperable with OpenCDMS API",
+            "color": "orange"
+          }
+        ]
+      },
+      {
+        "label": "7.1.2",
+        "title": "Manage content",
+        "text": "",
+        "requirements": [
+          {
+            "label": "7.1.2.1",
+            "title": "Manage content",
+            "text": "This component covers the technology, software, processes and governance processes suitable for generating a wide variety of content to effectively communicate issues relating to climate data.\n\nThis includes:\n1. Preparing texts, documents and data for effective web presentation.\n2. Using technology such as content management systems to simplify web content presentation.\n3. Implementing effective governance processes that review, validate and authorize content prior to being published.",
+            "classification": "Recommended",
+            "status": "not yet implemented",
+            "color": "red"
+          }
+        ]
+      },
+      {
+        "label": "7.1.3",
+        "title": "Visualization",
+        "text": "",
+        "requirements": [
+          {
+            "label": "7.1.3.1",
+            "title": "Cartography",
+            "text": "This component represents the technology, software, processes and governance processes suitable for generating a wide variety of cartographic output to effectively convey climate data issues.\n\nIt includes:\n1. Spatial data preparation\n2. Cartography\n3. Simple point-and-click web maps",
+            "classification": "Recommended",
+            "status": "Not implemented, unlikely to be implemented. Use of open OGC standards mean the OpenCDMS system is interoperable with existing GIS software packages.",
+            "color": "grey"
+          },
+          {
+            "label": "7.1.3.2",
+            "title": "3D",
+            "text": "This component provides the technology, software, processes and governance mechanisms suitable for visualizing and exploring climate data and issues within a 3D environment.",
+            "classification": "Optional",
+            "status": "Not implemented, unlikely to be in version 1.0",
+            "color": "grey"
+          },
+          {
+            "label": "7.1.3.3",
+            "title": "Media viewer",
+            "text": "This component refers to the technology, software, processes and governance processes that enable various media to be displayed within the graphical user interface. Some examples are:\n1. Photographs\n2. Diagrams\n3. Scanned documents such as scanned station records\n4. Videos\n5. Recorded audio media",
+            "classification": "Recommended",
+            "status": "Not yet implemented, no test data",
+            "color": "red"
+          }
+        ]
+      },
+      {
+        "label": "7.1.4",
+        "title": "Integrated search of climate data",
+        "text": "",
+        "requirements": [
+          {
+            "label": "7.1.4.1",
+            "title": "Spatial intelligence",
+            "text": "This component represents the technology, software, processes and governance processes that support an effective and dynamic analysis of climate data within a web environment to facilitate understanding of climate matters and communicate issues relating to climate data. This dynamic analysis includes:\n1. Geographical Information System (GIS) functionality, including the ability to perform spatial overlay analysis such as selecting points in a polygon.\n2. The ability to search features by attribute, for example:\n    1. Conducting a search of all stations within the catchment of a specific river.\n    2. Filtering the resultant stations to view only those that observe precipitation.\n    3. Viewing summary observations data for each of those stations.\n\nThis component integrates into a map-based interface a wide range of time-series data including climate observations, climate grids, satellite imagery and topography, together with appropriate textual and other attribute data, such as climate metadata.\n\nIt also facilitates dynamic data exploration and analysis using a broad array of integrated media, including maps, charts, graphs, tables and written reports.",
+            "classification": "Recommended",
+            "status": "Implemented via OGC-API standards and data model",
+            "color": "green"
+          },
+          {
+            "label": "7.1.4.2",
+            "title": "Integrated search of observations (metadata and data)",
+            "text": "This component concerns the functionality that allows an end-user to conduct an integrated search of the climate database and the observations metadata catalogue.\n\nThe search results will contain observations data and observations metadata.\n\nSome examples are:\n1. Determining what observations data are available based on a set of parameters and viewing the results in a table. These parameters may include:\n    1. Station\n    2. Sensor or procedure\n    3.  Phenomena\n    4.  Data quality (based on quality flags, the climate observation quality classification or other method)\n    5.  Time period\n    6.  A variety of other observation metadata parameters\n2. Reviewing observations metadata for selected stations.\n3. Determining what datasets provide the actual observations data for a given station, sensor and phenomenon combination, together with the URL of the relevant discovery metadata records. The discovery metadata records will in turn provide the URLs of any services providing dynamic access to the data. An example could involve searching for stations that use both a tipping bucket raingauge and manual methods to observe rainfall.\n\nFor more information, see:\na) Section on climate metadata (4.3)\nb) Subsection on observations metadata (4.3.1)\nc) Observations metadata catalogue component (8.2.1.2)\nd) Linked data component (8.2.2.1)",
+            "classification": "Required",
+            "status": "Implemented via OGC-API standards and data model",
+            "color": "green"
+          },
+          {
+            "label": "7.1.4.3",
+            "title": "Search discovery metadata",
+            "text": "This component refers to the functionality that] allows an end-user to search the CDMS discovery metadata catalogue to:\n1. Determine what datasets are managed by the NMHS. This search may be limited to datasets that are available publicly or those that are only available for internal use.\n2. Search for datasets in accordance with WIS parameters, categories and keywords.\n3. Review discovery metadata records that adequately describe a dataset to enable searchers to determine whether it is suitable for their particular use.\n4. Determine the URL that can be used to access online services that host the dataset for dynamic access and data download.\n\nThis same component could be used to search WIS metadata catalogues.\n\nFor more information, see:\na) Section on climate metadata (4.3)\nb) Subsection on dataset discovery metadata (4.3.2)\nc) Discovery metadata catalogue component (8.2.1.1)\nd) Linked data component (8.2.2.1)",
+            "classification": "Recommended",
+            "status": "Provided via OGC-API Records",
+            "color": "green"
+          },
+          {
+            "label": "7.1.4.4",
+            "title": "Search data provenance metadata",
+            "text": "This component provides the functionality that allows an end-user to search the CDMS data provenance metadata catalogue to:\n1. Broadly determine the lineage of a dataset, including the processes the dataset has been subjected to.\n2. Trace the provenance of individual records in detail, taking into account:\n    1. What was changed?\n    2. What was it derived from?\n    3. When was it changed?\n    4. What was done to change it?\n    5. How and why was it changed?\n    6. Who changed it?\n    7. Who did they act on behalf of (if applicable)?\n    8. Who authorized the change?\n\nFor more information, see:\na) Section on climate metadata (4.3)\nb) Subsection on data provenance (4.3.3)\nc) Data provenance metadata catalogue component (8.2.1.3)\nd) Linked data component (8.2.2.1)",
+            "classification": "Optional",
+            "status": "Implemented (partially) in data model but not yet in test data or UI.",
+            "color": "orange"
+          }
+        ]
+      },
+      {
+        "label": "7.1.5",
+        "title": "Data download",
+        "text": "",
+        "requirements": [
+          {
+            "label": "7.1.5.1",
+            "title": "Data download",
+            "text": "This component represents the functionality enabling end-users to download climate data.\n\nThis component is related to the climate data delivery components (Chapter 8) and data discovery registers.",
+            "classification": "Required",
+            "status": "Implemented via OGC-API Features endpoint",
+            "color": "green"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Open spatial standards",
+    "label": "8.1",
+    "text": "",
+    "requirements": [
+      {
+        "label": "8.1.1",
+        "title": "Open Geospatial Consortium services",
+        "text": "",
+        "requirements": [
+          {
+            "label": "8.1.1.1",
+            "title": "Web Map Services",
+            "text": "This component represents technology suitable for the distribution of a wide range of climate data via a Web Map Service (WMS).\n\nIn essence, a WMS provides a map view of data distributed via a georeferenced image.\n\nFor more information, see:\na) OGC WMS documentation\nb) The OGC Meteorology and Oceanography Domain Working Group paper on the use of WMS with time-dependent and elevation dependent data",
+            "classification": "Recommended",
+            "status": "Deprecated, use of newer OGC-API standards in OpenCDMS-API but no test data for WMS",
+            "color": "orange"
+          },
+          {
+            "label": "8.1.1.2",
+            "title": "Web Feature Services",
+            "text": "This component represents technology suitable for the distribution of a broad range of vector climate data via a Web Feature Service (WFS).\n\nIn essence, a WFS could provide vector and tabular climate data, which could be presented in a number of formats such as GML (see OGC GML web page) or Environmental Systems Research Institute (ESRI) shapefile.\n\nSome WFS implementations can serve data constrained by a logical data model (also known as an application schema). It may also be possible to enable WFS server software to provide meteorological observation data via WMO formats such as BUFR.\n\nThere may be issues with serving time series via WFS. There is discussion that a Sensor Web Service may be better for time-series\nobservations.\n\nFor more information, see:\na) OGC WFS documentation",
+            "classification": "Recommended",
+            "status": "Implemented by OGC-API features",
+            "color": "green"
+          },
+          {
+            "label": "8.1.1.3",
+            "title": "Web Coverage Services",
+            "text": "This component represents technology suitable for the distribution of a wide range of gridded and array climate data via a Web Coverage Service (WCS).\n\nIn essence, a WCS provides the actual gridded or array data.\n\nFuture versions of WCSs are intended to support logical data models defined as application schemas.\n\nFor more information, see:\na) OGC WCS documentation",
+            "classification": "Recommended",
+            "status": "Deprecated, use of newer OGC-API standards in OpenCDMS-API but no test data for coverages",
+            "color": "orange"
+          },
+          {
+            "label": "8.1.1.4",
+            "title": "Sensor Web Enablement Services",
+            "text": "This component represents a range of technological tools suitable for the distribution of a wide variety of observational data and related metadata.\n\nThere are a number of services that will become available when work stabilizes on these standards. Sensor Web Services are typically used with data that conform to the observations and measurements data model. This model is well suited to time-series data. Therefore, Sensor Web Services may be an appropriate mechanism for serving time-series climate data in the future.\n\nFor more information, see the OGC documentation for:\na) Observations and measurements\nb) Sensor Observation Services",
+            "classification": "Optional",
+            "status": "Not implemented, unlikely to be in version 1.0",
+            "color": "grey"
+          },
+          {
+            "label": "8.1.1.5",
+            "title": "CF-netCDF",
+            "text": "This component involves technology suitable for the provision of a wide variety of gridded or array scientific data written as netCDF files that support the conventions for climate and forecast metadata<sup>3</sup>.\n\nFor more information, see:\na) Wikipedia article on netCDF\nb) OGC netCDF standards suite\nc) The OGC CF-netCDF core and extensions primer\n\n<sup>3</sup> In this context, the term metadata refers to a set of fields in the header of a netCDF file that describe the context and format of the array data contained in the CF-netCDF file.",
+            "classification": "Recommended",
+            "status": "Not yet implemented",
+            "color": "red"
+          },
+          {
+            "label": "8.1.1.6",
+            "title": "Geosynchronization",
+            "text": "This component concerns a series of technological tools that enable a data publisher to distribute a data product in an environment that supports managed change to the source data.\n\nIn theory, end-users could subscribe to a data source and have changes to the data replicated in their copy of the data.\n\nIn summary, geosynchronization services are expected to support several processes, including:\n1. Allowing interested parties to subscribe to an authoritative data source.\n2. Data entry with validation.\n3. Notifying interested parties of changes.\n4. Allowing replication of the data provider's features.\n\nIt is anticipated that geosynchronization services will support crowdsourced data and processes in addition to authoritative data sources.\n\nAt present, geosynchronization services are being developed with the current version of a standard that only serves data via a WFS. \n\nIt is expected that geosynchronization will support additional services in the future, including WCS and WMS.\n\nFor more information, see:\na) OGC overview of geosynchronization services\nb) The OWS 7 engineering report on the test of geosynchronization services",
+            "classification": "Optional",
+            "status": "Implemented in underlying architecture and used in data ingest. Also used in WIS2.0 but not yet configured in OpenCDMS.",
+            "color": "orange"
+          },
+          {
+            "label": "8.1.1.7",
+            "title": "Web Processing Services",
+            "text": "This component covers a range of technological instruments that provide a standards-based framework for developing spatial processing services that operate via an internal network or the Internet.\n\nThis standard is being used by a number of open-source projects and vendors to develop the building blocks that will support a wide range of spatial analytic processes.\n\nThe latest version of the standard is being developed to support both synchronous and asynchronous Web Processing Services (WPS).\n\nThis standard has considerable potential for future CDMS use, for example:\n1. To enable an NMHS to establish a suite of services to process and analyse climate data within a services-oriented architecture.\n2. To enable a future service-provider to offer CDMS-related services via the cloud.\n\nFor more information, see:\na) WPS Wikipedia entry\nb) OGC WPS documentation",
+            "classification": "Optional",
+            "status": "Implemented via OGC-API processes.",
+            "color": "green"
+          },
+          {
+            "label": "8.1.1.8",
+            "title": "Symbology Encoding",
+            "text": "This component represents a range of technological tools that provide rules and a standardized approach for defining alternative visual portrayals of spatial data via an internal network or the Internet.\n\nSymbology Encoding, together with Styled Layer Descriptors (SLDs), can be used with WMSs, WFSs and WCSs to enable user-defined symbolization of spatial data from within a collection of published styles.\n\nAs an example, it is possible to publish several colour classification schemes for a gridded dataset, allowing end-users to select one that is appropriate for their use.\n\nFor more information, see:\na) OGC Symbology Encoding documentation",
+            "classification": "Optional",
+            "status": "Not implemented, unlikely to be in version 1.0",
+            "color": "grey"
+          },
+          {
+            "label": "8.1.1.9",
+            "title": "Styled Layer Descriptors",
+            "text": "This component represents a range of technological tools that provide rules and a standardized approach for defining alternative visual portrayals of the spatial data via an internal network or the Internet.\n\nStyled Layer Descriptors, together with Symbology Encoding, can be used with WMSs, WFSs and WCSs to enable user-defined symbolization of spatial data from within a collection of published styles.\n\nFor more information, see:\na) OGC SLD documentation",
+            "classification": "Optional",
+            "status": "Not implemented, unlikely to be in version 1.0",
+            "color": "grey"
+          }
+        ]
+      },
+      {
+        "label": "8.1.2",
+        "title": "Geography Markup Language application schema",
+        "text": "Application schemas (as defined in ISO 19109:2005 Geographic information - Rules for application schema) provide an abstract representation of the content and structure of information resources. The Climate observations application schema component (4.2.3.2) outlines the use of application schemas specifically developed for the climate domain.\n\nThese abstract representations of information provide the basis for deriving concrete encodings or data formats that allow the information to be serialized for exchange between systems and organizations.\n\nWork is proceeding within WMO to harmonize existing TDCFs (FM 92 GRIB Edition 2 and FM 94 BUFR Edition 4) with WMO METCE (described in the METCE component (4.2.3.1)), with the intent to bind those existing data formats to explicit, well-understood semantics.\n\nIn addition, the application schema can be used to develop XML-based data encodings using widely supported open standards for geographic information. The ISO 19136:2007 Geographic information - Geography Markup Language (GML) standard provides rules for serializing the abstract data model expressed as an application schema via XML encoding to create a GML\napplication schema.\n\nIn summary:\n1. An application schema can be thought of as a logical data model. For more information, see the subsection on WMO logical data models (4.2.3).\n2. A GML application schema is a physical model that is derived from a logical data model published using a particular technology - which in this case is GML. For an example, see the Combined climate observations and metadata component (8.1.2.1) below.\n\nDeriving a GML application schema from an application schema developed specifically for the climate domain (see Climate observations application schema component (4.2.3.2)) is anticipated to make climate data far more readily consumable for a broader community of users such as those interested in determining the impacts of climate change.\n\nWhile work has been conducted for several years, this task is still in its early stages as at December 2013. It is expected to take a number of years to complete. For an overview of how a logical data model (and associated application schema) could be used\nwith climate data, see Bannerman (2012), pp. 20-26.\n\nFor a more detailed description of what has been done to date, see Tandy (2013a), which provides an overview of the direction that WMO logical data model work is taking with regard to METCE.",
+        "requirements": [
+          {
+            "label": "8.1.2.1",
+            "title": "Combined climate observations and metadata",
+            "text": "This component represents the technology, software, processes and governance needed to support the transmission, consumption and processing of combined climate observations and associated metadata via a future climate observations application schema (or similar name) derived from:\n1. The schema outlined in the Climate observations application schema component (4.2.3.2)\n2. The schema outlined in the METCE component (4.2.3.1)\n\nAs discussed in the section above (8.1.2), this work is currently embryonic. However, it is anticipated that it will become a key technological mechanism for exchanging climate observations and metadata in future years in support of data interoperability and platform independence.\n\nFor more information, see:\na) Above section (8.1.2)\nb) METCE component (4.2.3.1)\nc) Climate observations application schema component (4.2.3.2)",
+            "classification": "Optional",
+            "status": "Not implemented, unlikely to be in version 1.0",
+            "color": "grey"
+          },
+          {
+            "label": "8.1.2.2",
+            "title": "Taxonomies and registers of authoritative terms",
+            "text": "This component is related to the previous component. It represents the technology, software, processes and governance needed to develop an authoritative definition of the concepts and terms referenced in a logical data model such as a future climate observations application schema (or similar name), and to enable the publication of such terms.\n\nFollowing the work of the Task Team on Aviation XML, WMO has established the WMO Codes Registry, which provides a web-based publication of terms from the Manual on Codes (WMO-No. 306).\n\nThe current coverage of terms is sparse - only covering the aviation-related terms required by the sponsoring activity - but there is commitment from WMO to populate the remaining code tables.\n\nThe WMO Codes Registry provides a well-defined programmatic application programming interface (API) alongside the web application. Where the need arises for publication of locally managed terms, it is recommended that the registry API be supported.\n\nAn open-source reference implementation of the registry software is available.\n\nFor more information, see:\na) Above section entitled GML application schema (8.1.2)\nb) METCE component (4.2.3.1)\nc) Climate observations application schema component (4.2.3.2)\nd) Overviews of the WMO Codes Registry (Tandy, 2013b, 2013c)",
+            "classification": "Optional",
+            "status": "Implemented via codes.wmo.int.",
+            "color": "orange"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Data discovery",
+    "label": "8.2",
+    "text": "",
+    "requirements": [
+      {
+        "label": "8.2.1",
+        "title": "Climate metadata catalogues",
+        "text": "",
+        "requirements": [
+          {
+            "label": "8.2.1.1",
+            "title": "Discovery metadata catalogue",
+            "text": "This component refers to the technology and processes that create a discovery metadata catalogue. This catalogue is used to publish an organization's data holdings as discovery metadata records, with corresponding records describing which online services may be used to access each dataset.\n\nA discovery metadata catalogue allows an organization to participate within the WIS environment.",
+            "classification": "Required",
+            "status": "OGC-API Records",
+            "color": "orange"
+          },
+          {
+            "label": "8.2.1.2",
+            "title": "Observations metadata catalogue",
+            "text": "This component refers to the technology and processes that create the observations metadata catalogue used to publish an organization's observations metadata records.\n\nIt is anticipated that the climate database will be used to store and manage observations metadata.\n\nThis component will serve as an IT catalogue service for observations metadata.\n\nMore work is required to define this component.",
+            "classification": "Optional",
+            "status": "Not yet implemented, import / export to OSCAR/Surface and other systems planned.",
+            "color": "red"
+          },
+          {
+            "label": "8.2.1.3",
+            "title": "Data provenance metadata catalogue",
+            "text": "This component refers to the technology and processes that create the data provenance metadata catalogue used to publish an organization's data provenance metadata records.\n\nIt is anticipated that the climate database will be used to store and manage data provenance metadata. This component will serve as an IT catalogue service for data provenance metadata.\n\nMore work is required to define this component.",
+            "classification": "Optional",
+            "status": "Not implemented, unlikely to be in version 1.0",
+            "color": "grey"
+          }
+        ]
+      },
+      {
+        "label": "8.2.2",
+        "title": "Linked data",
+        "text": "",
+        "requirements": [
+          {
+            "label": "8.2.2.1",
+            "title": "Linked data",
+            "text": "This component supports semantic search requests such as those used with linked data.\n\nThis is an emerging requirement that is building considerable momentum within information\nmanagement communities.\n\nThe Australian Climate Observations Reference Network - Surface Air Temperature (ACORN-SAT) dataset, published by the Australian government at http://lab.environment.data.gov.au/ provides an example of how linked data may be used for publishing climate data.\n\nMore work is required to define this component, including its relationship to the approaches adopted by WIS.\n\nFor more information, see:\na) A presentation on linked data (Berners-Lee, 2009)\nb) Article on the ACORN-SAT linked climate dataset (Lefort et al., 2013)",
+            "classification": "Optional",
+            "status": "Not implemented, unlikely to be in version 1.0",
+            "color": "grey"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Other formats",
+    "label": "8.3",
+    "text": "",
+    "requirements": [
+      {
+        "label": "8.3.1",
+        "title": "Open-source Project for a Network Data Access Protocol",
+        "text": "",
+        "requirements": [
+          {
+            "label": "8.3.1.1",
+            "title": "OPeNDAP",
+            "text": "This component represents technology suitable for the distribution of a wide range of scientific data via the Data Access Protocol (DAP).\n\nDAP is used in the world's scientific community to allow Internet access to a range of scientific data.\n\nThe protocol does not support the concept of spatial reference systems as defined in the OGC Abstract Specification on spatial referencing by coordinates. This makes it very difficult to reliably integrate data hosted via DAP with other spatial datasets, including those hosted via open spatial services.\n\nTherefore, it is considered more appropriate for cases in which researchers and scientists only want the data for numerical analysis.\n\nFor more information, see:\na) OPeNDAP Wikipedia page\nb) DAP 2.0 Specification",
+            "classification": "Optional",
+            "status": "Not implemented, unlikely to be in version 1.0. (+ not a data format)",
+            "color": "grey"
+          }
+        ]
+      },
+      {
+        "label": "8.3.2",
+        "title": "WMO formats",
+        "text": "",
+        "requirements": [
+          {
+            "label": "8.3.2.1",
+            "title": "WMO formats",
+            "text": "This component represents technology suitable for the distribution of a wide range of climate data via traditional WMO formats.\n\nFor more information, see:\na) FM 94 BUFR Edition 4\nb) FM 92 GRIB Edition 2\n\nOther formats also exist, but it is anticipated that they will be phased out in time.\n\nFor more information, see:\nc) *Manual on Codes* (WMO-No. 306), Volume I.2\nd) Wikipedia articles on BUFR and GRIB",
+            "classification": "Required",
+            "status": "In progress, BUFR encoding and decoding tools inbuilt",
+            "color": "orange"
+          }
+        ]
+      }
+    ]
+  }
+]

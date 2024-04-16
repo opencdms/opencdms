@@ -1,0 +1,200 @@
+[
+  {
+    "component": "VListItem",
+    "name": "dashboard",
+    "to": "/home",
+    "routeName": "dashboard",
+    "icon": "mdi-home",
+    "display": true,
+    "package": "@opencdms"
+  },
+  {
+    "component": "VListItem",
+    "name": "dashboard",
+    "to": "/dashboard",
+    "routeName": "dashboard",
+    "icon": "mdi-home",
+    "display": true,
+    "package": "@opencdms"
+  },
+  {
+    "component": "VListItem",
+    "name": "data-extract",
+    "to": "/observations/extract",
+    "routeName": "data-extract",
+    "icon": "mdi-construction",
+    "display": true,
+    "package": "@opencdms"
+  },
+  {
+    "component": "VListItem",
+    "name": "data-inventory",
+    "to": "/observations/inventory",
+    "routeName": "data-inventory",
+    "icon": "mdi-construction",
+    "display": true,
+    "package": "@opencdms"
+  },
+  {
+    "component": "VListItem",
+    "name": "data-map",
+    "to": "/observations/map",
+    "routeName": "data-map",
+    "icon": "mdi-construction",
+    "display": true,
+    "package": "@opencdms"
+  },
+  {
+    "component": "VListItem",
+    "name": "data-parameter",
+    "to": "/observations/parameter",
+    "routeName": "data-parameter",
+    "icon": "mdi-construction",
+    "display": true,
+    "package": "@opencdms"
+  },
+  {
+    "component": "VListItem",
+    "name": "data-parameter",
+    "to": "/observations/parameter/",
+    "routeName": "data-parameter",
+    "icon": "mdi-construction",
+    "display": true,
+    "package": "@opencdms"
+  },
+  {
+    "component": "VListItem",
+    "name": "observation-form",
+    "to": "/observations/forms/",
+    "routeName": "observation-form",
+    "icon": "mdi-construction",
+    "display": true,
+    "package": "@opencdms"
+  },
+  {
+    "component": "VListItem",
+    "name": "product-climate-normal",
+    "to": "/products/normals",
+    "routeName": "product-climate-normal",
+    "icon": "mdi-construction",
+    "display": true,
+    "package": "@opencdms"
+  },
+  {
+    "component": "VListItem",
+    "name": "product-climate-normal",
+    "to": "/products/normals/",
+    "routeName": "product-climate-normal",
+    "icon": "mdi-construction",
+    "display": true,
+    "package": "@opencdms"
+  },
+  {
+    "component": "VListItem",
+    "name": "product-climat",
+    "to": "/products/monthly",
+    "routeName": "product-climat",
+    "icon": "mdi-construction",
+    "display": true,
+    "package": "@opencdms"
+  },
+  {
+    "component": "VListItem",
+    "name": "product-climat",
+    "to": "/products/monthly/",
+    "routeName": "product-climat",
+    "icon": "mdi-construction",
+    "display": true,
+    "package": "@opencdms"
+  },
+  {
+    "component": "VListItem",
+    "name": "product-daycli",
+    "to": "/products/daily",
+    "routeName": "product-daycli",
+    "icon": "mdi-construction",
+    "display": true,
+    "package": "@opencdms"
+  },
+  {
+    "component": "VListItem",
+    "name": "product-daycli",
+    "to": "/products/daily/",
+    "routeName": "product-daycli",
+    "icon": "mdi-construction",
+    "display": true,
+    "package": "@opencdms"
+  },
+  {
+    "component": "VListItem",
+    "name": "quality-control",
+    "to": "/quality-control",
+    "routeName": "quality-control",
+    "icon": "mdi-construction",
+    "display": true,
+    "package": "@opencdms"
+  },
+  {
+    "component": "VListItem",
+    "name": "settings-user",
+    "to": "/settings/user/",
+    "routeName": "settings-user",
+    "icon": "mdi-construction",
+    "display": true,
+    "package": "@opencdms"
+  },
+  {
+    "component": "VListItem",
+    "name": "wis2-publication",
+    "to": "/wis2/publication",
+    "routeName": "wis2-publication",
+    "icon": "mdi-construction",
+    "display": true,
+    "package": "@opencdms"
+  },
+  {
+    "component": "VListItem",
+    "name": "wis2-publication",
+    "to": "/wis2/publication//view",
+    "routeName": "wis2-publication",
+    "icon": "mdi-construction",
+    "display": true,
+    "package": "@opencdms"
+  },
+  {
+    "component": "VListItem",
+    "name": "wis2-publication",
+    "to": "/wis2/publication//edit",
+    "routeName": "wis2-publication",
+    "icon": "mdi-construction",
+    "display": true,
+    "package": "@opencdms"
+  },
+  {
+    "component": "VListItem",
+    "name": "wis2-subscription",
+    "to": "/wis2/subscriptions",
+    "routeName": "wis2-subscription",
+    "icon": "mdi-construction",
+    "display": true,
+    "package": "@opencdms"
+  },
+  {
+    "component": "VListItem",
+    "name": "wis2-subscription",
+    "to": "/wis2/subscriptions//view",
+    "routeName": "wis2-subscription",
+    "icon": "mdi-construction",
+    "display": true,
+    "package": "@opencdms"
+  },
+  {
+    "component": "VListItem",
+    "name": "wis2-subscription",
+    "to": "/wis2/subscriptions//edit",
+    "routeName": "wis2-subscription",
+    "icon": "mdi-construction",
+    "display": true,
+    "package": "@opencdms"
+  }
+]

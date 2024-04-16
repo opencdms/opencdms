@@ -1,0 +1,18 @@
+version: '3.3'
+# docker-compose file to bring up opencdms-app front end
+# This front-end container is maintained separately from the
+# collection of backend containers in the main `opencdms` repo
+# since it doesn't need to share volumes/networks.
+# The Dockerfile below can also used as a devcontainer, therefore
+# we don't start the service in the dockerfile itself.
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./.devcontainer/Dockerfile
+    container_name: opencdms-app
+    ports:
+      - 8000:8000
+    volumes:
+      - ./:/workspaces/opencdms-app
+    command: sh -c "npm run serve"

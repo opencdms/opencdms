@@ -1,0 +1,5 @@
+id|name|description
+/vocab/status/latest|latest|The latest version of this record
+/vocab/status/draft|draft|Draft version of this record
+/vocab/status/archived|archived|Archived version of this record
+/vocab/status/deleted|deleted|Record marked for deletion

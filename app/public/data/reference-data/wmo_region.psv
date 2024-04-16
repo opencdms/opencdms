@@ -1,0 +1,10 @@
+id|name|description|links|_version|_change_date|_user_id|_status_id|comments
+/vocab/wmo_region/unknown|Unknown|Unknown||1||1|1|
+/vocab/wmo_region/I|Region I|Africa||1||1|1|
+/vocab/wmo_region/II|Region II|Asia||1||1|1|
+/vocab/wmo_region/III|Region III|South America||1||1|1|
+/vocab/wmo_region/IV|Region IV|North America, Central America and the Caribbean||1||1|1|
+/vocab/wmo_region/V|Region V|South-West Pacific||1||1|1|
+/vocab/wmo_region/VI|Region VI|Europe||1||1|1|
+/vocab/wmo_region/antarctica|Antarctica|Antarctica||1||1|1|
+/vocab/wmo_region/inapplicable|Inapplicable|Inapplicable||1||1|1|
