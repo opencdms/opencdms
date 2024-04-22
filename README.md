@@ -2,52 +2,21 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-> **The OpenCDMS software is expected to be available by 2025**\
-> **See [roadmap](https://www.opencdms.org/approach/roadmap) and [frequently asked questions](https://www.opencdms.org/about/faq/)**
+📌 OpenCDMS supports the [WMO Task Team on Climate Data Model (TT-CDM)](https://community.wmo.int/en/governance/commission-membership/commission-observation-infrastructure-and-information-systems-infcom/standing-committee-information-management-and-technology-sc-imt/expert-team-metadata-standards-et-metadata/task-team-climate-data-model-tt-cdm) by providing a Reference Implementation of the [WMO Core Climate Data Model - Observations (WCCDM-OBS)](https://meetings.wmo.int/INFCOM-3/_layouts/15/WopiFrame.aspx?sourcedoc=%7B3A36E4BF-D1B5-4CDC-BF80-89359C115420%7D&file=INFCOM-3-INF08-3(6a)-EXPERIMENTAL-CLIMATE-DATA-MODEL_en.docx) and related standards
 
-📌 OpenCDMS is an open source [Climate Data Management System (CDMS)](https://library.wmo.int/index.php?lvl=notice_display&id=16300) and also a Reference Implementation of the [WMO Climate Data Model Standard (CDM)](https://github.com/wmo-im/tt-cdm).
+📌 OpenCDMS also aims to support the [WMO Task Team on Information Management (ET-IM)](https://community.wmo.int/en/governance/commission-membership/commission-observation-infrastructure-and-information-systems-infcom/standing-committee-information-management-and-technology-sc-imt/expert-team-information-management-et-im) by providing a Reference Implementation of standardised web APIs for interacting with WCCDM-OBS and related standards
 
-📚 For more information, please see [docs.opencdms.org](https://docs.opencdms.org), see also [www.opencdms.org](https://www.opencdms.org)
+📌 OpenCDMS is not a complete [Climate Data Management System (CDMS)](https://library.wmo.int/index.php?lvl=notice_display&id=16300) for users. Instead it is a reuable package/library and Reference Implementation for CDMS developers
 
-This repository contains, in a single place, everything that is needed to install the OpenCDMS software and also includes the source of the documentation that is published at [docs.opencdms.org](https://docs.opencdms.org).
+📌 **Version 1.0 of the OpenCDMS package will be released before [WMO's 78th session of the Executive Council (EC-78)](https://wmo.int/events/constituent-body/78th-session-of-executive-council-ec-78) in June 2024**
 
+📚 For more information, please see [docs.opencdms.org](https://docs.opencdms.org).
 
-## Architecture
-
-![OpenCDMS Architecture](http://cdn-0.plantuml.com/plantuml/png/XP5HJy8m58NVzojkzWGFumVuG1282YfEXyQ4yN3fhh2mtYvjbqYC_zrcnfGk8CkIPUqztpaz7HcBsZQoYW1GMANXrP1sF-xzq2W9ugUQU39zp6BuQfS1QXHxtBejtfRy2KAnnP99kua8saUWBY3EUN4xMxpd70VBoW558Ks2TPrpxwsXUTR_7VaE-TZOtN_uUpg8Ik4-vnDodpn0d8jIkYZfmUuKmqs5PdywaIqb6O4L5HjFXLwgZDrgofuV-jwYG8iRD7HaKsnoDc974fsRYmOlixwlnmlyqVoypnFzVThBWi5WUDmrN44CgxlbCitMu4J1NdA-_kvaChpGZpVoFe4wkA3kT0INy0vniJb7NKt7oNKwMxVCZcatXsUqolbqF5b78-AYaTKF)
 
 ## Installation
 
-If you want to install OpenCDMS for production use, please see the instructions at https://docs.opencdms.org/administrator.
+Details will be added on:
 
-To set up containers see install/docker-compose.yaml
+a) Using OpenCDMS as a Python server implementation of the WCCDM-OBS and related standards
 
-If you are just interested in working with the OpenCDMS Python package locally then follow the instructions below.
-
-```
-# First use pip to install the `opencdms` command line tool
-pip install opencdms
-
-# Then install all dependencies into current environment
-opencdms install
-
-```
-
-**Note:** If you are developing locally, it is recommended to create a virtual environment before installing all of the opencdms dependencies, you can do this with the following commands:
-```
-# Create a venv directory to contain the virtual environment
-python3 -m venv venv
-
-# Activate the virtual environment
-source ./venv/bin/activate
-
-```
-
-To obtain the latest version of the software, clone the repository directly from GitHub:
-```
-pip uninstall opencdms
-git clone https://github.com/opencdms/opencdms.git
-pip install -e opencdms
-opencdms install
-
-```
+b) Installing OpenCDMS as an importable Python package
