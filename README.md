@@ -4,7 +4,7 @@
 
 ## Notices
 
-📌 **Version 1.0 of the OpenCDMS package will be released before [WMO's 78th session of the Executive Council (EC-78)](https://wmo.int/events/constituent-body/78th-session-of-executive-council-ec-78) in June 2024**
+📌 **Version 1.0 of the OpenCDMS package is expected to be release by the end of 2024**
 
 📌 OpenCDMS is not a complete [Climate Data Management System (CDMS)](https://library.wmo.int/index.php?lvl=notice_display&id=16300) for users. Instead it is a reuable package/library for CDMS developers
 
