@@ -4,9 +4,7 @@
 
 ## Notices
 
-📌 **Version 1.0 of the OpenCDMS package is expected to be release by the end of 2024**
-
-📌 OpenCDMS is not a complete [Climate Data Management System (CDMS)](https://library.wmo.int/index.php?lvl=notice_display&id=16300) for users. Instead it is a reuable package/library for CDMS developers
+📌 **OpenCDMS is not a complete [Climate Data Management System (CDMS)](https://library.wmo.int/index.php?lvl=notice_display&id=16300) for users. Instead it is a reuable package/library for CDMS developers**
 
 📌 OpenCDMS is intentionally minimal, it includes the importable `opencdms` Python package and a Python web server based on [pygeoapi](http://pygeoapo.io). Other complete CDMS solutions may add extra capabilities that would be needed to use the software in production
 
